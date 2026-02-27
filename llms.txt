@@ -1,0 +1,67 @@
+# Alejandro Sanabria
+
+> Engineering Manager · Mobile Platform Leader · AI-Augmented Execution
+
+## About
+
+Engineering Manager who stays technical. 8+ years shipping mobile platforms end-to-end. Now building with LLMs and autonomous agents — designing workflows that change how teams engineer, not just what they ship.
+
+I've driven growth engineering and experimentation at scale, connecting architecture decisions to revenue and product outcomes.
+
+## Links
+
+- Website: https://alesanabriav.com
+- LinkedIn: https://www.linkedin.com/in/alesanabriav/
+- Twitter/X: https://x.com/alesanabriav
+
+## The Arc
+
+I've spent most of my career at Platzi, and each phase taught me something different about how software gets built.
+
+Joined as the second mobile engineer. Small team, big product, everything to figure out. That's where I learned Swift and SwiftUI deeply — and where I learned that quality isn't the opposite of speed; it's what makes speed sustainable.
+
+Then the platform outgrew its stack. I was part of the team that migrated from React Native to fully native apps — Swift on iOS, Kotlin on Android. Working across all three paradigms taught me what each approach actually costs and where each one breaks.
+
+The migration wasn't about picking a side. It was about understanding the trade-offs deeply enough to make the right call for the product.
+
+Leadership came next. Not away from engineering — deeper into it. Helped scale the mobile platform across both iOS and Android, and pushed to turn technical debt reduction from a wish list into a discipline.
+
+Now I'm investing heavily in AI — not as a side interest, but as the next evolution of how I lead.
+
+## How I Lead
+
+### Technical Side
+
+- Helped design streaming and dynamic content architectures at scale
+- Contributed to internal libraries shared across the mobile platform
+- Helped define guardrails that keep both iOS and Android codebases healthy
+- Shipped on-device AI features with Apple Foundation Models alongside my team
+- The mobile team I helped build was recognized by Apple as an innovation example for Platzi
+- Architectural judgment across React Native, Swift, and Kotlin — not locked to one platform
+
+### People Side
+
+- Helped scale and structure mobile teams across iOS and Android
+- Mentored engineers through career transitions with high standards
+- Shaped a review culture with the team where quality is the norm, not the exception
+
+Android scope: I lead it directly — shared architecture decisions, critical unblocking, and unified execution standards. iOS and Android move as one team, not two silos.
+
+## What I'm Building Now
+
+AI is the biggest shift in how engineering work gets done since version control.
+
+- Agentic coding: architecture exploration, rapid prototyping, shipping faster
+- LLM pipelines: automating repetitive engineering work end-to-end
+- Agent design: multi-step execution with validation, handoffs, and recovery
+- Skill systems: reusable prompt architectures that encode team knowledge
+
+## What I Believe
+
+- Quality is a multiplier, not a tax. Investing in architecture pays back in velocity every sprint.
+- Lead from the code, not above it. An EM who can't evaluate a technical trade-off is managing blind.
+- AI augments judgment, it doesn't replace it. The goal is better engineering, not just faster output.
+
+## Tech
+
+Swift, iOS, Kotlin, Android, React Native, Claude Code, Git

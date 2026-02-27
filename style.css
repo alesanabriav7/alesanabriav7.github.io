@@ -1,0 +1,304 @@
+/* === Reset & Base === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0d1117;
+  --bg-surface: #161b22;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #cc785c;
+  --accent-hover: #e08a6a;
+  --border: #21262d;
+  --max-width: 720px;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Layout === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* === Header === */
+.site-header {
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.site-header .subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
+.social-links a svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  fill: currentColor;
+}
+
+/* === Sections === */
+section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+
+section h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+section p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+section strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* === Highlight text === */
+.highlight {
+  color: var(--accent);
+}
+
+/* === Subsections === */
+.subsection {
+  margin-top: 2rem;
+}
+
+.subsection h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.subsection ul {
+  list-style: none;
+  padding: 0;
+}
+
+.subsection ul li {
+  color: var(--text-muted);
+  padding: 0.3rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.subsection ul li::before {
+  content: "\2014";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* === Beliefs === */
+.beliefs-list {
+  list-style: none;
+  padding: 0;
+}
+
+.beliefs-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.beliefs-list li:last-child {
+  border-bottom: none;
+}
+
+.beliefs-list li strong {
+  display: block;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+/* === Building Now items === */
+.building-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.building-item {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.building-item .label {
+  color: var(--accent);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.building-item .desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* === Tech badges === */
+.tech-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.tech-badge:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* === Footer === */
+.site-footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.site-footer .social-links {
+  margin-bottom: 1rem;
+}
+
+.site-footer .copyright {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* === Scroll fade-in animation === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger the animations per section */
+section:nth-child(1) .fade-in { animation-delay: 0.1s; }
+section:nth-child(2) .fade-in { animation-delay: 0.15s; }
+section:nth-child(3) .fade-in { animation-delay: 0.2s; }
+section:nth-child(4) .fade-in { animation-delay: 0.25s; }
+section:nth-child(5) .fade-in { animation-delay: 0.3s; }
+section:nth-child(6) .fade-in { animation-delay: 0.35s; }
+
+/* Use IntersectionObserver-driven class for scroll-triggered fade */
+.fade-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
+
+  .site-header .subtitle {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+  }
+
+  .building-item {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .building-item .label {
+    min-width: unset;
+  }
+}
