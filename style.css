@@ -11,11 +11,10 @@
   --bg: #0d1117;
   --bg-surface: #161b22;
   --text: #e6edf3;
-  --text-muted: #8b949e;
+  --text-muted: #a0aab4;
   --accent: #cc785c;
   --accent-hover: #e08a6a;
-  --border: #21262d;
-  --max-width: 720px;
+  --border: rgba(255, 255, 255, 0.12);
 }
 
 html {
@@ -31,33 +30,68 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* === Layout === */
-.container {
-  max-width: var(--max-width);
+/* === Two-Column Layout === */
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* === Header === */
-.site-header {
-  padding: 5rem 0 3rem;
+/* === Sidebar === */
+.sidebar {
+  padding: 3rem 0 2rem;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.site-header h1 {
-  font-size: 2.5rem;
+.sidebar h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(28px, 6vw, 52px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
 }
 
-.site-header .subtitle {
+.subtitle {
   color: var(--text-muted);
-  font-size: 1.05rem;
-  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
   margin-bottom: 1.5rem;
 }
 
+.subtitle code {
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  background: rgba(204, 120, 92, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+/* === Avatar === */
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* === Social Links === */
 .social-links {
   display: flex;
   justify-content: center;
@@ -83,14 +117,32 @@ body {
   fill: currentColor;
 }
 
+/* === Section Navigation === */
+.section-nav {
+  display: none;
+}
+
+/* === Content Area === */
+.content {
+  max-width: 640px;
+}
+
 /* === Sections === */
 section {
   padding: 3rem 0;
   border-top: 1px solid var(--border);
 }
 
+section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+  margin: 0 -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 section h2 {
-  font-size: 1.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
@@ -153,13 +205,16 @@ section strong {
 }
 
 .beliefs-list li {
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
   color: var(--text-muted);
 }
 
 .beliefs-list li:last-child {
-  border-bottom: none;
+  margin-bottom: 0;
 }
 
 .beliefs-list li strong {
@@ -179,6 +234,10 @@ section strong {
   display: flex;
   gap: 1rem;
   align-items: baseline;
+  background: rgba(204, 120, 92, 0.06);
+  border-left: 2px solid var(--accent);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
 }
 
 .building-item .label {
@@ -199,18 +258,17 @@ section strong {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  justify-content: center;
 }
 
 .tech-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.85rem;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  font-size: 0.85rem;
+  padding: 4px 14px;
+  background: rgba(204, 120, 92, 0.1);
+  border: 1px solid rgba(204, 120, 92, 0.25);
+  border-radius: 9999px;
+  font-size: 13px;
   color: var(--text-muted);
   font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
   transition: border-color 0.2s, color 0.2s;
@@ -238,28 +296,6 @@ section strong {
 }
 
 /* === Scroll fade-in animation === */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Stagger the animations per section */
-section:nth-child(1) .fade-in { animation-delay: 0.1s; }
-section:nth-child(2) .fade-in { animation-delay: 0.15s; }
-section:nth-child(3) .fade-in { animation-delay: 0.2s; }
-section:nth-child(4) .fade-in { animation-delay: 0.25s; }
-section:nth-child(5) .fade-in { animation-delay: 0.3s; }
-section:nth-child(6) .fade-in { animation-delay: 0.35s; }
-
-/* Use IntersectionObserver-driven class for scroll-triggered fade */
 .fade-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -271,18 +307,14 @@ section:nth-child(6) .fade-in { animation-delay: 0.35s; }
   transform: translateY(0);
 }
 
-/* === Responsive === */
+/* === Responsive: Mobile === */
 @media (max-width: 600px) {
-  .site-header {
-    padding: 3.5rem 0 2rem;
+  .sidebar {
+    padding: 2.5rem 0 1.5rem;
   }
 
-  .site-header h1 {
-    font-size: 2rem;
-  }
-
-  .site-header .subtitle {
-    font-size: 0.9rem;
+  .subtitle {
+    white-space: normal;
   }
 
   section {
@@ -300,5 +332,68 @@ section:nth-child(6) .fade-in { animation-delay: 0.35s; }
 
   .building-item .label {
     min-width: unset;
+  }
+}
+
+/* === Responsive: Desktop two-column === */
+@media (min-width: 1024px) {
+  .page-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    height: fit-content;
+    padding: 3rem 0;
+  }
+
+  .sidebar-inner {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .sidebar .social-links {
+    justify-content: flex-start;
+  }
+
+  .subtitle {
+    white-space: normal;
+  }
+
+  .section-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    width: 100%;
+  }
+
+  .section-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    padding: 0.25rem 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .section-nav a:hover {
+    color: var(--text);
+  }
+
+  .section-nav a.active {
+    color: var(--accent);
+    border-left-color: var(--accent);
+  }
+
+  .tech-row {
+    justify-content: flex-start;
   }
 }
