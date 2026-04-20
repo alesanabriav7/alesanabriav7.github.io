@@ -1,0 +1,7 @@
+name = "alesanabriav-site"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+routes = [
+  { pattern = "alesanabriav.com/*", zone_name = "alesanabriav.com" }
+]
