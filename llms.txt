@@ -1,6 +1,6 @@
 # Alejandro Sanabria
 
-> Hands-on Engineering Leader · Mobile Platforms · AI Workflows
+> Hands-on Engineering Leader · Mobile Platforms · Product Engineering
 
 ## About
 
@@ -58,7 +58,7 @@ I'm applying AI to the parts of engineering where context, review, and repetitio
 
 ## Selected Work
 
-- iOS AI Workflow Systems: reusable workflow patterns for iOS architecture, implementation planning, code review, validation, App Store operations, and screenshot generation. The focus is not prompt tricks; it is encoding practical engineering judgment into repeatable systems. https://github.com/alesanabriav7/ios-architect-skill
+- iOS Workflow Systems: reusable workflow patterns for iOS architecture, implementation planning, code review, validation, App Store operations, and screenshot generation. The focus is not prompt tricks; it is encoding practical engineering judgment into repeatable systems. https://github.com/alesanabriav7/ios-architect-skill
 - Cifro: published private-by-design iOS finance app built with SwiftUI and Apple Foundation Models. Uses on-device AI for transaction parsing, budget bucket suggestions, daily insights, and a review ritual. No accounts, no cloud, no data sharing. https://apps.apple.com/co/app/cifro-budget-finance/id6759523370?l=en-GB
 - Release & Screenshot Automation: TypeScript command-line tooling for App Store Connect metadata/build uploads and deterministic iOS simulator screenshot capture. https://github.com/alesanabriav7/appstore-tools and https://github.com/alesanabriav7/screenshots-ios
 
@@ -70,4 +70,4 @@ I'm applying AI to the parts of engineering where context, review, and repetitio
 
 ## Tech
 
-Swift, SwiftUI, iOS, Kotlin, Android, React Native, Tuist, GRDB, Claude Code, OpenClaw, AI Workflows, Product Engineering, Git
+Swift, SwiftUI, iOS, Kotlin, Android, React Native, Tuist, GRDB, Claude Code, OpenClaw, Foundation Models, Product Engineering, Git
