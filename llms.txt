@@ -4,7 +4,7 @@
 
 ## About
 
-Engineering Manager who stays technical. 8+ years shipping mobile platforms end-to-end. Now building with LLMs and autonomous agents — designing workflows that change how teams engineer, not just what they ship.
+Engineering Manager who stays technical. 8+ years shipping mobile platforms end-to-end. After an 8+ year arc through mobile engineering and leadership, I'm now focused on AI-agent workflows, engineering automation, and personal finance software — designing systems that change how teams engineer, not just what they ship.
 
 I've driven growth engineering and experimentation at scale, connecting architecture decisions to revenue and product outcomes.
 
@@ -16,7 +16,7 @@ I've driven growth engineering and experimentation at scale, connecting architec
 
 ## The Arc
 
-I've spent most of my career at Platzi, and each phase taught me something different about how software gets built.
+My longest chapter was at Platzi, where each phase taught me something different about how software gets built.
 
 Joined as the second mobile engineer. Small team, big product, everything to figure out. That's where I learned Swift and SwiftUI deeply — and where I learned that quality isn't the opposite of speed; it's what makes speed sustainable.
 
@@ -45,7 +45,7 @@ Now I'm investing heavily in AI — not as a side interest, but as the next evol
 - Mentored engineers through career transitions with high standards
 - Shaped a review culture with the team where quality is the norm, not the exception
 
-Android scope: I lead it directly — shared architecture decisions, critical unblocking, and unified execution standards. iOS and Android move as one team, not two silos.
+Android scope: I've led it directly — shared architecture decisions, critical unblocking, and unified execution standards. iOS and Android move best as one team, not two silos.
 
 ## What I'm Building Now
 
@@ -56,6 +56,12 @@ AI is the biggest shift in how engineering work gets done since version control.
 - Agent design: multi-step execution with validation, handoffs, and recovery
 - Skill systems: reusable prompt architectures that encode team knowledge
 
+## Selected Work
+
+- iOS AI Agent Workflows: reusable agent workflows for iOS architecture, implementation planning, code review, validation, App Store operations, and screenshot generation using Claude Code, OpenClaw, skills, and LLM workflows. https://github.com/alesanabriav7/ios-architect-skill
+- Cifro: published private-by-design iOS finance app built with SwiftUI and Apple Foundation Models. Uses on-device AI for transaction parsing, budget bucket suggestions, daily insights, and a review ritual. No accounts, no cloud, no data sharing. https://apps.apple.com/co/app/cifro-budget-finance/id6759523370?l=en-GB
+- Release & Screenshot Automation: TypeScript command-line tooling for App Store Connect metadata/build uploads and deterministic iOS simulator screenshot capture. https://github.com/alesanabriav7/appstore-tools and https://github.com/alesanabriav7/screenshots-ios
+
 ## What I Believe
 
 - Quality is a multiplier, not a tax. Investing in architecture pays back in velocity every sprint.
@@ -64,4 +70,4 @@ AI is the biggest shift in how engineering work gets done since version control.
 
 ## Tech
 
-Swift, iOS, Kotlin, Android, React Native, Claude Code, Git
+Swift, SwiftUI, iOS, Kotlin, Android, React Native, Tuist, GRDB, Claude Code, OpenClaw, AI Agents, LLM Workflows, Git

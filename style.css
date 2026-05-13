@@ -212,6 +212,70 @@ section strong {
   color: var(--accent);
 }
 
+/* === Selected Work === */
+.work-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.work-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.work-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.work-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.work-type {
+  color: var(--accent);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+}
+
+.work-tags span {
+  padding: 2px 9px;
+  border-radius: 9999px;
+  background: rgba(204, 120, 92, 0.08);
+  border: 1px solid rgba(204, 120, 92, 0.18);
+  color: var(--text-muted);
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.75rem;
+}
+
+.work-link {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.work-link:hover {
+  color: var(--accent-hover);
+}
+
 /* === Beliefs === */
 .beliefs-list {
   list-style: none;
@@ -346,6 +410,11 @@ section strong {
 
   .building-item .label {
     min-width: unset;
+  }
+
+  .work-card-header {
+    flex-direction: column;
+    gap: 0.2rem;
   }
 }
 
