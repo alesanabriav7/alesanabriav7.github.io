@@ -1,12 +1,12 @@
 # Alejandro Sanabria
 
-> Engineering Manager · Mobile Platform Leader · AI-Augmented Execution
+> Hands-on Engineering Leader · Mobile Platforms · AI Workflows
 
 ## About
 
-Engineering Manager who stays technical. 8+ years shipping mobile platforms end-to-end. After an 8+ year arc through mobile engineering and leadership, I'm now focused on AI-agent workflows, engineering automation, and personal finance software — designing systems that change how teams engineer, not just what they ship.
+Hands-on engineering leader with 8+ years turning complex product and technical problems into shipped iOS and Android systems. I grew from one of Platzi's first mobile engineers into leading mobile engineering across both platforms, while staying close to architecture, code quality, product trade-offs, stakeholder alignment, and delivery execution.
 
-I've driven growth engineering and experimentation at scale, connecting architecture decisions to revenue and product outcomes.
+Recently, I have been applying AI to the way real engineering work gets done: breaking down ambiguous problems, preserving context, reviewing trade-offs, validating implementation, and automating repetitive delivery steps.
 
 ## Links
 
@@ -26,7 +26,7 @@ The migration wasn't about picking a side. It was about understanding the trade-
 
 Leadership came next. Not away from engineering — deeper into it. Helped scale the mobile platform across both iOS and Android, and pushed to turn technical debt reduction from a wish list into a discipline.
 
-Now I'm investing heavily in AI — not as a side interest, but as the next evolution of how I lead.
+Now I'm applying the same builder mindset to AI workflows: practical systems that help teams preserve context, review trade-offs, validate implementation, and ship with less repeated setup work.
 
 ## How I Lead
 
@@ -34,7 +34,7 @@ Now I'm investing heavily in AI — not as a side interest, but as the next evol
 
 - Helped design streaming and dynamic content architectures at scale
 - Contributed to internal libraries shared across the mobile platform
-- Helped define guardrails that keep both iOS and Android codebases healthy
+- Helped define standards that keep both iOS and Android codebases healthy
 - Shipped on-device AI features with Apple Foundation Models alongside my team
 - The mobile team I helped build was recognized by Apple as an innovation example for Platzi
 - Architectural judgment across React Native, Swift, and Kotlin — not locked to one platform
@@ -49,16 +49,16 @@ Android scope: I've led it directly — shared architecture decisions, critical 
 
 ## What I'm Building Now
 
-AI is the biggest shift in how engineering work gets done since version control.
+I'm applying AI to the parts of engineering where context, review, and repetition usually slow teams down. The work is practical: tools and workflows I use to plan, build, verify, package, and release real software.
 
-- Agentic coding: architecture exploration, rapid prototyping, shipping faster
-- LLM pipelines: automating repetitive engineering work end-to-end
-- Agent design: multi-step execution with validation, handoffs, and recovery
-- Skill systems: reusable prompt architectures that encode team knowledge
+- Architecture workflows: breaking down ambiguous work into implementation plans and trade-offs
+- Review loops: using AI to preserve context, check assumptions, and verify output
+- Delivery tooling: automating screenshots, App Store work, and release steps
+- Product systems: building apps like Cifro where AI supports useful product behavior
 
 ## Selected Work
 
-- iOS AI Agent Workflows: reusable agent workflows for iOS architecture, implementation planning, code review, validation, App Store operations, and screenshot generation using Claude Code, OpenClaw, skills, and LLM workflows. https://github.com/alesanabriav7/ios-architect-skill
+- iOS AI Workflow Systems: reusable workflow patterns for iOS architecture, implementation planning, code review, validation, App Store operations, and screenshot generation. The focus is not prompt tricks; it is encoding practical engineering judgment into repeatable systems. https://github.com/alesanabriav7/ios-architect-skill
 - Cifro: published private-by-design iOS finance app built with SwiftUI and Apple Foundation Models. Uses on-device AI for transaction parsing, budget bucket suggestions, daily insights, and a review ritual. No accounts, no cloud, no data sharing. https://apps.apple.com/co/app/cifro-budget-finance/id6759523370?l=en-GB
 - Release & Screenshot Automation: TypeScript command-line tooling for App Store Connect metadata/build uploads and deterministic iOS simulator screenshot capture. https://github.com/alesanabriav7/appstore-tools and https://github.com/alesanabriav7/screenshots-ios
 
@@ -66,8 +66,8 @@ AI is the biggest shift in how engineering work gets done since version control.
 
 - Quality is a multiplier, not a tax. Investing in architecture pays back in velocity every sprint.
 - Lead from the code, not above it. An EM who can't evaluate a technical trade-off is managing blind.
-- AI augments judgment, it doesn't replace it. The goal is better engineering, not just faster output.
+- AI should augment judgment, not replace it. The goal is better engineering, not just faster output.
 
 ## Tech
 
-Swift, SwiftUI, iOS, Kotlin, Android, React Native, Tuist, GRDB, Claude Code, OpenClaw, AI Agents, LLM Workflows, Git
+Swift, SwiftUI, iOS, Kotlin, Android, React Native, Tuist, GRDB, Claude Code, OpenClaw, AI Workflows, Product Engineering, Git
