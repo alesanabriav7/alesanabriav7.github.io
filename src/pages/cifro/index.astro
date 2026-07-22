@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const appStoreUrl = "https://apps.apple.com/co/app/cifro-budget-finance/id6759523370?l=en-GB";
+const cifroJsonLd = {
+  "@type": "SoftwareApplication",
+  name: "Cifro",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "iOS",
+  url: "https://alesanabriav.com/cifro/",
+  downloadUrl: appStoreUrl,
+  author: { "@type": "Person", name: "Alejandro Sanabria", url: "https://alesanabriav.com" },
+  description: "A private-by-design iOS finance app with on-device AI, no accounts, and no cloud data sharing.",
+};
+---
+
+<BaseLayout title="Cifro" description="Cifro is a private-by-design iOS finance app with on-device AI, no accounts, and no cloud data sharing." jsonLd={cifroJsonLd}>
+  <section class="cifro-hero"><div class="shell hero-grid"><div><p class="eyebrow">Cifro for iPhone</p><h1>Private finance, designed to stay on your device.</h1><p class="hero-copy">Cifro is a personal finance app built with SwiftUI and Apple Foundation Models. It helps turn transactions into clearer budgets, daily insights, and a lightweight review ritual—without accounts or cloud data sharing.</p><div class="hero-links"><a class="button primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">View on the App Store</a><a class="button quiet" href="/cifro/privacy">Read the privacy policy</a></div></div><img class="portrait" src="/alejandro-sanabria.jpg" alt="Cifro is built by Alejandro Sanabria" width="640" height="640" /></div></section>
+  <section class="section"><div class="shell"><div class="section-heading"><p class="eyebrow">Principles</p><h2>Useful intelligence without turning your finances into a data product.</h2></div><div class="feature-list"><div><h3>On-device AI</h3><p>Foundation Models support useful product behavior on the device instead of sending your financial context to a server.</p></div><div><h3>No accounts</h3><p>There is no account to create, no personal profile to maintain, and no cloud database holding your transactions.</p></div><div><h3>Practical routines</h3><p>Transaction parsing, budget bucket suggestions, daily insights, and review rituals focus on clarity over dashboard noise.</p></div><div><h3>Built natively</h3><p>Cifro is a native iOS product built with SwiftUI for a focused, private experience.</p></div></div></div></section>
+  <section class="section tint"><div class="shell"><div class="section-heading"><p class="eyebrow">Built by Alejandro</p><h2>Cifro is product proof, not a concept demo.</h2></div><div class="prose"><p>The app brings together product engineering, iOS architecture, privacy decisions, and applied AI. Read the public project context or get help with the app.</p><div class="hero-links"><a class="button primary" href="/work">See the case context</a><a class="button quiet" href="/cifro/support">Cifro support</a></div></div></div></section>
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>;
+}
+
+const { title, description, image = "/alejandro-sanabria.jpg", noindex = false, jsonLd } = Astro.props;
+const canonical = new URL(Astro.url.pathname, "https://alesanabriav.com");
+const fullTitle = title === "Alejandro Sanabria" ? title : `${title} — Alejandro Sanabria`;
+const person = {
+  "@type": "Person",
+  name: "Alejandro Sanabria",
+  url: "https://alesanabriav.com",
+  jobTitle: "Forward Deployed Engineer",
+  worksFor: { "@type": "Organization", name: "Wonderful.ai" },
+  sameAs: ["https://www.linkedin.com/in/alesanabriav/", "https://github.com/alesanabriav7"],
+};
+const structuredData = jsonLd
+  ? { "@context": "https://schema.org", "@graph": [person, jsonLd] }
+  : { "@context": "https://schema.org", ...person };
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(image, canonical)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{fullTitle}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body>
+    <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} />
+    <main>
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

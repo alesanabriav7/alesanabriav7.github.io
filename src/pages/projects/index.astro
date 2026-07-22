@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = [
+  { title: "Cifro", text: "A published private-by-design iOS finance app with on-device AI for transaction parsing, budget suggestions, insights, and review rituals.", href: "/cifro", cta: "Explore Cifro" },
+  { title: "iOS Architecture Skill", text: "A reusable architecture and planning workflow for building iOS features with deliberate boundaries and verification.", href: "https://github.com/alesanabriav7/ios-architect-skill", cta: "View repository" },
+  { title: "App Store Tools", text: "Command-line tooling for App Store Connect metadata and build delivery workflows.", href: "https://github.com/alesanabriav7/appstore-tools", cta: "View repository" },
+  { title: "Screenshots iOS", text: "Deterministic simulator screenshot capture for App Store assets, visual checks, and CI workflows.", href: "https://github.com/alesanabriav7/screenshots-ios", cta: "View repository" },
+];
+---
+
+<BaseLayout title="Projects" description="Shipped products and open-source workflow tools by Alejandro Sanabria.">
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Projects</p><h1>Tools and products that make the workflow tangible.</h1><p>These projects come from the same bias: turn recurring ambiguity into a smaller, verifiable system.</p></div></section>
+  <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}>{project.cta} →</a></article>)}</div></div></section>
+</BaseLayout>

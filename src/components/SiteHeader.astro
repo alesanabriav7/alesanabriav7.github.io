@@ -1,0 +1,21 @@
+---
+const { currentPath = "/" } = Astro.props;
+const links = [
+  { href: "/work", label: "Work" },
+  { href: "/projects", label: "Projects" },
+  { href: "/cifro", label: "Cifro" },
+];
+---
+
+<header class="site-header">
+  <div class="shell nav-shell">
+    <a class="wordmark" href="/" aria-label="Alejandro Sanabria home">Alejandro Sanabria</a>
+    <nav aria-label="Primary navigation">
+      {links.map((link) => (
+        <a class:list={["nav-link", { active: currentPath === link.href }]} href={link.href}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

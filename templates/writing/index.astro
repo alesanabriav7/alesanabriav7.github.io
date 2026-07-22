@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const posts = (await getCollection("writing")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const formatDate = (date: Date) => new Intl.DateTimeFormat("en", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date);
+---
+
+<BaseLayout title="Writing" description="Writing by Alejandro Sanabria on Forward Deployed Engineering, agent systems, mobile platforms, and practical engineering judgment.">
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Writing</p><h1>Notes from the work of making systems useful.</h1><p>Forward Deployed Engineering, agent systems, mobile platforms, product delivery, and the judgment that connects them.</p></div></section>
+  <section class="section tint"><div class="shell article-list">{posts.map((post) => <article><time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time><div><h2><a href={`/writing/${post.id}`}>{post.data.title}</a></h2><p>{post.data.description}</p><div class="article-meta">{post.data.tags.map((tag) => <span>{tag}</span>)}</div></div></article>)}</div></section>
+</BaseLayout>

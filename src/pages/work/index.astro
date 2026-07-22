@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const work = [
+  { title: "Wonderful.ai", type: "Forward Deployed Engineering", text: "Current work at the intersection of customer workflows, product constraints, AI systems, integrations, and implementation. Public writing stays sanitized; the operating lens is evidence over prompt theater.", tags: ["FDE", "Agents", "Integrations", "Delivery"] },
+  { title: "Platzi Mobile Platform", type: "Mobile platform leadership", text: "An 8+ year chapter from early mobile engineer to leading mobile engineering across iOS and Android: native Swift, Kotlin, React Native, shared standards, architecture, and team development.", tags: ["iOS", "Android", "Swift", "Kotlin"] },
+  { title: "Brand Spa", type: "Co-founder · full-stack product engineering", text: "Built and led engineering for B2B client products: CMS platforms, e-commerce, quoting systems, website builders, and internal tooling from architecture to production.", tags: ["B2B", "Laravel", "Rails", "React"] },
+  { title: "Baubap", type: "Engineering management", text: "A focused delivery chapter getting a first iOS version moving under a compressed timeline by aligning product, architecture, and execution.", tags: ["iOS", "Delivery", "Leadership"] },
+];
+---
+
+<BaseLayout title="Work" description="Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.">
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Selected work</p><h1>Systems, teams, and products that had to work in reality.</h1><p>My work spans customer-facing AI delivery, mobile platform leadership, and end-to-end product engineering. These are public, sanitized summaries—not customer records.</p></div></section>
+  <section class="section tint"><div class="shell"><div class="card-grid">{work.map((item) => <article class="card"><p class="eyebrow">{item.type}</p><h2>{item.title}</h2><p>{item.text}</p><ul class="tag-list">{item.tags.map((tag) => <li>{tag}</li>)}</ul></article>)}</div></div></section>
+  <section class="section"><div class="shell"><div class="section-heading"><p class="eyebrow">Product proof</p><h2>Some things are better shown as a shipped product.</h2></div><div class="card-grid"><article class="card featured"><p class="eyebrow">Cifro</p><h3>Private-by-design personal finance on iOS.</h3><p>SwiftUI, Apple Foundation Models, on-device AI, no accounts, and no cloud data sharing.</p><a href="/cifro">Explore Cifro →</a></article></div></div></section>
+</BaseLayout>

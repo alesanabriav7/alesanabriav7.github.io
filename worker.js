@@ -1,11 +1,16 @@
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/privacy" || url.pathname === "/privacy/") {
+      return Response.redirect(new URL("/cifro/privacy/", url), 301);
+    }
+
     const accept = request.headers.get("Accept") || "";
 
     if (accept.includes("text/markdown")) {
-      const url = new URL(request.url);
       const llmsUrl = new URL("/llms.txt", url.origin);
-      const res = await fetch(llmsUrl);
+      const res = await env.ASSETS.fetch(new Request(llmsUrl));
       const text = await res.text();
       const tokens = String(Math.ceil(text.split(/\s+/).length * 1.3));
 
@@ -17,6 +22,6 @@ export default {
       });
     }
 
-    return fetch(request);
+    return env.ASSETS.fetch(request);
   },
 };
