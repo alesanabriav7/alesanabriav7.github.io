@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import CifroFooter from "../components/CifroFooter.astro";
+import CifroHeader from "../components/CifroHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
@@ -7,13 +9,15 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  favicon?: string;
   noindex?: boolean;
   jsonLd?: Record<string, unknown>;
+  variant?: "personal" | "cifro";
 }
 
-const { title, description, image = "/alejandro-sanabria.jpg", noindex = false, jsonLd } = Astro.props;
+const { title, description, image = "/alejandro-sanabria.jpg", favicon = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>", noindex = false, jsonLd, variant = "personal" } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://alesanabriav.com");
-const fullTitle = title === "Alejandro Sanabria" ? title : `${title} — Alejandro Sanabria`;
+const fullTitle = variant === "cifro" || title === "Alejandro Sanabria" ? title : `${title} — Alejandro Sanabria`;
 const person = {
   "@type": "Person",
   name: "Alejandro Sanabria",
@@ -23,7 +27,7 @@ const person = {
   sameAs: ["https://www.linkedin.com/in/alesanabriav/", "https://github.com/alesanabriav7"],
 };
 const structuredData = jsonLd
-  ? { "@context": "https://schema.org", "@graph": [person, jsonLd] }
+  ? { "@context": "https://schema.org", "@graph": variant === "cifro" ? [jsonLd] : [person, jsonLd] }
   : { "@context": "https://schema.org", ...person };
 ---
 
@@ -35,7 +39,7 @@ const structuredData = jsonLd
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>" />
+    <link rel="icon" href={favicon} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
@@ -46,10 +50,10 @@ const structuredData = jsonLd
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
   <body>
-    <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} />
+    {variant === "cifro" ? <CifroHeader /> : <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} />}
     <main>
       <slot />
     </main>
-    <SiteFooter />
+    {variant === "cifro" ? <CifroFooter /> : <SiteFooter />}
   </body>
 </html>

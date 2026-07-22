@@ -1,20 +1,32 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const appStoreUrl = "https://apps.apple.com/co/app/cifro-budget-finance/id6759523370?l=en-GB";
+const appStoreUrl = "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370";
+const screenshots = [
+  { src: "/cifro/log-expenses.webp", alt: "Cifro lets someone log an expense in seconds" },
+  { src: "/cifro/review-purchases.webp", alt: "Cifro lists purchases for a focused review" },
+  { src: "/cifro/ai-insights.webp", alt: "Cifro shows on-device insights about spending" },
+  { src: "/cifro/budget-by-category.webp", alt: "Cifro shows budgets and spending by category" },
+];
+const carouselScreenshots = [...screenshots, { ...screenshots[0], alt: "" }];
 const cifroJsonLd = {
-  "@type": "SoftwareApplication",
+  "@type": ["SoftwareApplication", "MobileApplication"],
   name: "Cifro",
   applicationCategory: "FinanceApplication",
-  operatingSystem: "iOS",
+  applicationSubCategory: "Personal finance",
+  operatingSystem: "iOS 26.0 or later",
   url: "https://alesanabriav.com/cifro/",
   downloadUrl: appStoreUrl,
+  sameAs: appStoreUrl,
+  inLanguage: ["en", "es"],
+  offers: { "@type": "Offer", price: 0 },
   author: { "@type": "Person", name: "Alejandro Sanabria", url: "https://alesanabriav.com" },
-  description: "A private-by-design iOS finance app with on-device AI, no accounts, and no cloud data sharing.",
+  description: "A private budget and expense tracker for iPhone with on-device AI, no accounts, and no third-party tracking.",
 };
 ---
 
-<BaseLayout title="Cifro" description="Cifro is a private-by-design iOS finance app with on-device AI, no accounts, and no cloud data sharing." jsonLd={cifroJsonLd}>
-  <section class="cifro-hero"><div class="shell hero-grid"><div><p class="eyebrow">Cifro for iPhone</p><h1>Private finance, designed to stay on your device.</h1><p class="hero-copy">Cifro is a personal finance app built with SwiftUI and Apple Foundation Models. It helps turn transactions into clearer budgets, daily insights, and a lightweight review ritual—without accounts or cloud data sharing.</p><div class="hero-links"><a class="button primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">View on the App Store</a><a class="button quiet" href="/cifro/privacy">Read the privacy policy</a></div></div><img class="portrait" src="/alejandro-sanabria.jpg" alt="Cifro is built by Alejandro Sanabria" width="640" height="640" /></div></section>
-  <section class="section"><div class="shell"><div class="section-heading"><p class="eyebrow">Principles</p><h2>Useful intelligence without turning your finances into a data product.</h2></div><div class="feature-list"><div><h3>On-device AI</h3><p>Foundation Models support useful product behavior on the device instead of sending your financial context to a server.</p></div><div><h3>No accounts</h3><p>There is no account to create, no personal profile to maintain, and no cloud database holding your transactions.</p></div><div><h3>Practical routines</h3><p>Transaction parsing, budget bucket suggestions, daily insights, and review rituals focus on clarity over dashboard noise.</p></div><div><h3>Built natively</h3><p>Cifro is a native iOS product built with SwiftUI for a focused, private experience.</p></div></div></div></section>
-  <section class="section tint"><div class="shell"><div class="section-heading"><p class="eyebrow">Built by Alejandro</p><h2>Cifro is product proof, not a concept demo.</h2></div><div class="prose"><p>The app brings together product engineering, iOS architecture, privacy decisions, and applied AI. Read the public project context or get help with the app.</p><div class="hero-links"><a class="button primary" href="/work">See the case context</a><a class="button quiet" href="/cifro/support">Cifro support</a></div></div></div></section>
+<BaseLayout variant="cifro" title="Cifro — Private Budget & Expense Tracker for iPhone" description="Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI." image="/cifro/log-expenses.webp" favicon="/cifro/icon.jpg" jsonLd={cifroJsonLd}>
+  <section class="cifro-hero"><div class="shell hero-grid"><div><p class="eyebrow">Private expense tracker for iPhone</p><h1>Know where your money goes—without giving it away.</h1><p class="hero-copy">Capture an expense, review it once, and understand the pattern. Cifro is a private budget and spending app built for people who want clarity without accounts, ads, or financial data extraction.</p><div class="hero-links"><a class="button primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">Download on the App Store</a><a class="button quiet" href="#how-it-works">See how it works</a></div></div><figure class="cifro-hero-media"><div class="cifro-carousel" aria-label="Cifro product screenshots"><div class="cifro-carousel-track">{carouselScreenshots.map((screenshot, index) => <img src={screenshot.src} alt={screenshot.alt} width="600" height="1300" fetchpriority={index === 0 ? "high" : "auto"} aria-hidden={index === screenshots.length ? "true" : undefined} />)}</div></div><figcaption>Capture → review → understand → plan.</figcaption></figure></div></section>
+  <section id="how-it-works" class="section cifro-explainer"><div class="shell"><div class="section-heading"><p class="eyebrow">How it works</p><h2>A short loop for understanding your money.</h2></div><div class="cifro-steps"><article><span>01</span><h3>Capture the moment</h3><p>Type a simple line such as “15 lunch at Sushi Place”, or scan a receipt from the camera or photo library. Cifro parses the amount and context, then suggests the right bucket.</p></article><article><span>02</span><h3>Review with intent</h3><p>Money Moments turn a list of transactions into a focused queue. Mark each purchase as well spent, necessary, or needing review; optionally place it in the budget that matters.</p></article><article><span>03</span><h3>Make the month legible</h3><p>Organize monthly budgets into your own buckets and groups. Progress, reviewed spend, streaks, and an efficiency score make the change visible without turning Cifro into spreadsheet work.</p></article><article><span>04</span><h3>Let the system learn</h3><p>On-device Foundation Models use your corrections and examples to improve future suggestions. Daily insights surface a spending change, a streak milestone, or the one pattern worth noticing.</p></article><article><span>05</span><h3>Keep control of the data</h3><p>No account, ads, or third-party tracking. Face ID or Touch ID can protect the app; sync uses your private iCloud account when you choose to use it.</p></article></div></div></section>
+  <section id="privacy" class="section cifro-privacy"><div class="shell"><div class="section-heading"><p class="eyebrow">Private by architecture</p><h2>Your financial context stays yours.</h2></div><div class="cifro-privacy-grid"><article><h3>No account to create</h3><p>Start without an email, password, or profile. Cifro does not need a financial identity to be useful.</p></article><article><h3>No tracking business</h3><p>No ads and no third-party analytics SDKs. Your spending is not a dataset for someone else’s product.</p></article><article><h3>Your device, your iCloud</h3><p>Use Face ID or Touch ID to protect the app. If you sync, it stays in your private iCloud account—not a Cifro server.</p></article></div></div></section>
+  <section class="section tint cifro-cta"><div class="shell"><div class="section-heading"><p class="eyebrow">Start small</p><h2>Your money. Your device. Your rules.</h2></div><div class="prose"><p>Start with one expense. The rest is a habit you build at your own pace.</p><div class="hero-links"><a class="button primary" href={appStoreUrl} target="_blank" rel="noopener noreferrer">Download Cifro</a><a class="button quiet" href="/cifro/support">Get support</a></div></div></div></section>
 </BaseLayout>
