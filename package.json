@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/build-markdown.mjs",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "check:markdown": "node scripts/check-markdown.mjs",
+    "submit:indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
@@ -16,6 +18,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
+    "linkedom": "0.18.13",
+    "turndown": "7.2.4",
     "typescript": "5.9.3"
   }
 }

@@ -1,7 +1,7 @@
 export function GET() {
   const text = `# Alejandro Sanabria
 
-Canonical personal website: https://alesanabriav.com
+Canonical personal website: https://alejandrosanabria.com
 
 Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai and a mobile platform leader. He combines customer-facing AI delivery, mobile product engineering, and practical workflow systems.
 
@@ -13,14 +13,15 @@ Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai and a mobile p
 
 ## Product
 
-- Cifro: a private-by-design iOS finance app built with SwiftUI and Apple Foundation Models. It uses on-device AI and has no accounts or cloud data sharing.
-- Product landing: https://alesanabriav.com/cifro
-- Privacy policy: https://alesanabriav.com/cifro/privacy
+- Cifro: a budget planner and expense tracker for iPhone, built with SwiftUI and Apple Foundation Models. It tells you if your budget is on track, shows a daily spending limit, and includes a private on-device AI assistant. It uses on-device AI, requires no Cifro account, and has no ads or third-party tracking. Optional sync uses the user’s private iCloud account.
+- Product landing: https://alejandrosanabria.com/cifro
+- Landing en español: https://alejandrosanabria.com/cifro/es/
+- Privacy policy: https://alejandrosanabria.com/cifro/privacy
 
 ## Canonical links
 
-- Work: https://alesanabriav.com/work
-- Projects: https://alesanabriav.com/projects
+- Work: https://alejandrosanabria.com/work
+- Projects: https://alejandrosanabria.com/projects
 - GitHub: https://github.com/alesanabriav7
 - LinkedIn: https://www.linkedin.com/in/alesanabriav/
 `;

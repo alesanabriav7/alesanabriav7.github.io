@@ -1,6 +1,17 @@
 name = "alesanabriav-site"
 main = "worker.js"
 compatibility_date = "2026-07-22"
+workers_dev = false
+preview_urls = false
+
+routes = [
+  { pattern = "alesanabriav.com", custom_domain = true },
+  { pattern = "www.alesanabriav.com", custom_domain = true },
+  { pattern = "alesanabriav.com/*", zone_name = "alesanabriav.com" },
+  { pattern = "alejandrosanabria.com/*", zone_name = "alejandrosanabria.com" },
+  { pattern = "www.alejandrosanabria.com", custom_domain = true },
+  { pattern = "www.alejandrosanabria.com/*", zone_name = "alejandrosanabria.com" }
+]
 
 [assets]
 directory = "./dist"
@@ -8,6 +19,5 @@ binding = "ASSETS"
 run_worker_first = true
 not_found_handling = "404-page"
 
-routes = [
-  { pattern = "alesanabriav.com/*", zone_name = "alesanabriav.com" }
-]
+[build]
+command = "pnpm build"

@@ -71,41 +71,10 @@ img { display: block; max-width: 100%; }
 .article-list p { margin: 0.8rem 0 0; color: var(--muted); }
 .article-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; color: var(--accent-dark); font-size: 0.82rem; font-weight: 700; }
 
-.cifro-hero { padding: 6.5rem 0 5rem; background: var(--deep); color: white; }
 .cifro-site-header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--paper) 94%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent); backdrop-filter: blur(14px); }
 .cifro-site-header nav { display: flex; align-items: center; flex-wrap: wrap; gap: 1.1rem; }
 .cifro-download { min-height: 2.2rem; padding: 0.45rem 0.8rem; background: var(--deep); color: white; }
 .cifro-download:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: white; }
-.cifro-hero .hero-copy { color: #c6d3d1; }
-.cifro-hero .eyebrow { color: #f0ae83; }
-.cifro-hero .button.quiet { border-color: #547079; color: white; }
-.cifro-hero-media { width: min(100%, 330px); margin: 0; justify-self: end; }
-.cifro-carousel { overflow: hidden; border-radius: 1.6rem; box-shadow: 18px 18px 0 #d77a58; }
-.cifro-carousel-track { display: flex; width: 500%; animation: cifro-carousel 20s ease-in-out infinite; }
-.cifro-carousel-track img { display: block; flex: 0 0 20%; width: 20%; height: auto; }
-.cifro-carousel:hover .cifro-carousel-track { animation-play-state: paused; }
-.cifro-hero-media figcaption { margin-top: 1rem; color: #c6d3d1; font-size: 0.9rem; }
-.cifro-explainer { background: var(--surface); }
-.cifro-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.cifro-steps article { min-width: 0; padding: 1.35rem 1.2rem 1.35rem 0; border-right: 1px solid var(--line); }
-.cifro-steps article + article { padding-left: 1.2rem; }
-.cifro-steps article:last-child { border-right: 0; }
-.cifro-steps span { display: block; margin-bottom: 2.4rem; color: var(--accent-dark); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; }
-.cifro-steps h3 { margin: 0 0 0.65rem; font-size: 1.08rem; letter-spacing: -0.03em; }
-.cifro-steps p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
-.cifro-privacy { background: var(--paper); }
-.cifro-privacy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); }
-.cifro-privacy-grid article { padding: 1.5rem; border-right: 1px solid var(--line); }
-.cifro-privacy-grid article:last-child { border-right: 0; }
-.cifro-privacy-grid h3 { margin: 0 0 0.6rem; letter-spacing: -0.03em; }
-.cifro-privacy-grid p { margin: 0; color: var(--muted); line-height: 1.55; }
-@keyframes cifro-carousel {
-  0%, 16% { transform: translateX(0); }
-  20%, 36% { transform: translateX(-20%); }
-  40%, 56% { transform: translateX(-40%); }
-  60%, 76% { transform: translateX(-60%); }
-  80%, 100% { transform: translateX(-80%); }
-}
 
 .site-footer { padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
 .footer-content { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
@@ -123,16 +92,9 @@ img { display: block; max-width: 100%; }
   .hero-grid, .section-heading, .article-list article { grid-template-columns: 1fr; }
   .portrait { width: min(230px, 70vw); }
   .card-grid { grid-template-columns: 1fr; }
-  .cifro-hero-media { justify-self: start; width: min(280px, 75vw); }
-  .cifro-steps { grid-template-columns: 1fr; }
-  .cifro-steps article, .cifro-steps article + article { padding: 1.35rem 0; border-right: 0; border-bottom: 1px solid var(--line); }
-  .cifro-steps article:last-child { border-bottom: 0; }
-  .cifro-steps span { margin-bottom: 1.25rem; }
-  .cifro-privacy-grid { grid-template-columns: 1fr; }
-  .cifro-privacy-grid article { border-right: 0; border-bottom: 1px solid var(--line); }
-  .cifro-privacy-grid article:last-child { border-bottom: 0; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .cifro-carousel-track { animation: none; }
-}
+
+/* Project guides: keep code examples within the reading column. */
+.prose pre { overflow-x: auto; padding: 1rem; border: 1px solid currentColor; border-radius: 0.5rem; }
+.prose pre code { font-size: 0.875rem; }

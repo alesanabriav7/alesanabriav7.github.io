@@ -12,7 +12,7 @@ const links = [
     <a class="wordmark" href="/" aria-label="Alejandro Sanabria home">Alejandro Sanabria</a>
     <nav aria-label="Primary navigation">
       {links.map((link) => (
-        <a class:list={["nav-link", { active: currentPath === link.href }]} href={link.href}>
+        <a class:list={["nav-link", { active: currentPath === link.href }]} href={`${link.href}/`}>
           {link.label}
         </a>
       ))}

@@ -1,0 +1,101 @@
+.cifro-page {
+  --c-ink: #0b0b0b;
+  --c-muted: #56565c;
+  --c-soft: #f2f2f7;
+  --c-card: #ffffff;
+  --c-line: #e3e3e8;
+  --c-accent: #3a5975;
+  --c-accent-strong: #2b4459;
+  --c-amber: #82612e;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  color: var(--c-ink);
+  background: var(--c-soft);
+  -webkit-font-smoothing: antialiased;
+}
+
+.cifro-page .cifro-site-header { background: color-mix(in srgb, var(--c-soft) 82%, transparent); border-bottom-color: color-mix(in srgb, var(--c-line) 80%, transparent); }
+.cifro-page .wordmark { color: var(--c-accent); font-size: 1.05rem; }
+.cifro-page .nav-link { color: var(--c-muted); }
+.cifro-page .nav-link:hover { color: var(--c-accent); }
+.cifro-page .cifro-download { background: var(--c-ink); border-color: var(--c-ink); color: white; }
+.cifro-page .cifro-download:hover { background: var(--c-accent); border-color: var(--c-accent); color: white; }
+.cifro-page .cifro-footer { background: var(--c-card); border-top: 1px solid var(--c-line); color: var(--c-muted); }
+.cifro-page .cifro-footer a { color: var(--c-accent); }
+
+.cifro-eyebrow { margin: 0 0 0.9rem; color: var(--c-accent); font-size: 0.8rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; }
+.cifro-page .button { border-radius: 999px; font-weight: 600; }
+.cifro-primary { background: var(--c-ink); border-color: var(--c-ink); color: white; min-height: 3rem; padding: 0.75rem 1.35rem; }
+.cifro-primary:hover { background: var(--c-accent); border-color: var(--c-accent); color: white; }
+.cifro-secondary { background: color-mix(in srgb, var(--c-card) 70%, transparent); border-color: var(--c-line); color: var(--c-ink); min-height: 3rem; padding: 0.75rem 1.35rem; }
+.cifro-secondary:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+.cifro-hero {
+  padding: clamp(3.5rem, 8vw, 6.5rem) 0 3rem;
+  background: url("/cifro/v1.1/hero-bg.webp") center top / cover no-repeat, var(--c-soft);
+}
+.cifro-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); }
+.cifro-hero h1 { margin: 0; max-width: 15ch; font-size: clamp(2.6rem, 5.6vw, 4.6rem); font-weight: 750; line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; }
+.cifro-lede { max-width: 36rem; margin: 1.5rem 0 0; color: var(--c-muted); font-size: clamp(1.1rem, 1.8vw, 1.32rem); line-height: 1.5; }
+.cifro-note { margin: 1rem 0 0; color: var(--c-muted); font-size: 0.9rem; }
+.cifro-hero .hero-links { margin-top: 1.9rem; }
+
+.cifro-phone { position: relative; margin: 0; padding: 0.55rem; background: #0b0b0b; border-radius: 3rem; box-shadow: 0 30px 60px -24px rgba(20, 30, 45, 0.45), 0 2px 6px rgba(20, 30, 45, 0.12); }
+.cifro-phone img { width: 100%; height: auto; border-radius: 2.55rem; }
+.cifro-hero-phones { position: relative; display: flex; align-items: flex-start; justify-content: center; min-height: clamp(26rem, 48vw, 38rem); }
+.cifro-hero-phones .cifro-phone { width: min(17rem, 42vw); }
+.cifro-phone-front { z-index: 2; transform: translateX(18%); }
+.cifro-phone-back { position: absolute; left: 50%; top: 2.5rem; transform: translateX(-102%) scale(0.9); transform-origin: top right; opacity: 0.96; }
+
+.cifro-highlights { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 3rem 0 0; padding: 0; list-style: none; }
+.cifro-highlights li { padding: 0.45rem 0.85rem; background: color-mix(in srgb, var(--c-card) 80%, transparent); border: 1px solid var(--c-line); border-radius: 999px; color: var(--c-ink); font-size: 0.9rem; font-weight: 550; backdrop-filter: blur(10px); }
+
+.cifro-section { padding: clamp(4rem, 8vw, 6.5rem) 0; }
+.cifro-tint { background: var(--c-card); }
+.cifro-section-heading { max-width: 44rem; margin-bottom: 2.75rem; }
+.cifro-section-heading h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 750; line-height: 1.08; letter-spacing: -0.022em; text-wrap: balance; }
+.cifro-section-heading p:not(.cifro-eyebrow) { margin: 1rem 0 0; color: var(--c-muted); font-size: 1.12rem; }
+
+.cifro-features { display: grid; gap: clamp(3.5rem, 7vw, 6rem); }
+.cifro-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); align-items: center; gap: clamp(2rem, 6vw, 5rem); }
+.cifro-feature.reverse .cifro-feature-copy { order: 2; }
+.cifro-feature .cifro-phone { width: min(18rem, 70vw); justify-self: center; }
+.cifro-feature h3 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 720; line-height: 1.12; letter-spacing: -0.018em; text-wrap: balance; }
+.cifro-feature-copy > p:not(.cifro-eyebrow) { max-width: 33rem; margin: 1rem 0 0; color: var(--c-muted); font-size: 1.1rem; line-height: 1.55; }
+.cifro-feature ul { display: grid; gap: 0.6rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.cifro-feature li { position: relative; padding-left: 1.6rem; font-weight: 520; }
+.cifro-feature li::before { content: ""; position: absolute; left: 0; top: 0.5em; width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--c-accent); }
+
+.cifro-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.cifro-card { padding: 1.5rem; background: var(--c-soft); border: 1px solid var(--c-line); border-radius: 1.4rem; }
+.cifro-section:not(.cifro-tint) .cifro-card { background: var(--c-card); }
+.cifro-card h3 { margin: 0 0 0.55rem; font-size: 1.12rem; font-weight: 680; letter-spacing: -0.015em; }
+.cifro-card p { margin: 0; color: var(--c-muted); line-height: 1.55; }
+
+.cifro-faq-shell { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.cifro-faq { display: grid; border-top: 1px solid var(--c-line); }
+.cifro-faq details { border-bottom: 1px solid var(--c-line); }
+.cifro-faq summary { display: flex; justify-content: space-between; gap: 1rem; padding: 1.2rem 0; font-size: 1.1rem; font-weight: 620; cursor: pointer; list-style: none; }
+.cifro-faq summary::-webkit-details-marker { display: none; }
+.cifro-faq summary::after { content: "+"; color: var(--c-accent); font-size: 1.4rem; line-height: 1; transition: transform 0.2s ease; }
+.cifro-faq details[open] summary::after { transform: rotate(45deg); }
+.cifro-faq details p { margin: 0 0 1.25rem; max-width: 40rem; color: var(--c-muted); line-height: 1.6; }
+
+.cifro-cta { text-align: center; background: url("/cifro/v1.1/hero-bg.webp") center / cover no-repeat, var(--c-soft); }
+.cifro-cta h2 { margin: 0; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 750; letter-spacing: -0.025em; }
+.cifro-cta p { max-width: 34rem; margin: 1rem auto 0; color: var(--c-muted); font-size: 1.15rem; }
+.cifro-cta .hero-links { justify-content: center; }
+
+@media (max-width: 900px) {
+  .cifro-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 780px) {
+  .cifro-hero-grid, .cifro-feature, .cifro-faq-shell { grid-template-columns: 1fr; }
+  .cifro-feature.reverse .cifro-feature-copy { order: 0; }
+  .cifro-hero-phones { min-height: 30rem; margin-top: 1rem; }
+  .cifro-hero-phones .cifro-phone { width: min(14rem, 58vw); }
+  .cifro-grid { grid-template-columns: 1fr; }
+  .cifro-page .nav-shell { flex-direction: row; align-items: center; justify-content: space-between; min-height: 3.5rem; padding: 0.5rem 0; }
+  .cifro-page .cifro-site-header nav { flex-wrap: nowrap; gap: 0.9rem; }
+  .cifro-page .cifro-site-header .nav-link:not([hreflang]) { display: none; }
+}

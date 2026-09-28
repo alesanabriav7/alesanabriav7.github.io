@@ -1,0 +1,178 @@
+---
+import "../styles/cifro.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { absoluteUrl, personId, personNode } from "../data/site";
+import { cifroAlternates, cifroAppStoreId, cifroAppStoreUrl, cifroCopy, cifroPath, type CifroLang } from "../data/cifro";
+
+interface Props {
+  lang: CifroLang;
+}
+
+const { lang } = Astro.props;
+const t = cifroCopy[lang];
+const shot = (name: string) => `/cifro/v1.1/${lang}/${name}.webp`;
+const pageUrl = absoluteUrl(cifroPath(lang));
+
+const appNode = {
+  "@type": ["SoftwareApplication", "MobileApplication"],
+  "@id": `${absoluteUrl("/cifro/")}#app`,
+  name: "Cifro",
+  alternateName: lang === "es" ? "Cifro – Presupuesto y Gastos" : "Cifro – Budget Planner",
+  applicationCategory: "FinanceApplication",
+  applicationSubCategory: lang === "es" ? "Finanzas personales" : "Personal finance",
+  operatingSystem: "iOS 26.0 or later",
+  softwareVersion: "1.1",
+  url: pageUrl,
+  downloadUrl: cifroAppStoreUrl,
+  installUrl: cifroAppStoreUrl,
+  sameAs: cifroAppStoreUrl,
+  inLanguage: ["en", "es"],
+  image: absoluteUrl("/cifro/icon.jpg"),
+  screenshot: t.features.map((feature) => absoluteUrl(shot(feature.image))),
+  featureList: t.featureList,
+  offers: { "@type": "Offer", price: 0, priceCurrency: "USD" },
+  author: { "@id": personId },
+  description: t.meta.description,
+};
+
+const faqNode = {
+  "@type": "FAQPage",
+  "@id": `${pageUrl}#faq`,
+  inLanguage: lang,
+  mainEntity: t.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+---
+
+<BaseLayout
+  variant="cifro"
+  lang={lang}
+  title={t.meta.title}
+  description={t.meta.description}
+  image={`/cifro/v1.1/og-${lang}.png`}
+  imageAlt={t.meta.ogAlt}
+  favicon="/cifro/icon.jpg"
+  alternates={cifroAlternates}
+  appStoreId={cifroAppStoreId}
+  jsonLd={[personNode, appNode, faqNode]}
+>
+  <section class="cifro-hero">
+    <div class="shell cifro-hero-grid">
+      <div class="cifro-hero-copy">
+        <p class="cifro-eyebrow">{t.hero.eyebrow}</p>
+        <h1>{t.hero.title}</h1>
+        <p class="cifro-lede">{t.hero.body}</p>
+        <div class="hero-links">
+          <a class="button cifro-primary" href={cifroAppStoreUrl} target="_blank" rel="noopener noreferrer">{t.hero.primary}</a>
+          <a class="button cifro-secondary" href="#features">{t.hero.secondary}</a>
+        </div>
+        <p class="cifro-note">{t.hero.note}</p>
+      </div>
+      <div class="cifro-hero-phones" aria-hidden="false">
+        <figure class="cifro-phone cifro-phone-back">
+          <img src={shot("where")} alt={t.hero.secondImageAlt} width="660" height="1434" loading="eager" decoding="async" />
+        </figure>
+        <figure class="cifro-phone cifro-phone-front">
+          <img src={shot("home")} alt={t.hero.imageAlt} width="660" height="1434" loading="eager" fetchpriority="high" decoding="async" />
+        </figure>
+      </div>
+    </div>
+    <div class="shell">
+      <ul class="cifro-highlights">
+        {t.highlights.map((highlight) => <li>{highlight}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="features" class="cifro-section">
+    <div class="shell">
+      <div class="cifro-section-heading">
+        <p class="cifro-eyebrow">{t.featuresHeading.eyebrow}</p>
+        <h2>{t.featuresHeading.title}</h2>
+        <p>{t.featuresHeading.body}</p>
+      </div>
+      <div class="cifro-features">
+        {t.features.map((feature, index) => (
+          <article id={feature.id} class:list={["cifro-feature", { reverse: index % 2 === 1 }]}>
+            <div class="cifro-feature-copy">
+              <p class="cifro-eyebrow">{feature.eyebrow}</p>
+              <h3>{feature.title}</h3>
+              <p>{feature.body}</p>
+              <ul>
+                {feature.points.map((point) => <li>{point}</li>)}
+              </ul>
+            </div>
+            <figure class="cifro-phone">
+              <img src={shot(feature.image)} alt={feature.alt} width="660" height="1434" loading="lazy" decoding="async" />
+            </figure>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cifro-section cifro-tint">
+    <div class="shell">
+      <div class="cifro-section-heading">
+        <p class="cifro-eyebrow">{t.capture.eyebrow}</p>
+        <h2>{t.capture.title}</h2>
+      </div>
+      <div class="cifro-grid">
+        {t.capture.items.map((item) => (
+          <article class="cifro-card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" class="cifro-section">
+    <div class="shell">
+      <div class="cifro-section-heading">
+        <p class="cifro-eyebrow">{t.privacy.eyebrow}</p>
+        <h2>{t.privacy.title}</h2>
+      </div>
+      <div class="cifro-grid">
+        {t.privacy.items.map((item) => (
+          <article class="cifro-card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="cifro-section cifro-tint">
+    <div class="shell cifro-faq-shell">
+      <div class="cifro-section-heading">
+        <p class="cifro-eyebrow">{t.faqHeading.eyebrow}</p>
+        <h2>{t.faqHeading.title}</h2>
+      </div>
+      <div class="cifro-faq">
+        {t.faqs.map((faq) => (
+          <details>
+            <summary>{faq.question}</summary>
+            <p>{faq.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cifro-section cifro-cta">
+    <div class="shell">
+      <h2>{t.cta.title}</h2>
+      <p>{t.cta.body}</p>
+      <div class="hero-links">
+        <a class="button cifro-primary" href={cifroAppStoreUrl} target="_blank" rel="noopener noreferrer">{t.cta.primary}</a>
+        <a class="button cifro-secondary" href="/cifro/support/">{t.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

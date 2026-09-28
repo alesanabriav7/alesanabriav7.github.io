@@ -1,0 +1,184 @@
+Captured 2026-09-05 through authenticated Search Console desktop UI.
+Domain property: alesanabriav.com. No indexing requests or sitemap submissions were made.
+
+/projects/
+										82 button About Search Console
+									83 container, Text: Privacy Terms
+					84 container
+						85 text https://alesanabriav.com/projects/
+						86 container
+							87 container
+								88 container Breadcrumbs
+									89 heading URL Inspection
+								90 button TEST LIVE URL
+							91 container
+								92 container
+									93 container, Text: URL is not on Google This page is not indexed. Pages that aren't indexed can't be served on Google. S... Learn more
+									94 button (disabled) View crawled page
+									95 container
+										96 text Page changed?
+										97 button Request indexingRequest again
+								98 container
+									99 button (expanded) Page indexing Page is not indexed: URL is unknown to Google
+									100 container
+										101 text Discovery
+										102 text Sitemaps
+										103 text No referring sitemaps detected
+										104 text Referring page
+										105 text None detected
+										106 text URL might be known from other sources that are currently not reported
+										107 text Crawl
+										108 text Last crawl
+										109 text N/A
+										110 text Crawled as
+										111 text N/A
+										112 text Crawl allowed?
+										113 text N/A
+										114 text Page fetch
+										115 text N/A
+										116 text Indexing allowed?
+										117 text N/A
+										118 text Indexing
+										119 text User-declared canonical
+										120 text N/A
+										121 text Google-selected canonical
+										122 button null
+										123 text N/A
+										124 container, Text: Link to more extensive documentation LEARN MORE
+								125 text Enhancements & Experience
+								126 text Only indexed URLs can have enhancements
+				127 container
+					128 text New
+					129 text ! Discover how visitors find your
+					130 text Instagram
+					131 text ,
+					132 text TikTok
+					133 text ,
+					134 text X
+					135 text and
+					136 text YouTube
+					137 text content on Google Search
+					138 button Close
+				139 text Pages
+		140 tab group
+
+/cifro/
+										82 button About Search Console
+									83 container, Text: Privacy Terms
+					84 container
+						85 text https://alesanabriav.com/cifro/
+						86 container
+							87 container
+								88 container Breadcrumbs
+									89 heading URL Inspection
+								90 button TEST LIVE URL
+							91 container
+								92 container
+									93 container, Text: URL is not on Google This page is not indexed. Pages that aren't indexed can't be served on Google. S... Learn more
+									94 button (disabled) View crawled page
+									95 container
+										96 text Page changed?
+										97 button Request indexingRequest again
+								98 container
+									99 button (expanded) Page indexing Page is not indexed: URL is unknown to Google
+									100 container
+										101 text Discovery
+										102 text Sitemaps
+										103 text No referring sitemaps detected
+										104 text Referring page
+										105 text None detected
+										106 text URL might be known from other sources that are currently not reported
+										107 text Crawl
+										108 text Last crawl
+										109 text N/A
+										110 text Crawled as
+										111 text N/A
+										112 text Crawl allowed?
+										113 text N/A
+										114 text Page fetch
+										115 text N/A
+										116 text Indexing allowed?
+										117 text N/A
+										118 text Indexing
+										119 text User-declared canonical
+										120 text N/A
+										121 text Google-selected canonical
+										122 button null
+										123 text N/A
+										124 container, Text: Link to more extensive documentation LEARN MORE
+								125 text Enhancements & Experience
+								126 text Only indexed URLs can have enhancements
+				127 text URL Inspection
+				128 container
+					129 text New
+					130 text ! Discover how visitors find your
+					131 text Instagram
+					132 text ,
+					133 text TikTok
+					134 text ,
+					135 text X
+					136 text and
+					137 text YouTube
+					138 text content on Google Search
+					139 button Close
+				140 text Pages
+		141 tab group
+
+Sitemaps enviados
+										82 button About Search Console
+									83 container, Text: Privacy Terms
+					84 container
+						85 container Breadcrumbs
+							86 heading Sitemaps
+						87 container
+							88 container
+								89 text Add a new sitemap
+								90 container
+									91 text field (settable) Enter sitemap URL
+								92 button (disabled) SUBMIT
+							93 container
+								94 heading Submitted sitemaps
+								95 pop up button Filter table rows
+								96 table
+									97 row Sitemap Type Submitted Last read Status Discovered pages
+										98 column header Sitemap
+											99 text Sitemap
+										100 column header Type
+											101 text Type
+										102 column header Submitted
+											103 text Submitted
+										104 column header Last read
+											105 text Last read
+										106 column header Status
+											107 text Status
+										108 column header Discovered pages
+											109 text Discovered pages
+										110 column header Discovered videos
+											111 text Discovered videos
+										112 column header
+								113 text Rows per page:
+								114 list box Number of rows per page
+									115 text 5
+									116 text (selected) 10
+									117 text 25
+									118 text 50
+									119 text 100
+									120 text 250
+									121 text 500
+								122 text 0-0 of 0
+								123 container (disabled)
+								124 container (disabled)
+				125 container
+					126 text New
+					127 text ! Discover how visitors find your
+					128 text Instagram
+					129 text ,
+					130 text TikTok
+					131 text ,
+					132 text X
+					133 text and
+					134 text YouTube
+					135 text content on Google Search
+					136 button Close
+				137 text Sitemaps
+		138 tab group

@@ -1,14 +1,21 @@
 ---
-const appStoreUrl = "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370";
+import { cifroAppStoreUrl, cifroCopy, type CifroLang } from "../data/cifro";
+
+interface Props {
+  lang?: CifroLang;
+}
+
+const { lang = "en" } = Astro.props;
+const t = cifroCopy[lang].footer;
 ---
 
 <footer class="cifro-footer">
   <div class="shell footer-content">
-    <p>© 2026 Cifro · Private finance for iPhone</p>
-    <nav aria-label="Cifro links">
-      <a href="/cifro/privacy">Privacy</a>
-      <a href="/cifro/support">Support</a>
-      <a href={appStoreUrl} target="_blank" rel="noopener noreferrer">App Store</a>
+    <p>{t.tagline}</p>
+    <nav aria-label={t.navLabel}>
+      <a href="/cifro/privacy/">{t.privacy}</a>
+      <a href="/cifro/support/">{t.support}</a>
+      <a href={cifroAppStoreUrl} target="_blank" rel="noopener noreferrer">App Store</a>
     </nav>
   </div>
 </footer>

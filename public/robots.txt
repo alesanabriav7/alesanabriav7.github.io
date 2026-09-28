@@ -3,4 +3,4 @@ Allow: /
 
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
-Sitemap: https://alesanabriav.com/sitemap-index.xml
+Sitemap: https://alejandrosanabria.com/sitemap-index.xml

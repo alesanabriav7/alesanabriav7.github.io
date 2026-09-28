@@ -5,3 +5,4 @@ dist/
 drafts/
 .playwright-cli/
 output/playwright/
+generated/

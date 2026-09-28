@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Cifro</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0d1117;
+      --bg-surface: #161b22;
+      --text: #e6edf3;
+      --text-muted: #a0aab4;
+      --accent: #cc785c;
+      --border: rgba(255, 255, 255, 0.12);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .back {
+      display: inline-block;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+
+    .back:hover { color: var(--accent); }
+
+    .app-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-family: "SF Mono", "Fira Code", monospace;
+      color: var(--accent);
+      background: rgba(204, 120, 92, 0.1);
+      border: 1px solid rgba(204, 120, 92, 0.25);
+      border-radius: 9999px;
+      padding: 2px 12px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .updated {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 3rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    section:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      color: var(--text-muted);
+      padding: 0.25rem 0 0.25rem 1.25rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "\2014";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a class="back" href="https://alesanabriav.com">← alesanabriav.com</a>
+
+    <div class="app-label">Cifro</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: April 5, 2026</p>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Cifro is designed with privacy as a core principle. This policy explains what information the app accesses, how it is used, and what is never collected or shared.</p>
+      <p>Cifro does not operate servers, does not collect personal data, and does not share your information with third parties. All data lives on your device and, optionally, in your personal iCloud account.</p>
+    </section>
+
+    <section>
+      <h2>iCloud Sync</h2>
+      <p>Cifro uses iCloud to sync your data across your Apple devices. Your data is stored in your private iCloud account (CloudKit) and is governed by Apple's Privacy Policy. Cifro never has access to your iCloud credentials or your data stored there — only you and your devices do.</p>
+      <p>iCloud sync is optional and can be disabled at any time from iOS Settings.</p>
+    </section>
+
+    <section>
+      <h2>Camera — Receipt Scanning</h2>
+      <p>Cifro requests camera access to scan receipts. Images captured during scanning are processed entirely on-device to extract transaction data. No photos are stored or transmitted outside your device.</p>
+    </section>
+
+    <section>
+      <h2>Location — Vendor Detection</h2>
+      <p>Cifro requests location access to identify the vendor or merchant associated with a transaction. Location data is used only at the moment of the request to perform a local lookup and is never stored, logged, or transmitted to any server.</p>
+    </section>
+
+    <section>
+      <h2>Face ID / Biometric Authentication</h2>
+      <p>Cifro uses Face ID (or Touch ID) to protect access to the app. Biometric data is managed entirely by iOS and the Secure Enclave — Cifro never has access to your biometric data. Authentication results (granted/denied) are the only signal the app receives.</p>
+    </section>
+
+    <section>
+      <h2>Data We Do Not Collect</h2>
+      <p>We do not collect, transmit, or store any of the following on external servers:</p>
+      <ul>
+        <li>Names, email addresses, or account information</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Location history</li>
+        <li>Camera images or scanned receipts</li>
+        <li>Usage analytics or crash reports sent to third parties</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>Cifro does not integrate any third-party analytics, advertising, or tracking SDKs.</p>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>Cifro does not knowingly collect any information from children under the age of 13. Because we collect no personal data from any user, the app is safe for all ages.</p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>If this privacy policy changes, the updated version will be published at this URL with a new "Last updated" date.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about this policy? Reach out at <a href="mailto:alesanabriav@gmail.com">alesanabriav@gmail.com</a>.</p>
+    </section>
+
+    <div class="footer">
+      &copy; 2026 Alejandro Sanabria
+    </div>
+  </div>
+
+</body>
+</html>

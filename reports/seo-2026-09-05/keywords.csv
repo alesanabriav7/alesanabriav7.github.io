@@ -1,0 +1,21 @@
+query,intent,target_path,editorial_priority,evidence,action_required,monthly_search_volume,keyword_difficulty,competitor_rank
+Alejandro Sanabria,Brand,/,1,Measured: 8 impressions; position 10.88; 0 clicks,Optimize existing page,Not measured,Not measured,Not measured
+alesanabriav,Brand,/,1,Candidate based on public handle,Optimize existing page,Not measured,Not measured,Not measured
+Alejandro Sanabria Wonderful,Brand + current role,/,1,Candidate based on current public role,Optimize existing page,Not measured,Not measured,Not measured
+Alejandro Sanabria forward deployed engineer,Brand + current role,/,1,Candidate based on current public role,Optimize existing page,Not measured,Not measured,Not measured
+forward deployed engineering projects,Professional evidence,/work/,2,Topic present in comparison portfolios,Optimize existing page,Not measured,Not measured,Not measured
+forward deployed engineer AI workflows,Professional evidence,/work/,2,Topic present; relevance hypothesis,Optimize existing page,Not measured,Not measured,Not measured
+customer workflow AI implementation,Professional evidence,/work/,3,Candidate; needs substantive public example,Optimize existing page,Not measured,Not measured,Not measured
+AI agent evaluation workflow,Technical article,/writing/agent-evaluation-workflow/,3,Candidate; needs original reusable example,Create new page,Not measured,Not measured,Not measured
+iOS architecture skills,Developer tooling,/projects/ios-architect/,1,Public repository supports topic,Create new page,Not measured,Not measured,Not measured
+SwiftUI architecture AI coding agents,Developer tooling,/projects/ios-architect/,2,Public repository supports topic,Create new page,Not measured,Not measured,Not measured
+iOS clean architecture GRDB,Developer tooling,/projects/ios-architect/,2,Public repository supports topic,Create new page,Not measured,Not measured,Not measured
+App Store Connect CLI,Developer tooling,/projects/appstore-tools/,1,Public repository supports topic,Create new page,Not measured,Not measured,Not measured
+appstore-tools,Tool brand,/projects/appstore-tools/,1,Public repository and npm tool name,Create new page,Not measured,Not measured,Not measured
+automate App Store metadata,Developer tooling,/projects/appstore-tools/,2,Public README documents command,Create new page,Not measured,Not measured,Not measured
+iOS simulator screenshot CLI,Developer tooling,/projects/screenshots-ios/,1,Public repository supports topic,Create new page,Not measured,Not measured,Not measured
+deterministic iOS screenshots,Developer tooling,/projects/screenshots-ios/,2,Public repository supports topic,Create new page,Not measured,Not measured,Not measured
+screenshots-ios,Tool brand,/projects/screenshots-ios/,1,Public repository and npm tool name,Create new page,Not measured,Not measured,Not measured
+Cifro expense tracker,Product brand,/cifro/,1,Published product and landing,Optimize existing page,Not measured,Not measured,Not measured
+private expense tracker iPhone,Product discovery,/cifro/,2,Candidate based on product behavior,Optimize existing page,Not measured,Not measured,Not measured
+expense tracker no account iPhone,Product discovery,/cifro/,2,Candidate based on product behavior,Optimize existing page,Not measured,Not measured,Not measured

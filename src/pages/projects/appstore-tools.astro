@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="App Store Connect CLI" description="Use appstore-tools to list apps, prepare IPAs, manage App Store metadata, and upload builds from the command line.">
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Public developer tools</p><h1>App Store Connect automation with appstore-tools</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful.ai</p></div></section>
+  <section class="section tint"><div class="shell prose">
+<p>A release includes more than compiling an app. There are archives, signing options, listing metadata, and a build that needs to reach App Store Connect. appstore-tools brings those operations into a TypeScript CLI and library.</p>
+<h2>What you can do</h2>
+<p>List applications, generate an IPA, read and update App Store metadata, and upload builds. The public documentation describes authentication and the commands for each part of the workflow.</p>
+<h2>Start by reading</h2>
+<p>Begin with the command reference and a read-only operation such as listing your apps. Prepare and review changes before applying an update. The metadata workflow supports reading the existing listing into a file so that changes can be inspected.</p>
+<h2>Questions</h2>
+<p><strong>Is this only a CLI?</strong> The repository provides a TypeScript CLI and library.</p>
+<p><strong>Can it help with metadata?</strong> Yes. The documented workflow can read listing metadata and apply a reviewed metadata file.</p>
+<p><strong>What setup does it need?</strong> Follow the current README for Node.js, App Store Connect authentication, and Xcode requirements for build-related operations.</p>
+<p><a href="https://github.com/alesanabriav7/appstore-tools">Read the command reference</a>.</p><h2>Inspect before changing a release</h2><pre><code>npx appstore-tools --help
+npx appstore-tools apps list</code></pre><p>The help command exposes the available operations. Listing apps requires the App Store Connect authentication described in the README. Build and upload operations also depend on your local Xcode and signing setup.</p><p><a href="/projects/">Explore all projects →</a></p></div></section>
+</BaseLayout>

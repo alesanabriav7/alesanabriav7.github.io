@@ -1,0 +1,153 @@
+[
+  {
+    "url": "https://alesanabriav.com/",
+    "final": "https://alesanabriav.com/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/alejandro-sanabria.jpg",
+    "final": "https://alesanabriav.com/alejandro-sanabria.jpg",
+    "status": 200,
+    "type": "image/jpeg",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro",
+    "final": "https://alesanabriav.com/cifro/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/",
+    "final": "https://alesanabriav.com/cifro/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/?audit=1",
+    "final": "https://alesanabriav.com/cifro/?audit=1",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/ai-insights.webp",
+    "final": "https://alesanabriav.com/cifro/ai-insights.webp",
+    "status": 200,
+    "type": "image/webp",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/budget-by-category.webp",
+    "final": "https://alesanabriav.com/cifro/budget-by-category.webp",
+    "status": 200,
+    "type": "image/webp",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/log-expenses.webp",
+    "final": "https://alesanabriav.com/cifro/log-expenses.webp",
+    "status": 200,
+    "type": "image/webp",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/privacy",
+    "final": "https://alesanabriav.com/cifro/privacy/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/privacy/",
+    "final": "https://alesanabriav.com/cifro/privacy/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/review-purchases.webp",
+    "final": "https://alesanabriav.com/cifro/review-purchases.webp",
+    "status": 200,
+    "type": "image/webp",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/support",
+    "final": "https://alesanabriav.com/cifro/support/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/support/",
+    "final": "https://alesanabriav.com/cifro/support/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/projects",
+    "final": "https://alesanabriav.com/projects/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://alesanabriav.com/work",
+    "final": "https://alesanabriav.com/work/",
+    "status": 200,
+    "type": "text/html",
+    "length": null
+  },
+  {
+    "url": "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370",
+    "final": "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370",
+    "status": 200,
+    "type": "text/html",
+    "length": "204522"
+  },
+  {
+    "url": "https://github.com/alesanabriav7",
+    "final": "https://github.com/alesanabriav7",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "length": null
+  },
+  {
+    "url": "https://github.com/alesanabriav7/appstore-tools",
+    "final": "https://github.com/alesanabriav7/appstore-tools",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "length": null
+  },
+  {
+    "url": "https://github.com/alesanabriav7/ios-architect-skill",
+    "final": "https://github.com/alesanabriav7/ios-architect-skill",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "length": null
+  },
+  {
+    "url": "https://github.com/alesanabriav7/screenshots-ios",
+    "final": "https://github.com/alesanabriav7/screenshots-ios",
+    "status": 200,
+    "type": "text/html; charset=utf-8",
+    "length": null
+  },
+  {
+    "url": "https://wonderful.ai",
+    "final": "https://www.wonderful.ai/",
+    "status": 200,
+    "type": "text/html",
+    "length": "835546"
+  },
+  {
+    "url": "https://www.linkedin.com/in/alesanabriav/",
+    "status": 405
+  }
+]

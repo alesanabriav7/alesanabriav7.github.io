@@ -4,56 +4,99 @@ import CifroFooter from "../components/CifroFooter.astro";
 import CifroHeader from "../components/CifroHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import {
+  SITE_NAME,
+  SITE_URL,
+  DEFAULT_IMAGE,
+  DEFAULT_IMAGE_ALT,
+  absoluteUrl,
+  personNode,
+  websiteNode,
+} from "../data/site";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  imageAlt?: string;
   favicon?: string;
   noindex?: boolean;
-  jsonLd?: Record<string, unknown>;
-  variant?: "personal" | "cifro";
+  ogType?: "website" | "profile" | "article";
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  variant?: "personal" | "profile" | "cifro";
+  lang?: "en" | "es";
+  alternates?: { hreflang: string; href: string }[];
+  appStoreId?: string;
 }
 
-const { title, description, image = "/alejandro-sanabria.jpg", favicon = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>", noindex = false, jsonLd, variant = "personal" } = Astro.props;
-const canonical = new URL(Astro.url.pathname, "https://alesanabriav.com");
-const fullTitle = variant === "cifro" || title === "Alejandro Sanabria" ? title : `${title} — Alejandro Sanabria`;
-const person = {
-  "@type": "Person",
-  name: "Alejandro Sanabria",
-  url: "https://alesanabriav.com",
-  jobTitle: "Forward Deployed Engineer",
-  worksFor: { "@type": "Organization", name: "Wonderful.ai" },
-  sameAs: ["https://www.linkedin.com/in/alesanabriav/", "https://github.com/alesanabriav7"],
-};
-const structuredData = jsonLd
-  ? { "@context": "https://schema.org", "@graph": variant === "cifro" ? [jsonLd] : [person, jsonLd] }
-  : { "@context": "https://schema.org", ...person };
+const {
+  title,
+  description,
+  image = DEFAULT_IMAGE,
+  imageAlt = DEFAULT_IMAGE_ALT,
+  favicon = "/favicon.svg",
+  noindex = false,
+  ogType = "website",
+  jsonLd,
+  variant = "personal",
+  lang = "en",
+  alternates = [],
+  appStoreId,
+} = Astro.props;
+const ogLocale = lang === "es" ? "es_LA" : "en_US";
+const canonical = new URL(Astro.url.pathname, SITE_URL);
+const fullTitle = variant === "cifro" || title.startsWith(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
+const imageUrl = absoluteUrl(image);
+const metadataSiteName = variant === "cifro" ? "Cifro" : SITE_NAME;
+
+const extraNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const identityNodes = variant === "cifro" ? [] : [personNode, websiteNode];
+const structuredDataNodes = [...identityNodes, ...extraNodes];
+const structuredDataJson = structuredDataNodes.length > 0
+  ? JSON.stringify({ "@context": "https://schema.org", "@graph": structuredDataNodes }).replace(/</g, "\\u003c")
+  : null;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
+    <meta name="google-site-verification" content="l95xqS-N0KHT5-3z9O5GaMDLjR-_60SRadHGRSqD3Qw" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
     <link rel="canonical" href={canonical} />
+    {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={absoluteUrl(alternate.href)} />)}
+    {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`} />}
     <link rel="icon" href={favicon} />
-    <meta property="og:type" content="website" />
+    {variant === "profile" && (
+      <>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+      </>
+    )}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={metadataSiteName} />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(image, canonical)} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <title>{fullTitle}</title>
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson}></script>}
   </head>
-  <body>
-    {variant === "cifro" ? <CifroHeader /> : <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} />}
+  <body class={`${variant}-page`}>
+    {variant === "cifro" ? <CifroHeader lang={lang} /> : variant === "personal" ? <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} /> : null}
     <main>
       <slot />
     </main>
-    {variant === "cifro" ? <CifroFooter /> : <SiteFooter />}
+    {variant === "cifro" ? <CifroFooter lang={lang} /> : variant === "personal" ? <SiteFooter /> : null}
   </body>
 </html>

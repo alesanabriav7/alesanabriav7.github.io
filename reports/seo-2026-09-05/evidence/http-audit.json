@@ -1,0 +1,2116 @@
+[
+  {
+    "requested": "https://alesanabriav.com/",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/",
+    "status": 200,
+    "title": "Alejandro Sanabria",
+    "words": 1291,
+    "bytes": 22096,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "robots": "index, follow",
+      "og:type": "profile",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Alejandro Sanabria",
+      "og:description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "og:url": "https://alesanabriav.com/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Alejandro Sanabria",
+      "twitter:description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Alejandro Sanabria"
+      },
+      {
+        "tag": "h2",
+        "text": "About"
+      },
+      {
+        "tag": "h2",
+        "text": "Known For"
+      },
+      {
+        "tag": "h2",
+        "text": "The Arc"
+      },
+      {
+        "tag": "h2",
+        "text": "How I Lead"
+      },
+      {
+        "tag": "h3",
+        "text": "Technical Side"
+      },
+      {
+        "tag": "h3",
+        "text": "People Side"
+      },
+      {
+        "tag": "h2",
+        "text": "What I'm Building Now"
+      },
+      {
+        "tag": "h2",
+        "text": "Selected Work"
+      },
+      {
+        "tag": "h3",
+        "text": "Platzi Mobile Platform"
+      },
+      {
+        "tag": "h3",
+        "text": "iOS Workflow Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "Cifro"
+      },
+      {
+        "tag": "h3",
+        "text": "Release & Screenshot Automation"
+      },
+      {
+        "tag": "h3",
+        "text": "Brand Spa"
+      },
+      {
+        "tag": "h3",
+        "text": "Baubap iOS First Version"
+      },
+      {
+        "tag": "h3",
+        "text": "Wonderful.ai"
+      },
+      {
+        "tag": "h2",
+        "text": "What I Believe"
+      },
+      {
+        "tag": "h2",
+        "text": "Tech"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": null
+      },
+      {
+        "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap",
+        "rel": "stylesheet"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/index.IN2cTyGc.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://alesanabriav.com/#webpage",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria — alesanabriav",
+            "isPartOf": {
+              "@id": "https://alesanabriav.com/#website"
+            },
+            "mainEntity": {
+              "@id": "https://alesanabriav.com/#person"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows."
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/work",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/work/",
+    "status": 200,
+    "title": "Work — Alejandro Sanabria",
+    "words": 211,
+    "bytes": 6822,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.",
+      "robots": "index, follow",
+      "og:type": "website",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Work — Alejandro Sanabria",
+      "og:description": "Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.",
+      "og:url": "https://alesanabriav.com/work/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Work — Alejandro Sanabria",
+      "twitter:description": "Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Systems, teams, and products that had to work in reality."
+      },
+      {
+        "tag": "h2",
+        "text": "Wonderful.ai"
+      },
+      {
+        "tag": "h2",
+        "text": "Platzi Mobile Platform"
+      },
+      {
+        "tag": "h2",
+        "text": "Brand Spa"
+      },
+      {
+        "tag": "h2",
+        "text": "Baubap"
+      },
+      {
+        "tag": "h2",
+        "text": "Some things are better shown as a shipped product."
+      },
+      {
+        "tag": "h3",
+        "text": "Private-by-design personal finance on iOS."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/work/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/work/",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/work/",
+    "status": 200,
+    "title": "Work — Alejandro Sanabria",
+    "words": 211,
+    "bytes": 6822,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.",
+      "robots": "index, follow",
+      "og:type": "website",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Work — Alejandro Sanabria",
+      "og:description": "Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.",
+      "og:url": "https://alesanabriav.com/work/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Work — Alejandro Sanabria",
+      "twitter:description": "Selected work across Forward Deployed Engineering, mobile platform leadership, and product delivery.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Systems, teams, and products that had to work in reality."
+      },
+      {
+        "tag": "h2",
+        "text": "Wonderful.ai"
+      },
+      {
+        "tag": "h2",
+        "text": "Platzi Mobile Platform"
+      },
+      {
+        "tag": "h2",
+        "text": "Brand Spa"
+      },
+      {
+        "tag": "h2",
+        "text": "Baubap"
+      },
+      {
+        "tag": "h2",
+        "text": "Some things are better shown as a shipped product."
+      },
+      {
+        "tag": "h3",
+        "text": "Private-by-design personal finance on iOS."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/work/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/projects",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/projects/",
+    "status": 200,
+    "title": "Projects — Alejandro Sanabria",
+    "words": 117,
+    "bytes": 5821,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Shipped products and open-source workflow tools by Alejandro Sanabria.",
+      "robots": "index, follow",
+      "og:type": "website",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Projects — Alejandro Sanabria",
+      "og:description": "Shipped products and open-source workflow tools by Alejandro Sanabria.",
+      "og:url": "https://alesanabriav.com/projects/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Projects — Alejandro Sanabria",
+      "twitter:description": "Shipped products and open-source workflow tools by Alejandro Sanabria.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Tools and products that make the workflow tangible."
+      },
+      {
+        "tag": "h2",
+        "text": "Cifro"
+      },
+      {
+        "tag": "h2",
+        "text": "iOS Architecture Skill"
+      },
+      {
+        "tag": "h2",
+        "text": "App Store Tools"
+      },
+      {
+        "tag": "h2",
+        "text": "Screenshots iOS"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/projects/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/cifro",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/cifro/",
+    "status": 200,
+    "title": "Cifro — Private Budget & Expense Tracker for iPhone",
+    "words": 367,
+    "bytes": 9668,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI.",
+      "robots": "index, follow",
+      "og:type": "website",
+      "og:site_name": "Cifro",
+      "og:locale": "en_US",
+      "og:title": "Cifro — Private Budget & Expense Tracker for iPhone",
+      "og:description": "Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI.",
+      "og:url": "https://alesanabriav.com/cifro/",
+      "og:image": "https://alesanabriav.com/cifro/log-expenses.webp",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Cifro — Private Budget & Expense Tracker for iPhone",
+      "twitter:description": "Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI.",
+      "twitter:image": "https://alesanabriav.com/cifro/log-expenses.webp",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Know where your money goes—without giving it away."
+      },
+      {
+        "tag": "h2",
+        "text": "A short loop for understanding your money."
+      },
+      {
+        "tag": "h3",
+        "text": "Capture the moment"
+      },
+      {
+        "tag": "h3",
+        "text": "Review with intent"
+      },
+      {
+        "tag": "h3",
+        "text": "Make the month legible"
+      },
+      {
+        "tag": "h3",
+        "text": "Let the system learn"
+      },
+      {
+        "tag": "h3",
+        "text": "Keep control of the data"
+      },
+      {
+        "tag": "h2",
+        "text": "Your financial context stays yours."
+      },
+      {
+        "tag": "h3",
+        "text": "No account to create"
+      },
+      {
+        "tag": "h3",
+        "text": "No tracking business"
+      },
+      {
+        "tag": "h3",
+        "text": "Your device, your iCloud"
+      },
+      {
+        "tag": "h2",
+        "text": "Your money. Your device. Your rules."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/cifro/"
+      },
+      {
+        "rel": "icon",
+        "href": "/cifro/icon.jpg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [
+      {
+        "src": "/cifro/log-expenses.webp",
+        "alt": "Cifro lets someone log an expense in seconds",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "high"
+      },
+      {
+        "src": "/cifro/review-purchases.webp",
+        "alt": "Cifro lists purchases for a focused review",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto"
+      },
+      {
+        "src": "/cifro/ai-insights.webp",
+        "alt": "Cifro shows on-device insights about spending",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto"
+      },
+      {
+        "src": "/cifro/budget-by-category.webp",
+        "alt": "Cifro shows budgets and spending by category",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto"
+      },
+      {
+        "src": "/cifro/log-expenses.webp",
+        "alt": null,
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto",
+        "aria-hidden": "true"
+      }
+    ],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": [
+              "SoftwareApplication",
+              "MobileApplication"
+            ],
+            "name": "Cifro",
+            "applicationCategory": "FinanceApplication",
+            "applicationSubCategory": "Personal finance",
+            "operatingSystem": "iOS 26.0 or later",
+            "url": "https://alesanabriav.com/cifro/",
+            "downloadUrl": "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370",
+            "sameAs": "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370",
+            "inLanguage": [
+              "en",
+              "es"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": 0
+            },
+            "author": {
+              "@id": "https://alesanabriav.com/#person"
+            },
+            "description": "A private budget and expense tracker for iPhone with on-device AI, no accounts, and no third-party tracking."
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/cifro/support",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/cifro/support/",
+    "status": 200,
+    "title": "Cifro Support",
+    "words": 101,
+    "bytes": 4381,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Support and help for Cifro, a private-by-design iOS finance app.",
+      "robots": "index, follow",
+      "og:type": "website",
+      "og:site_name": "Cifro",
+      "og:locale": "en_US",
+      "og:title": "Cifro Support",
+      "og:description": "Support and help for Cifro, a private-by-design iOS finance app.",
+      "og:url": "https://alesanabriav.com/cifro/support/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Cifro Support",
+      "twitter:description": "Support and help for Cifro, a private-by-design iOS finance app.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Support"
+      },
+      {
+        "tag": "h2",
+        "text": "Need help?"
+      },
+      {
+        "tag": "h2",
+        "text": "Where is my data?"
+      },
+      {
+        "tag": "h2",
+        "text": "Privacy"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/cifro/support/"
+      },
+      {
+        "rel": "icon",
+        "href": "/cifro/icon.jpg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/cifro/privacy",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/cifro/privacy/",
+    "status": 200,
+    "title": "Cifro Privacy",
+    "words": 143,
+    "bytes": 4685,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Privacy policy for Cifro, a private-by-design iOS finance app.",
+      "robots": "noindex, follow",
+      "og:type": "website",
+      "og:site_name": "Cifro",
+      "og:locale": "en_US",
+      "og:title": "Cifro Privacy",
+      "og:description": "Privacy policy for Cifro, a private-by-design iOS finance app.",
+      "og:url": "https://alesanabriav.com/cifro/privacy/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Cifro Privacy",
+      "twitter:description": "Privacy policy for Cifro, a private-by-design iOS finance app.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Privacy policy"
+      },
+      {
+        "tag": "h2",
+        "text": "Data stays on your device"
+      },
+      {
+        "tag": "h2",
+        "text": "No account or analytics profile"
+      },
+      {
+        "tag": "h2",
+        "text": "On-device intelligence"
+      },
+      {
+        "tag": "h2",
+        "text": "Your control"
+      },
+      {
+        "tag": "h2",
+        "text": "Contact"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/cifro/privacy/"
+      },
+      {
+        "rel": "icon",
+        "href": "/cifro/icon.jpg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/privacy",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/cifro/privacy/",
+    "status": 200,
+    "title": "Cifro Privacy",
+    "words": 143,
+    "bytes": 4685,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Privacy policy for Cifro, a private-by-design iOS finance app.",
+      "robots": "noindex, follow",
+      "og:type": "website",
+      "og:site_name": "Cifro",
+      "og:locale": "en_US",
+      "og:title": "Cifro Privacy",
+      "og:description": "Privacy policy for Cifro, a private-by-design iOS finance app.",
+      "og:url": "https://alesanabriav.com/cifro/privacy/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Cifro Privacy",
+      "twitter:description": "Privacy policy for Cifro, a private-by-design iOS finance app.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Privacy policy"
+      },
+      {
+        "tag": "h2",
+        "text": "Data stays on your device"
+      },
+      {
+        "tag": "h2",
+        "text": "No account or analytics profile"
+      },
+      {
+        "tag": "h2",
+        "text": "On-device intelligence"
+      },
+      {
+        "tag": "h2",
+        "text": "Your control"
+      },
+      {
+        "tag": "h2",
+        "text": "Contact"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/cifro/privacy/"
+      },
+      {
+        "rel": "icon",
+        "href": "/cifro/icon.jpg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/robots.txt",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/robots.txt",
+    "status": 200,
+    "bytes": 132,
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/sitemap-index.xml",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/sitemap-index.xml",
+    "status": 200,
+    "bytes": 187,
+    "headers": {
+      "Content-Type": "application/xml"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/sitemap-0.xml",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/sitemap-0.xml",
+    "status": 200,
+    "bytes": 603,
+    "headers": {
+      "Content-Type": "application/xml"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/llms.txt",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/llms.txt",
+    "status": 200,
+    "bytes": 1106,
+    "headers": {
+      "Content-Type": "text/plain"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/seo-audit-definitely-missing-20260905",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/seo-audit-definitely-missing-20260905",
+    "status": 404,
+    "title": "Page not found — Alejandro Sanabria",
+    "words": 25,
+    "bytes": 4433,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "The requested page was not found.",
+      "robots": "noindex, follow",
+      "og:type": "website",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Page not found — Alejandro Sanabria",
+      "og:description": "The requested page was not found.",
+      "og:url": "https://alesanabriav.com/404/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Page not found — Alejandro Sanabria",
+      "twitter:description": "The requested page was not found.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "That page is not here."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/404/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/writing/",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/writing/",
+    "status": 404,
+    "title": "Page not found — Alejandro Sanabria",
+    "words": 25,
+    "bytes": 4433,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "The requested page was not found.",
+      "robots": "noindex, follow",
+      "og:type": "website",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Page not found — Alejandro Sanabria",
+      "og:description": "The requested page was not found.",
+      "og:url": "https://alesanabriav.com/404/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Page not found — Alejandro Sanabria",
+      "twitter:description": "The requested page was not found.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "That page is not here."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/404/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/stillr/privacy/",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/stillr/privacy/",
+    "status": 404,
+    "title": "Page not found — Alejandro Sanabria",
+    "words": 25,
+    "bytes": 4433,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "The requested page was not found.",
+      "robots": "noindex, follow",
+      "og:type": "website",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Page not found — Alejandro Sanabria",
+      "og:description": "The requested page was not found.",
+      "og:url": "https://alesanabriav.com/404/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Page not found — Alejandro Sanabria",
+      "twitter:description": "The requested page was not found.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "That page is not here."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/404/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "http://alesanabriav.com/",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/",
+    "status": 200,
+    "title": "Alejandro Sanabria",
+    "words": 1291,
+    "bytes": 22096,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "robots": "index, follow",
+      "og:type": "profile",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Alejandro Sanabria",
+      "og:description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "og:url": "https://alesanabriav.com/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Alejandro Sanabria",
+      "twitter:description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Alejandro Sanabria"
+      },
+      {
+        "tag": "h2",
+        "text": "About"
+      },
+      {
+        "tag": "h2",
+        "text": "Known For"
+      },
+      {
+        "tag": "h2",
+        "text": "The Arc"
+      },
+      {
+        "tag": "h2",
+        "text": "How I Lead"
+      },
+      {
+        "tag": "h3",
+        "text": "Technical Side"
+      },
+      {
+        "tag": "h3",
+        "text": "People Side"
+      },
+      {
+        "tag": "h2",
+        "text": "What I'm Building Now"
+      },
+      {
+        "tag": "h2",
+        "text": "Selected Work"
+      },
+      {
+        "tag": "h3",
+        "text": "Platzi Mobile Platform"
+      },
+      {
+        "tag": "h3",
+        "text": "iOS Workflow Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "Cifro"
+      },
+      {
+        "tag": "h3",
+        "text": "Release & Screenshot Automation"
+      },
+      {
+        "tag": "h3",
+        "text": "Brand Spa"
+      },
+      {
+        "tag": "h3",
+        "text": "Baubap iOS First Version"
+      },
+      {
+        "tag": "h3",
+        "text": "Wonderful.ai"
+      },
+      {
+        "tag": "h2",
+        "text": "What I Believe"
+      },
+      {
+        "tag": "h2",
+        "text": "Tech"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": null
+      },
+      {
+        "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap",
+        "rel": "stylesheet"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/index.IN2cTyGc.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://alesanabriav.com/#webpage",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria — alesanabriav",
+            "isPartOf": {
+              "@id": "https://alesanabriav.com/#website"
+            },
+            "mainEntity": {
+              "@id": "https://alesanabriav.com/#person"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows."
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://www.alesanabriav.com/",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/",
+    "status": 200,
+    "title": "Alejandro Sanabria",
+    "words": 1291,
+    "bytes": 22096,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "robots": "index, follow",
+      "og:type": "profile",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:title": "Alejandro Sanabria",
+      "og:description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "og:url": "https://alesanabriav.com/",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Alejandro Sanabria",
+      "twitter:description": "Alejandro Sanabria (online as alesanabriav) is a Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Alejandro Sanabria"
+      },
+      {
+        "tag": "h2",
+        "text": "About"
+      },
+      {
+        "tag": "h2",
+        "text": "Known For"
+      },
+      {
+        "tag": "h2",
+        "text": "The Arc"
+      },
+      {
+        "tag": "h2",
+        "text": "How I Lead"
+      },
+      {
+        "tag": "h3",
+        "text": "Technical Side"
+      },
+      {
+        "tag": "h3",
+        "text": "People Side"
+      },
+      {
+        "tag": "h2",
+        "text": "What I'm Building Now"
+      },
+      {
+        "tag": "h2",
+        "text": "Selected Work"
+      },
+      {
+        "tag": "h3",
+        "text": "Platzi Mobile Platform"
+      },
+      {
+        "tag": "h3",
+        "text": "iOS Workflow Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "Cifro"
+      },
+      {
+        "tag": "h3",
+        "text": "Release & Screenshot Automation"
+      },
+      {
+        "tag": "h3",
+        "text": "Brand Spa"
+      },
+      {
+        "tag": "h3",
+        "text": "Baubap iOS First Version"
+      },
+      {
+        "tag": "h3",
+        "text": "Wonderful.ai"
+      },
+      {
+        "tag": "h2",
+        "text": "What I Believe"
+      },
+      {
+        "tag": "h2",
+        "text": "Tech"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon.svg"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": null
+      },
+      {
+        "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap",
+        "rel": "stylesheet"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/index.IN2cTyGc.css"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://alesanabriav.com/#website",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria",
+            "alternateName": "alesanabriav",
+            "publisher": {
+              "@id": "https://alesanabriav.com/#person"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://alesanabriav.com/#webpage",
+            "url": "https://alesanabriav.com/",
+            "name": "Alejandro Sanabria — alesanabriav",
+            "isPartOf": {
+              "@id": "https://alesanabriav.com/#website"
+            },
+            "mainEntity": {
+              "@id": "https://alesanabriav.com/#person"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows."
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://www.alesanabriav.com/cifro?audit=1",
+    "accept": "text/html",
+    "url": "https://alesanabriav.com/cifro/?audit=1",
+    "status": 200,
+    "title": "Cifro — Private Budget & Expense Tracker for iPhone",
+    "words": 367,
+    "bytes": 9668,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI.",
+      "robots": "index, follow",
+      "og:type": "website",
+      "og:site_name": "Cifro",
+      "og:locale": "en_US",
+      "og:title": "Cifro — Private Budget & Expense Tracker for iPhone",
+      "og:description": "Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI.",
+      "og:url": "https://alesanabriav.com/cifro/",
+      "og:image": "https://alesanabriav.com/cifro/log-expenses.webp",
+      "og:image:alt": "Alejandro Sanabria",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Cifro — Private Budget & Expense Tracker for iPhone",
+      "twitter:description": "Cifro is a private expense tracker and budget planner for iPhone. Capture spending, review purchases, and understand your habits with on-device AI.",
+      "twitter:image": "https://alesanabriav.com/cifro/log-expenses.webp",
+      "twitter:image:alt": "Alejandro Sanabria"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Know where your money goes—without giving it away."
+      },
+      {
+        "tag": "h2",
+        "text": "A short loop for understanding your money."
+      },
+      {
+        "tag": "h3",
+        "text": "Capture the moment"
+      },
+      {
+        "tag": "h3",
+        "text": "Review with intent"
+      },
+      {
+        "tag": "h3",
+        "text": "Make the month legible"
+      },
+      {
+        "tag": "h3",
+        "text": "Let the system learn"
+      },
+      {
+        "tag": "h3",
+        "text": "Keep control of the data"
+      },
+      {
+        "tag": "h2",
+        "text": "Your financial context stays yours."
+      },
+      {
+        "tag": "h3",
+        "text": "No account to create"
+      },
+      {
+        "tag": "h3",
+        "text": "No tracking business"
+      },
+      {
+        "tag": "h3",
+        "text": "Your device, your iCloud"
+      },
+      {
+        "tag": "h2",
+        "text": "Your money. Your device. Your rules."
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/cifro/"
+      },
+      {
+        "rel": "icon",
+        "href": "/cifro/icon.jpg"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/_astro/BaseLayout.CTCXlC1U.css"
+      }
+    ],
+    "images": [
+      {
+        "src": "/cifro/log-expenses.webp",
+        "alt": "Cifro lets someone log an expense in seconds",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "high"
+      },
+      {
+        "src": "/cifro/review-purchases.webp",
+        "alt": "Cifro lists purchases for a focused review",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto"
+      },
+      {
+        "src": "/cifro/ai-insights.webp",
+        "alt": "Cifro shows on-device insights about spending",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto"
+      },
+      {
+        "src": "/cifro/budget-by-category.webp",
+        "alt": "Cifro shows budgets and spending by category",
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto"
+      },
+      {
+        "src": "/cifro/log-expenses.webp",
+        "alt": null,
+        "width": "600",
+        "height": "1300",
+        "loading": "eager",
+        "fetchpriority": "auto",
+        "aria-hidden": "true"
+      }
+    ],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://alesanabriav.com/#person",
+            "name": "Alejandro Sanabria",
+            "givenName": "Alejandro",
+            "familyName": "Sanabria",
+            "alternateName": [
+              "alesanabriav",
+              "alesanabriav7"
+            ],
+            "url": "https://alesanabriav.com/",
+            "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+            "jobTitle": "Forward Deployed Engineer",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Wonderful.ai"
+            },
+            "description": "Forward Deployed Engineer at Wonderful.ai, mobile platform leader, and builder of practical AI product workflows.",
+            "sameAs": [
+              "https://www.linkedin.com/in/alesanabriav/",
+              "https://github.com/alesanabriav7"
+            ]
+          },
+          {
+            "@type": [
+              "SoftwareApplication",
+              "MobileApplication"
+            ],
+            "name": "Cifro",
+            "applicationCategory": "FinanceApplication",
+            "applicationSubCategory": "Personal finance",
+            "operatingSystem": "iOS 26.0 or later",
+            "url": "https://alesanabriav.com/cifro/",
+            "downloadUrl": "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370",
+            "sameAs": "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370",
+            "inLanguage": [
+              "en",
+              "es"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": 0
+            },
+            "author": {
+              "@id": "https://alesanabriav.com/#person"
+            },
+            "description": "A private budget and expense tracker for iPhone with on-device AI, no accounts, and no third-party tracking."
+          }
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html"
+    }
+  },
+  {
+    "requested": "https://alesanabriav7.github.io/",
+    "accept": "text/html",
+    "url": "https://alesanabriav7.github.io/",
+    "status": 200,
+    "title": "Alejandro Sanabria — Forward Deployed Engineer & Mobile Platform Leader",
+    "words": 1300,
+    "bytes": 27279,
+    "meta": {
+      "unknown": "",
+      "viewport": "width=device-width, initial-scale=1.0",
+      "description": "Alejandro Sanabria — Forward Deployed Engineer at Wonderful.ai and mobile platform leader, known for iOS and Android platforms, AI workflows, Cifro, B2B product engineering, and practical product engineering systems.",
+      "author": "Alejandro Sanabria",
+      "keywords": "Alejandro Sanabria, Wonderful.ai FDE, Brand Spa co-founder, Platzi mobile engineering, Baubap iOS, engineering manager, full-stack engineer, mobile platforms, B2B product engineering, Swift, SwiftUI, Kotlin, React Native, TypeScript, Laravel, Ruby on Rails, Foundation Models, AI workflows, Cifro, appstore-tools, screenshots-ios",
+      "robots": "index, follow",
+      "og:title": "Alejandro Sanabria — Forward Deployed Engineer & Mobile Platform Leader",
+      "og:description": "FDE at Wonderful.ai and mobile platform leader behind iOS, Android, AI workflows, Cifro, B2B products, and Foundation Models products.",
+      "og:type": "profile",
+      "og:profile:first_name": "Alejandro",
+      "og:profile:last_name": "Sanabria",
+      "og:profile:username": "alesanabriav",
+      "og:url": "https://alesanabriav.com/",
+      "og:site_name": "Alejandro Sanabria",
+      "og:locale": "en_US",
+      "og:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "Alejandro Sanabria — Forward Deployed Engineer and Mobile Platform Leader",
+      "twitter:card": "summary",
+      "twitter:title": "Alejandro Sanabria — Forward Deployed Engineer & Mobile Platform Leader",
+      "twitter:description": "FDE at Wonderful.ai and mobile platform leader behind iOS, Android, AI workflows, Cifro, B2B products, and Foundation Models products.",
+      "twitter:image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+      "twitter:image:alt": "Alejandro Sanabria — Forward Deployed Engineer and Mobile Platform Leader"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Alejandro Sanabria"
+      },
+      {
+        "tag": "h2",
+        "text": "About"
+      },
+      {
+        "tag": "h2",
+        "text": "Known For"
+      },
+      {
+        "tag": "h2",
+        "text": "The Arc"
+      },
+      {
+        "tag": "h2",
+        "text": "How I Lead"
+      },
+      {
+        "tag": "h3",
+        "text": "Technical Side"
+      },
+      {
+        "tag": "h3",
+        "text": "People Side"
+      },
+      {
+        "tag": "h2",
+        "text": "What I'm Building Now"
+      },
+      {
+        "tag": "h2",
+        "text": "Selected Work"
+      },
+      {
+        "tag": "h3",
+        "text": "Platzi Mobile Platform"
+      },
+      {
+        "tag": "h3",
+        "text": "iOS Workflow Systems"
+      },
+      {
+        "tag": "h3",
+        "text": "Cifro"
+      },
+      {
+        "tag": "h3",
+        "text": "Release & Screenshot Automation"
+      },
+      {
+        "tag": "h3",
+        "text": "Brand Spa"
+      },
+      {
+        "tag": "h3",
+        "text": "Baubap iOS First Version"
+      },
+      {
+        "tag": "h3",
+        "text": "Wonderful.ai"
+      },
+      {
+        "tag": "h2",
+        "text": "What I Believe"
+      },
+      {
+        "tag": "h2",
+        "text": "Tech"
+      }
+    ],
+    "assets": [
+      {
+        "rel": "canonical",
+        "href": "https://alesanabriav.com/"
+      },
+      {
+        "rel": "describedby",
+        "href": "/llms.txt",
+        "type": "text/plain"
+      },
+      {
+        "rel": "sitemap",
+        "href": "/sitemap.xml",
+        "type": "application/xml"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.googleapis.com"
+      },
+      {
+        "rel": "preconnect",
+        "href": "https://fonts.gstatic.com",
+        "crossorigin": null
+      },
+      {
+        "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap",
+        "rel": "stylesheet"
+      },
+      {
+        "rel": "me",
+        "href": "https://www.linkedin.com/in/alesanabriav/"
+      },
+      {
+        "rel": "me",
+        "href": "https://github.com/alesanabriav7"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "style.css"
+      },
+      {
+        "rel": "icon",
+        "href": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>"
+      }
+    ],
+    "images": [],
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://alesanabriav.com/#alejandro-sanabria",
+        "name": "Alejandro Sanabria",
+        "givenName": "Alejandro",
+        "familyName": "Sanabria",
+        "url": "https://alesanabriav.com",
+        "image": "https://alesanabriav.com/alejandro-sanabria.jpg",
+        "jobTitle": "Forward Deployed Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Wonderful.ai",
+          "url": "https://wonderful.ai"
+        },
+        "description": "Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai, former engineering manager, co-founder, and mobile platform leader. He is known for leading iOS and Android platform work, creating AI-assisted mobile engineering workflows, shipping iOS products such as Cifro, full-stack B2B product engineering, and managing a fast first-version iOS delivery at Baubap.",
+        "knowsAbout": [
+          "Swift",
+          "iOS",
+          "Kotlin",
+          "Android",
+          "React Native",
+          "TypeScript",
+          "React",
+          "Node.js",
+          "Laravel",
+          "Ruby on Rails",
+          "SwiftUI",
+          "Foundation Models",
+          "Product Engineering",
+          "Claude Code",
+          "OpenClaw",
+          "Mobile Engineering",
+          "Engineering Management",
+          "Forward Deployed Engineering",
+          "AI Workflows",
+          "B2B Product Engineering",
+          "Personal Finance Software",
+          "App Store Automation"
+        ],
+        "affiliation": [
+          {
+            "@type": "Organization",
+            "name": "Wonderful.ai",
+            "url": "https://wonderful.ai"
+          },
+          {
+            "@type": "Organization",
+            "name": "Platzi",
+            "url": "https://platzi.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "Baubap",
+            "url": "https://baubap.com"
+          },
+          {
+            "@type": "Organization",
+            "name": "Brand Spa"
+          }
+        ],
+        "hasOccupation": [
+          {
+            "@type": "Occupation",
+            "name": "Forward Deployed Engineer"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Engineering Manager"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Mobile Engineering Leader"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Full-Stack Engineer"
+          },
+          {
+            "@type": "Occupation",
+            "name": "Co-Founder"
+          }
+        ],
+        "mainEntityOfPage": "https://alesanabriav.com/",
+        "sameAs": [
+          "https://www.linkedin.com/in/alesanabriav/",
+          "https://github.com/alesanabriav7"
+        ]
+      }
+    ],
+    "headers": {
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Tue, 25 Aug 2026 00:45:10 GMT",
+      "Vary": "Accept-Encoding"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/",
+    "accept": "text/markdown",
+    "url": "https://alesanabriav.com/",
+    "status": 200,
+    "bytes": 1106,
+    "headers": {
+      "Content-Type": "text/markdown; charset=utf-8"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/cifro",
+    "accept": "text/markdown",
+    "url": "https://alesanabriav.com/cifro",
+    "status": 200,
+    "bytes": 1106,
+    "headers": {
+      "Content-Type": "text/markdown; charset=utf-8"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/work",
+    "accept": "text/markdown",
+    "url": "https://alesanabriav.com/work",
+    "status": 200,
+    "bytes": 1106,
+    "headers": {
+      "Content-Type": "text/markdown; charset=utf-8"
+    }
+  },
+  {
+    "requested": "https://alesanabriav.com/seo-audit-definitely-missing-20260905",
+    "accept": "text/markdown",
+    "url": "https://alesanabriav.com/seo-audit-definitely-missing-20260905",
+    "status": 200,
+    "bytes": 1106,
+    "headers": {
+      "Content-Type": "text/markdown; charset=utf-8"
+    }
+  }
+]

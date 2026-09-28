@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://alesanabriav.com/alejandro-sanabria.jpg",
+    "bytes": 160630,
+    "dimensions": [
+      "  pixelWidth: 1200",
+      "  pixelHeight: 630"
+    ]
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/log-expenses.webp",
+    "bytes": 28748,
+    "dimensions": [
+      "  pixelWidth: 600",
+      "  pixelHeight: 1300"
+    ]
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/ai-insights.webp",
+    "bytes": 33044,
+    "dimensions": [
+      "  pixelWidth: 600",
+      "  pixelHeight: 1300"
+    ]
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/review-purchases.webp",
+    "bytes": 34882,
+    "dimensions": [
+      "  pixelWidth: 600",
+      "  pixelHeight: 1300"
+    ]
+  },
+  {
+    "url": "https://alesanabriav.com/cifro/budget-by-category.webp",
+    "bytes": 37870,
+    "dimensions": [
+      "  pixelWidth: 600",
+      "  pixelHeight: 1300"
+    ]
+  }
+]

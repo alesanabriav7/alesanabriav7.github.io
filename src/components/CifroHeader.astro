@@ -1,15 +1,25 @@
 ---
-const appStoreUrl = "https://apps.apple.com/co/app/cifro-presupuesto-y-gastos/id6759523370";
+import { cifroAppStoreUrl, cifroCopy, cifroPath, type CifroLang } from "../data/cifro";
+
+interface Props {
+  lang?: CifroLang;
+}
+
+const { lang = "en" } = Astro.props;
+const t = cifroCopy[lang].nav;
+const home = cifroPath(lang);
+const otherLang: CifroLang = lang === "en" ? "es" : "en";
 ---
 
 <header class="cifro-site-header">
   <div class="shell nav-shell">
-    <a class="wordmark" href="/cifro/" aria-label="Cifro home">Cifro</a>
-    <nav aria-label="Cifro navigation">
-      <a class="nav-link" href="#how-it-works">How it works</a>
-      <a class="nav-link" href="#privacy">Privacy</a>
-      <a class="nav-link" href="/cifro/support">Support</a>
-      <a class="button cifro-download" href={appStoreUrl} target="_blank" rel="noopener noreferrer">Download</a>
+    <a class="wordmark" href={home} aria-label={t.homeLabel}>Cifro</a>
+    <nav aria-label={t.navLabel}>
+      <a class="nav-link" href={`${home}#features`}>{t.features}</a>
+      <a class="nav-link" href={`${home}#privacy`}>{t.privacy}</a>
+      <a class="nav-link" href={`${home}#faq`}>{t.faq}</a>
+      <a class="nav-link" href={cifroPath(otherLang)} hreflang={otherLang} lang={otherLang}>{t.switchLabel}</a>
+      <a class="button cifro-download" href={cifroAppStoreUrl} target="_blank" rel="noopener noreferrer">{t.download}</a>
     </nav>
   </div>
 </header>
