@@ -8,8 +8,9 @@ routes = [
   { pattern = "alesanabriav.com", custom_domain = true },
   { pattern = "www.alesanabriav.com", custom_domain = true },
   { pattern = "alesanabriav.com/*", zone_name = "alesanabriav.com" },
-  { pattern = "alejandrosanabria.com/*", zone_name = "alejandrosanabria.com" },
+  { pattern = "alejandrosanabria.com", custom_domain = true },
   { pattern = "www.alejandrosanabria.com", custom_domain = true },
+  { pattern = "alejandrosanabria.com/*", zone_name = "alejandrosanabria.com" },
   { pattern = "www.alejandrosanabria.com/*", zone_name = "alejandrosanabria.com" }
 ]
 
