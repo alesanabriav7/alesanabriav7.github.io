@@ -1,0 +1,259 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_NAME, SITE_HANDLE, personId, websiteId, profileLinks, homeAlternates } from "../../data/site";
+import "../../styles/profile.css";
+
+const profileJsonLd = {
+  "@type": "ProfilePage",
+  "@id": "https://alejandrosanabria.com/es/#webpage",
+  url: "https://alejandrosanabria.com/es/",
+  inLanguage: "es",
+  name: `${SITE_NAME} — ${SITE_HANDLE}`,
+  isPartOf: { "@id": websiteId },
+  mainEntity: { "@id": personId },
+  description:
+    "Forward Deployed Engineer en Wonderful.ai, construye agentes de IA e integraciones para flujos de trabajo de clientes.",
+};
+---
+
+<BaseLayout
+  variant="profile"
+  title={`${SITE_NAME} | Forward Deployed Engineer e IA en Bogotá`}
+  description="Alejandro Sanabria (alesanabriav) es Forward Deployed Engineer en Wonderful.ai en Bogotá, Colombia. Construye agentes de IA, integraciones y apps iOS como Cifro."
+  lang="es"
+  ogType="profile"
+  jsonLd={profileJsonLd}
+  alternates={homeAlternates}
+>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="avatar" aria-hidden="true">AS</div>
+        <h1 class="sidebar-name">{SITE_NAME}</h1>
+        <p class="subtitle">Forward Deployed Engineer en Wonderful.ai · Agentes de IA e integraciones</p>
+        <nav class="social-links" aria-label="Redes">
+          <a href="https://www.linkedin.com/in/alesanabriav/" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/alesanabriav7" target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+            GitHub
+          </a>
+          <a href={profileLinks.x} target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+            X (@alesanabriav)
+          </a>
+          <a href={profileLinks.appStore} target="_blank" rel="me noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path></svg>
+            App Store
+          </a>
+        </nav>
+        <nav class="section-nav" aria-label="En esta página">
+          <a href="#about">Sobre mí</a>
+          <a href="#work">Trabajo destacado</a>
+          <a href="#building">Qué construyo</a>
+          <a href="#beliefs">Principios</a>
+          <a href="#tech">Tecnología</a>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="profile-content">
+      <section id="about" class="profile-section">
+        <div class="fade-on-scroll">
+          <h2>Sobre mí</h2>
+          <p>Soy Alejandro Sanabria, Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful.ai</a>. Construyo agentes de IA e integraciones para flujos de trabajo reales de clientes.</p>
+          <p>Mi trabajo conecta las necesidades del cliente, las decisiones de producto, la implementación y la verificación. Mi experiencia en plataformas móviles y productos full-stack me ayuda a convertir esas decisiones en software que funciona.</p>
+          <p>Conoce mi <a href="/work/">trabajo como Forward Deployed Engineer</a> y mis <a href="/projects/">apps públicas y herramientas para desarrolladores</a> (en inglés).</p>
+        </div>
+      </section>
+
+      <section id="work" class="profile-section">
+        <div class="fade-on-scroll">
+          <h2>Trabajo destacado</h2>
+          <div class="work-grid">
+            <article class="work-card">
+              <div class="work-card-header"><h3>Wonderful.ai</h3><span class="work-type">forward deployed engineering</span></div>
+              <p>Construyo agentes de IA e integraciones alrededor de los flujos de trabajo del cliente, conectando las restricciones de producto con la implementación y la verificación.</p>
+              <div class="work-tags"><span>FDE</span><span>Flujos con IA</span><span>Contexto del cliente</span><span>Implementación</span></div>
+              <a class="work-link" href="/work/">Ver mi trabajo de ingeniería</a>
+            </article>
+            <article class="work-card">
+              <div class="work-card-header"><h3>Sistemas de flujo de trabajo iOS</h3><span class="work-type">herramientas de flujo de trabajo</span></div>
+              <p>Patrones de trabajo reutilizables para arquitectura iOS, planeación de implementación, code review, validación, operaciones de App Store y generación de screenshots. Hacen explícitas las decisiones de arquitectura, la revisión y la verificación.</p>
+              <div class="work-tags"><span>Claude Code</span><span>OpenClaw</span><span>Skills</span><span>Flujos con IA</span></div>
+              <a class="work-link" href="/projects/ios-architect/">ios-architect-skill</a>
+            </article>
+            <article class="work-card">
+              <div class="work-card-header"><h3>Cifro</h3><span class="work-type">app de finanzas</span></div>
+              <p>Una app de finanzas para iOS publicada y privada por diseño, hecha con SwiftUI y Apple Foundation Models. Cifro usa IA en el dispositivo para interpretar transacciones, sugerir categorías de presupuesto, dar insights diarios y guiar una revisión periódica: sin cuenta de Cifro, sin anuncios ni rastreo de terceros, y con sincronización opcional mediante tu iCloud privado.</p>
+              <div class="work-tags"><span>SwiftUI</span><span>Foundation Models</span><span>IA en el dispositivo</span><span>Finanzas</span></div>
+              <a class="work-link" href="/cifro/es/">Conoce Cifro</a>
+            </article>
+            <article class="work-card">
+              <div class="work-card-header"><h3>Automatización de releases y screenshots</h3><span class="work-type">automatización iOS</span></div>
+              <p>Herramientas de línea de comandos para el flujo de entrega móvil: automatización de metadatos y subida de builds en App Store Connect, y captura determinística de screenshots en el simulador de iOS para la App Store, pruebas de regresión y pipelines de CI.</p>
+              <div class="work-tags"><span>TypeScript</span><span>App Store Connect</span><span>Simulador</span><span>Automatización</span></div>
+              <a class="work-link" href="/projects/appstore-tools/">appstore-tools</a>
+              <a class="work-link" href="/projects/screenshots-ios/">screenshots-ios</a>
+            </article>
+            <article class="work-card">
+              <div class="work-card-header"><h3>Plataforma móvil de Platzi</h3><span class="work-type">liderazgo de plataforma móvil</span></div>
+              <p>Más de 8 años en móvil: de ser uno de los primeros ingenieros móviles de Platzi a liderar la plataforma iOS y Android. Ayudé a migrar de React Native a Swift y Kotlin nativos, escalar estándares compartidos y formar el equipo detrás del trabajo con Foundation Models y Liquid Glass reconocido por Apple.</p>
+              <div class="work-tags"><span>iOS</span><span>Android</span><span>Swift</span><span>Kotlin</span><span>React Native</span></div>
+            </article>
+            <article class="work-card">
+              <div class="work-card-header"><h3>Brand Spa</h3><span class="work-type">cofundador · ingeniería full-stack</span></div>
+              <p>Cofundé una agencia digital y lideré su ingeniería durante casi cinco años como ingeniero principal en los proyectos de clientes. Construí soluciones web a la medida, de la arquitectura a producción, con PHP, Laravel, Ruby on Rails, WordPress, React y Node.js.</p>
+              <div class="work-tags"><span>Productos B2B</span><span>Full-Stack</span><span>React</span><span>Laravel</span><span>Rails</span></div>
+            </article>
+            <article class="work-card">
+              <div class="work-card-header"><h3>Primera versión iOS de Baubap</h3><span class="work-type">etapa corta de gerencia de ingeniería</span></div>
+              <p>Una etapa corta como gerente de ingeniería enfocada en sacar rápido la primera versión iOS de Baubap: alinear producto, arquitectura móvil, restricciones de entrega y ejecución del equipo en un cronograma ajustado.</p>
+              <div class="work-tags"><span>iOS</span><span>Gerencia de ingeniería</span><span>Entrega</span><span>Alineación de producto</span></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="building" class="profile-section">
+        <div class="fade-on-scroll">
+          <h2>Qué estoy construyendo</h2>
+          <p>Aplico IA en las partes de la ingeniería donde el contexto, la revisión y la repetición suelen frenar a los equipos.</p>
+          <p>Es trabajo práctico: herramientas y flujos que uso para planear, construir, verificar, empaquetar y publicar software real.</p>
+          <div class="building-grid">
+            <div class="building-item"><span class="label">Trabajo FDE</span><span class="desc">Trabajo cerca de los flujos del cliente, las necesidades de producto, los sistemas de IA y la implementación</span></div>
+            <div class="building-item"><span class="label">Flujos de arquitectura</span><span class="desc">Convertir trabajo ambiguo en planes de implementación y trade-offs</span></div>
+            <div class="building-item"><span class="label">Ciclos de revisión</span><span class="desc">Usar IA para conservar contexto, validar supuestos y verificar resultados</span></div>
+            <div class="building-item"><span class="label">Herramientas de entrega</span><span class="desc">Automatizar screenshots, App Store y pasos de release</span></div>
+            <div class="building-item"><span class="label">Sistemas de producto</span><span class="desc">Construir apps como Cifro donde la IA aporta comportamiento útil</span></div>
+          </div>
+          <p>El objetivo no es la IA por sí misma, sino mejor criterio de ingeniería, retroalimentación más rápida y sistemas que funcionan.</p>
+        </div>
+      </section>
+
+      <section id="beliefs" class="profile-section">
+        <div class="fade-on-scroll">
+          <h2>En qué creo</h2>
+          <ul class="beliefs-list">
+            <li><strong>La calidad multiplica, no es un impuesto.</strong> Invertir en arquitectura se devuelve en velocidad cada sprint.</li>
+            <li><strong>Liderar desde el código, no por encima de él.</strong> Un EM que no puede evaluar un trade-off técnico está gestionando a ciegas.</li>
+            <li><strong>La IA se vuelve útil cuando aterriza en un flujo de trabajo.</strong> Lo difícil es conectar el comportamiento del modelo con un trabajo, un equipo y un resultado reales.</li>
+            <li><strong>La IA debe potenciar el criterio, no reemplazarlo.</strong> El objetivo es mejor ingeniería, no solo producir más rápido.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tech" class="profile-section">
+        <div class="fade-on-scroll">
+          <h2>Tecnología</h2>
+          <div class="tech-row">
+            <span class="tech-badge">Swift</span><span class="tech-badge">SwiftUI</span><span class="tech-badge">iOS</span><span class="tech-badge">Kotlin</span><span class="tech-badge">Android</span><span class="tech-badge">React Native</span><span class="tech-badge">TypeScript</span><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">Laravel</span><span class="tech-badge">Ruby on Rails</span><span class="tech-badge">Tuist</span><span class="tech-badge">GRDB</span><span class="tech-badge">Claude Code</span><span class="tech-badge">OpenClaw</span><span class="tech-badge">Foundation Models</span><span class="tech-badge">Forward Deployed Engineering</span><span class="tech-badge">AI Workflows</span><span class="tech-badge">Product Engineering</span><span class="tech-badge">Git</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="profile-footer">
+        <nav class="site-links" aria-label="Enlaces del sitio"><a href="/work/">Work</a><a href="/projects/">Projects</a><a href="/cifro/es/">Cifro</a><a href="/about/">About</a><a href="/" hreflang="en" lang="en">English</a></nav>
+        <nav class="social-links" aria-label="Redes"><a href="https://www.linkedin.com/in/alesanabriav/" target="_blank" rel="me noopener noreferrer">LinkedIn</a><a href="https://github.com/alesanabriav7" target="_blank" rel="me noopener noreferrer">GitHub</a><a href={profileLinks.x} target="_blank" rel="me noopener noreferrer">X</a><a href={profileLinks.appStore} target="_blank" rel="me noopener noreferrer">App Store</a><a href={profileLinks.platzi} target="_blank" rel="me noopener noreferrer">Platzi</a></nav>
+        <p class="copyright">© {new Date().getFullYear()} {SITE_NAME}</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const fadeElements = document.querySelectorAll<HTMLElement>(".fade-on-scroll");
+
+    if (!reducedMotion) {
+      document.body.classList.add("motion-ready");
+      const fadeObserver = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            fadeObserver.unobserve(entry.target);
+          }
+        }
+      }, { threshold: 0.15 });
+
+      for (const element of fadeElements) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) element.classList.add("visible");
+        else fadeObserver.observe(element);
+      }
+    }
+
+    const navLinks = [...document.querySelectorAll<HTMLAnchorElement>(".section-nav a")];
+    const sections = [...document.querySelectorAll<HTMLElement>(".profile-section[id]")];
+    let lockedSectionId: string | null = null;
+
+    const setActiveSection = (id: string) => {
+      for (const link of navLinks) {
+        const active = link.hash === `#${id}`;
+        link.classList.toggle("active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      }
+    };
+
+    const updateActiveSection = () => {
+      if (lockedSectionId) return;
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+        setActiveSection(sections.at(-1)?.id ?? "about");
+        return;
+      }
+
+      const threshold = window.innerHeight * 0.35;
+      let activeSection = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top > threshold) break;
+        activeSection = section;
+      }
+      setActiveSection(activeSection?.id ?? "about");
+    };
+
+    let scrollUpdatePending = false;
+    const scheduleActiveSectionUpdate = () => {
+      if (scrollUpdatePending) return;
+      scrollUpdatePending = true;
+      requestAnimationFrame(() => {
+        updateActiveSection();
+        scrollUpdatePending = false;
+      });
+    };
+
+    const syncHashOrScroll = () => {
+      const hashSection = sections.find((section) => `#${section.id}` === window.location.hash);
+      lockedSectionId = hashSection?.id ?? null;
+      if (lockedSectionId) setActiveSection(lockedSectionId);
+      else updateActiveSection();
+    };
+
+    const releaseNavigationLock = () => {
+      if (!lockedSectionId) return;
+      lockedSectionId = null;
+      scheduleActiveSectionUpdate();
+    };
+
+    for (const link of navLinks) {
+      link.addEventListener("click", () => {
+        lockedSectionId = link.hash.slice(1);
+        setActiveSection(lockedSectionId);
+      });
+    }
+
+    window.addEventListener("scroll", scheduleActiveSectionUpdate, { passive: true });
+    window.addEventListener("resize", scheduleActiveSectionUpdate);
+    window.addEventListener("hashchange", syncHashOrScroll);
+    window.addEventListener("wheel", releaseNavigationLock, { passive: true });
+    window.addEventListener("touchstart", releaseNavigationLock, { passive: true });
+    window.addEventListener("pointerdown", releaseNavigationLock, { passive: true });
+    window.addEventListener("keydown", (event) => {
+      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) {
+        releaseNavigationLock();
+      }
+    });
+    syncHashOrScroll();
+  </script>
+</BaseLayout>

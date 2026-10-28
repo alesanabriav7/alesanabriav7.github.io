@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_URL, personId, websiteId, profileLinks } from "../../data/site";
+
+const aboutJsonLd = {
+  "@type": "AboutPage",
+  "@id": `${SITE_URL}/about/#webpage`,
+  url: `${SITE_URL}/about/`,
+  name: "About Alejandro Sanabria (alesanabriav)",
+  isPartOf: { "@id": websiteId },
+  mainEntity: { "@id": personId },
+  about: { "@id": personId },
+};
+
+const profiles = [
+  { label: "LinkedIn", href: profileLinks.linkedin },
+  { label: "GitHub (alesanabriav7)", href: profileLinks.github },
+  { label: "GitHub (alesanabriav)", href: profileLinks.githubLegacy },
+  { label: "X (@alesanabriav)", href: profileLinks.x },
+  { label: "App Store developer page", href: profileLinks.appStore },
+  { label: "Platzi teacher profile", href: profileLinks.platzi },
+];
+---
+
+<BaseLayout
+  title="Alejandro Sanabria (alesanabriav) — About"
+  description="About Alejandro Sanabria (alesanabriav): Forward Deployed Engineer at Wonderful.ai in Bogotá, Colombia, iOS and mobile platform engineer, Platzi teacher, and maker of the Cifro iPhone app."
+  ogType="profile"
+  jsonLd={aboutJsonLd}
+>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria</h1><p>Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful.ai</a>, based in Bogotá, Colombia. I build AI agents and integrations for real customer workflows.</p></div></section>
+  <section class="section tint"><div class="shell prose">
+    <h2>Background</h2>
+    <p>Alejandro Sanabria, known online as <strong>alesanabriav</strong>, started as a frontend developer and moved into mobile platforms and full-stack products.</p>
+    <ul>
+      <li><strong>Wonderful.ai</strong> — Forward Deployed Engineer building AI agents and integrations around customer workflows.</li>
+      <li><strong>Platzi</strong> — an 8+ year mobile chapter, from one of Platzi's first mobile engineers to leading iOS and Android platform work, including the move from React Native to native Swift and Kotlin. He also teaches courses on Platzi.</li>
+      <li><strong>Brand Spa</strong> — co-founded a digital agency and led its engineering for nearly five years, building web products with PHP, Laravel, Ruby on Rails, WordPress, React, and Node.js.</li>
+      <li><strong>Baubap</strong> — a short engineering management chapter getting Baubap's first iOS version moving.</li>
+    </ul>
+    <h2>Products and tools</h2>
+    <p>He publishes <a href="/cifro/">Cifro</a>, a private-by-design iPhone budget app built with SwiftUI and Apple Foundation Models, and open-source developer tools such as <a href="/projects/appstore-tools/">appstore-tools</a>, <a href="/projects/screenshots-ios/">screenshots-ios</a>, and <a href="/projects/ios-architect/">ios-architect-skill</a>.</p>
+    <h2>Focus</h2>
+    <p>iOS, Swift, SwiftUI, Android, Kotlin, React Native, TypeScript, AI agents and workflows, and App Store delivery automation.</p>
+    <h2>Profiles</h2>
+    <ul>{profiles.map((p) => <li><a href={p.href} rel="me noopener noreferrer" target="_blank">{p.label}</a></li>)}</ul>
+    <p><a href="/es/" hreflang="es" lang="es">Versión en español</a></p>
+  </div></section>
+</BaseLayout>

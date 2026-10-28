@@ -4,9 +4,28 @@ export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
 export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria";
 
+export const profileLinks = {
+  linkedin: "https://www.linkedin.com/in/alesanabriav/",
+  github: "https://github.com/alesanabriav7",
+  githubLegacy: "https://github.com/alesanabriav",
+  x: "https://x.com/alesanabriav",
+  appStore: "https://apps.apple.com/co/developer/alejandro-sanabria/id1801328559",
+  platzi: "https://platzi.com/profes/alesanabriav/",
+};
+
 export const personSameAs = [
-  "https://www.linkedin.com/in/alesanabriav/",
-  "https://github.com/alesanabriav7",
+  profileLinks.linkedin,
+  profileLinks.github,
+  profileLinks.githubLegacy,
+  profileLinks.x,
+  profileLinks.appStore,
+  profileLinks.platzi,
+];
+
+export const homeAlternates = [
+  { hreflang: "en", href: "/" },
+  { hreflang: "es", href: "/es/" },
+  { hreflang: "x-default", href: "/" },
 ];
 
 export function absoluteUrl(path: string): string {
@@ -29,6 +48,26 @@ export const personNode = {
   worksFor: { "@type": "Organization", name: "Wonderful.ai" },
   description:
     "Forward Deployed Engineer at Wonderful.ai, building AI agents, integrations, and tools for real customer workflows.",
+  homeLocation: {
+    "@type": "Place",
+    name: "Bogotá, Colombia",
+    address: { "@type": "PostalAddress", addressLocality: "Bogotá", addressCountry: "CO" },
+  },
+  knowsAbout: [
+    "Forward Deployed Engineering",
+    "AI agents",
+    "AI workflows",
+    "iOS development",
+    "Swift",
+    "SwiftUI",
+    "Apple Foundation Models",
+    "Android",
+    "Kotlin",
+    "React Native",
+    "TypeScript",
+    "Mobile architecture",
+    "App Store Connect automation",
+  ],
   sameAs: personSameAs,
 };
 
