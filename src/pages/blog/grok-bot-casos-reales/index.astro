@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { SITE_URL, DEFAULT_IMAGE, absoluteUrl, personId, profileLinks } from "../../../data/site";
+import { posts, postPath } from "../../../data/posts";
+
+const post = posts.find((p) => p.slug === "grok-bot-casos-reales")!;
+const url = `${SITE_URL}${postPath(post.slug)}`;
+const xPost = `${profileLinks.x}/status/2115895162257993847`;
+
+const postJsonLd = {
+  "@type": "BlogPosting",
+  "@id": `${url}#article`,
+  mainEntityOfPage: url,
+  url,
+  headline: post.title,
+  description: post.description,
+  inLanguage: "es",
+  datePublished: post.datePublished,
+  dateModified: post.datePublished,
+  image: absoluteUrl(DEFAULT_IMAGE),
+  author: { "@id": personId },
+  publisher: { "@id": personId },
+  isPartOf: { "@id": `${SITE_URL}/blog/#blog` },
+  about: ["Grok Bot", "Asistentes de IA", "Agentes de IA"],
+  discussionUrl: xPost,
+};
+---
+
+<BaseLayout
+  title={`${post.title} | Alejandro Sanabria`}
+  description={post.description}
+  lang="es"
+  ogType="article"
+  jsonLd={postJsonLd}
+>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Blog · <time datetime={post.datePublished}>29 de octubre de 2026</time></p><h1>{post.title}</h1><p>Por Alejandro Sanabria, Forward Deployed Engineer en Bogotá.</p></div></section>
+  <section class="section"><article class="shell prose" lang="es">
+    <p>Soy Alejandro Sanabria, Forward Deployed Engineer en Bogotá. En el trabajo me la paso construyendo agentes de IA para flujos reales de clientes, así que era cuestión de tiempo antes de querer uno que trabajara para mí. No un chatbot que me conteste bonito o haga cositas pequeñas: un asistente que resuelva cosas de principio a fin.</p>
+    <p>Llevaba meses buscándolo. Pasé por tres opciones y solo una se siente de verdad como un asistente. Aquí va el recorrido y, sobre todo, los casos concretos de las últimas semanas, por si te sirven de inspiración para probarlo.</p>
+
+    <h2>Tres intentos antes de dar con el bueno</h2>
+    <h3>OpenClaw: mucha potencia, pero el que trabajaba era yo</h3>
+    <p>Arranqué con OpenClaw. La idea me encantaba, pero se rompía a cada rato. Terminaba debuggeando, actualizando y cuidando al asistente, y me quitaba más tiempo del que me ahorraba.</p>
+    <h3>Hermes de Nous: listo y estable, pero más harness que asistente</h3>
+    <p>Luego me pasé a Hermes, corriendo 24/7 en una Mac M3. Como tenía el plan de USD 100 de Codex, me rendía muy bien y le pedía tareas de código. Era inteligente y mucho más estable. El problema: por más tuning que le hice, nunca se sintió 100% como un asistente puro; era más bien un buen harness. Siempre quedaba algo a medias y me tocaba decirle cómo terminarlo.</p>
+    <h3>Grok Bot: aquí sí</h3>
+    <p>Con Grok Bot cambió el chip. Va directo, ejecuta y muy pocas veces deja algo sin hacer.</p>
+
+    <h2>No tengo un bot, tengo un equipo</h2>
+    <p>Lo tengo armado como un equipo pequeño:</p>
+    <ul>
+      <li>Un <strong>jefe de gabinete</strong>, que recibe todo lo que le pido y lo reparte.</li>
+      <li><strong>Ploutos</strong>, para mis finanzas.</li>
+      <li><strong>Hermes</strong>, para viajes y millas.</li>
+      <li><strong>Asclepius</strong>, para la salud.</li>
+      <li>Y otros para compras, cine, inglés, noticias de X y hasta mis drops de Pokémon.</li>
+    </ul>
+    <p>Cada bot tiene su tema, su memoria y sus reglas, así que no tengo que repetir nada. Si una vez le digo que en las reservas siempre me ponga de primer pasajero, ya queda sabido para siempre. Y todos comparten alewik, mi second brain: ahí está mucho contexto mío, y eso les ayuda a hacer mejor las cosas.</p>
+    <p>Lo repetitivo lo dejo como rutina: revisar mi correo cada dos horas, buscar citas de Global Entry dos veces al día y, cada lunes, mirar si se me están acabando los suplementos. Y entre ellos se pasan el trabajo: si me llega un correo de un viaje, el jefe de gabinete se lo entrega a Hermes.</p>
+
+    <h2>Trámites y plata</h2>
+    <h3>El beneficio tributario de mi carro híbrido</h3>
+    <p>En Colombia los carros híbridos tienen dos beneficios: la devolución del IVA y una deducción en la renta. Conseguirlos es un laberinto de UPME, DIAN, certificados y formularios.</p>
+    <p>El asistente juntó la factura, el RUT, la licencia de tránsito y el historial de mi carro anterior. Me creó la cuenta en la UPME, llenó el formulario y pagó el certificado cuando le di el sí. Después dejó radicada ante la DIAN la devolución del IVA, que son millones, y además me queda la deducción en la renta. Mi papel fue estar pendiente y aprobar.</p>
+    <h3>Plata que no sabía que me debían</h3>
+    <p>La idea la vi en X y la probé tal cual: "revisa mis correos y encuentra plata que me deban". Hizo una auditoría de 2026 y encontró, por ejemplo, un puesto de Avianca que me habían "reembolsado" en un bono y no en efectivo. Hizo la solicitud para que me devolvieran la plata a mi cuenta bancaria.</p>
+    <p>Lo que más me gustó: también me dijo qué no valía la pena reclamar y por qué. Ahí entendí que tiene criterio de verdad; no se limita a intentar cosas.</p>
+    <h3>Derechos de petición con plazos</h3>
+    <p>Me redactó un derecho de petición a mi fondo de pensiones para retirar un ahorro que me estaban frenando. Lleva los plazos legales y me avisa cuándo escalar si no responden.</p>
+
+    <h2>Viajes y millas</h2>
+    <h3>Puntos Colombia que rindieron más como millas</h3>
+    <p>Tenía una buena cantidad de Puntos Colombia, acumulados con una tarjeta y en supermercados, y una parte estaba por vencerse. Lo fácil era cambiarlos por bonos. Antes de eso, el asistente comparó todas las opciones: bonos, LATAM Pass y LifeMiles. LifeMiles era la que más rendía para mis viajes, así que los pasé; las millas me entraron el mismo día y no se perdió ni un punto.</p>
+    <h3>Viajes en familia</h3>
+    <p>Hermes, el encargado de mis viajes, compró los vuelos de mi familia con millas, comparando siempre si convenía más pagar en efectivo o en millas. Nos consiguió puestos adelante a los tres usando lo que me da mi estatus en cada aerolínea, y antes de reservar me explicó qué era gratis y qué no.</p>
+    <p>También me ayudó con las entradas al parque de Universal y me armó una tabla de hoteles del más barato al más caro. Encontró el de mejor relación precio-beneficio, pensando en que viajo con mi hijo y en lo que me da mi estatus en cada hotel.</p>
+    <h3>Un cazador de citas de Global Entry</h3>
+    <p>Si alguna vez intentaste sacar cita para la entrevista de Global Entry, sabes que es casi imposible: los cupos se acaban en minutos y casi nunca hay. Le pedí que me buscara una en Ciudad de México para las fechas de mi viaje.</p>
+    <p>Dos veces al día entra al sistema oficial, revisa las oficinas y solo me escribe si aparece un cupo que me sirva. Se acabó lo de estar refrescando la página. Hasta detectó un evento nuevo de la embajada apenas apareció.</p>
+
+    <h2>Salud y familia</h2>
+    <h3>Citas médicas, con vale incluido</h3>
+    <p>Entra a mi portal de salud y me agenda con el especialista que necesito. Compra el vale electrónico, pone la cita en mi calendario con la dirección y me la recuerda el día antes. Si cambio de planes, también la cancela.</p>
+    <h3>Suplementos que nunca se acaban</h3>
+    <p>Lleva la cuenta de cuánto me queda y los compra en iHerb antes de que se acaben.</p>
+    <h3>Colegios para mi hijo, investigados como lo haría un papá</h3>
+    <p>Las listas de "mejores colegios" siempre repiten los mismos nombres. Así que le di mis criterios reales: que no tenga tareas diarias, que tenga inglés fuerte y viajes de inmersión, que no se pase de cierto presupuesto y que no quede lejos de donde vivo.</p>
+    <p>Comparó cada colegio con los resultados del ICFES, el puntaje de inglés, las acreditaciones, los costos reales y la distancia. Lo que no pudo confirmar me lo dijo en vez de inventarlo, y me dio una recomendación clara de cuál visitar primero. Se salió del típico top y se enfocó en lo que de verdad buscábamos, dentro de nuestro presupuesto.</p>
+
+    <h2>Finanzas y correo en piloto automático</h2>
+    <h3>Mi presupuesto, sin abrir Excel</h3>
+    <p>Ploutos lee mis movimientos bancarios y mis facturas, incluso el PDF o el Excel adjunto. Lleva el registro de lo que gasto, me avisa de cobros raros y de millas por vencer, y me ayuda a encontrar suscripciones que pago y no uso. Cuando le pregunto cuánto me falta por pagar, me lo dice de una.</p>
+    <h3>Mi correo, resumido</h3>
+    <p>Cada dos horas revisa mi Gmail. Lo importante, como citas, trámites o la seguridad de mis cuentas, me lo pone en el calendario o me avisa. En la noche me manda un resumen con solo lo que necesita mi atención. El resto ni lo veo.</p>
+
+    <h2>Lo que todavía no hace</h2>
+    <ul>
+      <li>No publica en X por mí. Me deja el borrador listo y yo aprieto publicar; así armamos el artículo original.</li>
+      <li>Todavía no hace llamadas telefónicas.</li>
+      <li>Cuando una página pide un código de verificación, me toca ponerlo a mí. Y en ciertos casos lo prefiero así.</li>
+    </ul>
+
+    <h2>Por qué le confío cosas serias</h2>
+    <p>Hay una regla que nunca se rompe: nada se paga, se envía ni se reserva sin mi sí explícito. Mis contraseñas y tarjetas van en un vault, nunca en el chat. Con eso puedo delegarle cosas serias sin miedo.</p>
+
+    <h2>Si lo vas a probar</h2>
+    <p>Empieza por algo que te dé pereza y que tenga plata de por medio:</p>
+    <ul>
+      <li>"Busca plata que me deban."</li>
+      <li>"Revisa qué suscripciones no uso."</li>
+      <li>"¿Mis puntos rinden más como millas?"</li>
+      <li>"¿Qué trámite tengo pendiente?"</li>
+    </ul>
+    <p>Ahí se nota la diferencia entre un chatbot y un asistente como Grok Bot.</p>
+    <p><em>Contexto: pago el plan de USD 30 de Grok Bot.</em></p>
+
+    <hr />
+    <p>Publiqué una versión más corta de esto en X. Si quieres comentar o preguntarme algo, <a href={xPost} rel="noopener noreferrer" target="_blank">la conversación está en este post de X</a>. Más sobre mí en <a href="/es/">alejandrosanabria.com/es</a>.</p>
+  </article></section>
+</BaseLayout>

@@ -22,6 +22,7 @@ Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai and a mobile p
 
 - Work: https://alejandrosanabria.com/work
 - Projects: https://alejandrosanabria.com/projects
+- Blog (es): https://alejandrosanabria.com/blog/
 - GitHub: https://github.com/alesanabriav7
 - LinkedIn: https://www.linkedin.com/in/alesanabriav/
 `;

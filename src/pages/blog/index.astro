@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { SITE_URL, personId, websiteId } from "../../data/site";
+import { posts, postPath } from "../../data/posts";
+
+const blogJsonLd = {
+  "@type": "Blog",
+  "@id": `${SITE_URL}/blog/#blog`,
+  url: `${SITE_URL}/blog/`,
+  name: "Blog de Alejandro Sanabria",
+  inLanguage: "es",
+  isPartOf: { "@id": websiteId },
+  author: { "@id": personId },
+  blogPost: posts.map((post) => ({ "@id": `${SITE_URL}${postPath(post.slug)}#article` })),
+};
+---
+
+<BaseLayout
+  title="Blog | Alejandro Sanabria, Forward Deployed Engineer"
+  description="Blog de Alejandro Sanabria, Forward Deployed Engineer en Bogotá: notas sobre agentes de IA, asistentes y cómo los uso en la vida real."
+  lang="es"
+  jsonLd={blogJsonLd}
+>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Blog</p><h1>Escritos</h1><p>Notas de Alejandro Sanabria sobre agentes de IA y cómo los uso de verdad.</p></div></section>
+  <section class="section"><div class="shell article-list">
+    {posts.map((post) => (
+      <article lang={post.lang}>
+        <time datetime={post.datePublished}>{post.datePublished}</time>
+        <div><h2><a href={postPath(post.slug)}>{post.title}</a></h2><p>{post.description}</p></div>
+      </article>
+    ))}
+  </div></section>
+</BaseLayout>
