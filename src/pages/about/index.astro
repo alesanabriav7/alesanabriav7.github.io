@@ -6,7 +6,7 @@ const aboutJsonLd = {
   "@type": "AboutPage",
   "@id": `${SITE_URL}/about/#webpage`,
   url: `${SITE_URL}/about/`,
-  name: "About Alejandro Sanabria (alesanabriav)",
+  name: "About Alejandro Sanabria Villescas (alesanabriav)",
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   about: { "@id": personId },
@@ -15,7 +15,6 @@ const aboutJsonLd = {
 const profiles = [
   { label: "LinkedIn", href: profileLinks.linkedin },
   { label: "GitHub (alesanabriav7)", href: profileLinks.github },
-  { label: "GitHub (alesanabriav)", href: profileLinks.githubLegacy },
   { label: "X (@alesanabriav)", href: profileLinks.x },
   { label: "App Store developer page", href: profileLinks.appStore },
   { label: "Platzi teacher profile", href: profileLinks.platzi },
@@ -23,8 +22,8 @@ const profiles = [
 ---
 
 <BaseLayout
-  title="About Alejandro Sanabria | Forward Deployed Engineer (AI, Bogotá)"
-  description="About Alejandro Sanabria (alesanabriav): Forward Deployed Engineer at Wonderful.ai in Bogotá, Colombia, iOS and mobile platform engineer, Platzi teacher, and maker of the Cifro iPhone app."
+  title="Alejandro Sanabria Villescas (alesanabriav) | About"
+  description="Alejandro Sanabria Villescas, alesanabriav online. Forward Deployed Engineer at Wonderful in Bogotá, former iOS & Android lead at Platzi, Platzi teacher, maker of Cifro."
   ogType="profile"
   jsonLd={aboutJsonLd}
   alternates={[
@@ -32,20 +31,20 @@ const profiles = [
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria</h1><p>Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful.ai</a>, based in Bogotá, Colombia. I build AI agents and integrations for real customer workflows. Alejandro Sanabria Villescas is a Forward Deployed Engineer in Bogotá, Colombia.</p></div></section>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia, and an iOS &amp; Android engineer.</p></div></section>
   <section class="section tint"><div class="shell prose">
     <h2>Background</h2>
-    <p>Alejandro Sanabria, known online as <strong>alesanabriav</strong>, started as a frontend developer and moved into mobile platforms and full-stack products.</p>
+    <p>I started as a frontend developer and moved into mobile and full-stack products.</p>
     <ul>
-      <li><strong>Wonderful.ai</strong> — Forward Deployed Engineer building AI agents and integrations around customer workflows.</li>
-      <li><strong>Platzi</strong> — an 8+ year mobile chapter, from one of Platzi's first mobile engineers to leading iOS and Android platform work, including the move from React Native to native Swift and Kotlin. He also teaches courses on Platzi.</li>
-      <li><strong>Brand Spa</strong> — co-founded a digital agency and led its engineering for nearly five years, building web products with PHP, Laravel, Ruby on Rails, WordPress, React, and Node.js.</li>
-      <li><strong>Baubap</strong> — a short engineering management chapter getting Baubap's first iOS version moving.</li>
+      <li><strong>Wonderful</strong>: Forward Deployed Engineer. I build AI agents and integrations for customer workflows.</li>
+      <li><strong>Platzi</strong>: 8+ years on mobile. I joined as one of Platzi's first mobile engineers and ended up leading iOS and Android, including the move from React Native to native Swift and Kotlin. I also teach courses on Platzi.</li>
+      <li><strong>Brand Spa</strong>: I co-founded a digital agency and ran its engineering for almost five years. We built web products with PHP, Laravel, Ruby on Rails, WordPress, React and Node.js.</li>
+      <li><strong>Baubap</strong>: a short stint as engineering manager to get Baubap's first iOS app out.</li>
     </ul>
-    <h2>Products and tools</h2>
-    <p>He publishes <a href="/cifro/">Cifro</a>, a private-by-design iPhone budget app built with SwiftUI and Apple Foundation Models, and open-source developer tools such as <a href="/projects/appstore-tools/">appstore-tools</a>, <a href="/projects/screenshots-ios/">screenshots-ios</a>, and <a href="/projects/ios-architect/">ios-architect-skill</a>.</p>
-    <h2>Focus</h2>
-    <p>iOS, Swift, SwiftUI, Android, Kotlin, React Native, TypeScript, AI agents and workflows, and App Store delivery automation.</p>
+    <h2>Things I've built</h2>
+    <p><a href="/cifro/">Cifro</a> is my budget app for iPhone, made with SwiftUI and Apple Foundation Models. I also publish open-source tools: <a href="/projects/appstore-tools/">appstore-tools</a> (App Store Connect CLI), <a href="/projects/screenshots-ios/">screenshots-ios</a> (iOS simulator screenshots) and <a href="/projects/ios-architect/">ios-architect-skill</a> (iOS architecture skills for Claude Code). All of them are on the <a href="/projects/">projects page</a>.</p>
+    <h2>What I work with</h2>
+    <p>Swift, SwiftUI, Kotlin, React Native, TypeScript, AI agents and App Store release automation.</p>
     <h2>Profiles</h2>
     <ul>{profiles.map((p) => <li><a href={p.href} rel="me noopener noreferrer" target="_blank">{p.label}</a></li>)}</ul>
     <p><a href="/es/" hreflang="es" lang="es">Versión en español</a></p>

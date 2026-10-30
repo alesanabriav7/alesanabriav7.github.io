@@ -2,14 +2,42 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const projects = [
-  { title: "Cifro", text: "A published private-by-design iOS finance app with on-device AI for transaction parsing, budget suggestions, insights, and review rituals.", href: "/cifro", cta: "Explore Cifro" },
-  { title: "iOS Architecture Skill", text: "A reusable architecture and planning workflow for building iOS features with deliberate boundaries and verification.", href: "/projects/ios-architect/", cta: "How it works" },
-  { title: "App Store Tools", text: "Command-line tooling for App Store Connect metadata and build delivery workflows.", href: "/projects/appstore-tools/", cta: "How it works" },
-  { title: "Screenshots iOS", text: "Deterministic simulator screenshot capture for App Store assets, visual checks, and CI workflows.", href: "/projects/screenshots-ios/", cta: "How it works" },
+  {
+    title: "Cifro",
+    text: "Budget app for iPhone. Free, no ads, no account, no bank login. You log expenses by typing, by voice or by scanning a receipt. I built it with SwiftUI and Apple Foundation Models, and the AI runs on the phone.",
+    links: [
+      { href: "/cifro/", label: "Cifro page" },
+      { href: "https://apps.apple.com/app/id6759523370", label: "App Store" },
+    ],
+  },
+  {
+    title: "appstore-tools",
+    text: "TypeScript CLI and library for App Store Connect. It lists your apps, builds an IPA, reads and updates App Store metadata, and uploads builds.",
+    links: [
+      { href: "/projects/appstore-tools/", label: "App Store Connect CLI" },
+      { href: "https://github.com/alesanabriav7/appstore-tools", label: "GitHub" },
+    ],
+  },
+  {
+    title: "screenshots-ios",
+    text: "CLI for iOS simulator screenshots. It builds the app, sets the simulator status bar, launches it on the screen you choose with preview data, and saves the image. Settings live in a JSON file.",
+    links: [
+      { href: "/projects/screenshots-ios/", label: "iOS simulator screenshot CLI" },
+      { href: "https://github.com/alesanabriav7/screenshots-ios", label: "GitHub" },
+    ],
+  },
+  {
+    title: "ios-architect-skill",
+    text: "Skills for Claude Code and OpenClaw covering SwiftUI feature architecture, GRDB persistence, Swift concurrency tests and visual checks.",
+    links: [
+      { href: "/projects/ios-architect/", label: "iOS architecture skills" },
+      { href: "https://github.com/alesanabriav7/ios-architect-skill", label: "GitHub" },
+    ],
+  },
 ];
 ---
 
-<BaseLayout title="AI & Developer Tools Projects" description="Shipped products and open-source workflow tools by Alejandro Sanabria.">
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Projects</p><h1>Apps and developer tools by Alejandro Sanabria</h1><p>These products and tools address recurring engineering work: structuring an iOS feature, preparing a release, capturing consistent app state, and using on-device AI in a real product.</p></div></section>
-  <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}>{project.cta} →</a></article>)}</div></div></section>
+<BaseLayout title="Projects by Alejandro Sanabria: Cifro, appstore-tools, screenshots-ios" description="Apps and open-source tools I build and use: Cifro for iPhone, an App Store Connect CLI, an iOS simulator screenshot CLI and iOS skills for AI coding agents.">
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Projects</p><h1>Things I've built</h1><p>One iPhone app and three open-source tools. I use the tools to build and release the app.</p></div></section>
+  <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><p>{project.links.map((link, i) => <>{i > 0 && " · "}<a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a></>)}</p></article>)}</div></div></section>
 </BaseLayout>

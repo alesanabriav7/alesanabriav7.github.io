@@ -47,7 +47,7 @@ interface CifroCopy {
 export const cifroCopy: Record<CifroLang, CifroCopy> = {
   en: {
     meta: {
-      title: "Cifro — Budget Planner & Expense Tracker for iPhone with Private AI",
+      title: "Cifro App: Budget Planner & Expense Tracker for iPhone, No Bank Login",
       description:
         "Cifro is a budget planner and expense tracker for iPhone. Know if you're on track this month, see your daily spending limit, and ask private on-device AI about your money. No bank login, ads, or tracking.",
       ogAlt: "Cifro budget planner on iPhone showing whether the month is on track",
@@ -81,8 +81,8 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     highlights: ["Daily spending limit", "Budgets by category", "Private on-device AI", "Receipt scanning", "Voice and Siri", "iCloud sync"],
     featuresHeading: {
       eyebrow: "Features",
-      title: "Everything you need to stay on budget.",
-      body: "A calm, native iPhone app that answers the questions that matter before the month gets away from you.",
+      title: "What Cifro does",
+      body: "Cifro tells you three things: if the month is on track, how much you can spend per day, and where the money went.",
     },
     features: [
       {
@@ -90,7 +90,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         eyebrow: "Budget pace",
         title: "A budget planner that tells you if you're on track",
         body:
-          "Open Cifro and read the verdict first — “You're on pace” or “You're spending a bit fast” — with the exact daily limit to finish the month within budget.",
+          "Open Cifro and read the verdict first (“You're on pace” or “You're spending a bit fast”) with the exact daily limit to finish the month within budget.",
         points: ["Daily spending limit for the rest of the month", "Projection for month-end spending", "Expected savings against your monthly income"],
         image: "home",
         alt: "Cifro Home with the month verdict, daily limit, pace chart and metrics",
@@ -100,7 +100,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         eyebrow: "Spending tracker",
         title: "See where your money goes",
         body:
-          "One stacked bar splits the month by category, by group, or by intention — well spent, necessary, or unnecessary. Tap any row to open those exact expenses.",
+          "One stacked bar splits the month by category, by group, or by intention: well spent, necessary, or unnecessary. Tap any row to open those exact expenses.",
         points: ["Categories, groups and intention views", "Share of spending for every category", "Budget next to what you spent"],
         image: "where",
         alt: "Cifro “Where it goes” with a stacked bar and a category list",
@@ -120,7 +120,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         eyebrow: "Private AI",
         title: "Ask Cifro about your money",
         body:
-          "Ask “Am I on track?”, “What can I cut this month?” or “How am I doing vs. last month?”. Cifro AI answers with your real numbers using Apple Intelligence on your iPhone — the conversation never leaves the device.",
+          "Ask “Am I on track?”, “What can I cut this month?” or “How am I doing vs. last month?”. Cifro AI answers with your real numbers using Apple Intelligence on your iPhone. The conversation never leaves the device.",
         points: ["Answers based on your own spending", "Runs on device with Apple Intelligence", "Month context available on every iPhone"],
         image: "assistant",
         alt: "Cifro AI with the month in context and suggested questions",
@@ -153,7 +153,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         { title: "No account or bank login", body: "Start without an email, password or bank connection. Cifro is useful from the first expense." },
         { title: "No ads, no tracking", body: "No advertising and no third-party analytics. Your spending is not someone else's dataset." },
         { title: "Your iPhone, your iCloud", body: "Data lives on your iPhone and syncs through your own private iCloud. Face ID or Touch ID can lock the app." },
-        { title: "AI on device", body: "Suggestions and Cifro AI run on your iPhone. Only exchange rates are fetched from the internet — never your data." },
+        { title: "AI on device", body: "Suggestions and Cifro AI run on your iPhone. Only exchange rates are fetched from the internet, never your data." },
       ],
     },
     faqHeading: { eyebrow: "FAQ", title: "Questions about Cifro." },
@@ -185,7 +185,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
   },
   es: {
     meta: {
-      title: "Cifro — App de presupuesto y control de gastos para iPhone con IA",
+      title: "Cifro: app de presupuesto para iPhone sin conectar tu banco",
       description:
         "Cifro es una app de presupuesto y control de gastos para iPhone. Sabe si vas bien este mes, conoce tu límite de gasto diario y pregúntale a una IA privada por tu dinero. Sin conectar tu banco, sin anuncios ni rastreo.",
       ogAlt: "Cifro, app de presupuesto en iPhone, mostrando si el mes va bien",
@@ -219,8 +219,8 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     highlights: ["Límite de gasto diario", "Presupuesto por categoría", "IA privada en tu iPhone", "Escaneo de recibos", "Voz y Siri", "Sincronización iCloud"],
     featuresHeading: {
       eyebrow: "Funciones",
-      title: "Todo para cumplir tu presupuesto.",
-      body: "Una app nativa y tranquila que responde lo importante antes de que el mes se te escape.",
+      title: "Qué hace Cifro",
+      body: "Cifro te dice tres cosas: si el mes va bien, cuánto puedes gastar al día y en qué se te fue la plata.",
     },
     features: [
       {
@@ -228,7 +228,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         eyebrow: "Ritmo del presupuesto",
         title: "Una app de presupuesto que te dice si vas bien",
         body:
-          "Abre Cifro y lee primero el veredicto — “Vas en ritmo” o “Vas un poco rápido” — con el límite diario exacto para cerrar el mes dentro del presupuesto.",
+          "Abre Cifro y lee primero el veredicto (“Vas en ritmo” o “Vas un poco rápido”) con el límite diario exacto para cerrar el mes dentro del presupuesto.",
         points: ["Límite de gasto diario para lo que queda del mes", "Proyección de gasto al cierre", "Ahorro esperado frente a tu ingreso mensual"],
         image: "home",
         alt: "Inicio de Cifro con el veredicto del mes, límite diario, gráfica de ritmo y métricas",
@@ -238,7 +238,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         eyebrow: "Control de gastos",
         title: "Mira a dónde se va tu dinero",
         body:
-          "Una sola barra divide el mes por categoría, por grupo o por intención — bien invertido, necesario o innecesario. Toca cualquier fila para ver esos gastos exactos.",
+          "Una sola barra divide el mes por categoría, por grupo o por intención: bien invertido, necesario o innecesario. Toca cualquier fila para ver esos gastos exactos.",
         points: ["Vistas por categoría, grupo e intención", "Porcentaje del gasto de cada categoría", "Presupuesto junto a lo gastado"],
         image: "where",
         alt: "“A dónde se va” en Cifro con una barra apilada y la lista de categorías",
@@ -258,7 +258,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         eyebrow: "IA privada",
         title: "Pregúntale a Cifro por tu dinero",
         body:
-          "Pregunta “¿Voy bien este mes?”, “¿Qué puedo recortar?” o “¿Cómo voy frente al mes pasado?”. Cifro IA responde con tus números reales usando Apple Intelligence en tu iPhone — la conversación nunca sale del dispositivo.",
+          "Pregunta “¿Voy bien este mes?”, “¿Qué puedo recortar?” o “¿Cómo voy frente al mes pasado?”. Cifro IA responde con tus números reales usando Apple Intelligence en tu iPhone. La conversación nunca sale del dispositivo.",
         points: ["Respuestas basadas en tus propios gastos", "Corre en tu iPhone con Apple Intelligence", "Contexto del mes en cualquier iPhone"],
         image: "assistant",
         alt: "Cifro IA con el contexto del mes y preguntas sugeridas",
@@ -291,7 +291,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
         { title: "Sin cuenta ni banco", body: "Empieza sin correo, contraseña ni conexión bancaria. Cifro es útil desde el primer gasto." },
         { title: "Sin anuncios ni rastreo", body: "Sin publicidad y sin analíticas de terceros. Tus gastos no son los datos de nadie más." },
         { title: "Tu iPhone, tu iCloud", body: "Tus datos viven en tu iPhone y se sincronizan con tu propio iCloud privado. Face ID o Touch ID pueden bloquear la app." },
-        { title: "IA en tu dispositivo", body: "Las sugerencias y Cifro IA corren en tu iPhone. Solo se consultan tasas de cambio en internet — nunca tus datos." },
+        { title: "IA en tu dispositivo", body: "Las sugerencias y Cifro IA corren en tu iPhone. Solo se consultan tasas de cambio en internet, nunca tus datos." },
       ],
     },
     faqHeading: { eyebrow: "Preguntas", title: "Preguntas sobre Cifro." },

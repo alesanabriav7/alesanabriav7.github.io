@@ -8,19 +8,19 @@ const profileJsonLd = {
   "@type": "ProfilePage",
   "@id": "https://alejandrosanabria.com/#webpage",
   url: "https://alejandrosanabria.com/",
-  name: `${SITE_NAME} — ${SITE_HANDLE}`,
+  name: `${SITE_NAME} (${SITE_HANDLE})`,
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   description:
-    "Forward Deployed Engineer at Wonderful.ai, building AI agents and integrations for customer workflows.",
+    "Alejandro Sanabria, Forward Deployed Engineer at Wonderful in Bogotá. iOS & Android engineer.",
 };
 const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.datePublished))[0];
 ---
 
 <BaseLayout
   variant="profile"
-  title={`${SITE_NAME} | Forward Deployed Engineer & AI`}
-  description="Alejandro Sanabria builds AI agents and integrations as a Forward Deployed Engineer at Wonderful.ai. Explore his public products and developer tools."
+  title={`${SITE_NAME} | Forward Deployed Engineer in Bogotá`}
+  description="I'm Alejandro Sanabria, a Forward Deployed Engineer at Wonderful in Bogotá. I build AI agents for customer workflows and ship iOS apps and developer tools."
   ogType="profile"
   jsonLd={profileJsonLd}
   alternates={homeAlternates}
@@ -30,7 +30,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
       <div class="sidebar-inner">
         <div class="avatar" aria-hidden="true">AS</div>
         <h1 class="sidebar-name">{SITE_NAME}</h1>
-        <p class="subtitle">Forward Deployed Engineer at Wonderful.ai · AI agents & integrations</p>
+        <p class="subtitle">Forward Deployed Engineer at Wonderful · iOS &amp; Android · Bogotá</p>
         <nav class="social-links" aria-label="Social links">
           <a href="https://www.linkedin.com/in/alesanabriav/" target="_blank" rel="me noopener noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
@@ -53,8 +53,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
           <a href="#about">About</a>
           <a href="#work">Selected Work</a>
           <a href="#building">Building Now</a>
-          <a href="#beliefs">Beliefs</a>
-          <a href="#tech">Tech</a>
+                    <a href="#tech">Tech</a>
         </nav>
       </div>
     </aside>
@@ -63,9 +62,9 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
       <section id="about" class="profile-section">
         <div class="fade-on-scroll">
           <h2>About</h2>
-          <p>I'm Alejandro Sanabria Villescas, a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful.ai</a>, based in Bogotá. I build AI agents and integrations for real customer workflows.</p>
-          <p>My work connects customer needs, product decisions, implementation, and verification. A background in mobile platforms and full-stack products helps me carry those decisions into working software.</p>
-          <p>Explore my <a href="/work/">forward deployed engineering work</a> and <a href="/projects/">public apps and developer tools</a>.</p>
+          <p>I'm Alejandro Sanabria Villescas, a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá. I build AI agents and integrations that run on customers' real workflows.</p>
+          <p>Before this I spent 8+ years on mobile at Platzi. I joined as one of the first mobile engineers and ended up leading iOS and Android. On the side I ship Cifro, a budget app for iPhone, and small CLI tools for App Store releases.</p>
+          <p>More on <a href="/work/">where I've worked</a> and <a href="/projects/">the apps and tools I've built</a>.</p>
           {latestPost && (
             <p class="latest-post"><strong>Latest post:</strong> <a href={postPath(latestPost.slug)} hreflang={latestPost.lang}>{latestPost.title}</a>{latestPost.lang === "es" ? " (in Spanish)" : ""}</p>
           )}
@@ -77,44 +76,44 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
           <h2>Selected Work</h2>
           <div class="work-grid">
             <article class="work-card">
-              <div class="work-card-header"><h3>Wonderful.ai</h3><span class="work-type">forward deployed engineering</span></div>
-              <p>I build AI agents and integrations around customer workflows, connecting product constraints with implementation and verification.</p>
-              <div class="work-tags"><span>FDE</span><span>AI Workflows</span><span>Customer Context</span><span>Implementation</span></div>
-              <a class="work-link" href="/work/">Explore my engineering work</a>
+              <div class="work-card-header"><h3>Wonderful</h3><span class="work-type">forward deployed engineering</span></div>
+              <p>I build AI agents for Wonderful's customers and wire them into the systems those customers already use.</p>
+              <div class="work-tags"><span>AI agents</span><span>Integrations</span></div>
+              <a class="work-link" href="/work/">Where I've worked</a>
             </article>
             <article class="work-card">
-              <div class="work-card-header"><h3>iOS Workflow Systems</h3><span class="work-type">workflow tooling</span></div>
-              <p>Reusable workflow patterns for iOS architecture, implementation planning, code review, validation, App Store operations, and screenshot generation. The workflows make architecture decisions, review, and verification explicit.</p>
-              <div class="work-tags"><span>Claude Code</span><span>OpenClaw</span><span>Skills</span><span>AI workflows</span></div>
-              <a class="work-link" href="/projects/ios-architect/">ios-architect-skill</a>
+              <div class="work-card-header"><h3>iOS skills for coding agents</h3><span class="work-type">open source</span></div>
+              <p>Instructions I wrote for Claude Code and OpenClaw so they build SwiftUI features with clear feature boundaries, GRDB for storage, tests, and a visual check at the end.</p>
+              <div class="work-tags"><span>Claude Code</span><span>OpenClaw</span><span>SwiftUI</span><span>GRDB</span></div>
+              <a class="work-link" href="/projects/ios-architect/">iOS architecture skills for Claude Code</a>
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Cifro</h3><span class="work-type">finance app</span></div>
-              <p>A published private-by-design iOS finance app built with SwiftUI and Apple Foundation Models. Cifro uses on-device AI for transaction parsing, budget bucket suggestions, daily insights, and a review ritual — no Cifro account, no ads or third-party tracking, and optional sync through your private iCloud account.</p>
+              <p>A free budget app for iPhone. You log an expense by typing "15 lunch", by voice, or by scanning a receipt. No account, no bank login, no ads. The AI runs on the phone with Apple Foundation Models.</p>
               <div class="work-tags"><span>SwiftUI</span><span>Foundation Models</span><span>On-device AI</span><span>Finance</span></div>
-              <a class="work-link" href="/cifro/">Explore Cifro</a>
+              <a class="work-link" href="/cifro/">Cifro budget app</a>
             </article>
             <article class="work-card">
-              <div class="work-card-header"><h3>Release &amp; Screenshot Automation</h3><span class="work-type">iOS automation</span></div>
-              <p>Command-line tooling that supports the mobile delivery workflow: App Store Connect metadata and build upload automation, plus deterministic iOS simulator screenshot capture for App Store assets, regression checks, and CI pipelines.</p>
+              <div class="work-card-header"><h3>Release tooling</h3><span class="work-type">CLI tools</span></div>
+              <p>Two CLIs I use to ship my own apps. appstore-tools uploads builds and edits App Store metadata. screenshots-ios takes the same simulator screenshots every time.</p>
               <div class="work-tags"><span>TypeScript</span><span>App Store Connect</span><span>Simulator</span><span>Automation</span></div>
-              <a class="work-link" href="/projects/appstore-tools/">appstore-tools</a>
-              <a class="work-link" href="/projects/screenshots-ios/">screenshots-ios</a>
+              <a class="work-link" href="/projects/appstore-tools/">appstore-tools (App Store Connect CLI)</a>
+              <a class="work-link" href="/projects/screenshots-ios/">screenshots-ios (simulator screenshots)</a>
             </article>
             <article class="work-card">
-              <div class="work-card-header"><h3>Platzi Mobile Platform</h3><span class="work-type">mobile platform leadership</span></div>
-              <p>8+ year mobile chapter growing from one of Platzi's first mobile engineers into leading iOS and Android platform work. Helped move the platform from React Native to native Swift and Kotlin, scale shared standards, and build the team behind Apple-recognized Foundation Models and Liquid Glass work.</p>
+              <div class="work-card-header"><h3>Platzi</h3><span class="work-type">iOS &amp; Android lead</span></div>
+              <p>8+ years. I joined as one of Platzi's first mobile engineers and ended up leading iOS and Android. We moved the app from React Native to native Swift and Kotlin. Apple recognized the team's Foundation Models and Liquid Glass work.</p>
               <div class="work-tags"><span>iOS</span><span>Android</span><span>Swift</span><span>Kotlin</span><span>React Native</span></div>
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Brand Spa</h3><span class="work-type">co-founder · full-stack engineering</span></div>
-              <p>Co-founded and led the engineering side of a digital agency for nearly five years, serving as the principal engineer across client projects. Built custom web solutions from architecture to production using PHP, Laravel, Ruby on Rails, WordPress, React, and Node.js.</p>
-              <div class="work-tags"><span>B2B Products</span><span>Full-Stack</span><span>React</span><span>Laravel</span><span>Rails</span></div>
+              <p>I co-founded a digital agency and ran its engineering for almost five years. I was the main engineer on client projects, built with PHP, Laravel, Ruby on Rails, WordPress, React and Node.js.</p>
+              <div class="work-tags"><span>B2B</span><span>Full-Stack</span><span>React</span><span>Laravel</span><span>Rails</span></div>
             </article>
             <article class="work-card">
-              <div class="work-card-header"><h3>Baubap iOS First Version</h3><span class="work-type">short engineering management chapter</span></div>
-              <p>A short engineering management chapter focused on getting Baubap's first iOS version moving quickly: aligning product, mobile architecture, delivery constraints, and team execution around a compressed timeline.</p>
-              <div class="work-tags"><span>iOS</span><span>Engineering Management</span><span>Delivery</span><span>Product Alignment</span></div>
+              <div class="work-card-header"><h3>Baubap</h3><span class="work-type">engineering manager</span></div>
+              <p>A short stint as engineering manager to get Baubap's first iOS app out on a tight timeline.</p>
+              <div class="work-tags"><span>iOS</span><span>Engineering Management</span></div>
             </article>
           </div>
         </div>
@@ -123,28 +122,8 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
       <section id="building" class="profile-section">
         <div class="fade-on-scroll">
           <h2>What I'm Building Now</h2>
-          <p>I'm applying AI to the parts of engineering where context, review, and repetition usually slow teams down.</p>
-          <p>The work is practical: tools and workflows I use to plan, build, verify, package, and release real software.</p>
-          <div class="building-grid">
-            <div class="building-item"><span class="label">FDE work</span><span class="desc">Working close to customer workflows, product needs, AI systems, and implementation</span></div>
-            <div class="building-item"><span class="label">Architecture workflows</span><span class="desc">Breaking down ambiguous work into implementation plans and trade-offs</span></div>
-            <div class="building-item"><span class="label">Review loops</span><span class="desc">Using AI to preserve context, check assumptions, and verify output</span></div>
-            <div class="building-item"><span class="label">Delivery tooling</span><span class="desc">Automating screenshots, App Store work, and release steps</span></div>
-            <div class="building-item"><span class="label">Product systems</span><span class="desc">Building apps like Cifro where AI supports useful product behavior</span></div>
-          </div>
-          <p>The goal is not AI for its own sake. The goal is better engineering judgment, faster feedback, and working systems.</p>
-        </div>
-      </section>
-
-      <section id="beliefs" class="profile-section">
-        <div class="fade-on-scroll">
-          <h2>What I Believe</h2>
-          <ul class="beliefs-list">
-            <li><strong>Quality is a multiplier, not a tax.</strong> Investing in architecture pays back in velocity every sprint.</li>
-            <li><strong>Lead from the code, not above it.</strong> An EM who can't evaluate a technical trade-off is managing blind.</li>
-            <li><strong>AI becomes useful when it lands inside a workflow.</strong> The hard part is connecting model behavior to a real job, team, and outcome.</li>
-            <li><strong>AI should augment judgment, not replace it.</strong> The goal is better engineering, not just faster output.</li>
-          </ul>
+          <p>Agents at Wonderful, updates to <a href="/cifro/">Cifro</a>, and the release tools I use for it: <a href="/projects/appstore-tools/">appstore-tools</a> and <a href="/projects/screenshots-ios/">screenshots-ios</a>.</p>
+          <p>I still read the code. If I can't judge a trade-off, I shouldn't be the one approving it.</p>
         </div>
       </section>
 
@@ -152,7 +131,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
         <div class="fade-on-scroll">
           <h2>Tech</h2>
           <div class="tech-row">
-            <span class="tech-badge">Swift</span><span class="tech-badge">SwiftUI</span><span class="tech-badge">iOS</span><span class="tech-badge">Kotlin</span><span class="tech-badge">Android</span><span class="tech-badge">React Native</span><span class="tech-badge">TypeScript</span><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">Laravel</span><span class="tech-badge">Ruby on Rails</span><span class="tech-badge">Tuist</span><span class="tech-badge">GRDB</span><span class="tech-badge">Claude Code</span><span class="tech-badge">OpenClaw</span><span class="tech-badge">Foundation Models</span><span class="tech-badge">Forward Deployed Engineering</span><span class="tech-badge">AI Workflows</span><span class="tech-badge">Product Engineering</span><span class="tech-badge">Git</span>
+            <span class="tech-badge">Swift</span><span class="tech-badge">SwiftUI</span><span class="tech-badge">iOS</span><span class="tech-badge">Kotlin</span><span class="tech-badge">Android</span><span class="tech-badge">React Native</span><span class="tech-badge">TypeScript</span><span class="tech-badge">React</span><span class="tech-badge">Node.js</span><span class="tech-badge">Laravel</span><span class="tech-badge">Ruby on Rails</span><span class="tech-badge">Tuist</span><span class="tech-badge">GRDB</span><span class="tech-badge">Claude Code</span><span class="tech-badge">OpenClaw</span><span class="tech-badge">Foundation Models</span><span class="tech-badge">Git</span>
           </div>
         </div>
       </section>

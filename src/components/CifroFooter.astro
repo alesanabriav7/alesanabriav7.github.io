@@ -12,6 +12,7 @@ const t = cifroCopy[lang].footer;
 <footer class="cifro-footer">
   <div class="shell footer-content">
     <p>{t.tagline}</p>
+    <p>{lang === "es" ? <>Hecha por <a href="/es/">Alejandro Sanabria</a> en Bogotá</> : <>Made by <a href="/">Alejandro Sanabria</a> in Bogotá</>}</p>
     <nav aria-label={t.navLabel}>
       <a href="/cifro/privacy/">{t.privacy}</a>
       <a href="/cifro/support/">{t.support}</a>

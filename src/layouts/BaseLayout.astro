@@ -97,6 +97,6 @@ const structuredDataJson = structuredDataNodes.length > 0
     <main>
       <slot />
     </main>
-    {variant === "cifro" ? <CifroFooter lang={lang} /> : variant === "personal" ? <SiteFooter /> : null}
+    {variant === "cifro" ? <CifroFooter lang={lang} /> : variant === "personal" ? <SiteFooter lang={lang} /> : null}
   </body>
 </html>

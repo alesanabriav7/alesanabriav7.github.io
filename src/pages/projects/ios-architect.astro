@@ -1,18 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="iOS Architecture Skills" description="A toolkit for AI coding agents building SwiftUI apps: feature architecture, persistence, platform integration, testing, and visual checks.">
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Public developer tools</p><h1>iOS architecture skills for AI coding agents</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful.ai</p></div></section>
+<BaseLayout title="iOS Architecture Skills for Claude Code and AI Coding Agents" description="Open-source skills that help Claude Code and other coding agents build SwiftUI features with clear boundaries, GRDB persistence, tests and visual checks.">
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Open source</p><h1>iOS architecture skills for Claude Code and AI coding agents</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
   <section class="section tint"><div class="shell prose">
-<p>When an AI coding agent adds an iOS feature, the architecture needs to remain understandable after the first implementation. iOS Architecture Skills provides focused workflows for that work, from feature boundaries to persistence and verification.</p>
+<p>Coding agents like Claude Code can write a SwiftUI feature fast. The problem is what the codebase looks like after ten of them. These skills tell the agent how to split a feature, where storage goes (GRDB), how to test async code, and how to check the screen at the end.</p>
 <p>The toolkit covers SwiftUI, Clean Architecture, MVVM, GRDB, and Swift concurrency. Its skills divide responsibilities across architecture, reusable UI, platform integration, storage, testing, and visual checks.</p>
 <h2>What the toolkit covers</h2>
-<p>Use the architecture workflow for a new app or feature. Use the focused persistence workflow for a database change, or the testing workflow for concurrency and dependency injection work. This separation helps match the scope of the workflow to the scope of the change.</p>
+<p>Use the architecture skill for a new app or feature. Use the persistence skill for a database change, and the testing skill for concurrency and dependency injection. Pick the one that matches the size of the change.</p>
 <h2>Start with one feature</h2>
 <p>Choose a small feature and describe its expected behavior, storage needs, and existing project conventions. Follow the repository&#x27;s installation instructions, then inspect the generated changes and verify the result in your project.</p>
 <h2>Questions</h2>
 <p><strong>Is this an application framework?</strong> It is a toolkit of instructions and supporting resources for coding agents.</p>
 <p><strong>Does it include persistence guidance?</strong> Yes. The public toolkit includes focused GRDB workflows alongside broader feature architecture.</p>
 <p><strong>Does it replace code review?</strong> Review and verification remain part of using generated changes in a real project.</p>
-<p><a href="https://github.com/alesanabriav7/ios-architect-skill">Read the repository and installation guide</a>.</p><h2>Try it on a bounded feature</h2><p>Install the toolkit using the repository instructions, then start with a request that states behavior and constraints:</p><pre><code>Add a saved-items feature to this SwiftUI app. Persist items locally, follow the existing feature boundaries, and verify that saved items survive relaunch.</code></pre><p>Review the domain model, storage boundary, and view state separately. The result still needs to compile and be exercised in your app.</p><p><a href="/projects/">Explore all projects →</a></p></div></section>
+<p><a href="https://github.com/alesanabriav7/ios-architect-skill">Read the repository and installation guide</a>.</p><h2>Try it on a bounded feature</h2><p>Install the toolkit using the repository instructions, then start with a request that states behavior and constraints:</p><pre><code>Add a saved-items feature to this SwiftUI app. Persist items locally, follow the existing feature boundaries, and verify that saved items survive relaunch.</code></pre><p>Review the domain model, storage boundary, and view state separately. The result still needs to compile and be exercised in your app.</p><p>For the visual check, I use <a href="/projects/screenshots-ios/">screenshots-ios</a>. <a href="/projects/">All projects →</a></p></div></section>
 </BaseLayout>

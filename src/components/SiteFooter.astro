@@ -1,7 +1,30 @@
+---
+const { lang = "en" } = Astro.props;
+const es = lang === "es";
+const siteLinks = es
+  ? [
+      { href: "/work/", label: "Trabajo" },
+      { href: "/projects/", label: "Proyectos" },
+      { href: "/cifro/es/", label: "Cifro" },
+      { href: "/blog/", label: "Blog" },
+      { href: "/about/", label: "Sobre mí" },
+      { href: "/es/", label: "Inicio en español" },
+    ]
+  : [
+      { href: "/work/", label: "Work" },
+      { href: "/projects/", label: "Projects" },
+      { href: "/cifro/", label: "Cifro" },
+      { href: "/blog/", label: "Blog" },
+      { href: "/about/", label: "About" },
+    ];
+---
 <footer class="site-footer">
   <div class="shell footer-content">
     <p>© {new Date().getFullYear()} Alejandro Sanabria</p>
-    <nav aria-label="Social links">
+    <nav aria-label={es ? "Enlaces del sitio" : "Site links"}>
+      {siteLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+    <nav aria-label={es ? "Redes" : "Social links"}>
       <a href="https://www.linkedin.com/in/alesanabriav/" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
       <a href="https://github.com/alesanabriav7" rel="me noopener noreferrer" target="_blank">GitHub</a>
       <a href="https://x.com/alesanabriav" rel="me noopener noreferrer" target="_blank">X</a>

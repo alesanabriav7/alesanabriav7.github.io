@@ -46,9 +46,9 @@ export const personNode = {
   url: `${SITE_URL}/`,
   image: absoluteUrl(DEFAULT_IMAGE),
   jobTitle: "Forward Deployed Engineer",
-  worksFor: { "@type": "Organization", name: "Wonderful.ai" },
+  worksFor: { "@type": "Organization", name: "Wonderful", url: "https://wonderful.ai" },
   description:
-    "Forward Deployed Engineer at Wonderful.ai, building AI agents, integrations, and tools for real customer workflows.",
+    "Forward Deployed Engineer at Wonderful in Bogotá. Builds AI agents for customer workflows, the Cifro iPhone app, and App Store developer tools. iOS & Android engineer.",
   homeLocation: {
     "@type": "Place",
     name: "Bogotá, Colombia",
