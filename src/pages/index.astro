@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { SITE_NAME, SITE_HANDLE, personId, websiteId, profileLinks, homeAlternates } from "../data/site";
+import { posts, postPath } from "../data/posts";
 import "../styles/profile.css";
 
 const profileJsonLd = {
@@ -13,6 +14,7 @@ const profileJsonLd = {
   description:
     "Forward Deployed Engineer at Wonderful.ai, building AI agents and integrations for customer workflows.",
 };
+const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.datePublished))[0];
 ---
 
 <BaseLayout
@@ -61,9 +63,12 @@ const profileJsonLd = {
       <section id="about" class="profile-section">
         <div class="fade-on-scroll">
           <h2>About</h2>
-          <p>I'm Alejandro Sanabria, a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful.ai</a>. I build AI agents and integrations for real customer workflows.</p>
+          <p>I'm Alejandro Sanabria Villescas, a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful.ai</a>, based in Bogotá. I build AI agents and integrations for real customer workflows.</p>
           <p>My work connects customer needs, product decisions, implementation, and verification. A background in mobile platforms and full-stack products helps me carry those decisions into working software.</p>
           <p>Explore my <a href="/work/">forward deployed engineering work</a> and <a href="/projects/">public apps and developer tools</a>.</p>
+          {latestPost && (
+            <p class="latest-post"><strong>Latest post:</strong> <a href={postPath(latestPost.slug)} hreflang={latestPost.lang}>{latestPost.title}</a>{latestPost.lang === "es" ? " (in Spanish)" : ""}</p>
+          )}
         </div>
       </section>
 

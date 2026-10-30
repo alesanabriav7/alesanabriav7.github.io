@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { SITE_NAME, SITE_HANDLE, personId, websiteId, profileLinks, homeAlternates } from "../../data/site";
+import { posts, postPath } from "../../data/posts";
 import "../../styles/profile.css";
 
 const profileJsonLd = {
@@ -14,12 +15,13 @@ const profileJsonLd = {
   description:
     "Forward Deployed Engineer en Wonderful.ai, construye agentes de IA e integraciones para flujos de trabajo de clientes.",
 };
+const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.datePublished))[0];
 ---
 
 <BaseLayout
   variant="profile"
   title={`${SITE_NAME} | Forward Deployed Engineer e IA en Bogotá`}
-  description="Alejandro Sanabria (alesanabriav) es Forward Deployed Engineer en Wonderful.ai en Bogotá, Colombia. Construye agentes de IA, integraciones y apps iOS como Cifro."
+  description="Alejandro Sanabria Villescas (alesanabriav) es Forward Deployed Engineer en Wonderful.ai en Bogotá, Colombia. Construye agentes de IA, integraciones y apps iOS como Cifro."
   lang="es"
   ogType="profile"
   jsonLd={profileJsonLd}
@@ -63,9 +65,12 @@ const profileJsonLd = {
       <section id="about" class="profile-section">
         <div class="fade-on-scroll">
           <h2>Sobre mí</h2>
-          <p>Soy Alejandro Sanabria, Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful.ai</a>. Construyo agentes de IA e integraciones para flujos de trabajo reales de clientes.</p>
+          <p>Soy Alejandro Sanabria Villescas, Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful.ai</a>, en Bogotá. Construyo agentes de IA e integraciones para flujos de trabajo reales de clientes.</p>
           <p>Mi trabajo conecta las necesidades del cliente, las decisiones de producto, la implementación y la verificación. Mi experiencia en plataformas móviles y productos full-stack me ayuda a convertir esas decisiones en software que funciona.</p>
           <p>Conoce mi <a href="/work/">trabajo como Forward Deployed Engineer</a> y mis <a href="/projects/">apps públicas y herramientas para desarrolladores</a> (en inglés).</p>
+          {latestPost && (
+            <p class="latest-post"><strong>Último post:</strong> <a href={postPath(latestPost.slug)}>{latestPost.title}</a></p>
+          )}
         </div>
       </section>
 
