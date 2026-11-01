@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { SITE_URL, personId, websiteId, profileLinks } from "../../../data/site";
+
+const aboutJsonLd = {
+  "@type": "AboutPage",
+  "@id": `${SITE_URL}/es/sobre-mi/#webpage`,
+  url: `${SITE_URL}/es/sobre-mi/`,
+  inLanguage: "es",
+  name: "Sobre Alejandro Sanabria Villescas (alesanabriav)",
+  isPartOf: { "@id": websiteId },
+  mainEntity: { "@id": personId },
+  about: { "@id": personId },
+};
+
+const profiles = [
+  { label: "LinkedIn", href: profileLinks.linkedin },
+  { label: "GitHub (alesanabriav7)", href: profileLinks.github },
+  { label: "X (@alesanabriav)", href: profileLinks.x },
+  { label: "Mis apps en la App Store", href: profileLinks.appStore },
+  { label: "Mi perfil de profe en Platzi", href: profileLinks.platzi },
+];
+---
+
+<BaseLayout
+  title="Alejandro Sanabria Villescas (alesanabriav) | Sobre mí"
+  description="Soy Alejandro Sanabria Villescas, alesanabriav en internet. Forward Deployed Engineer en Wonderful, en Bogotá. Lideré iOS y Android en Platzi, doy cursos ahí y hago Cifro."
+  lang="es"
+  ogType="profile"
+  jsonLd={aboutJsonLd}
+  alternates={[
+    { hreflang: "en", href: "/about/" },
+    { hreflang: "es", href: "/es/sobre-mi/" },
+    { hreflang: "x-default", href: "/about/" },
+  ]}
+>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Sobre mí · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>Me conocen como Alejandro Sanabria, y en internet como alesanabriav. Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>, vivo en Bogotá, Colombia, y soy ingeniero iOS y Android.</p></div></section>
+  <section class="section tint"><div class="shell prose">
+    <h2>Trayectoria</h2>
+    <p>Empecé como desarrollador frontend y de ahí pasé a productos móviles y full-stack.</p>
+    <ul>
+      <li><strong>Wonderful</strong>: Forward Deployed Engineer. Construyo agentes de IA e integraciones para los procesos de los clientes.</li>
+      <li><strong>Platzi</strong>: más de 8 años en móvil. Entré como uno de los primeros ingenieros móviles de Platzi y terminé liderando iOS y Android, incluida la migración de React Native a Swift y Kotlin nativos. También doy cursos en Platzi.</li>
+      <li><strong>Brand Spa</strong>: cofundé una agencia digital y llevé la parte de ingeniería durante casi cinco años. Hacíamos productos web con PHP, Laravel, Ruby on Rails, WordPress, React y Node.js.</li>
+      <li><strong>Baubap</strong>: estuve poco tiempo como engineering manager para sacar la primera app iOS de Baubap.</li>
+    </ul>
+    <h2>Lo que he construido</h2>
+    <p><a href="/cifro/es/">Cifro</a> es mi app de presupuesto para iPhone, hecha con SwiftUI y Apple Foundation Models. También publico herramientas de código abierto: <a href="/projects/appstore-tools/">appstore-tools</a> (una CLI para App Store Connect), <a href="/projects/screenshots-ios/">screenshots-ios</a> (capturas del simulador de iOS) y <a href="/projects/ios-architect/">ios-architect-skill</a> (skills de arquitectura iOS para Claude Code). Están todas en la <a href="/projects/">página de proyectos</a>.</p>
+    <p>A veces escribo en el <a href="/blog/">blog</a>, por ejemplo sobre <a href="/blog/grok-bot-casos-reales/">los casos reales de mi equipo de bots en Grok Bot</a>.</p>
+    <h2>Con qué trabajo</h2>
+    <p>Swift, SwiftUI, Kotlin, React Native, TypeScript, agentes de IA y automatización de releases en la App Store.</p>
+    <h2>Dónde encontrarme</h2>
+    <ul>{profiles.map((p) => <li><a href={p.href} rel="me noopener noreferrer" target="_blank">{p.label}</a></li>)}</ul>
+    <p><a href="/es/">Inicio en español</a> · <a href="/about/" hreflang="en" lang="en">English version</a></p>
+  </div></section>
+</BaseLayout>

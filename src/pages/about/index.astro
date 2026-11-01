@@ -28,6 +28,7 @@ const profiles = [
   jsonLd={aboutJsonLd}
   alternates={[
     { hreflang: "en", href: "/about/" },
+    { hreflang: "es", href: "/es/sobre-mi/" },
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
@@ -47,6 +48,6 @@ const profiles = [
     <p>Swift, SwiftUI, Kotlin, React Native, TypeScript, AI agents and App Store release automation.</p>
     <h2>Profiles</h2>
     <ul>{profiles.map((p) => <li><a href={p.href} rel="me noopener noreferrer" target="_blank">{p.label}</a></li>)}</ul>
-    <p><a href="/es/" hreflang="es" lang="es">Versión en español</a></p>
+    <p><a href="/es/sobre-mi/" hreflang="es" lang="es">Versión en español</a></p>
   </div></section>
 </BaseLayout>
