@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE_NAME, SITE_HANDLE, personId, websiteId, profileLinks, homeAlternates } from "../../data/site";
+import { SITE_NAME, SITE_HANDLE, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../../data/site";
 import { posts, postPath } from "../../data/posts";
 import "../../styles/profile.css";
 
@@ -12,6 +12,7 @@ const profileJsonLd = {
   name: `${SITE_NAME} (${SITE_HANDLE})`,
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
+  primaryImageOfPage: { "@id": personImageId },
   description:
     "Alejandro Sanabria, Forward Deployed Engineer en Wonderful en Bogotá. Ingeniero iOS y Android.",
 };
@@ -30,7 +31,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
   <div class="page-layout">
     <aside class="sidebar">
       <div class="sidebar-inner">
-        <div class="avatar" aria-hidden="true">AS</div>
+        <img class="avatar-photo" src={PERSON_PHOTO_SMALL} srcset={`${PERSON_PHOTO_SMALL} 192w, ${PERSON_PHOTO} 460w`} sizes="96px" alt={PERSON_PHOTO_ALT} width="96" height="96" decoding="async" />
         <h1 class="sidebar-name">{SITE_NAME}</h1>
         <p class="subtitle">Forward Deployed Engineer en Wonderful · iOS y Android · Bogotá</p>
         <nav class="social-links" aria-label="Redes">

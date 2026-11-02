@@ -464,3 +464,12 @@
     transition: none;
   }
 }
+
+.profile-page .avatar-photo {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+}

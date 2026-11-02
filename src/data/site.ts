@@ -2,7 +2,10 @@ export const SITE_URL = "https://alejandrosanabria.com";
 export const SITE_NAME = "Alejandro Sanabria";
 export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
-export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria";
+export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at Apple WWDC";
+export const PERSON_PHOTO = "/alejandro-sanabria-villescas.jpg";
+export const PERSON_PHOTO_SMALL = "/alejandro-sanabria-villescas-192.jpg";
+export const PERSON_PHOTO_ALT = "Alejandro Sanabria Villescas";
 
 export const profileLinks = {
   linkedin: "https://www.linkedin.com/in/alesanabriav/",
@@ -34,6 +37,18 @@ export function absoluteUrl(path: string): string {
 
 export const personId = `${SITE_URL}/#person`;
 export const websiteId = `${SITE_URL}/#website`;
+export const personImageId = `${SITE_URL}/#person-image`;
+
+export const personImageNode = {
+  "@type": "ImageObject",
+  "@id": personImageId,
+  url: absoluteUrl(PERSON_PHOTO),
+  contentUrl: absoluteUrl(PERSON_PHOTO),
+  width: 460,
+  height: 460,
+  caption: "Alejandro Sanabria Villescas (alesanabriav)",
+  name: "Alejandro Sanabria Villescas",
+};
 
 export const personNode = {
   "@type": "Person",
@@ -44,7 +59,7 @@ export const personNode = {
   additionalName: "Villescas",
   alternateName: ["Alejandro Sanabria Villescas", SITE_HANDLE, "alesanabriav7"],
   url: `${SITE_URL}/`,
-  image: absoluteUrl(DEFAULT_IMAGE),
+  image: personImageNode,
   jobTitle: "Forward Deployed Engineer",
   worksFor: { "@type": "Organization", name: "Wonderful", url: "https://wonderful.ai" },
   description:

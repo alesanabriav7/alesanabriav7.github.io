@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { SITE_URL, personId, websiteId, profileLinks } from "../../../data/site";
+import { SITE_URL, PERSON_PHOTO, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks } from "../../../data/site";
 
 const aboutJsonLd = {
-  "@type": "AboutPage",
+  "@type": ["AboutPage", "ProfilePage"],
   "@id": `${SITE_URL}/es/sobre-mi/#webpage`,
   url: `${SITE_URL}/es/sobre-mi/`,
   inLanguage: "es",
@@ -11,6 +11,7 @@ const aboutJsonLd = {
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   about: { "@id": personId },
+  primaryImageOfPage: { "@id": personImageId },
 };
 
 const profiles = [
@@ -34,7 +35,7 @@ const profiles = [
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Sobre mí · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>Me conocen como Alejandro Sanabria, y en internet como alesanabriav. Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>, vivo en Bogotá, Colombia, y soy ingeniero iOS y Android.</p></div></section>
+  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">Sobre mí · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>Me conocen como Alejandro Sanabria, y en internet como alesanabriav. Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>, vivo en Bogotá, Colombia, y soy ingeniero iOS y Android.</p></div></section>
   <section class="section tint"><div class="shell prose">
     <h2>Trayectoria</h2>
     <p>Empecé como desarrollador frontend y de ahí pasé a productos móviles y full-stack.</p>

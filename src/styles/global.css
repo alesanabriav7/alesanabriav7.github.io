@@ -98,3 +98,5 @@ img { display: block; max-width: 100%; }
 /* Project guides: keep code examples within the reading column. */
 .prose pre { overflow-x: auto; padding: 1rem; border: 1px solid currentColor; border-radius: 0.5rem; }
 .prose pre code { font-size: 0.875rem; }
+
+.person-photo { display: block; width: 160px; height: 160px; margin: 0 0 1.75rem; border-radius: 50%; object-fit: cover; }

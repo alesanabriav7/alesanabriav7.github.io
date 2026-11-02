@@ -1,15 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE_URL, personId, websiteId, profileLinks } from "../../data/site";
+import { SITE_URL, PERSON_PHOTO, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks } from "../../data/site";
 
 const aboutJsonLd = {
-  "@type": "AboutPage",
+  "@type": ["AboutPage", "ProfilePage"],
   "@id": `${SITE_URL}/about/#webpage`,
   url: `${SITE_URL}/about/`,
   name: "About Alejandro Sanabria Villescas (alesanabriav)",
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   about: { "@id": personId },
+  primaryImageOfPage: { "@id": personImageId },
 };
 
 const profiles = [
@@ -32,7 +33,7 @@ const profiles = [
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia, and an iOS &amp; Android engineer.</p></div></section>
+  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia, and an iOS &amp; Android engineer.</p></div></section>
   <section class="section tint"><div class="shell prose">
     <h2>Background</h2>
     <p>I started as a frontend developer and moved into mobile and full-stack products.</p>
