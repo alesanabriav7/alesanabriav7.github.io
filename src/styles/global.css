@@ -99,4 +99,7 @@ img { display: block; max-width: 100%; }
 .prose pre { overflow-x: auto; padding: 1rem; border: 1px solid currentColor; border-radius: 0.5rem; }
 .prose pre code { font-size: 0.875rem; }
 
+.about-figure { margin: 1.75rem 0; max-width: 420px; }
+.about-figure img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.about-figure figcaption { margin-top: .5rem; font-size: .875rem; opacity: .75; }
 .person-photo { display: block; width: 160px; height: 160px; margin: 0 0 1.75rem; border-radius: 50%; object-fit: cover; }

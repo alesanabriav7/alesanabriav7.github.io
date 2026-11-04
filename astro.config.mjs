@@ -13,6 +13,9 @@ export default defineConfig({
             { url: "https://alejandrosanabria.com/alejandro-sanabria-villescas.jpg", caption: "Alejandro Sanabria" },
             { url: "https://alejandrosanabria.com/alejandro-sanabria.jpg", caption: "Alejandro Sanabria" },
           ];
+          if (["/about/", "/es/sobre-mi/"].includes(path)) {
+            item.img.push({ url: "https://alejandrosanabria.com/alejandro-sanabria-wwdc26.jpg", caption: "Alejandro Sanabria" });
+          }
         }
         return item;
       },

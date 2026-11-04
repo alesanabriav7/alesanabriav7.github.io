@@ -50,6 +50,17 @@ export const personImageNode = {
   name: "Alejandro Sanabria Villescas",
 };
 
+export const WWDC26_PHOTO = "/alejandro-sanabria-wwdc26.jpg";
+export const wwdc26ImageNode = {
+  "@type": "ImageObject",
+  "@id": `${SITE_URL}/#wwdc26-image`,
+  url: absoluteUrl(WWDC26_PHOTO),
+  contentUrl: absoluteUrl(WWDC26_PHOTO),
+  width: 1200,
+  height: 1200,
+  caption: "Alejandro Sanabria at WWDC26, Apple Park",
+};
+
 export const personNode = {
   "@type": "Person",
   "@id": personId,
@@ -59,7 +70,7 @@ export const personNode = {
   additionalName: "Villescas",
   alternateName: ["Alejandro Sanabria Villescas", SITE_HANDLE, "alesanabriav7"],
   url: `${SITE_URL}/`,
-  image: personImageNode,
+  image: [personImageNode, wwdc26ImageNode],
   jobTitle: "Forward Deployed Engineer",
   worksFor: { "@type": "Organization", name: "Wonderful", url: "https://wonderful.ai" },
   description:
