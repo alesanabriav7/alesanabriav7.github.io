@@ -3,8 +3,8 @@ export const SITE_NAME = "Alejandro Sanabria";
 export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
 export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at Apple WWDC";
-export const PERSON_PHOTO = "/alejandro-sanabria-villescas.jpg";
-export const PERSON_PHOTO_SMALL = "/alejandro-sanabria-villescas-192.jpg";
+export const PERSON_PHOTO = "/alejandro-sanabria-villescas.jpg?v=20261104";
+export const PERSON_PHOTO_SMALL = "/alejandro-sanabria-villescas-192.jpg?v=20261104";
 export const PERSON_PHOTO_ALT = "Alejandro Sanabria Villescas";
 
 export const profileLinks = {
@@ -44,8 +44,8 @@ export const personImageNode = {
   "@id": personImageId,
   url: absoluteUrl(PERSON_PHOTO),
   contentUrl: absoluteUrl(PERSON_PHOTO),
-  width: 460,
-  height: 460,
+  width: 1200,
+  height: 1200,
   caption: "Alejandro Sanabria",
   name: "Alejandro Sanabria Villescas",
 };
