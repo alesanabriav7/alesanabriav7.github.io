@@ -46,7 +46,7 @@ export const personImageNode = {
   contentUrl: absoluteUrl(PERSON_PHOTO),
   width: 460,
   height: 460,
-  caption: "Alejandro Sanabria Villescas (alesanabriav)",
+  caption: "Alejandro Sanabria",
   name: "Alejandro Sanabria Villescas",
 };
 
