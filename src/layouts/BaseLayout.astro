@@ -12,6 +12,7 @@ import {
   absoluteUrl,
   personNode,
   websiteNode,
+  cifroAppNode,
 } from "../data/site";
 
 interface Props {
@@ -50,7 +51,7 @@ const imageUrl = absoluteUrl(image);
 const metadataSiteName = variant === "cifro" ? "Cifro" : SITE_NAME;
 
 const extraNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
-const identityNodes = variant === "cifro" ? [] : [personNode, websiteNode];
+const identityNodes = variant === "cifro" ? [] : [personNode, websiteNode, cifroAppNode];
 const structuredDataNodes = [...identityNodes, ...extraNodes];
 const structuredDataJson = structuredDataNodes.length > 0
   ? JSON.stringify({ "@context": "https://schema.org", "@graph": structuredDataNodes }).replace(/</g, "\\u003c")
