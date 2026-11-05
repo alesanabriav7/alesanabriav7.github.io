@@ -16,6 +16,7 @@ export const profileLinks = {
   x: "https://x.com/alesanabriav",
   appStore: "https://apps.apple.com/co/developer/alejandro-sanabria/id1801328559",
   platzi: "https://platzi.com/profes/alesanabriav/",
+  wikidata: "https://www.wikidata.org/wiki/Q142050521",
 };
 
 export const personSameAs = [
@@ -25,6 +26,7 @@ export const personSameAs = [
   profileLinks.x,
   profileLinks.appStore,
   profileLinks.platzi,
+  profileLinks.wikidata,
 ];
 
 export const homeAlternates = [
