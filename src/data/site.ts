@@ -2,6 +2,7 @@ import { cifroAppStoreUrl } from "./cifro";
 
 export const SITE_URL = "https://alejandrosanabria.com";
 export const SITE_NAME = "Alejandro Sanabria";
+export const FULL_NAME = "Alejandro Sanabria Villescas";
 export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
 export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at Apple WWDC";

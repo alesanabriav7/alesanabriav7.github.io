@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { SITE_NAME, SITE_HANDLE, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../data/site";
+import { SITE_NAME, FULL_NAME, SITE_HANDLE, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../data/site";
 import { posts, postPath } from "../data/posts";
 import "../styles/profile.css";
 
@@ -8,7 +8,7 @@ const profileJsonLd = {
   "@type": "ProfilePage",
   "@id": "https://alejandrosanabria.com/#webpage",
   url: "https://alejandrosanabria.com/",
-  name: `${SITE_NAME} (${SITE_HANDLE})`,
+  name: `${FULL_NAME} (${SITE_HANDLE})`,
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   primaryImageOfPage: { "@id": personImageId },
@@ -20,7 +20,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
 
 <BaseLayout
   variant="profile"
-  title={`${SITE_NAME} | Wonderful · software since 2012`}
+  title={`${FULL_NAME} | Wonderful · software since 2012`}
   description="Alejandro Sanabria Villescas, Forward Deployed Engineer at Wonderful in Bogotá. In technology since 2012: Brand Spa, then 8+ years on mobile at Platzi."
   ogType="profile"
   jsonLd={profileJsonLd}
@@ -30,7 +30,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
     <aside class="sidebar">
       <div class="sidebar-inner">
         <img class="avatar-photo" src={PERSON_PHOTO_SMALL} srcset={`${PERSON_PHOTO_SMALL} 192w, ${PERSON_PHOTO} 1200w`} sizes="96px" alt={PERSON_PHOTO_ALT} width="96" height="96" decoding="async" />
-        <h1 class="sidebar-name">{SITE_NAME}</h1>
+        <h1 class="sidebar-name">{FULL_NAME}</h1>
         <p class="subtitle">Forward Deployed Engineer at Wonderful · Bogotá</p>
         <nav class="social-links" aria-label="Social links">
           <a href="https://www.linkedin.com/in/alesanabriav/" target="_blank" rel="me noopener noreferrer">
@@ -64,7 +64,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
         <div class="fade-on-scroll">
           <h2>About</h2>
           <p>I'm Alejandro Sanabria Villescas, a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá. I sit with customers, turn real workflows into AI agents, and wire those agents into the systems they already run.</p>
-          <p>I've been working in technology since 2012, about 14 years. I co-founded Brand Spa and ran its engineering from December 2012 to October 2017, building B2B web products for clients. Then, from October 2017 to June 2026, I spent more than eight years on mobile at Platzi: I joined as one of the first mobile engineers and ended up leading iOS and Android, including the move from React Native to native Swift and Kotlin. On the side I ship Cifro, a budget app for iPhone, and small CLI tools for App Store releases.</p>
+          <p>I've been working in technology since 2012, about 14 years: I co-founded Brand Spa, then spent more than eight years on mobile at Platzi, and now I'm at Wonderful. On the side I ship Cifro, a budget app for iPhone, and small CLI tools for App Store releases.</p>
           <p>More on <a href="/work/">where I've worked</a> and <a href="/projects/">the apps and tools I've built</a>.</p>
           {latestPost && (
             <p class="latest-post"><strong>Latest post:</strong> <a href={postPath(latestPost.slug)} hreflang={latestPost.lang}>{latestPost.title}</a>{latestPost.lang === "es" ? " (in Spanish)" : ""}</p>
@@ -78,7 +78,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
           <div class="work-grid">
             <article class="work-card">
               <div class="work-card-header"><h3>Wonderful</h3><span class="work-type">forward deployed engineering</span></div>
-              <p>Since July 2026. I build AI agents for Wonderful's customers and wire them into the systems those customers already use.</p>
+              <p>I build AI agents for Wonderful's customers and wire them into the systems those customers already use.</p>
               <div class="work-tags"><span>AI agents</span><span>Integrations</span></div>
               <a class="work-link" href="/work/">Where I've worked</a>
             </article>
@@ -103,12 +103,12 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Brand Spa</h3><span class="work-type">co-founder · full-stack engineering</span></div>
-              <p>December 2012 – October 2017. I co-founded a digital agency and ran its engineering for almost five years. I was the main engineer on client projects: CMS platforms, e-commerce and quoting systems, built with PHP, Laravel, Ruby on Rails, WordPress, React and Node.js.</p>
+              <p>I co-founded a digital agency and ran its engineering for almost five years. B2B products for clients: CMS platforms, e-commerce and quoting systems.</p>
               <div class="work-tags"><span>B2B</span><span>Full-Stack</span><span>React</span><span>Laravel</span><span>Rails</span></div>
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Platzi</h3><span class="work-type">iOS &amp; Android lead</span></div>
-              <p>October 2017 – June 2026, 8+ years. I joined as one of Platzi's first mobile engineers and ended up leading iOS and Android. We moved the app from React Native to native Swift and Kotlin. Apple recognized the team's Foundation Models and Liquid Glass work.</p>
+              <p>8+ years. I joined as one of Platzi's first mobile engineers and ended up leading iOS and Android. We moved the app from React Native to native Swift and Kotlin. Apple recognized the team's Foundation Models and Liquid Glass work.</p>
               <div class="work-tags"><span>iOS</span><span>Android</span><span>Swift</span><span>Kotlin</span><span>React Native</span></div>
             </article>
           </div>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE_NAME, SITE_HANDLE, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../../data/site";
+import { SITE_NAME, FULL_NAME, SITE_HANDLE, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../../data/site";
 import { posts, postPath } from "../../data/posts";
 import "../../styles/profile.css";
 
@@ -9,7 +9,7 @@ const profileJsonLd = {
   "@id": "https://alejandrosanabria.com/es/#webpage",
   url: "https://alejandrosanabria.com/es/",
   inLanguage: "es",
-  name: `${SITE_NAME} (${SITE_HANDLE})`,
+  name: `${FULL_NAME} (${SITE_HANDLE})`,
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   primaryImageOfPage: { "@id": personImageId },
@@ -21,7 +21,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
 
 <BaseLayout
   variant="profile"
-  title={`${SITE_NAME} | Wonderful · tecnología desde 2012`}
+  title={`${FULL_NAME} | Wonderful · tecnología desde 2012`}
   description="Alejandro Sanabria Villescas, Forward Deployed Engineer en Wonderful, en Bogotá. En tecnología desde 2012: Brand Spa y después más de 8 años en móvil en Platzi."
   lang="es"
   ogType="profile"
@@ -32,7 +32,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
     <aside class="sidebar">
       <div class="sidebar-inner">
         <img class="avatar-photo" src={PERSON_PHOTO_SMALL} srcset={`${PERSON_PHOTO_SMALL} 192w, ${PERSON_PHOTO} 1200w`} sizes="96px" alt={PERSON_PHOTO_ALT} width="96" height="96" decoding="async" />
-        <h1 class="sidebar-name">{SITE_NAME}</h1>
+        <h1 class="sidebar-name">{FULL_NAME}</h1>
         <p class="subtitle">Forward Deployed Engineer en Wonderful · Bogotá</p>
         <nav class="social-links" aria-label="Redes">
           <a href="https://www.linkedin.com/in/alesanabriav/" target="_blank" rel="me noopener noreferrer">
@@ -66,7 +66,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
         <div class="fade-on-scroll">
           <h2>Sobre mí</h2>
           <p>Soy Alejandro Sanabria Villescas, Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>, en Bogotá. Trabajo con los clientes, traduzco sus procesos reales a agentes de IA y los conecto con los sistemas que ya usan.</p>
-          <p>Llevo en tecnología desde 2012, unos 14 años. Cofundé Brand Spa y llevé su ingeniería de diciembre de 2012 a octubre de 2017, con productos web B2B para clientes. Después, de octubre de 2017 a junio de 2026, estuve más de ocho años en móvil en Platzi: entré como uno de los primeros ingenieros móviles y terminé liderando iOS y Android, incluida la migración de React Native a Swift y Kotlin nativos. Por fuera hago <a href="/cifro/es/">Cifro, una app de presupuesto para iPhone</a>, y herramientas de línea de comandos para publicar en la App Store.</p>
+          <p>Llevo en tecnología desde 2012, unos 14 años: cofundé Brand Spa, después estuve más de ocho años en móvil en Platzi y ahora estoy en Wonderful. Por fuera hago <a href="/cifro/es/">Cifro, una app de presupuesto para iPhone</a>, y herramientas de línea de comandos para publicar en la App Store.</p>
           <p>Más sobre <a href="/work/">dónde he trabajado</a> y <a href="/es/proyectos/">las apps y herramientas que he hecho</a>.</p>
           {latestPost && (
             <p class="latest-post"><strong>Último post:</strong> <a href={postPath(latestPost.slug)}>{latestPost.title}</a></p>
@@ -80,7 +80,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
           <div class="work-grid">
             <article class="work-card">
               <div class="work-card-header"><h3>Wonderful</h3><span class="work-type">forward deployed engineering</span></div>
-              <p>Desde julio de 2026. Construyo agentes de IA para los clientes de Wonderful y los conecto con los sistemas que esos clientes ya usan.</p>
+              <p>Construyo agentes de IA para los clientes de Wonderful y los conecto con los sistemas que esos clientes ya usan.</p>
               <div class="work-tags"><span>Agentes de IA</span><span>Integraciones</span></div>
               <a class="work-link" href="/work/">Dónde he trabajado</a>
             </article>
@@ -105,12 +105,12 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Brand Spa</h3><span class="work-type">cofundador · ingeniería full-stack</span></div>
-              <p>De diciembre de 2012 a octubre de 2017. Cofundé una agencia digital y llevé su ingeniería casi cinco años. Fui el ingeniero principal en los proyectos de clientes: CMS, e-commerce y cotizadores, con PHP, Laravel, Ruby on Rails, WordPress, React y Node.js.</p>
+              <p>Cofundé una agencia digital y llevé su ingeniería casi cinco años. Productos B2B para clientes: CMS, e-commerce y cotizadores.</p>
               <div class="work-tags"><span>B2B</span><span>Full-Stack</span><span>React</span><span>Laravel</span><span>Rails</span></div>
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Platzi</h3><span class="work-type">líder iOS y Android</span></div>
-              <p>De octubre de 2017 a junio de 2026, más de 8 años. Entré como uno de los primeros ingenieros móviles de Platzi y terminé liderando iOS y Android. Pasamos la app de React Native a Swift y Kotlin nativos. Apple reconoció el trabajo del equipo con Foundation Models y Liquid Glass.</p>
+              <p>Más de 8 años. Entré como uno de los primeros ingenieros móviles de Platzi y terminé liderando iOS y Android. Pasamos la app de React Native a Swift y Kotlin nativos. Apple reconoció el trabajo del equipo con Foundation Models y Liquid Glass.</p>
               <div class="work-tags"><span>iOS</span><span>Android</span><span>Swift</span><span>Kotlin</span><span>React Native</span></div>
             </article>
           </div>
