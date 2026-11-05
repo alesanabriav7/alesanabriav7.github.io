@@ -23,8 +23,8 @@ const profiles = [
 ---
 
 <BaseLayout
-  title="Alejandro Sanabria Villescas (alesanabriav) | About"
-  description="Alejandro Sanabria Villescas, alesanabriav online. Forward Deployed Engineer at Wonderful in Bogotá, former iOS & Android lead at Platzi, Platzi teacher, maker of Cifro."
+  title="Alejandro Sanabria Villescas (alesanabriav) | since 2012"
+  description="Alejandro Sanabria Villescas (alesanabriav) at Wonderful in Bogotá. About 14 years in tech since 2012: Brand Spa, Platzi mobile, now agents in customer systems."
   ogType="profile"
   jsonLd={aboutJsonLd}
   alternates={[
@@ -33,21 +33,20 @@ const profiles = [
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia, and an iOS &amp; Android engineer.</p></div></section>
+  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia.</p></div></section>
   <section class="section tint"><div class="shell prose">
     <h2>Background</h2>
-    <p>I started as a frontend developer and moved into mobile and full-stack products.</p>
+    <p>I've worked in technology since 2012, about 14 years. I started in frontend, then built and led product engineering across web and mobile.</p>
     <ul>
-      <li><strong>Wonderful</strong>: Forward Deployed Engineer. I build AI agents and integrations for customer workflows.</li>
-      <li><strong>Platzi</strong>: 8+ years on mobile. I joined as one of Platzi's first mobile engineers and ended up leading iOS and Android, including the move from React Native to native Swift and Kotlin. I also teach courses on Platzi.</li>
-      <li><strong>Brand Spa</strong>: I co-founded a digital agency and ran its engineering for almost five years. We built web products with PHP, Laravel, Ruby on Rails, WordPress, React and Node.js.</li>
-      <li><strong>Baubap</strong>: a short stint as engineering manager to get Baubap's first iOS app out.</li>
+      <li><strong>Brand Spa</strong>: Co-founder. I ran engineering from December 2012 to October 2017. Client-facing B2B products: CMS platforms, e-commerce, quoting systems, website builders and internal tools.</li>
+      <li><strong>Platzi</strong>: More than eight years on mobile, October 2017 to June 2026. I joined as one of the first mobile engineers and later led iOS and Android, including the move from React Native to native Swift and Kotlin. Apple recognized the team's Foundation Models and Liquid Glass work. I also teach courses on Platzi.</li>
+      <li><strong>Wonderful</strong>: Forward Deployed Engineer, July 2026 to present. I build AI agents for customer workflows and connect them to the tools those customers already use.</li>
     </ul>
     <figure class="about-figure"><img src="/alejandro-sanabria-wwdc26.jpg" srcset="/alejandro-sanabria-wwdc26-800.jpg 800w, /alejandro-sanabria-wwdc26.jpg 1200w" sizes="(max-width: 480px) 100vw, 420px" alt="Alejandro Sanabria at WWDC26, Apple Park" width="1200" height="1200" loading="lazy" decoding="async" /><figcaption>At WWDC26, Apple Park.</figcaption></figure>
     <h2>Things I've built</h2>
     <p><a href="/cifro/">Cifro</a> is my budget app for iPhone, made with SwiftUI and Apple Foundation Models. I also publish open-source tools: <a href="/projects/appstore-tools/">appstore-tools</a> (App Store Connect CLI), <a href="/projects/screenshots-ios/">screenshots-ios</a> (iOS simulator screenshots) and <a href="/projects/ios-architect/">ios-architect-skill</a> (iOS architecture skills for Claude Code). All of them are on the <a href="/projects/">projects page</a>.</p>
     <h2>What I work with</h2>
-    <p>Swift, SwiftUI, Kotlin, React Native, TypeScript, AI agents and App Store release automation.</p>
+    <p>Swift, SwiftUI, Kotlin, React Native, TypeScript, and AI agents wired into existing customer systems. App Store release automation when I ship my own apps.</p>
     <h2>Profiles</h2>
     <ul>{profiles.map((p) => <li><a href={p.href} rel="me noopener noreferrer" target="_blank">{p.label}</a></li>)}</ul>
     <p><a href="/es/sobre-mi/" hreflang="es" lang="es">Versión en español</a></p>

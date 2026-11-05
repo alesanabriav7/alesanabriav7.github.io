@@ -53,6 +53,8 @@ img { display: block; max-width: 100%; }
 .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .card { display: flex; flex-direction: column; min-height: 100%; padding: 1.45rem; background: var(--paper); border: 1px solid var(--line); border-radius: 1rem; }
 .card.featured { background: var(--deep); border-color: var(--deep); color: white; }
+.card h2 { margin: 0; font-size: 1.45rem; line-height: 1.15; letter-spacing: -0.04em; }
+.card p.card-role { margin: 0.4rem 0 0.85rem; color: var(--accent-dark); font-size: 0.82rem; font-weight: 700; }
 .card h3 { margin: 0.35rem 0 0.75rem; font-size: 1.3rem; line-height: 1.1; letter-spacing: -0.035em; }
 .card p { margin: 0; color: var(--muted); }
 .card.featured p { color: #c9d4d1; }

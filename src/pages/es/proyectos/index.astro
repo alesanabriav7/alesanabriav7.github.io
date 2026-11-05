@@ -60,7 +60,7 @@ const projects = [
     { hreflang: "x-default", href: "/projects/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Proyectos · Alejandro Sanabria</p><h1>Lo que he construido</h1><p>Una app para iPhone y tres herramientas de código abierto. Las herramientas las uso para construir y publicar la app.</p></div></section>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Proyectos · Alejandro Sanabria</p><h1>Lo que he construido</h1><p>Una app para iPhone y tres herramientas de código abierto. Las herramientas las uso para construir y publicar la app. La trayectoria laboral está en <a href="/es/sobre-mi/">Sobre mí</a> y en <a href="/work/">dónde he trabajado</a>.</p></div></section>
   <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><p>{project.links.map((link, i) => <>{i > 0 && " · "}<a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a></>)}</p></article>)}</div>
   <p><a href="/es/sobre-mi/">Sobre mí</a> · <a href="/projects/" hreflang="en" lang="en">English version</a></p></div></section>
 </BaseLayout>

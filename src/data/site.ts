@@ -1,5 +1,8 @@
+import { cifroAppStoreUrl } from "./cifro";
+
 export const SITE_URL = "https://alejandrosanabria.com";
 export const SITE_NAME = "Alejandro Sanabria";
+export const FULL_NAME = "Alejandro Sanabria Villescas";
 export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
 export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at Apple WWDC";
@@ -14,6 +17,7 @@ export const profileLinks = {
   x: "https://x.com/alesanabriav",
   appStore: "https://apps.apple.com/co/developer/alejandro-sanabria/id1801328559",
   platzi: "https://platzi.com/profes/alesanabriav/",
+  wikidata: "https://www.wikidata.org/wiki/Q142050521",
 };
 
 export const personSameAs = [
@@ -23,6 +27,7 @@ export const personSameAs = [
   profileLinks.x,
   profileLinks.appStore,
   profileLinks.platzi,
+  profileLinks.wikidata,
 ];
 
 export const homeAlternates = [
@@ -73,8 +78,13 @@ export const personNode = {
   image: [personImageNode, wwdc26ImageNode],
   jobTitle: "Forward Deployed Engineer",
   worksFor: { "@type": "Organization", name: "Wonderful", url: "https://wonderful.ai" },
+  alumniOf: [
+    { "@type": "Organization", name: "Brand Spa" },
+    { "@type": "Organization", name: "Platzi", url: "https://platzi.com" },
+  ],
   description:
-    "Forward Deployed Engineer at Wonderful in Bogotá. Builds AI agents for customer workflows, the Cifro iPhone app, and App Store developer tools. iOS & Android engineer.",
+    "Forward Deployed Engineer at Wonderful in Bogotá. In technology since 2012: co-founded Brand Spa, led mobile at Platzi for 8+ years, and ships the Cifro iPhone app.",
+  disambiguatingDescription: "Not the tax lawyer Alejandro Sanabria Díaz at Pérez-Llorca.",
   homeLocation: {
     "@type": "Place",
     name: "Bogotá, Colombia",
@@ -96,6 +106,19 @@ export const personNode = {
     "App Store Connect automation",
   ],
   sameAs: personSameAs,
+};
+
+export const cifroAppNode = {
+  "@type": "SoftwareApplication",
+  "@id": `${SITE_URL}/cifro/#app`,
+  name: "Cifro",
+  applicationCategory: "FinanceApplication",
+  operatingSystem: "iOS",
+  url: `${SITE_URL}/cifro/`,
+  downloadUrl: cifroAppStoreUrl,
+  installUrl: cifroAppStoreUrl,
+  sameAs: cifroAppStoreUrl,
+  author: { "@id": personId },
 };
 
 export const websiteNode = {
