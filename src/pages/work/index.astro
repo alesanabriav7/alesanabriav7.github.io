@@ -9,7 +9,15 @@ const work = [
 ];
 ---
 
-<BaseLayout title={`${FULL_NAME}: Brand Spa, Platzi, Wonderful since 2012`} description="I've worked since 2012: Brand Spa engineering (Dec 2012–Oct 2017), Platzi mobile (Oct 2017–Jun 2026), Forward Deployed Engineer at Wonderful since July 2026.">
+<BaseLayout
+  title={`${FULL_NAME}: Brand Spa, Platzi, Wonderful since 2012`}
+  description="I've worked since 2012: Brand Spa engineering (Dec 2012–Oct 2017), Platzi mobile (Oct 2017–Jun 2026), Forward Deployed Engineer at Wonderful since July 2026."
+  alternates={[
+    { hreflang: "en", href: "/work/" },
+    { hreflang: "es", href: "/es/trabajo/" },
+    { hreflang: "x-default", href: "/work/" },
+  ]}
+>
   <section class="page-intro"><div class="shell"><p class="eyebrow">Work</p><h1>Where I've worked: Brand Spa, Platzi, Wonderful</h1><p>I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a>. I've been in technology since 2012, about 14 years: I co-founded Brand Spa, then led mobile at Platzi.</p></div></section>
   <section class="section tint"><div class="shell"><div class="card-grid">{work.map((item) => <article class="card"><h2>{item.title}</h2><p class="card-role">{item.type}</p><p>{item.text}</p><ul class="tag-list">{item.tags.map((tag) => <li>{tag}</li>)}</ul></article>)}</div></div></section>
   <section class="section"><div class="shell"><div class="section-heading"><p class="eyebrow">My own app</p><h2>Cifro</h2></div><div class="card-grid"><article class="card featured"><p class="eyebrow">Cifro</p><h3>A budget app for iPhone.</h3><p>SwiftUI and Apple Foundation Models, with the AI running on the phone. No Cifro account, ads or third-party tracking. Optional sync uses your private iCloud account.</p><a href="/cifro/">Cifro budget app →</a></article></div></div></section>

@@ -67,7 +67,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
           <h2>Sobre mí</h2>
           <p>Soy Alejandro Sanabria Villescas, Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>, en Bogotá. Trabajo con los clientes, traduzco sus procesos reales a agentes de IA y los conecto con los sistemas que ya usan.</p>
           <p>Llevo en tecnología desde 2012, unos 14 años: cofundé Brand Spa, después estuve más de ocho años en móvil en Platzi y ahora estoy en Wonderful. Por fuera hago <a href="/cifro/es/">Cifro, una app de presupuesto para iPhone</a>, y herramientas de línea de comandos para publicar en la App Store.</p>
-          <p>Más sobre <a href="/work/">dónde he trabajado</a> y <a href="/es/proyectos/">las apps y herramientas que he hecho</a>.</p>
+          <p>Más sobre <a href="/es/trabajo/">dónde he trabajado</a> y <a href="/es/proyectos/">las apps y herramientas que he hecho</a>.</p>
           {latestPost && (
             <p class="latest-post"><strong>Último post:</strong> <a href={postPath(latestPost.slug)}>{latestPost.title}</a></p>
           )}
@@ -82,7 +82,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
               <div class="work-card-header"><h3>Wonderful</h3><span class="work-type">forward deployed engineering</span></div>
               <p>Construyo agentes de IA para los clientes de Wonderful y los conecto con los sistemas que esos clientes ya usan.</p>
               <div class="work-tags"><span>Agentes de IA</span><span>Integraciones</span></div>
-              <a class="work-link" href="/work/">Dónde he trabajado</a>
+              <a class="work-link" href="/es/trabajo/">Dónde he trabajado</a>
             </article>
             <article class="work-card">
               <div class="work-card-header"><h3>Skills de iOS para agentes de código</h3><span class="work-type">open source</span></div>
@@ -135,7 +135,7 @@ const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.dat
       </section>
 
       <footer class="profile-footer">
-        <nav class="site-links" aria-label="Enlaces del sitio"><a href="/work/">Trabajo</a><a href="/es/proyectos/">Proyectos</a><a href="/cifro/es/">Cifro</a><a href="/blog/">Blog</a><a href="/es/sobre-mi/">Sobre mí</a><a href="/" hreflang="en" lang="en">English</a></nav>
+        <nav class="site-links" aria-label="Enlaces del sitio"><a href="/es/trabajo/">Trabajo</a><a href="/es/proyectos/">Proyectos</a><a href="/cifro/es/">Cifro</a><a href="/blog/">Blog</a><a href="/es/sobre-mi/">Sobre mí</a><a href="/" hreflang="en" lang="en">English</a></nav>
         <nav class="social-links" aria-label="Redes"><a href="https://www.linkedin.com/in/alesanabriav/" target="_blank" rel="me noopener noreferrer">LinkedIn</a><a href="https://github.com/alesanabriav7" target="_blank" rel="me noopener noreferrer">GitHub</a><a href={profileLinks.x} target="_blank" rel="me noopener noreferrer">X</a><a href={profileLinks.appStore} target="_blank" rel="me noopener noreferrer">App Store</a><a href={profileLinks.platzi} target="_blank" rel="me noopener noreferrer">Platzi</a></nav>
         <p class="copyright">© {new Date().getFullYear()} {SITE_NAME}</p>
       </footer>
