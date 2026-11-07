@@ -94,7 +94,7 @@ const structuredDataJson = structuredDataNodes.length > 0
     {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson}></script>}
   </head>
   <body class={`${variant}-page`}>
-    {variant === "cifro" ? <CifroHeader lang={lang} /> : variant === "personal" ? <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} /> : null}
+    {variant === "cifro" ? <CifroHeader lang={lang} /> : variant === "personal" ? <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} lang={lang} alternates={alternates} /> : null}
     <main>
       <slot />
     </main>
