@@ -57,7 +57,7 @@ export const home = {
     heroAlt: "Alejandro Sanabria at WWDC26 in Apple Park, holding his WWDC26 attendee badge",
     caption: "WWDC26 at Apple Park",
     about: [
-      `At <a href="https://wonderful.ai">Wonderful</a> I design and ship voice and chat AI agents for enterprises. I define the agent's behavior with the customer's team, integrate it with their CRMs and internal APIs, and validate it with evaluations and production monitoring before and after launch.`,
+      `At <a href="https://wonderful.ai">Wonderful</a> I design and ship AI agents for enterprises. I define their behavior with the customer's team, integrate them with CRMs and internal APIs, and build the apps that complete the workflow around the agent, so it hits the metrics that make it worth having. All of it is validated with evaluations and production monitoring.`,
       "Before that, more than a decade building products. Most of it in <strong>native iOS and Android</strong>: app architecture at scale, leading mobile teams, and migrating a large app from React Native to Swift and Kotlin. Earlier I co-founded Brand Spa and built full-stack B2B platforms.",
       `On the side I maintain <a href="/cifro/">Cifro</a>, an iPhone finance app with on-device AI built on Apple Foundation Models, and the open source tools I use to ship it.`,
     ],
@@ -75,7 +75,7 @@ export const home = {
     heroAlt: "Alejandro Sanabria en la WWDC26, en Apple Park, con su credencial de la WWDC26",
     caption: "En la WWDC26, en Apple Park",
     about: [
-      `En <a href="https://wonderful.ai">Wonderful</a> diseño y llevo a producción agentes de IA de voz y chat para empresas. Defino el comportamiento del agente con el equipo del cliente, lo integro con sus CRMs y APIs internas, y lo valido con evaluaciones y monitoreo en producción, antes y después del lanzamiento.`,
+      `En <a href="https://wonderful.ai">Wonderful</a> diseño y llevo a producción agentes de IA para empresas. Defino su comportamiento con el equipo del cliente, los integro con sus CRMs y APIs internas, y construyo las apps que completan el flujo alrededor del agente para que cumpla las métricas que justifican tenerlo. Todo se valida con evaluaciones y monitoreo en producción.`,
       "Antes de eso, más de una década construyendo producto. La mayor parte en <strong>iOS y Android nativos</strong>: arquitectura de apps a escala, liderazgo de equipos móviles y la migración de una app grande de React Native a Swift y Kotlin. Antes cofundé Brand Spa, donde construí plataformas B2B full-stack.",
       `Por fuera mantengo <a href="/cifro/es/">Cifro</a>, una app de finanzas para iPhone con IA on-device sobre Apple Foundation Models, y las herramientas open source con las que la publico.`,
     ],
@@ -87,12 +87,12 @@ export const home = {
 
 export const experience: Record<Lang, InsetItem[]> = {
   en: [
-    { title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "Jul 2026–now", live: true, body: "Voice and chat AI agents for enterprise customers: agent design, integrations with CRMs and internal APIs, evaluations and production monitoring." },
+    { title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "Jul 2026–now", live: true, body: "AI agents for enterprise customers, plus the apps that complete the workflow around them: agent design, CRM and API integrations, business metrics, evaluations and production monitoring." },
     { title: "Platzi", subtitle: "Mobile engineer to iOS & Android lead", meta: "Oct 2017–Jun 2026", body: "Joined as one of the first mobile engineers and grew into leading iOS and Android, including the move from React Native to native Swift and Kotlin." },
     { title: "Brand Spa", subtitle: "Co-founder · Full-stack engineering", meta: "Dec 2012–Oct 2017", body: "I co-founded the agency and ran engineering for almost five years: B2B client products like CMS platforms, e-commerce and quoting systems." },
   ],
   es: [
-    { title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "jul 2026–hoy", live: true, body: "Agentes de IA de voz y chat para clientes empresariales: diseño del agente, integraciones con CRMs y APIs internas, evaluaciones y monitoreo en producción." },
+    { title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "jul 2026–hoy", live: true, body: "Agentes de IA para clientes empresariales y las apps que completan el flujo a su alrededor: diseño del agente, integraciones con CRMs y APIs, métricas de negocio, evaluaciones y monitoreo en producción." },
     { title: "Platzi", subtitle: "De ingeniero móvil a líder de iOS y Android", meta: "oct 2017–jun 2026", body: "Entré como uno de los primeros ingenieros móviles y terminé liderando iOS y Android, incluida la migración de React Native a Swift y Kotlin nativos." },
     { title: "Brand Spa", subtitle: "Cofundador · Ingeniería full-stack", meta: "dic 2012–oct 2017", body: "Cofundé la agencia y llevé la ingeniería casi cinco años: productos B2B para clientes, como CMS, e-commerce y cotizadores." },
   ],
