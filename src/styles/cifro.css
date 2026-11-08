@@ -38,7 +38,8 @@
 }
 
 .cifro-hero h1 {
-  max-width: 15ch;
+  max-width: 19ch;
+  white-space: pre-line;
   margin: 0;
   font-size: clamp(2.6rem, 5.6vw, 4.6rem);
   font-weight: 750;
