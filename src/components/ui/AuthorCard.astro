@@ -1,0 +1,16 @@
+---
+import { SITE_NAME, personSameAs } from "../../data/site";
+---
+
+<aside class="author-card" aria-label="About the author">
+  <img class="author-card__photo" src="/images/apple-park-portrait-600.webp" alt={SITE_NAME} width="88" height="88" loading="lazy" decoding="async" />
+  <div>
+    <p class="author-card__label">Written by</p>
+    <p class="author-card__name">{SITE_NAME}</p>
+    <p class="author-card__bio">Forward Deployed Engineer at Wonderful.ai. 12+ years building software products, with native iOS and Android at the core.</p>
+    <div class="author-card__links">
+      <a class="text-link" href="/">About me</a>
+      <a class="text-link" href={personSameAs[0]} target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</aside>

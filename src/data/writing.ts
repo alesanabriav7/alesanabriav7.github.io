@@ -11,5 +11,5 @@ export const formatPostDate = (date: Date) =>
   new Intl.DateTimeFormat("en", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(date);
 
 export function readingMinutes(body = ""): number {
-  return Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 220));
+  return Math.max(1, Math.ceil(body.split(/\s+/).filter(Boolean).length / 200));
 }

@@ -1,0 +1,19 @@
+---
+import { SITE_NAME } from "../../data/site";
+import { formatPostDate } from "../../data/writing";
+
+interface Props {
+  date: Date;
+  minutes: number;
+}
+
+const { date, minutes } = Astro.props;
+---
+
+<div class="byline">
+  <img class="byline__avatar" src="/images/apple-park-portrait-600.webp" alt="" width="44" height="44" />
+  <div>
+    <a class="byline__name" href="/" rel="author">{SITE_NAME}</a>
+    <p class="byline__meta"><time datetime={date.toISOString()}>{formatPostDate(date)}</time>{` · ${minutes} min read`}</p>
+  </div>
+</div>

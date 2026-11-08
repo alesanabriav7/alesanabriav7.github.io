@@ -1,20 +1,24 @@
 ---
 import { render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import AuthorCard from "../../components/ui/AuthorCard.astro";
+import Byline from "../../components/ui/Byline.astro";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import PostList from "../../components/ui/PostList.astro";
 import Prose from "../../components/ui/Prose.astro";
-import { absoluteUrl, personId, SITE_NAME } from "../../data/site";
-import { formatPostDate, getPosts, readingMinutes, type Post } from "../../data/writing";
+import Section from "../../components/ui/Section.astro";
+import TagList from "../../components/ui/TagList.astro";
+import { absoluteUrl, personId } from "../../data/site";
+import { getPosts, readingMinutes, type Post } from "../../data/writing";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
-  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, more: posts.filter((other) => other.id !== post.id).slice(0, 2) } }));
 }
 
-const { post } = Astro.props as { post: Post };
+const { post, more } = Astro.props as { post: Post; more: Post[] };
 const { Content } = await render(post);
 const path = `/writing/${post.id}/`;
-const date = formatPostDate(post.data.pubDate);
-const minutes = readingMinutes(post.body);
 const postJsonLd = {
   "@type": "BlogPosting",
   "@id": `${absoluteUrl(path)}#article`,
@@ -38,22 +42,25 @@ const postJsonLd = {
   breadcrumbs={[{ name: "Writing", href: "/writing/" }, { name: post.data.title, href: path }]}
 >
   <article class="post">
-    <header class="page-header">
-      <div class="container container--reading">
-        <p class="eyebrow">{post.data.draft ? "Draft · " : ""}{post.data.tags[0]}</p>
-        <h1>{post.data.title}</h1>
-        <p class="page-header__lead">{post.data.description}</p>
-        <div class="post-byline">
-          <img src="/images/apple-park-portrait-600.webp" alt="" width="40" height="40" />
-          <span><a href="/" rel="author">{SITE_NAME}</a><br /><time datetime={post.data.pubDate.toISOString()}>{date}</time> · {minutes} min read</span>
-        </div>
-      </div>
-    </header>
-    <section class="section">
-      <div class="container container--reading">
-        <Prose><Content /></Prose>
-        <div class="btn-row"><a class="text-link" href="/writing/">All writing</a></div>
-      </div>
-    </section>
+    <PageTitle reading eyebrow={`${post.data.draft ? "Draft · " : ""}${post.data.tags[0]}`} title={post.data.title}>
+      {post.data.description}
+      <Byline slot="meta" date={post.data.pubDate} minutes={readingMinutes(post.body)} />
+    </PageTitle>
+
+    <Section reading reveal={false}>
+      <Prose><Content /></Prose>
+      <TagList tags={post.data.tags} />
+    </Section>
+
+    <Section reading>
+      <AuthorCard />
+    </Section>
   </article>
+
+  {more.length > 0 && (
+    <Section reading title="More writing.">
+      <PostList posts={more} />
+      <div class="btn-row"><a class="text-link" href="/writing/">All writing</a></div>
+    </Section>
+  )}
 </BaseLayout>
