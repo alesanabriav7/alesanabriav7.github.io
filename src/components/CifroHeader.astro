@@ -1,4 +1,5 @@
 ---
+import SiteNav from "./ui/SiteNav.astro";
 import { cifroAppStoreUrl, cifroCopy, cifroPath, type CifroLang } from "../data/cifro";
 
 interface Props {
@@ -9,17 +10,18 @@ const { lang = "en" } = Astro.props;
 const t = cifroCopy[lang].nav;
 const home = cifroPath(lang);
 const otherLang: CifroLang = lang === "en" ? "es" : "en";
+const links = [
+  { href: `${home}#features`, label: t.features, hideOnMobile: true },
+  { href: `${home}#privacy`, label: t.privacy, hideOnMobile: true },
+  { href: `${home}#faq`, label: t.faq, hideOnMobile: true },
+  { href: cifroPath(otherLang), label: t.switchLabel, hreflang: otherLang },
+];
 ---
 
-<header class="cifro-site-header">
-  <div class="shell nav-shell">
-    <a class="wordmark" href={home} aria-label={t.homeLabel}>Cifro</a>
-    <nav aria-label={t.navLabel}>
-      <a class="nav-link" href={`${home}#features`}>{t.features}</a>
-      <a class="nav-link" href={`${home}#privacy`}>{t.privacy}</a>
-      <a class="nav-link" href={`${home}#faq`}>{t.faq}</a>
-      <a class="nav-link" href={cifroPath(otherLang)} hreflang={otherLang} lang={otherLang}>{t.switchLabel}</a>
-      <a class="button cifro-download" href={cifroAppStoreUrl} target="_blank" rel="noopener noreferrer">{t.download}</a>
-    </nav>
-  </div>
-</header>
+<SiteNav
+  wide
+  brand={{ href: home, label: "Cifro", ariaLabel: t.homeLabel }}
+  links={links}
+  cta={{ href: cifroAppStoreUrl, label: t.download, external: true }}
+  ariaLabel={t.navLabel}
+/>

@@ -1,0 +1,94 @@
+/*
+  Design tokens. Two brand themes (data-theme) × two modes (data-mode).
+  Each color token is light-dark(light, dark); the active value follows color-scheme:
+  - no data-mode (no JS): the browser's prefers-color-scheme
+  - data-mode="light" | "dark": set by the mode script (browser preference + local time)
+*/
+:root {
+  color-scheme: light dark;
+
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.1rem;
+  --text-xl: 1.3rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 18px;
+  --radius-pill: 999px;
+
+  --shell-width: 1120px;
+  --container-width: 980px;
+  --reading-width: 720px;
+  --gutter: 22px;
+  --duration: 0.2s;
+}
+
+:root[data-mode="light"] {
+  color-scheme: light;
+}
+
+:root[data-mode="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="personal"] {
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --color-bg: light-dark(#f5f5f7, #000000);
+  --color-surface: light-dark(#ffffff, #1c1c1e);
+  --color-surface-alt: light-dark(#ffffff, #1c1c1e);
+  --color-fill: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.08));
+  --color-text: light-dark(#1d1d1f, #f5f5f7);
+  --color-muted: light-dark(#6e6e73, #a1a1a6);
+  --color-border: light-dark(#d2d2d7, #38383a);
+  --color-accent: light-dark(#0066cc, #2997ff);
+  --color-accent-hover: light-dark(#0077ed, #47a6ff);
+  --color-accent-soft: light-dark(rgba(0, 102, 204, 0.08), rgba(41, 151, 255, 0.14));
+  --color-accent-line: light-dark(rgba(0, 102, 204, 0.22), rgba(41, 151, 255, 0.3));
+  --color-on-accent: #ffffff;
+  --color-inverse: light-dark(#1d1d1f, #f5f5f7);
+  --color-on-inverse: light-dark(#ffffff, #000000);
+  --color-btn-bg: #0071e3;
+  --color-btn-bg-hover: #0077ed;
+  --color-btn-text: #ffffff;
+}
+
+[data-theme="cifro"] {
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-display: var(--font-body);
+
+  --color-bg: light-dark(#f2f2f7, #000000);
+  --color-surface: light-dark(#ffffff, #1c1c1e);
+  --color-surface-alt: light-dark(#ffffff, #1c1c1e);
+  --color-text: light-dark(#0b0b0b, #f5f5f7);
+  --color-muted: light-dark(#56565c, #a1a1a6);
+  --color-border: light-dark(#e3e3e8, #38383a);
+  --color-accent: light-dark(#3a5975, #8fb1cf);
+  --color-accent-hover: light-dark(#2b4459, #b0c9df);
+  --color-accent-soft: light-dark(rgba(58, 89, 117, 0.08), rgba(143, 177, 207, 0.12));
+  --color-accent-line: light-dark(rgba(58, 89, 117, 0.2), rgba(143, 177, 207, 0.28));
+  --color-on-accent: light-dark(#ffffff, #000000);
+  --color-inverse: light-dark(#0b0b0b, #f5f5f7);
+  --color-on-inverse: light-dark(#ffffff, #000000);
+  --color-fill: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.08));
+  --color-btn-bg: var(--color-inverse);
+  --color-btn-bg-hover: var(--color-accent);
+  --color-btn-text: var(--color-on-inverse);
+  --color-hero-wash: light-dark(transparent, rgba(0, 0, 0, 0.78));
+}

@@ -31,7 +31,7 @@ interface Faq {
 interface CifroCopy {
   meta: { title: string; description: string; ogAlt: string };
   nav: { homeLabel: string; navLabel: string; features: string; privacy: string; faq: string; switchLabel: string; download: string };
-  footer: { tagline: string; navLabel: string; privacy: string; support: string };
+  footer: { tagline: string; madeBy: string; navLabel: string; privacy: string; support: string };
   hero: { eyebrow: string; title: string; body: string; primary: string; secondary: string; note: string; imageAlt: string; secondImageAlt: string };
   highlights: string[];
   featuresHeading: { eyebrow: string; title: string; body: string };
@@ -63,6 +63,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     },
     footer: {
       tagline: "© 2026 Cifro · Budget planner & expense tracker for iPhone",
+      madeBy: "Made by",
       navLabel: "Cifro links",
       privacy: "Privacy",
       support: "Support",
@@ -201,6 +202,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     },
     footer: {
       tagline: "© 2026 Cifro · App de presupuesto y control de gastos para iPhone",
+      madeBy: "Creada por",
       navLabel: "Enlaces de Cifro",
       privacy: "Privacidad",
       support: "Soporte",

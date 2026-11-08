@@ -1,15 +1,42 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/ui/Card.astro";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import Section from "../../components/ui/Section.astro";
+import { cifroAppStoreUrl } from "../../data/cifro";
 
-const projects = [
-  { title: "Cifro", text: "A published private-by-design iOS finance app with on-device AI for transaction parsing, budget suggestions, insights, and review rituals.", href: "/cifro", cta: "Explore Cifro" },
-  { title: "iOS Architecture Skill", text: "A reusable architecture and planning workflow for building iOS features with deliberate boundaries and verification.", href: "/projects/ios-architect/", cta: "How it works" },
-  { title: "App Store Tools", text: "Command-line tooling for App Store Connect metadata and build delivery workflows.", href: "/projects/appstore-tools/", cta: "How it works" },
-  { title: "Screenshots iOS", text: "Deterministic simulator screenshot capture for App Store assets, visual checks, and CI workflows.", href: "/projects/screenshots-ios/", cta: "How it works" },
+const tools = [
+  { title: "iOS Architecture Skills", meta: "AI coding workflow", glyph: "layers", tint: "indigo", text: "A reusable architecture and planning workflow for building iOS features with deliberate boundaries and verification.", href: "/projects/ios-architect/" },
+  { title: "App Store Tools", meta: "TypeScript CLI", glyph: "terminal", tint: "gray", text: "Command-line tooling for App Store Connect metadata and build delivery workflows.", href: "/projects/appstore-tools/" },
+  { title: "Screenshots iOS", meta: "Simulator automation", glyph: "viewfinder", tint: "pink", text: "Deterministic simulator screenshot capture for App Store assets, visual checks, and CI workflows.", href: "/projects/screenshots-ios/" },
 ];
 ---
 
-<BaseLayout title="AI & Developer Tools Projects" description="Shipped products and open-source workflow tools by Alejandro Sanabria.">
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Projects</p><h1>Apps and developer tools by Alejandro Sanabria</h1><p>These products and tools address recurring engineering work: structuring an iOS feature, preparing a release, capturing consistent app state, and using on-device AI in a real product.</p></div></section>
-  <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}>{project.cta} →</a></article>)}</div></div></section>
+<BaseLayout
+  title="Projects: iOS Apps & Developer Tools"
+  description="Apps and open-source developer tools by Alejandro Sanabria: Cifro for iOS, AI architecture skills, App Store Connect automation, and simulator screenshots."
+  breadcrumbs={[{ name: "Projects", href: "/projects/" }]}
+>
+  <PageTitle eyebrow="Projects" title="Apps and developer tools by Alejandro Sanabria.">
+    Products and tools for recurring engineering work: structuring an iOS feature, preparing a release, capturing consistent app state, and using on-device AI in a real product.
+  </PageTitle>
+
+  <Section title="App." kicker="Shipped on the App Store.">
+    <Card
+      title="Cifro"
+      meta="iOS app · Budget planner"
+      icon={{ src: "/cifro/icon.jpg", alt: "Cifro app icon" }}
+      links={[{ href: "/cifro/", label: "Explore Cifro" }, { href: cifroAppStoreUrl, label: "App Store", external: true }]}
+    >
+      <p>A published private-by-design iOS finance app with on-device AI for transaction parsing, budget suggestions, insights, and review rituals.</p>
+    </Card>
+  </Section>
+
+  <Section title="Developer tools." kicker="Open source, used daily.">
+    <div class="card-grid card-grid--3">
+      {tools.map((tool) => (
+        <Card title={tool.title} meta={tool.meta} glyph={tool.glyph as "layers" | "terminal" | "viewfinder"} glyphColor={tool.tint as "indigo" | "gray" | "pink"} links={[{ href: tool.href, label: "Learn more" }]}><p>{tool.text}</p></Card>
+      ))}
+    </div>
+  </Section>
 </BaseLayout>

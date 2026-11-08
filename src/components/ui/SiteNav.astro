@@ -1,0 +1,52 @@
+---
+export interface NavLink {
+  href: string;
+  label: string;
+  hreflang?: string;
+  hideOnMobile?: boolean;
+}
+
+interface Props {
+  brand: { href: string; label: string; ariaLabel?: string };
+  links: NavLink[];
+  cta?: { href: string; label: string; external?: boolean; hideOnMobile?: boolean };
+  currentPath?: string;
+  wide?: boolean;
+  ariaLabel?: string;
+}
+
+const { brand, links, cta, currentPath, wide = false, ariaLabel = "Primary navigation" } = Astro.props;
+const normalize = (path: string) => path.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) => {
+  if (!currentPath || href.includes("#")) return false;
+  const target = normalize(href);
+  return target !== "/" && (currentPath === target || currentPath.startsWith(`${target}/`));
+};
+---
+
+<header class="global-nav">
+  <div class:list={[wide ? "shell" : "container", "global-nav__inner"]}>
+    <a class="global-nav__brand" href={brand.href} aria-label={brand.ariaLabel}>{brand.label}</a>
+    <nav class="global-nav__links" aria-label={ariaLabel}>
+      {links.map((link) => (
+        <a
+          class="global-nav__link"
+          href={link.href}
+          hreflang={link.hreflang}
+          lang={link.hreflang}
+          aria-current={isCurrent(link.href) ? "page" : undefined}
+          data-hide-mobile={link.hideOnMobile ? "" : undefined}
+        >{link.label}</a>
+      ))}
+      {cta && (
+        <a
+          class="btn btn--primary btn--sm"
+          href={cta.href}
+          target={cta.external ? "_blank" : undefined}
+          rel={cta.external ? "noopener noreferrer" : undefined}
+          data-hide-mobile={cta.hideOnMobile ? "" : undefined}
+        >{cta.label}</a>
+      )}
+    </nav>
+  </div>
+</header>
