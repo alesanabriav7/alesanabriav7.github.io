@@ -1,4 +1,10 @@
-export function GET() {
+import { getPosts } from "../data/writing";
+
+export async function GET() {
+  const posts = await getPosts();
+  const writing = posts.length > 0
+    ? `\n## Writing\n\n${posts.map((post) => `- ${post.data.title}: https://alejandrosanabria.com/writing/${post.id}/`).join("\n")}\n`
+    : "";
   const text = `# Alejandro Sanabria
 
 Canonical personal website: https://alejandrosanabria.com
@@ -25,7 +31,7 @@ Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai with 12+ years
 - Projects: https://alejandrosanabria.com/projects
 - GitHub: https://github.com/alesanabriav7
 - LinkedIn: https://www.linkedin.com/in/alesanabriav/
-`;
+${writing}`;
 
   return new Response(text, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }

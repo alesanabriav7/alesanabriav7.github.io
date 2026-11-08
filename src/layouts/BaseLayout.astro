@@ -9,6 +9,7 @@ import CifroHeader from "../components/CifroHeader.astro";
 import SiteFooter from "../components/ui/SiteFooter.astro";
 import SiteNav from "../components/ui/SiteNav.astro";
 import { personalContact, personalFooterLinks, personalNavLinks } from "../data/navigation";
+import { getPosts } from "../data/writing";
 import {
   SITE_NAME,
   SITE_URL,
@@ -53,6 +54,7 @@ const {
   breadcrumbs,
 } = Astro.props;
 const isCifro = variant === "cifro";
+const hasWriting = !isCifro && (await getPosts()).length > 0;
 const ogLocale = lang === "es" ? "es_LA" : "en_US";
 const canonical = new URL(Astro.url.pathname, SITE_URL).toString();
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -85,6 +87,7 @@ const structuredDataJson = structuredDataNodes.length > 0
     {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={absoluteUrl(alternate.href)} />)}
     {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`} />}
     <link rel="icon" href={favicon} />
+    {hasWriting && <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} — Writing`} href="/rss.xml" />}
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={metadataSiteName} />
     <meta property="og:locale" content={ogLocale} />
@@ -107,7 +110,7 @@ const structuredDataJson = structuredDataNodes.length > 0
     ) : (
       <SiteNav
         brand={{ href: "/", label: SITE_NAME, ariaLabel: `${SITE_NAME} home` }}
-        links={personalNavLinks}
+        links={personalNavLinks(hasWriting)}
         cta={personalContact}
         currentPath={currentPath}
       />
@@ -118,7 +121,7 @@ const structuredDataJson = structuredDataNodes.length > 0
     {isCifro ? (
       <CifroFooter lang={lang} />
     ) : (
-      <SiteFooter links={personalFooterLinks} ariaLabel="Site links">{`© ${new Date().getFullYear()} ${SITE_NAME}`}</SiteFooter>
+      <SiteFooter links={personalFooterLinks(hasWriting)} ariaLabel="Site links">{`© ${new Date().getFullYear()} ${SITE_NAME}`}</SiteFooter>
     )}
     <script>
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

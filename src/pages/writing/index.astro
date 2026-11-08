@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import PostList from "../../components/ui/PostList.astro";
+import Section from "../../components/ui/Section.astro";
+import { getPosts } from "../../data/writing";
+
+const posts = await getPosts();
+---
+
+<BaseLayout
+  title="Writing"
+  description="Writing by Alejandro Sanabria on forward deployed engineering, AI agents in production, mobile platforms, and building software products."
+  breadcrumbs={[{ name: "Writing", href: "/writing/" }]}
+  noindex={posts.length === 0}
+>
+  <PageTitle eyebrow="Writing" title="Notes from building software that holds up.">
+    Forward deployed engineering, AI agents in production, mobile platforms, and the product judgment that connects them.
+  </PageTitle>
+  <Section>
+    {posts.length > 0 ? <PostList posts={posts} /> : <p class="empty-state">The first posts are on their way.</p>}
+  </Section>
+</BaseLayout>

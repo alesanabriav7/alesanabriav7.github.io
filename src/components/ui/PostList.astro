@@ -1,0 +1,24 @@
+---
+import { formatPostDate, readingMinutes, type Post } from "../../data/writing";
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="post-list">
+  {posts.map((post) => (
+    <li>
+      <a class="post-list__item" href={`/writing/${post.id}/`}>
+        <span class="post-list__meta">
+          <time datetime={post.data.pubDate.toISOString()}>{formatPostDate(post.data.pubDate)}</time>
+          {` · ${readingMinutes(post.body)} min read${post.data.draft ? " · Draft" : ""}`}
+        </span>
+        <span class="post-list__title">{post.data.title}</span>
+        <span class="post-list__description">{post.data.description}</span>
+      </a>
+    </li>
+  ))}
+</ul>
