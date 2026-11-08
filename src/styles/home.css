@@ -4,11 +4,7 @@
 }
 
 .hero__eyebrow {
-  margin: 0 0 var(--space-3);
-  color: var(--color-muted);
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-5);
 }
 
 .hero h1 {
@@ -37,6 +33,36 @@
 
 .hero .btn-row {
   justify-content: center;
+}
+
+.hero__now {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 0;
+  padding: 0.35rem 0.85rem 0.35rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.hero__now-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-btn-bg);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+.hero__now-label {
+  color: var(--color-text);
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero .hero__media {
@@ -195,4 +221,14 @@
   color: var(--color-muted);
   font-size: clamp(1.15rem, 1.8vw, 1.3rem);
   line-height: 1.5;
+}
+
+@media (max-width: 400px) {
+  .hero__now-label {
+    display: none;
+  }
+
+  .hero__now {
+    font-size: 0.8125rem;
+  }
 }

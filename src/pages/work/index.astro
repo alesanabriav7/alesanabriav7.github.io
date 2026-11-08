@@ -22,11 +22,11 @@ const tools = [
     I connect customer workflows, AI systems, and product engineering — with 12+ years of building software products, mobile at the core, behind it.
   </PageTitle>
 
-  <Section title="Experience." kicker="Where I've done the work.">
+  <Section eyebrow="Experience" title="Where I've done the work.">
     <InsetList items={experience} />
   </Section>
 
-  <Section title="Product proof." kicker="Some things are better shown shipped.">
+  <Section eyebrow="Product proof" title="Some things are better shown shipped.">
     <div class="card-grid card-grid--2">
       <Card
         title="Cifro"
@@ -42,7 +42,7 @@ const tools = [
     </div>
   </Section>
 
-  <Section title="Tools." kicker="That support delivery.">
+  <Section eyebrow="Tools" title="Tools that support delivery.">
     <div class="card-grid card-grid--3">
       {tools.map((tool) => (
         <Card title={tool.title} meta={tool.meta} glyph={tool.glyph as "layers" | "terminal" | "viewfinder"} glyphColor={tool.tint as "indigo" | "gray" | "pink"} links={[{ href: tool.href, label: "Learn more" }]}><p>{tool.text}</p></Card>

@@ -21,7 +21,7 @@ const tools = [
     Products and tools for recurring engineering work: structuring an iOS feature, preparing a release, capturing consistent app state, and using on-device AI in a real product.
   </PageTitle>
 
-  <Section title="App." kicker="Shipped on the App Store.">
+  <Section eyebrow="App" title="Shipped on the App Store.">
     <Card
       title="Cifro"
       meta="iOS app · Budget planner"
@@ -32,7 +32,7 @@ const tools = [
     </Card>
   </Section>
 
-  <Section title="Developer tools." kicker="Open source, used daily.">
+  <Section eyebrow="Developer tools" title="Open source, used daily.">
     <div class="card-grid card-grid--3">
       {tools.map((tool) => (
         <Card title={tool.title} meta={tool.meta} glyph={tool.glyph as "layers" | "terminal" | "viewfinder"} glyphColor={tool.tint as "indigo" | "gray" | "pink"} links={[{ href: tool.href, label: "Learn more" }]}><p>{tool.text}</p></Card>
