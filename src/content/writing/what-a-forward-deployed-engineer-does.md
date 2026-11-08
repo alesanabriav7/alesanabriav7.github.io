@@ -26,7 +26,7 @@ Skipping any one of them shows up later. If you build without understanding, you
 
 ## Why a product background helps
 
-I spent more than twelve years building software products — native iOS and Android at the core, plus full-stack web and B2B platforms — before this role. That background matters more than I expected.
+Before this role I spent more than twelve years building software products, mostly native iOS and Android, along with full-stack web and B2B platforms. That background matters more than I expected.
 
 Mobile teaches you that the user's context is unforgiving: a slow screen or a confusing state is felt immediately. Product work teaches you to ask what outcome a feature is for. Both habits transfer directly. A customer workflow is just another product surface, and an agent is just another component that has to earn its place in it.
 

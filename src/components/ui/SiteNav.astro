@@ -7,7 +7,7 @@ export interface NavLink {
 }
 
 interface Props {
-  brand: { href: string; label: string; ariaLabel?: string; mark?: string };
+  brand: { href: string; label: string; shortLabel?: string; ariaLabel?: string };
   links: NavLink[];
   cta?: { href: string; label: string; external?: boolean; hideOnMobile?: boolean };
   currentPath?: string;
@@ -26,7 +26,7 @@ const isCurrent = (href: string) => {
 
 <header class="global-nav">
   <div class:list={[wide ? "shell" : "container", "global-nav__inner"]}>
-    <a class="global-nav__brand" href={brand.href} aria-label={brand.ariaLabel}>{brand.mark && <span class="global-nav__mark" aria-hidden="true">{brand.mark}</span>}<span class:list={["global-nav__label", { "global-nav__label--collapsible": brand.mark }]}>{brand.label}</span></a>
+    <a class="global-nav__brand" href={brand.href} aria-label={brand.ariaLabel}>{brand.shortLabel ? <><span class="global-nav__label-full">{brand.label}</span><span class="global-nav__label-short">{brand.shortLabel}</span></> : brand.label}</a>
     <nav class="global-nav__links" aria-label={ariaLabel}>
       {links.map((link) => (
         <a

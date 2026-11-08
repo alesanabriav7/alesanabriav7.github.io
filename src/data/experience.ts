@@ -8,7 +8,7 @@ export const experience: InsetItem[] = [
     subtitle: "Forward Deployed Engineer",
     meta: "Now",
     live: true,
-    body: "AI agents and integrations for customer workflows — from discovery to implementation and verification.",
+    body: "AI agents and integrations for customer workflows, from discovery through implementation and verification.",
   },
   {
     mark: "P",
@@ -24,7 +24,7 @@ export const experience: InsetItem[] = [
     title: "Brand Spa",
     subtitle: "Co-founder · Principal engineer",
     meta: "~5 years",
-    body: "Led engineering for B2B client products — CMS platforms, e-commerce, quoting systems, and internal tools — with Laravel, Rails, React, and Node.js.",
+    body: "Led engineering for B2B client products such as CMS platforms, e-commerce, quoting systems, and internal tools, built with Laravel, Rails, React, and Node.js.",
   },
   {
     mark: "Ba",

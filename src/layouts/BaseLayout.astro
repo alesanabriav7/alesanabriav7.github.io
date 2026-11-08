@@ -81,8 +81,8 @@ const structuredDataJson = structuredDataNodes.length > 0
     <meta name="description" content={description} />
     <meta name="author" content={SITE_NAME} />
     <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content={isCifro ? "#f2f2f7" : "#f7f6f3"} />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content={isCifro ? "#000000" : "#0c0a09"} />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content={isCifro ? "#f2f2f7" : "#ffffff"} />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content={isCifro ? "#000000" : "#0b0b0b"} />
     <link rel="canonical" href={canonical} />
     {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={absoluteUrl(alternate.href)} />)}
     {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`} />}
@@ -109,7 +109,7 @@ const structuredDataJson = structuredDataNodes.length > 0
       <CifroHeader lang={lang} />
     ) : (
       <SiteNav
-        brand={{ href: "/", label: SITE_NAME, ariaLabel: `${SITE_NAME} home`, mark: "AS" }}
+        brand={{ href: "/", label: SITE_NAME, shortLabel: "A. Sanabria", ariaLabel: `${SITE_NAME} home` }}
         links={personalNavLinks(hasWriting)}
         cta={personalContact}
         currentPath={currentPath}

@@ -28,7 +28,7 @@ export const personNode = {
   jobTitle: "Forward Deployed Engineer",
   worksFor: { "@type": "Organization", name: "Wonderful.ai", url: "https://wonderful.ai" },
   description:
-    "Forward Deployed Engineer at Wonderful.ai with 12+ years building software products — native iOS and Android at the core, plus full-stack web and AI agents.",
+    "Forward Deployed Engineer at Wonderful.ai with 12+ years building software products, with native iOS and Android at the core.",
   knowsAbout: [
     "Forward Deployed Engineering",
     "AI agents",

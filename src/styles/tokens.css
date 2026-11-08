@@ -7,7 +7,6 @@
 :root {
   color-scheme: light dark;
 
-  --font-label: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
   --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", "Fira Code", "Cascadia Code", monospace;
 
@@ -50,25 +49,24 @@
 [data-theme="personal"] {
   --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-label: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono", Menlo, monospace;
 
-  --color-bg: light-dark(#f7f6f3, #0c0a09);
-  --color-surface: light-dark(#ffffff, #1c1917);
-  --color-surface-alt: light-dark(#ffffff, #1c1917);
-  --color-fill: light-dark(rgba(28, 25, 23, 0.05), rgba(255, 255, 255, 0.07));
-  --color-text: light-dark(#1c1917, #f5f5f4);
-  --color-muted: light-dark(#6b6460, #a8a29e);
-  --color-border: light-dark(#e4e0db, #2e2a27);
-  --color-accent: light-dark(#c2410c, #ff8a3d);
-  --color-accent-hover: light-dark(#9a3412, #ffa366);
-  --color-accent-soft: light-dark(rgba(201, 74, 12, 0.08), rgba(255, 138, 61, 0.12));
-  --color-accent-line: light-dark(rgba(201, 74, 12, 0.22), rgba(255, 138, 61, 0.3));
-  --color-on-accent: light-dark(#ffffff, #140a04);
-  --color-inverse: light-dark(#1c1917, #f5f5f4);
-  --color-on-inverse: light-dark(#ffffff, #0c0a09);
-  --color-btn-bg: light-dark(#c94a0c, #ff7a2e);
-  --color-btn-bg-hover: light-dark(#a83d09, #ff9550);
-  --color-btn-text: light-dark(#ffffff, #140a04);
+  --color-bg: light-dark(#ffffff, #0b0b0b);
+  --color-surface: light-dark(#f5f5f5, #171717);
+  --color-surface-alt: light-dark(#f5f5f5, #171717);
+  --color-fill: light-dark(rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.07));
+  --color-text: light-dark(#111111, #f2f2f2);
+  --color-muted: light-dark(#5c5c5c, #a3a3a3);
+  --color-border: light-dark(#e6e6e6, #262626);
+  --color-accent: light-dark(#b9471a, #dc582a);
+  --color-accent-hover: light-dark(#963821, #e8764f);
+  --color-accent-soft: light-dark(rgba(192, 83, 43, 0.08), rgba(220, 88, 42, 0.14));
+  --color-accent-line: light-dark(rgba(192, 83, 43, 0.22), rgba(220, 88, 42, 0.3));
+  --color-on-accent: #ffffff;
+  --color-inverse: light-dark(#111111, #f2f2f2);
+  --color-on-inverse: light-dark(#ffffff, #0b0b0b);
+  --color-btn-bg: #c0532b;
+  --color-btn-bg-hover: #a9431e;
+  --color-btn-text: #ffffff;
 }
 
 [data-theme="cifro"] {

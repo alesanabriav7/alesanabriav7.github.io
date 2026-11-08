@@ -1,12 +1,12 @@
 ---
 title: "Building Cifro: on-device AI in a budgeting app"
-description: "Why I built Cifro, a private iPhone budget planner, around Apple Foundation Models — and the product decisions that came from keeping every number on the device."
+description: "Why I built Cifro, a private iPhone budget planner, around Apple Foundation Models, and the product decisions that came from keeping every number on the device."
 pubDate: 2026-11-08
 tags: ["iOS", "Foundation Models", "Product"]
 draft: true
 ---
 
-[Cifro](/cifro/) is a budget planner for iPhone that answers one question when you open it: are you on track this month? I built it with SwiftUI and Apple Foundation Models, and one constraint shaped almost every decision — your financial data never leaves your device.
+[Cifro](/cifro/) is a budget planner for iPhone that answers one question when you open it: are you on track this month? I built it with SwiftUI and Apple Foundation Models, and one constraint shaped almost every decision: your financial data never leaves your device.
 
 ## Private by design, not by policy
 
@@ -22,13 +22,13 @@ On-device models are a good fit for small, frequent, personal tasks. In Cifro th
 - **Suggestions.** Proposing budget categories that match how you actually spend.
 - **Questions.** Asking "Am I on track?" or "What can I cut this month?" and getting an answer grounded in your own numbers, through Apple Intelligence on the device.
 
-None of these need a server. The conversation stays on the iPhone, and the only thing Cifro looks up online is currency exchange rates — never your data.
+None of these need a server. The conversation stays on the iPhone, and the only thing Cifro looks up online is currency exchange rates, never your data.
 
 ## Designing for phones without Apple Intelligence
 
 Not every iPhone running iOS 26 supports Apple Intelligence. I didn't want the core experience to depend on it, so the month's context, the daily spending limit, and the insights work everywhere. The AI assistant is an addition on top of a budget that already answers the main question.
 
-That split — a deterministic core plus an AI layer — made the app easier to reason about and easier to test.
+Splitting the app into a deterministic core and an AI layer made it easier to reason about and easier to test.
 
 ## What I'd tell another iOS team
 
