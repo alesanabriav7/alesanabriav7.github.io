@@ -3,12 +3,13 @@ export function GET() {
 
 Canonical personal website: https://alejandrosanabria.com
 
-Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai and a mobile platform leader. He combines customer-facing AI delivery, mobile product engineering, and practical workflow systems.
+Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai with 12+ years building software products. Native iOS and Android are the core of his work, alongside full-stack web products, B2B platforms, and customer-facing AI delivery.
 
 ## Core work
 
 - Forward Deployed Engineering: customer workflows, agents, integrations, evaluation, observability, and delivery.
-- Mobile platforms: iOS, Android, Swift, SwiftUI, Kotlin, React Native, architecture, and engineering leadership.
+- Mobile platforms (core): iOS, Android, Swift, SwiftUI, Kotlin, React Native, architecture, and engineering leadership.
+- Product and full-stack engineering: TypeScript, Node.js, React, Laravel, Ruby on Rails, B2B platforms, and e-commerce.
 - Product systems: practical AI workflows, App Store operations, screenshot automation, and product delivery.
 
 ## Product

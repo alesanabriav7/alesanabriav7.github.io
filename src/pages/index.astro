@@ -11,7 +11,7 @@ import { experience } from "../data/experience";
 import { cifroAppStoreUrl } from "../data/cifro";
 
 const description =
-  "Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai building AI agents and integrations, with 12+ years building and leading native iOS and Android platforms.";
+  "Alejandro Sanabria is a Forward Deployed Engineer at Wonderful.ai with 12+ years building software products — native iOS and Android at the core, plus full-stack web, B2B platforms, and AI agents.";
 
 const profileJsonLd = {
   "@type": "ProfilePage",
@@ -25,9 +25,9 @@ const profileJsonLd = {
 };
 
 const stats = [
-  { value: "12+ years", label: "Building and leading mobile platforms" },
-  { value: "iOS & Android", label: "Native Swift, SwiftUI and Kotlin" },
-  { value: "App Store", label: "Cifro, shipped with on-device AI" },
+  { value: "12+ years", label: "Building and shipping software products" },
+  { value: "iOS & Android", label: "Mobile at the core — Swift, SwiftUI, Kotlin" },
+  { value: "Full-stack", label: "Web, backend and B2B platforms" },
   { value: "AI agents", label: "In production at Wonderful.ai" },
 ];
 
@@ -66,9 +66,9 @@ const projects = [
 ];
 
 const capabilities = [
-  { title: "Mobile platforms", items: ["Swift & SwiftUI", "Kotlin & Android", "React Native", "GRDB & Tuist", "Apple Foundation Models", "Mobile architecture & standards"] },
+  { title: "Mobile platforms", items: ["Swift & SwiftUI", "Kotlin & Android", "React Native", "GRDB & Tuist", "Apple Foundation Models", "App Store Connect automation"] },
   { title: "AI & forward deployment", items: ["AI agents & integrations", "Customer workflow design", "Evaluation & verification", "Claude Code & OpenClaw", "Agent skills & tooling"] },
-  { title: "Product engineering", items: ["TypeScript & Node.js", "React", "Laravel & Ruby on Rails", "App Store Connect automation", "Engineering leadership"] },
+  { title: "Product & full-stack", items: ["Product discovery to delivery", "TypeScript, Node.js & React", "Laravel & Ruby on Rails", "B2B platforms & e-commerce", "Engineering leadership"] },
 ];
 
 const principles = [
@@ -80,7 +80,7 @@ const principles = [
 ---
 
 <BaseLayout
-  title={`${SITE_NAME} | Forward Deployed Engineer & Mobile`}
+  title={`${SITE_NAME} | Forward Deployed Engineer & Product Engineer`}
   description={description}
   ogType="profile"
   jsonLd={profileJsonLd}
@@ -89,7 +89,7 @@ const principles = [
     <div class="container">
       <p class="hero__eyebrow enter" style="--i: 0">Forward Deployed Engineer at Wonderful.ai</p>
       <h1 class="enter" style="--i: 1">{SITE_NAME}</h1>
-      <p class="hero__lead enter" style="--i: 2">I bring <strong>AI agents into real customer workflows</strong> — with 12+ years building native iOS and Android platforms behind me.</p>
+      <p class="hero__lead enter" style="--i: 2">I bring <strong>AI agents into real customer workflows</strong> — backed by 12+ years building software products, with native mobile at the core.</p>
       <div class="btn-row enter" style="--i: 3">
         <Button href="/work/">See my work</Button>
         <a class="text-link" href={personSameAs[0]} target="_blank" rel="me noopener noreferrer">Connect on LinkedIn</a>
@@ -120,7 +120,7 @@ const principles = [
     <div class="about">
       <div class="about-copy">
         <p>I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful.ai</a>. I sit between customers and the product: understanding the workflow, building the agents and integrations, and verifying they hold up in production.</p>
-        <p>That work rests on <strong>12+ years of mobile engineering</strong> — shipping native iOS and Android apps, leading platform teams, and moving products from React Native to Swift and Kotlin.</p>
+        <p>That work rests on <strong>12+ years building software products</strong>. Mobile is the core — shipping native iOS and Android apps and leading platform teams — alongside full-stack web products, B2B platforms, and the delivery systems behind them.</p>
         <p>Today I apply AI where context, review, and repetition slow teams down: architecture planning, review loops, and release tooling.</p>
       </div>
       <figure class="about__portrait">
@@ -139,7 +139,7 @@ const principles = [
     </div>
   </Section>
 
-  <Section id="experience" title="Experience." kicker="From mobile platforms to AI in production.">
+  <Section id="experience" title="Experience." kicker="Products, platforms, and AI in production.">
     <InsetList items={experience} />
     <div class="btn-row"><a class="text-link" href="/work/">Full work history</a></div>
   </Section>
@@ -154,7 +154,7 @@ const principles = [
     </div>
   </Section>
 
-  <Section id="capabilities" title="Capabilities." kicker="Mobile depth, AI breadth.">
+  <Section id="capabilities" title="Capabilities." kicker="Mobile at the core, product end to end.">
     <div class="card-grid card-grid--3">
       {capabilities.map((group) => (
         <Card title={group.title}>
