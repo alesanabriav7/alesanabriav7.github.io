@@ -18,13 +18,13 @@ const [cifro, ...tools] = projects[lang];
   <PageTitle eyebrow={t.eyebrow} title={t.heading}><Fragment set:html={t.lead} /></PageTitle>
 
   <Section title={t.app}>
-    <Card title={cifro.title} meta={cifro.meta} icon={cifro.icon} links={cifro.links}><p>{cifro.text}</p></Card>
+    <Card feature title={cifro.title} meta={cifro.meta} icon={cifro.icon} links={cifro.links}><p>{cifro.text}</p></Card>
   </Section>
 
   <Section title={t.tools}>
     <div class="card-grid card-grid--3">
       {tools.map((tool) => (
-        <Card title={tool.title} meta={tool.meta} glyph={tool.glyph} links={tool.links}><p>{tool.text}</p></Card>
+        <Card title={tool.title} meta={tool.meta} links={tool.links}><p>{tool.text}</p></Card>
       ))}
     </div>
   </Section>

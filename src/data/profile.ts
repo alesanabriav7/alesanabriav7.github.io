@@ -21,9 +21,9 @@ export const contactEmail = "me@alesanabriav.com";
 
 export const ui = {
   en: {
-    nav: { work: "Work", projects: "Projects", blog: "Blog", about: "About", switchLabel: "Español", connect: "Connect", label: "Primary navigation", footer: "Site links", homeLabel: "Alejandro Sanabria home" },
+    nav: { work: "Work", projects: "Projects", blog: "Blog", about: "About", switchLabel: "Español", connect: "Contact", label: "Primary navigation", footer: "Site links", homeLabel: "Alejandro Sanabria home" },
     footer: { email: "Email" },
-    sections: { about: "About", experience: "Experience", projects: "Projects", capabilities: "Capabilities", blog: "Blog", contact: "Contact" },
+    sections: { about: "About", experience: "Experience", projects: "Projects", blog: "Blog", contact: "Contact" },
     fullHistory: "Full work history",
     allPosts: "All posts",
     inSpanish: "In Spanish",
@@ -35,7 +35,7 @@ export const ui = {
   es: {
     nav: { work: "Trabajo", projects: "Proyectos", blog: "Blog", about: "Sobre mí", switchLabel: "English", connect: "Contacto", label: "Navegación principal", footer: "Enlaces del sitio", homeLabel: "Alejandro Sanabria, inicio" },
     footer: { email: "Correo" },
-    sections: { about: "Sobre mí", experience: "Experiencia", projects: "Proyectos", capabilities: "Con qué trabajo", blog: "Blog", contact: "Contacto" },
+    sections: { about: "Sobre mí", experience: "Experiencia", projects: "Proyectos", blog: "Blog", contact: "Contacto" },
     fullHistory: "Toda mi trayectoria",
     allPosts: "Ver el blog",
     inSpanish: "En español",
@@ -56,16 +56,10 @@ export const home = {
     secondary: "Connect on LinkedIn",
     heroAlt: "Alejandro Sanabria at WWDC26 in Apple Park, holding his WWDC26 attendee badge",
     caption: "WWDC26 at Apple Park",
-    stats: [
-      { value: "Since 2012", label: "Building software products" },
-      { value: "iOS & Android", label: "Native Swift, SwiftUI and Kotlin" },
-      { value: "Full-stack", label: "Web, backend and B2B platforms" },
-      { value: "AI agents", label: "In production at Wonderful" },
-    ],
     about: [
-      `I'm Alejandro Sanabria Villescas, a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá. I sit with customers, turn real workflows into AI agents, and wire those agents into the systems they already run.`,
-      "I've been building software since 2012. I co-founded Brand Spa and ran its engineering, spent most of my career on <strong>native iOS and Android</strong>, shipping apps and leading mobile teams, and now I work on AI agents at Wonderful.",
-      `On the side I ship <a href="/cifro/">Cifro</a>, a budget app for iPhone, and a few open source tools I use to release it.`,
+      `My work at <a href="https://wonderful.ai">Wonderful</a> starts before the code. I sit with the customer, learn how their team actually operates, and build AI agents that plug into the systems they already use, tested against real cases.`,
+      "Before that I spent more than a decade building software products. I co-founded Brand Spa, where we built B2B platforms for clients, and most of my career went into <strong>native iOS and Android</strong>: shipping apps, leading mobile teams, and moving a large app from React Native to Swift and Kotlin.",
+      `On the side I make <a href="/cifro/">Cifro</a>, a budget app for iPhone, and the open source tools I use to release it.`,
     ],
     portraitAlt: "Alejandro Sanabria Villescas at Apple Park",
     portraitCaption: "Apple Park, Cupertino",
@@ -80,16 +74,10 @@ export const home = {
     secondary: "Hablemos por LinkedIn",
     heroAlt: "Alejandro Sanabria en la WWDC26, en Apple Park, con su credencial de la WWDC26",
     caption: "En la WWDC26, en Apple Park",
-    stats: [
-      { value: "Desde 2012", label: "Construyendo productos de software" },
-      { value: "iOS y Android", label: "Swift, SwiftUI y Kotlin nativos" },
-      { value: "Full-stack", label: "Web, backend y plataformas B2B" },
-      { value: "Agentes de IA", label: "En producción en Wonderful" },
-    ],
     about: [
-      `Soy Alejandro Sanabria Villescas, Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>, en Bogotá. Trabajo de la mano con los clientes: entiendo cómo operan, convierto esos procesos en agentes de IA y los conecto con los sistemas que ya usan.`,
-      "Construyo software desde 2012. Cofundé Brand Spa y llevé su ingeniería, pasé la mayor parte de mi carrera en <strong>iOS y Android nativos</strong>, publicando apps y liderando equipos móviles, y hoy trabajo en agentes de IA en Wonderful.",
-      `Por fuera hago <a href="/cifro/es/">Cifro</a>, una app de presupuesto para iPhone, y algunas herramientas de código abierto que uso para publicarla.`,
+      `En <a href="https://wonderful.ai">Wonderful</a> mi trabajo empieza antes del código. Me siento con el cliente, entiendo cómo opera de verdad su equipo y construyo agentes de IA que se conectan a los sistemas que ya usa, probados con casos reales.`,
+      "Antes de eso pasé más de una década haciendo productos de software. Cofundé Brand Spa, donde construimos plataformas B2B para clientes, y la mayor parte de mi carrera la dediqué a <strong>iOS y Android nativos</strong>: publicar apps, liderar equipos móviles y migrar una app grande de React Native a Swift y Kotlin.",
+      `Por fuera hago <a href="/cifro/es/">Cifro</a>, una app de presupuesto para iPhone, y las herramientas de código abierto con las que la publico.`,
     ],
     portraitAlt: "Alejandro Sanabria Villescas en Apple Park",
     portraitCaption: "Apple Park, Cupertino",
@@ -99,18 +87,16 @@ export const home = {
 
 export const experience: Record<Lang, InsetItem[]> = {
   en: [
-    { mark: "W", title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "Jul 2026–now", live: true, body: "I build AI agents for Wonderful's customers and connect them to the tools they already run." },
-    { mark: "P", title: "Platzi", subtitle: "Mobile engineer to iOS & Android lead", meta: "Oct 2017–Jun 2026", body: "Joined as one of the first mobile engineers and grew into leading iOS and Android, including the move from React Native to native Swift and Kotlin." },
-    { mark: "BS", title: "Brand Spa", subtitle: "Co-founder · Full-stack engineering", meta: "Dec 2012–Oct 2017", body: "I co-founded the agency and ran engineering for almost five years: B2B client products like CMS platforms, e-commerce and quoting systems." },
+    { title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "Jul 2026–now", live: true, body: "I build AI agents for Wonderful's customers and connect them to the tools they already run." },
+    { title: "Platzi", subtitle: "Mobile engineer to iOS & Android lead", meta: "Oct 2017–Jun 2026", body: "Joined as one of the first mobile engineers and grew into leading iOS and Android, including the move from React Native to native Swift and Kotlin." },
+    { title: "Brand Spa", subtitle: "Co-founder · Full-stack engineering", meta: "Dec 2012–Oct 2017", body: "I co-founded the agency and ran engineering for almost five years: B2B client products like CMS platforms, e-commerce and quoting systems." },
   ],
   es: [
-    { mark: "W", title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "jul 2026–hoy", live: true, body: "Construyo agentes de IA para los clientes de Wonderful y los conecto con las herramientas que ya usan." },
-    { mark: "P", title: "Platzi", subtitle: "De ingeniero móvil a líder de iOS y Android", meta: "oct 2017–jun 2026", body: "Entré como uno de los primeros ingenieros móviles y terminé liderando iOS y Android, incluida la migración de React Native a Swift y Kotlin nativos." },
-    { mark: "BS", title: "Brand Spa", subtitle: "Cofundador · Ingeniería full-stack", meta: "dic 2012–oct 2017", body: "Cofundé la agencia y llevé la ingeniería casi cinco años: productos B2B para clientes, como CMS, e-commerce y cotizadores." },
+    { title: "Wonderful", subtitle: "Forward Deployed Engineer", meta: "jul 2026–hoy", live: true, body: "Construyo agentes de IA para los clientes de Wonderful y los conecto con las herramientas que ya usan." },
+    { title: "Platzi", subtitle: "De ingeniero móvil a líder de iOS y Android", meta: "oct 2017–jun 2026", body: "Entré como uno de los primeros ingenieros móviles y terminé liderando iOS y Android, incluida la migración de React Native a Swift y Kotlin nativos." },
+    { title: "Brand Spa", subtitle: "Cofundador · Ingeniería full-stack", meta: "dic 2012–oct 2017", body: "Cofundé la agencia y llevé la ingeniería casi cinco años: productos B2B para clientes, como CMS, e-commerce y cotizadores." },
   ],
 };
-
-type Glyph = "layers" | "terminal" | "viewfinder";
 
 export interface Project {
   id: string;
@@ -118,7 +104,6 @@ export interface Project {
   meta: string;
   text: string;
   icon?: { src: string; alt: string };
-  glyph?: Glyph;
   links: { href: string; label: string; external?: boolean }[];
 }
 
@@ -138,7 +123,6 @@ export const projects: Record<Lang, Project[]> = {
       id: "appstore-tools",
       title: "appstore-tools",
       meta: "TypeScript CLI",
-      glyph: "terminal",
       text: "TypeScript CLI and library for App Store Connect. It lists your apps, builds an IPA, reads and updates App Store metadata, and uploads builds.",
       links: [{ href: "/projects/appstore-tools/", label: "How it works" }, { href: "https://github.com/alesanabriav7/appstore-tools", label: "GitHub", external: true }],
     },
@@ -146,7 +130,6 @@ export const projects: Record<Lang, Project[]> = {
       id: "screenshots-ios",
       title: "screenshots-ios",
       meta: "Simulator CLI",
-      glyph: "viewfinder",
       text: "CLI for iOS simulator screenshots. It builds the app, sets the status bar, launches it on the screen you choose with preview data, and saves the image.",
       links: [{ href: "/projects/screenshots-ios/", label: "How it works" }, { href: "https://github.com/alesanabriav7/screenshots-ios", label: "GitHub", external: true }],
     },
@@ -154,7 +137,6 @@ export const projects: Record<Lang, Project[]> = {
       id: "ios-architect-skill",
       title: "ios-architect-skill",
       meta: "Skills for coding agents",
-      glyph: "layers",
       text: "Skills for Claude Code and OpenClaw covering SwiftUI feature architecture, GRDB persistence, Swift concurrency tests and visual checks.",
       links: [{ href: "/projects/ios-architect/", label: "How it works" }, { href: "https://github.com/alesanabriav7/ios-architect-skill", label: "GitHub", external: true }],
     },
@@ -172,7 +154,6 @@ export const projects: Record<Lang, Project[]> = {
       id: "appstore-tools",
       title: "appstore-tools",
       meta: "CLI en TypeScript",
-      glyph: "terminal",
       text: "CLI y librería en TypeScript para App Store Connect. Lista tus apps, genera el IPA, lee y actualiza la metadata de la App Store y sube builds.",
       links: [{ href: "/projects/appstore-tools/", label: "Cómo funciona" }, { href: "https://github.com/alesanabriav7/appstore-tools", label: "GitHub", external: true }],
     },
@@ -180,7 +161,6 @@ export const projects: Record<Lang, Project[]> = {
       id: "screenshots-ios",
       title: "screenshots-ios",
       meta: "CLI del simulador",
-      glyph: "viewfinder",
       text: "CLI para capturas del simulador de iOS. Compila la app, ajusta la barra de estado, la abre en la pantalla que elijas con datos de prueba y guarda la imagen.",
       links: [{ href: "/projects/screenshots-ios/", label: "Cómo funciona" }, { href: "https://github.com/alesanabriav7/screenshots-ios", label: "GitHub", external: true }],
     },
@@ -188,23 +168,9 @@ export const projects: Record<Lang, Project[]> = {
       id: "ios-architect-skill",
       title: "ios-architect-skill",
       meta: "Skills para agentes de código",
-      glyph: "layers",
       text: "Skills para Claude Code y OpenClaw sobre arquitectura de features en SwiftUI, persistencia con GRDB, tests de concurrencia en Swift y revisiones visuales.",
       links: [{ href: "/projects/ios-architect/", label: "Cómo funciona" }, { href: "https://github.com/alesanabriav7/ios-architect-skill", label: "GitHub", external: true }],
     },
-  ],
-};
-
-export const capabilities: Record<Lang, { title: string; items: string[] }[]> = {
-  en: [
-    { title: "Mobile", items: ["Swift & SwiftUI", "Kotlin & Android", "React Native", "GRDB & Tuist", "Apple Foundation Models", "App Store Connect automation"] },
-    { title: "AI with customers", items: ["AI agents & integrations", "Customer workflow design", "Evaluation & verification", "Claude Code & OpenClaw"] },
-    { title: "Product & full-stack", items: ["TypeScript, Node.js & React", "Laravel & Ruby on Rails", "B2B platforms & e-commerce", "Engineering leadership"] },
-  ],
-  es: [
-    { title: "Móvil", items: ["Swift y SwiftUI", "Kotlin y Android", "React Native", "GRDB y Tuist", "Apple Foundation Models", "Automatización de App Store Connect"] },
-    { title: "IA con clientes", items: ["Agentes de IA e integraciones", "Diseño de procesos con el cliente", "Evaluación y verificación", "Claude Code y OpenClaw"] },
-    { title: "Producto y full-stack", items: ["TypeScript, Node.js y React", "Laravel y Ruby on Rails", "Plataformas B2B y e-commerce", "Liderazgo de equipos de ingeniería"] },
   ],
 };
 

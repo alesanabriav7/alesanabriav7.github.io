@@ -231,27 +231,6 @@
   box-shadow: 0 0 0 1px var(--color-border);
 }
 
-.card__glyph {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: var(--space-5);
-  border-radius: 22.5%;
-  color: #ffffff;
-}
-
-.card__glyph svg {
-  width: 30px;
-  height: 30px;
-}
-
-.tint-blue { background: linear-gradient(180deg, #2b8cff, #0a6cf0); }
-.tint-indigo { background: linear-gradient(180deg, #6e6cf5, #4f4ad8); }
-.tint-orange { background: linear-gradient(180deg, #ffa53a, #f5800b); }
-.tint-green { background: linear-gradient(180deg, #3ad16b, #26b050); }
-.tint-pink { background: linear-gradient(180deg, #ff5a7e, #ee2f5c); }
-.tint-gray { background: linear-gradient(180deg, #8e8e93, #636366); }
 
 .card__meta {
   margin: 0 0 var(--space-2);
@@ -372,41 +351,6 @@
   color: var(--color-muted);
   font-size: 0.9375rem;
   line-height: 1.55;
-}
-
-/* Stats */
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-4);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.stat {
-  padding: var(--space-6) var(--space-5);
-  border-radius: var(--radius-xl);
-  background: var(--color-surface);
-}
-
-.stat__value {
-  display: block;
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: clamp(1.375rem, 2vw, 1.75rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  white-space: nowrap;
-  line-height: 1.1;
-}
-
-.stat__label {
-  display: block;
-  margin-top: var(--space-2);
-  color: var(--color-muted);
-  font-size: 0.9375rem;
-  line-height: 1.4;
 }
 
 /* Plain list inside a tile */
@@ -582,8 +526,7 @@
 
 @media (max-width: 900px) {
   .card-grid--3,
-  .card-grid--4,
-  .stat-grid {
+  .card-grid--4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -623,10 +566,6 @@
 
   .global-nav__brand {
     font-size: 1rem;
-  }
-
-  .stat__value {
-    white-space: normal;
   }
 
   .global-nav [data-hide-mobile] {
@@ -853,8 +792,7 @@
   content: none;
 }
 
-[data-theme="personal"] .inset-list__mark,
-[data-theme="personal"] .card__glyph {
+[data-theme="personal"] .inset-list__mark {
   background: var(--color-accent-soft);
   color: var(--color-accent);
 }
@@ -937,4 +875,53 @@
   margin-top: var(--space-3);
   color: var(--color-muted);
   font-size: 0.875rem;
+}
+
+.inset-list--plain .inset-list__row {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.inset-list--plain .inset-list__row + .inset-list__row::before {
+  left: var(--space-8);
+}
+
+.inset-list--plain .inset-list__body {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .inset-list--plain .inset-list__row {
+    grid-template-columns: 1fr;
+  }
+
+  .inset-list--plain .inset-list__row + .inset-list__row::before {
+    left: var(--space-5);
+  }
+
+  .inset-list--plain .inset-list__meta {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+.card--feature {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--space-6);
+}
+
+.card--feature .card__icon {
+  grid-row: span 4;
+  width: 72px;
+  height: 72px;
+}
+
+@media (max-width: 640px) {
+  .card--feature {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-grid--spaced {
+  margin-top: var(--space-4);
 }

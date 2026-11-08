@@ -1,5 +1,5 @@
 export interface InsetItem {
-  mark: string;
+  mark?: string;
   tint?: "blue" | "indigo" | "orange" | "green" | "pink" | "gray";
   title: string;
   subtitle?: string;

@@ -8,10 +8,10 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<ul class="inset-list">
+<ul class:list={["inset-list", { "inset-list--plain": items.every((item) => !item.mark) }]}>
   {items.map((item) => (
     <li class="inset-list__row">
-      <span class:list={["inset-list__mark", `tint-${item.tint ?? "gray"}`]} aria-hidden="true">{item.mark}</span>
+      {item.mark && <span class:list={["inset-list__mark", `tint-${item.tint ?? "gray"}`]} aria-hidden="true">{item.mark}</span>}
       <div>
         <h3 class="inset-list__title">{item.title}</h3>
         {item.subtitle && <p class="inset-list__subtitle">{item.subtitle}</p>}

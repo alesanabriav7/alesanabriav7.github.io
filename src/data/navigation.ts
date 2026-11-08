@@ -15,7 +15,7 @@ export function personalNavLinks(lang: Lang, alternates: { hreflang: string; hre
 }
 
 export function personalContact(lang: Lang) {
-  return { href: profileLinks.linkedin, label: ui[lang].nav.connect, external: true, hideOnMobile: true };
+  return { href: `${paths[lang].home}#contact`, label: ui[lang].nav.connect, hideOnMobile: true };
 }
 
 export function personalFooterLinks(lang: Lang) {

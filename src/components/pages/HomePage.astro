@@ -6,9 +6,8 @@ import Card from "../ui/Card.astro";
 import InsetList from "../ui/InsetList.astro";
 import PostList from "../ui/PostList.astro";
 import Section from "../ui/Section.astro";
-import StatGrid from "../ui/StatGrid.astro";
 import { FULL_NAME, SITE_HANDLE, SITE_URL, personId, personImageId, profileLinks, websiteId } from "../../data/site";
-import { capabilities, contactEmail, experience, home, paths, projects, ui, alternatesFor, type Lang } from "../../data/profile";
+import { contactEmail, experience, home, paths, projects, ui, alternatesFor, type Lang } from "../../data/profile";
 import { sortedPosts } from "../../data/posts";
 
 interface Props {
@@ -20,6 +19,7 @@ const t = home[lang];
 const s = ui[lang].sections;
 const p = paths[lang];
 const latestPosts = sortedPosts().slice(0, 3);
+const [cifro, ...tools] = projects[lang];
 
 const profileJsonLd = {
   "@type": "ProfilePage",
@@ -63,10 +63,6 @@ const profileJsonLd = {
     </figure>
   </section>
 
-  <section class="hero-stats">
-    <div class="container"><StatGrid items={t.stats} /></div>
-  </section>
-
   <Section id="about" title={s.about}>
     <div class="about">
       <div class="about-copy">
@@ -94,21 +90,10 @@ const profileJsonLd = {
   </Section>
 
   <Section id="projects" title={s.projects}>
-    <div class="card-grid card-grid--2">
-      {projects[lang].map((project) => (
-        <Card title={project.title} meta={project.meta} icon={project.icon} glyph={project.glyph} links={project.links}>
-          <p>{project.text}</p>
-        </Card>
-      ))}
-    </div>
-  </Section>
-
-  <Section id="capabilities" title={s.capabilities}>
-    <div class="card-grid card-grid--3">
-      {capabilities[lang].map((group) => (
-        <Card title={group.title}>
-          <ul class="plain-list">{group.items.map((item) => <li>{item}</li>)}</ul>
-        </Card>
+    <Card feature title={cifro.title} meta={cifro.meta} icon={cifro.icon} links={cifro.links}><p>{cifro.text}</p></Card>
+    <div class="card-grid card-grid--3 card-grid--spaced">
+      {tools.map((tool) => (
+        <Card title={tool.title} meta={tool.meta} links={tool.links}><p>{tool.text}</p></Card>
       ))}
     </div>
   </Section>
