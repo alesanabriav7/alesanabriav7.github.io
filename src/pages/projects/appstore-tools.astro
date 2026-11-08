@@ -2,8 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Faq from "../../components/ui/Faq.astro";
 import PageTitle from "../../components/ui/PageTitle.astro";
-import Section from "../../components/ui/Section.astro";
 import Prose from "../../components/ui/Prose.astro";
+import Section from "../../components/ui/Section.astro";
 
 const faqs = [
   { question: "Is this only a CLI?", answer: "The repository provides a TypeScript CLI and library." },
@@ -13,32 +13,31 @@ const faqs = [
 ---
 
 <BaseLayout
-  title="App Store Connect CLI: appstore-tools"
-  description="appstore-tools by Alejandro Sanabria: list apps, prepare IPAs, manage App Store metadata, and upload builds from the command line."
-  breadcrumbs={[{ name: "Projects", href: "/projects/" }, { name: "App Store Tools", href: "/projects/appstore-tools/" }]}
+  title="appstore-tools: App Store Connect CLI in TypeScript"
+  description="Open-source TypeScript CLI to list apps, build IPAs, pull and update App Store metadata, and upload builds to App Store Connect. By Alejandro Sanabria."
+  breadcrumbs={[{ name: "Projects", href: "/projects/" }, { name: "appstore-tools", href: "/projects/appstore-tools/" }]}
 >
-  <PageTitle reading eyebrow="Developer tools" title="App Store Connect automation with appstore-tools">
-    By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful.ai
+  <PageTitle reading eyebrow="Open-source CLI" title="appstore-tools: an App Store Connect CLI for TypeScript projects">
+    By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful
   </PageTitle>
 
   <Section reading>
     <Prose>
-      <p>A release includes more than compiling an app. There are archives, signing options, listing metadata, and a build that needs to reach App Store Connect. appstore-tools brings those operations into a TypeScript CLI and library.</p>
-      <h2>What you can do</h2>
-      <p>List applications, generate an IPA, read and update App Store metadata, and upload builds. The public documentation describes authentication and the commands for each part of the workflow.</p>
-      <h2>Start by reading</h2>
-      <p>Begin with the command reference and a read-only operation such as listing your apps. Prepare and review changes before applying an update. The metadata workflow supports reading the existing listing into a file so that changes can be inspected.</p>
-    
+      <p>appstore-tools is a TypeScript CLI and library for App Store Connect. It lists your apps, builds an IPA, pulls the listing metadata to a file so you can edit it, pushes it back, and uploads the build.</p>
+      <h2>Commands</h2>
+      <p>List apps, generate an IPA, read and update App Store metadata, and upload builds. The README covers authentication and each command.</p>
+      <h2>Where to start</h2>
+      <p>Run a read-only command first, like listing your apps. For metadata, pull the current listing into a file, edit it, check it, then apply it.</p>
       <h2>Inspect before changing a release</h2>
       <pre><code>npx appstore-tools --help
 npx appstore-tools apps list</code></pre>
       <p>The help command exposes the available operations. Listing apps requires the App Store Connect authentication described in the README. Build and upload operations also depend on your local Xcode and signing setup.</p>
-      <p><a href="https://github.com/alesanabriav7/appstore-tools">Read the command reference</a>.</p>
+      <p><a href="https://github.com/alesanabriav7/appstore-tools">Read the command reference</a>. For App Store screenshots, see <a href="/projects/screenshots-ios/">screenshots-ios</a>.</p>
     </Prose>
   </Section>
 
   <Section reading title="Questions">
     <Faq items={faqs} />
-    <div class="btn-row"><a class="text-link" href="/projects/">Explore all projects</a></div>
+    <div class="btn-row"><a class="text-link" href="/projects/">All projects</a></div>
   </Section>
 </BaseLayout>

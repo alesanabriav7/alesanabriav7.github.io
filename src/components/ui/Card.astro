@@ -2,7 +2,7 @@
 import TagList from "./TagList.astro";
 
 interface Props {
-  title: string;
+  title?: string;
   meta?: string;
   icon?: { src: string; alt: string };
   glyph?: "layers" | "terminal" | "viewfinder";
@@ -30,7 +30,7 @@ const Heading = headingLevel === 2 ? "h2" : "h3";
   )}
   {icon && <img class="card__icon" src={icon.src} alt={icon.alt} width="56" height="56" loading="lazy" decoding="async" />}
   {meta && <p class="card__meta">{meta}</p>}
-  <Heading class="card__title">{title}</Heading>
+  {title && <Heading class="card__title">{title}</Heading>}
   <slot />
   {tags.length > 0 && <TagList tags={tags} />}
   {links.length > 0 && (

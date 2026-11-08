@@ -2,8 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Faq from "../../components/ui/Faq.astro";
 import PageTitle from "../../components/ui/PageTitle.astro";
-import Section from "../../components/ui/Section.astro";
 import Prose from "../../components/ui/Prose.astro";
+import Section from "../../components/ui/Section.astro";
 
 const faqs = [
   { question: "Is this an application framework?", answer: "It is a toolkit of instructions and supporting resources for coding agents." },
@@ -13,32 +13,31 @@ const faqs = [
 ---
 
 <BaseLayout
-  title="iOS Architecture Skills for AI Agents"
-  description="A toolkit by Alejandro Sanabria for AI coding agents building SwiftUI apps: feature architecture, persistence, platform integration, testing, and visual checks."
-  breadcrumbs={[{ name: "Projects", href: "/projects/" }, { name: "iOS Architecture Skills", href: "/projects/ios-architect/" }]}
+  title="iOS Architecture Skills for Claude Code and AI Coding Agents"
+  description="Open-source skills that help Claude Code and other coding agents build SwiftUI features with clear boundaries, GRDB persistence, tests and visual checks."
+  breadcrumbs={[{ name: "Projects", href: "/projects/" }, { name: "ios-architect-skill", href: "/projects/ios-architect/" }]}
 >
-  <PageTitle reading eyebrow="Developer tools" title="iOS architecture skills for AI coding agents">
-    By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful.ai
+  <PageTitle reading eyebrow="Open source" title="iOS architecture skills for Claude Code and AI coding agents">
+    By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful
   </PageTitle>
 
   <Section reading>
     <Prose>
-      <p>When an AI coding agent adds an iOS feature, the architecture needs to remain understandable after the first implementation. iOS Architecture Skills provides focused workflows for that work, from feature boundaries to persistence and verification.</p>
+      <p>Coding agents like Claude Code can write a SwiftUI feature fast. The problem is what the codebase looks like after ten of them. These skills tell the agent how to split a feature, where storage goes (GRDB), how to test async code, and how to check the screen at the end.</p>
       <p>The toolkit covers SwiftUI, Clean Architecture, MVVM, GRDB, and Swift concurrency. Its skills divide responsibilities across architecture, reusable UI, platform integration, storage, testing, and visual checks.</p>
       <h2>What the toolkit covers</h2>
-      <p>Use the architecture workflow for a new app or feature. Use the focused persistence workflow for a database change, or the testing workflow for concurrency and dependency injection work. This separation helps match the scope of the workflow to the scope of the change.</p>
+      <p>Use the architecture skill for a new app or feature. Use the persistence skill for a database change, and the testing skill for concurrency and dependency injection. Pick the one that matches the size of the change.</p>
       <h2>Start with one feature</h2>
       <p>Choose a small feature and describe its expected behavior, storage needs, and existing project conventions. Follow the repository's installation instructions, then inspect the generated changes and verify the result in your project.</p>
-    
       <h2>Try it on a bounded feature</h2>
       <p>Install the toolkit using the <a href="https://github.com/alesanabriav7/ios-architect-skill">repository instructions</a>, then start with a request that states behavior and constraints:</p>
       <pre><code>Add a saved-items feature to this SwiftUI app. Persist items locally, follow the existing feature boundaries, and verify that saved items survive relaunch.</code></pre>
-      <p>Review the domain model, storage boundary, and view state separately. The result still needs to compile and be exercised in your app.</p>
+      <p>Review the domain model, storage boundary, and view state separately. The result still needs to compile and be exercised in your app. For the visual check, I use <a href="/projects/screenshots-ios/">screenshots-ios</a>.</p>
     </Prose>
   </Section>
 
   <Section reading title="Questions">
     <Faq items={faqs} />
-    <div class="btn-row"><a class="text-link" href="/projects/">Explore all projects</a></div>
+    <div class="btn-row"><a class="text-link" href="/projects/">All projects</a></div>
   </Section>
 </BaseLayout>

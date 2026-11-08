@@ -17,5 +17,5 @@ const links = [
 ---
 
 <SiteFooter wide links={links} ariaLabel={t.navLabel}>
-  {t.tagline} · {t.madeBy} <a href="/" rel="author">{SITE_NAME}</a>
+  {t.tagline} · {t.madeBy} <a href={lang === "es" ? "/es/" : "/"} rel="author">{SITE_NAME}</a> {lang === "es" ? "en Bogotá" : "in Bogotá"}
 </SiteFooter>

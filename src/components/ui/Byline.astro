@@ -1,19 +1,21 @@
 ---
 import { SITE_NAME } from "../../data/site";
-import { formatPostDate } from "../../data/writing";
+import { formatPostDate } from "../../data/posts";
+import { paths, ui, type Lang } from "../../data/profile";
 
 interface Props {
-  date: Date;
+  date: string;
   minutes: number;
+  lang: Lang;
 }
 
-const { date, minutes } = Astro.props;
+const { date, minutes, lang } = Astro.props;
 ---
 
 <div class="byline">
   <img class="byline__avatar" src="/images/apple-park-portrait-600.webp" alt="" width="44" height="44" />
   <div>
-    <a class="byline__name" href="/" rel="author">{SITE_NAME}</a>
-    <p class="byline__meta"><time datetime={date.toISOString()}>{formatPostDate(date)}</time>{` · ${minutes} min read`}</p>
+    <a class="byline__name" href={paths[lang].home} rel="author">{SITE_NAME}</a>
+    <p class="byline__meta"><time datetime={date}>{formatPostDate(date, lang)}</time>{` · ${ui[lang].readingTime(minutes)}`}</p>
   </div>
 </div>

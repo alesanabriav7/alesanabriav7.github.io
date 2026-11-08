@@ -1,25 +1,38 @@
-import { personSameAs } from "./site";
+import { contactEmail, paths, ui, type Lang } from "./profile";
+import { profileLinks } from "./site";
 
-const [linkedin, github] = personSameAs;
-
-export const contactEmail = "me@alesanabriav.com";
-
-export function personalNavLinks(hasWriting: boolean) {
+export function personalNavLinks(lang: Lang, alternates: { hreflang: string; href: string }[] = []) {
+  const t = ui[lang].nav;
+  const p = paths[lang];
+  const other = alternates.find((alternate) => alternate.hreflang === (lang === "es" ? "en" : "es"));
   return [
-    { href: "/work/", label: "Work" },
-    { href: "/projects/", label: "Projects" },
-    ...(hasWriting ? [{ href: "/writing/", label: "Writing" }] : []),
+    { href: p.work, label: t.work },
+    { href: p.projects, label: t.projects },
+    { href: p.blog, label: t.blog },
+    { href: p.about, label: t.about, hideOnMobile: true },
+    ...(other ? [{ href: other.href, label: t.switchLabel, hreflang: other.hreflang, hideOnMobile: true }] : []),
   ];
 }
 
-export const personalContact = { href: linkedin, label: "Connect", external: true, hideOnMobile: true };
+export function personalContact(lang: Lang) {
+  return { href: profileLinks.linkedin, label: ui[lang].nav.connect, external: true, hideOnMobile: true };
+}
 
-export function personalFooterLinks(hasWriting: boolean) {
+export function personalFooterLinks(lang: Lang) {
+  const t = ui[lang].nav;
+  const p = paths[lang];
+  const otherLang: Lang = lang === "es" ? "en" : "es";
   return [
-    ...personalNavLinks(hasWriting),
-    { href: "/cifro/", label: "Cifro" },
-    { href: linkedin, label: "LinkedIn", external: true, rel: "me noopener noreferrer" },
-    { href: github, label: "GitHub", external: true, rel: "me noopener noreferrer" },
-    { href: `mailto:${contactEmail}`, label: "Email" },
+    { href: p.work, label: t.work },
+    { href: p.projects, label: t.projects },
+    { href: p.blog, label: t.blog },
+    { href: p.about, label: t.about },
+    { href: p.cifro, label: "Cifro" },
+    { href: profileLinks.linkedin, label: "LinkedIn", external: true, rel: "me noopener noreferrer" },
+    { href: profileLinks.github, label: "GitHub", external: true, rel: "me noopener noreferrer" },
+    { href: profileLinks.x, label: "X", external: true, rel: "me noopener noreferrer" },
+    { href: profileLinks.appStore, label: "App Store", external: true, rel: "me noopener noreferrer" },
+    { href: `mailto:${contactEmail}`, label: ui[lang].footer.email },
+    { href: paths[otherLang].home, label: ui[lang].nav.switchLabel },
   ];
 }

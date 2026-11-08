@@ -1,17 +1,17 @@
 import rss from "@astrojs/rss";
-import { getPosts } from "../data/writing";
+import { postPath, sortedPosts } from "../data/posts";
 
-export async function GET(context: { site?: URL }) {
-  const posts = await getPosts();
+export function GET(context: { site?: URL }) {
   return rss({
-    title: "Alejandro Sanabria — Writing",
-    description: "Writing on forward deployed engineering, AI agents in production, mobile platforms, and building software products.",
+    title: "Blog de Alejandro Sanabria",
+    description: "Notas sobre agentes de IA, asistentes y cómo los uso en la vida real.",
     site: context.site ?? "https://alejandrosanabria.com",
-    items: posts.map((post) => ({
-      title: post.data.title,
-      description: post.data.description,
-      pubDate: post.data.pubDate,
-      link: `/writing/${post.id}/`,
+    customData: "<language>es</language>",
+    items: sortedPosts().map((post) => ({
+      title: post.title,
+      description: post.description,
+      pubDate: new Date(`${post.datePublished}T12:00:00Z`),
+      link: postPath(post.slug),
     })),
   });
 }
