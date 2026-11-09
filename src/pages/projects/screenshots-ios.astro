@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { brandedTitle, topicPageNode } from "../../data/site";
 const exampleJson = JSON.stringify({ workspace: "MyApp.xcworkspace", scheme: "MyApp", screenshotName: "home", outputDir: "docs/screenshots", launchEnv: { APP_USE_PREVIEW_DATA: "1", APP_INITIAL_SCREEN: "home" } }, null, 2);
 const title = brandedTitle("screenshots-ios: iOS screenshot CLI");
-const description = "screenshots-ios builds the app, sets the status bar, launches a screen with preview data, and saves the screenshot.";
+const description = "CLI for iOS simulator screenshots. It builds the app, sets the status bar, launches with your environment variables, and captures the screen.";
 ---
 <BaseLayout title={title} description={description} jsonLd={topicPageNode("/projects/screenshots-ios/", title, description, "en")}>
   <section class="page-intro"><div class="shell"><p class="eyebrow">Open-source CLI</p><h1>Repeatable iOS simulator screenshots</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
