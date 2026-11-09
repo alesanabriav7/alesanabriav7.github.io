@@ -1,9 +1,18 @@
 ---
 import "../../styles/cifro.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const supportJsonLd = {
+  "@type": "WebPage",
+  "@id": "https://alejandrosanabria.com/cifro/support/#webpage",
+  url: "https://alejandrosanabria.com/cifro/support/",
+  inLanguage: "en",
+  name: "Cifro Support: help with the iPhone budget app",
+  about: { "@id": "https://alejandrosanabria.com/cifro/#app" },
+};
 ---
 
-<BaseLayout variant="cifro" title="Cifro Support: help with the iPhone budget app" description="Cifro support: how to contact me, where your data lives, iCloud sync, currencies, Face ID and supported iPhones." favicon="/cifro/icon.jpg">
+<BaseLayout variant="cifro" title="Cifro Support: help with the iPhone budget app" description="Cifro support: how to contact me, where your data lives, iCloud sync, currencies, Face ID and supported iPhones." favicon="/cifro/icon.jpg" jsonLd={supportJsonLd}>
   <section class="page-intro compact"><div class="shell"><p class="eyebrow">Cifro</p><h1>Cifro support</h1><p>Questions about <a href="/cifro/">Cifro</a>? Email me and I'll answer.</p></div></section>
   <section class="section tint"><div class="shell prose"><h2>Contact</h2><p>Email <a href="mailto:me@alesanabriav.com?subject=Cifro%20support">me@alesanabriav.com</a> with the Cifro version, your iPhone model, and a short description of what happened. Do not include personal financial information.</p>
   <h2>Common questions</h2>
