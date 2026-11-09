@@ -47,9 +47,9 @@ interface CifroCopy {
 export const cifroCopy: Record<CifroLang, CifroCopy> = {
   en: {
     meta: {
-      title: "Cifro App: Budget Planner & Expense Tracker for iPhone, No Bank Login",
+      title: "Cifro: budget app for iPhone",
       description:
-        "Cifro is a budget planner and expense tracker for iPhone. Know if you're on track this month, see your daily spending limit, and ask private on-device AI about your money. No bank login, ads, or tracking.",
+        "Cifro is a budget app for iPhone. Log an expense by text, voice, or a receipt scan. AI runs on the phone. No account and no bank login.",
       ogAlt: "Cifro budget planner on iPhone showing whether the month is on track",
     },
     nav: {
@@ -69,7 +69,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     },
     hero: {
       eyebrow: "Budget planner & expense tracker for iPhone",
-      title: "Know if your budget is on track.",
+      title: "Budget app for iPhone",
       body:
         "Cifro turns your spending into a clear answer: are you on pace this month, how much can you spend per day, and where is your money going. No bank login, no ads, no tracking.",
       primary: "Download on the App Store",
@@ -185,9 +185,9 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
   },
   es: {
     meta: {
-      title: "Cifro: app de presupuesto para iPhone sin conectar tu banco",
+      title: "Cifro: app de presupuesto para iPhone",
       description:
-        "Cifro es una app de presupuesto y control de gastos para iPhone. Sabe si vas bien este mes, conoce tu límite de gasto diario y pregúntale a una IA privada por tu dinero. Sin conectar tu banco, sin anuncios ni rastreo.",
+        "Cifro es una app de presupuesto para iPhone. Registras un gasto por texto, voz o un recibo. La IA corre en el teléfono. Sin cuenta ni banco.",
       ogAlt: "Cifro, app de presupuesto en iPhone, mostrando si el mes va bien",
     },
     nav: {
@@ -207,7 +207,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     },
     hero: {
       eyebrow: "App de presupuesto y control de gastos para iPhone",
-      title: "Sabe si tu presupuesto va bien.",
+      title: "App de presupuesto para iPhone",
       body:
         "Cifro convierte tus gastos en una respuesta clara: si vas en ritmo este mes, cuánto puedes gastar al día y a dónde se va tu dinero. Sin conectar tu banco, sin anuncios, sin rastreo.",
       primary: "Descargar en la App Store",

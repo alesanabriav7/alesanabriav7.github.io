@@ -1,17 +1,10 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { FULL_NAME, SITE_URL, personId, websiteId } from "../../../data/site";
+import { brandedTitle, topicPageNode } from "../../../data/site";
 
-const pageJsonLd = {
-  "@type": "CollectionPage",
-  "@id": `${SITE_URL}/es/trabajo/#webpage`,
-  url: `${SITE_URL}/es/trabajo/`,
-  inLanguage: "es",
-  name: `${FULL_NAME}: Brand Spa, Platzi, Wonderful desde 2012`,
-  isPartOf: { "@id": websiteId },
-  about: { "@id": personId },
-  author: { "@id": personId },
-};
+const title = brandedTitle("Dónde he trabajado: Brand Spa, Platzi y Wonderful");
+const description = "Brand Spa (dic 2012–oct 2017), móvil en Platzi (oct 2017–jun 2026) y Forward Deployed Engineer en Wonderful desde julio de 2026.";
+const pageJsonLd = topicPageNode("/es/trabajo/", title, description, "es");
 
 const work = [
   {
@@ -36,8 +29,8 @@ const work = [
 ---
 
 <BaseLayout
-  title={`${FULL_NAME}: Brand Spa, Platzi, Wonderful desde 2012`}
-  description="He trabajado desde 2012: ingeniería en Brand Spa (dic 2012–oct 2017), móvil en Platzi (oct 2017–jun 2026), Forward Deployed Engineer en Wonderful desde julio de 2026."
+  title={title}
+  description={description}
   lang="es"
   jsonLd={pageJsonLd}
   alternates={[
@@ -46,7 +39,7 @@ const work = [
     { hreflang: "x-default", href: "/work/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Trabajo · Alejandro Sanabria</p><h1>Dónde he trabajado: Brand Spa, Platzi, Wonderful</h1><p>Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>. Llevo en tecnología desde 2012, unos 14 años: cofundé Brand Spa y después lideré móvil en Platzi.</p></div></section>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Trabajo</p><h1>Dónde he trabajado: Brand Spa, Platzi y Wonderful</h1><p>Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>. Llevo en tecnología desde 2012, unos 14 años: cofundé Brand Spa y después lideré móvil en Platzi.</p></div></section>
   <section class="section tint"><div class="shell"><div class="card-grid">{work.map((item) => <article class="card"><h2>{item.title}</h2><p class="card-role">{item.type}</p><p>{item.text}</p><ul class="tag-list">{item.tags.map((tag) => <li>{tag}</li>)}</ul></article>)}</div></div></section>
   <section class="section"><div class="shell"><div class="section-heading"><p class="eyebrow">Mi propia app</p><h2>Cifro</h2></div><div class="card-grid"><article class="card featured"><p class="eyebrow">Cifro</p><h3>Una app de presupuesto para iPhone.</h3><p>SwiftUI y Apple Foundation Models, con la IA corriendo en el teléfono. Sin cuenta de Cifro, sin anuncios ni tracking de terceros. La sincronización opcional usa tu cuenta privada de iCloud.</p><a href="/cifro/es/">App de presupuesto Cifro →</a></article></div></div></section>
   <section class="section tint"><div class="shell prose"><h2>Herramientas con las que publico</h2><p><a href="/projects/ios-architect/">Skills de arquitectura iOS para Claude Code</a> mantienen claros los límites de cada feature cuando un agente escribe el código. <a href="/projects/appstore-tools/">appstore-tools</a> maneja la metadata y las subidas a App Store Connect. <a href="/projects/screenshots-ios/">screenshots-ios</a> captura el simulador siempre en el mismo estado.</p><p><a href="/es/proyectos/">Todos los proyectos →</a></p>

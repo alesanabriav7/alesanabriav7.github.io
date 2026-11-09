@@ -1,17 +1,10 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { SITE_URL, personId, websiteId } from "../../../data/site";
+import { brandedTitle, topicPageNode } from "../../../data/site";
 
-const pageJsonLd = {
-  "@type": "CollectionPage",
-  "@id": `${SITE_URL}/es/proyectos/#webpage`,
-  url: `${SITE_URL}/es/proyectos/`,
-  inLanguage: "es",
-  name: "Proyectos de Alejandro Sanabria",
-  isPartOf: { "@id": websiteId },
-  about: { "@id": personId },
-  author: { "@id": personId },
-};
+const title = brandedTitle("Proyectos: Cifro y herramientas");
+const description = "Cifro, una app de presupuesto para iPhone, más appstore-tools, screenshots-ios y skills de iOS para agentes de código.";
+const pageJsonLd = topicPageNode("/es/proyectos/", title, description, "es");
 
 const projects = [
   {
@@ -50,8 +43,8 @@ const projects = [
 ---
 
 <BaseLayout
-  title="Proyectos de Alejandro Sanabria: Cifro, appstore-tools, screenshots-ios"
-  description="Las apps y herramientas de código abierto que hago y uso: Cifro para iPhone, una CLI de App Store Connect, una CLI de capturas del simulador de iOS y skills de iOS para agentes de código."
+  title={title}
+  description={description}
   lang="es"
   jsonLd={pageJsonLd}
   alternates={[
@@ -60,7 +53,7 @@ const projects = [
     { hreflang: "x-default", href: "/projects/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Proyectos · Alejandro Sanabria</p><h1>Lo que he construido</h1><p>Una app para iPhone y tres herramientas de código abierto. Las herramientas las uso para construir y publicar la app. La trayectoria laboral está en <a href="/es/sobre-mi/">Sobre mí</a> y en <a href="/es/trabajo/">dónde he trabajado</a>.</p></div></section>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Proyectos</p><h1>Cifro y las herramientas con las que publico</h1><p>Una app para iPhone y tres herramientas de código abierto. Las herramientas las uso para construir y publicar la app. La trayectoria laboral está en <a href="/es/sobre-mi/">Sobre mí</a> y en <a href="/es/trabajo/">dónde he trabajado</a>.</p></div></section>
   <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><p>{project.links.map((link, i) => <>{i > 0 && " · "}<a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a></>)}</p></article>)}</div>
   <p><a href="/es/sobre-mi/">Sobre mí</a> · <a href="/projects/" hreflang="en" lang="en">English version</a></p></div></section>
 </BaseLayout>

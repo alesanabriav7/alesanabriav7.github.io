@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { brandedTitle, topicPageNode } from "../../data/site";
 const exampleJson = JSON.stringify({ workspace: "MyApp.xcworkspace", scheme: "MyApp", screenshotName: "home", outputDir: "docs/screenshots", launchEnv: { APP_USE_PREVIEW_DATA: "1", APP_INITIAL_SCREEN: "home" } }, null, 2);
+const title = brandedTitle("screenshots-ios: iOS screenshot CLI");
+const description = "screenshots-ios builds the app, sets the status bar, launches a screen with preview data, and saves the screenshot.";
 ---
-<BaseLayout title="screenshots-ios: iOS Simulator Screenshots CLI" description="Take the same iOS simulator screenshot every time: build, set the status bar, launch on a chosen screen with preview data, capture. JSON config. By Alejandro Sanabria.">
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Open-source CLI</p><h1>screenshots-ios: repeatable iOS simulator screenshots from the CLI</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
+<BaseLayout title={title} description={description} jsonLd={topicPageNode("/projects/screenshots-ios/", title, description, "en")}>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Open-source CLI</p><h1>Repeatable iOS simulator screenshots</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
   <section class="section tint"><div class="shell prose">
 <p>Screenshots drift when the clock, battery or sample data change between runs. screenshots-ios handles the simulator side from the command line: it builds and installs the app, sets the status bar, launches with your environment variables and saves the image. Your app still decides which screen and which data to show.</p>
 <h2>How it works</h2>

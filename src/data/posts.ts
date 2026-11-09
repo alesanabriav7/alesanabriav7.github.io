@@ -9,9 +9,9 @@ export interface Post {
 export const posts: Post[] = [
   {
     slug: "grok-bot-casos-reales",
-    title: "Lo que mi equipo de Grok Bot hizo por mí: casos reales",
+    title: "Casos reales de mi equipo de Grok Bot",
     description:
-      "Alejandro Sanabria, Forward Deployed Engineer en Bogotá, cuenta casos reales de su equipo de bots en Grok Bot: trámites, plata que le debían, millas, citas y lo que todavía no hace.",
+      "Casos de un equipo de bots en Grok Bot: trámites, reembolsos, millas, citas de Global Entry y lo que no automatiza.",
     datePublished: "2026-10-29",
     lang: "es",
   },

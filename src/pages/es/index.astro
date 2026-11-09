@@ -1,28 +1,30 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE_NAME, FULL_NAME, SITE_HANDLE, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../../data/site";
+import { SITE_NAME, FULL_NAME, PERSON_PHOTO, PERSON_PHOTO_SMALL, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, homeAlternates } from "../../data/site";
 import { posts, postPath } from "../../data/posts";
 import "../../styles/profile.css";
 
+const title = `${FULL_NAME} | Wonderful, desde 2012`;
+const description =
+  "Alejandro Sanabria Villescas, Forward Deployed Engineer en Wonderful, en Bogotá. En tecnología desde 2012: Brand Spa y más de 8 años en móvil en Platzi.";
 const profileJsonLd = {
   "@type": "ProfilePage",
   "@id": "https://alejandrosanabria.com/es/#webpage",
   url: "https://alejandrosanabria.com/es/",
   inLanguage: "es",
-  name: `${FULL_NAME} (${SITE_HANDLE})`,
+  name: title,
   isPartOf: { "@id": websiteId },
   mainEntity: { "@id": personId },
   primaryImageOfPage: { "@id": personImageId },
-  description:
-    "Alejandro Sanabria Villescas, Forward Deployed Engineer en Wonderful, en Bogotá. En tecnología desde 2012: Brand Spa y después más de 8 años en móvil en Platzi.",
+  description,
 };
 const latestPost = [...posts].sort((a, b) => b.datePublished.localeCompare(a.datePublished))[0];
 ---
 
 <BaseLayout
   variant="profile"
-  title={`${FULL_NAME} | Wonderful · tecnología desde 2012`}
-  description="Alejandro Sanabria Villescas, Forward Deployed Engineer en Wonderful, en Bogotá. En tecnología desde 2012: Brand Spa y después más de 8 años en móvil en Platzi."
+  title={title}
+  description={description}
   lang="es"
   ogType="profile"
   jsonLd={profileJsonLd}

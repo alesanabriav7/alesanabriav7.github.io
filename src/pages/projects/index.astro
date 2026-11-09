@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { brandedTitle, topicPageNode } from "../../data/site";
 
 const projects = [
   {
@@ -35,9 +36,13 @@ const projects = [
     ],
   },
 ];
+
+const title = brandedTitle("Projects: Cifro and open-source tools");
+const description = "Cifro, a budget app for iPhone, plus appstore-tools, screenshots-ios, and iOS skills for coding agents.";
+const pageJsonLd = topicPageNode("/projects/", title, description, "en");
 ---
 
-<BaseLayout alternates={[{ hreflang: "en", href: "/projects/" }, { hreflang: "es", href: "/es/proyectos/" }, { hreflang: "x-default", href: "/projects/" }]} title="Projects by Alejandro Sanabria: Cifro, appstore-tools, screenshots-ios" description="Apps and open-source tools I build and use: Cifro for iPhone, an App Store Connect CLI, an iOS simulator screenshot CLI and iOS skills for AI coding agents.">
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Projects</p><h1>Things I've built</h1><p>One iPhone app and three open-source tools. I use the tools to build and release the app. For jobs and the timeline, see <a href="/about/">About</a> and <a href="/work/">where I've worked</a>.</p></div></section>
+<BaseLayout alternates={[{ hreflang: "en", href: "/projects/" }, { hreflang: "es", href: "/es/proyectos/" }, { hreflang: "x-default", href: "/projects/" }]} title={title} description={description} jsonLd={pageJsonLd}>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Projects</p><h1>Cifro and the tools I use to ship it</h1><p>One iPhone app and three open-source tools. I use the tools to build and release the app. For jobs and the timeline, see <a href="/about/">About</a> and <a href="/work/">where I've worked</a>.</p></div></section>
   <section class="section tint"><div class="shell"><div class="card-grid">{projects.map((project) => <article class:list={["card", { featured: project.title === "Cifro" }]}><h2>{project.title}</h2><p>{project.text}</p><p>{project.links.map((link, i) => <>{i > 0 && " · "}<a href={link.href} target={link.href.startsWith("http") ? "_blank" : undefined} rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a></>)}</p></article>)}</div></div></section>
 </BaseLayout>
