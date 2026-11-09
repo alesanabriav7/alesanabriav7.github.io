@@ -25,4 +25,17 @@ for (const status of [301, 404, 304]) assert.equal((await get('/missing/', 'text
 assert.equal((await get('/llms.txt', 'text/markdown', asset(200, 'text/plain'))).headers.get('Content-Type'), 'text/plain');
 assert.equal((await get('/privacy/', 'text/markdown')).headers.get('Location'), origin + '/cifro/privacy/');
 assert.match((await get('/cifro/privacy/', 'text/markdown')).headers.get('X-Robots-Tag'), /noindex/);
+for (const path of ['/404', '/404/', '/404.html']) {
+  const response = await get(path, 'text/html', asset(200));
+  assert.equal(response.status, 404, path);
+  assert.equal(response.headers.get('Content-Type'), 'text/html', path);
+  assert.equal(await response.text(), '<h1>HTML</h1>', path);
+}
+assert.equal((await get('/404', 'text/html', asset(200), 'HEAD')).body, null);
+const sitemap = await get('/sitemap.xml', '*/*');
+assert.equal(sitemap.status, 301);
+assert.equal(sitemap.headers.get('Location'), origin + '/sitemap-index.xml');
+const aliasSitemap = await worker.fetch(new Request('http://www.alesanabriav.com/sitemap.xml'));
+assert.equal(aliasSitemap.status, 301);
+assert.equal(aliasSitemap.headers.get('Location'), origin + '/sitemap-index.xml');
 console.log(`Markdown checks passed for ${Object.keys(pages).length} pages, negotiation, redirects, 404s, HEAD and privacy.`);

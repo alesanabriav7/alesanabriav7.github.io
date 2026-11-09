@@ -20,11 +20,25 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const legacyPrivacy = url.pathname === "/privacy" || url.pathname === "/privacy/";
-    if (ALIASES.has(url.hostname) || (url.hostname === CANONICAL_HOST && url.protocol !== "https:") || legacyPrivacy) {
+    const legacySitemap = url.pathname === "/sitemap.xml";
+    if (ALIASES.has(url.hostname) || (url.hostname === CANONICAL_HOST && url.protocol !== "https:") || legacyPrivacy || legacySitemap) {
       url.protocol = "https:";
       url.hostname = CANONICAL_HOST;
       if (legacyPrivacy) url.pathname = "/cifro/privacy/";
+      if (legacySitemap) url.pathname = "/sitemap-index.xml";
       return Response.redirect(url, 301);
+    }
+    // /404 is a real file, so the asset binding would serve it with 200.
+    // Unknown paths already come back as 404 via assets.not_found_handling = "404-page".
+    if (url.pathname === "/404" || url.pathname === "/404/" || url.pathname === "/404.html") {
+      let notFound = await env.ASSETS.fetch(request);
+      if (notFound.status >= 300 && notFound.status < 400) {
+        const location = notFound.headers.get("Location");
+        if (location) notFound = await env.ASSETS.fetch(new Request(new URL(location, request.url), request));
+      }
+      const headers = new Headers(notFound.headers);
+      headers.delete("Location");
+      return new Response(request.method === "HEAD" ? null : notFound.body, { status: 404, headers });
     }
     // Serve the requested asset, preserving redirects and 404s for every Accept header.
     const markdownRequested = wantsMarkdown(request.headers.get('Accept') || '');

@@ -1,8 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { brandedTitle, topicPageNode } from "../../data/site";
+
+const title = brandedTitle("appstore-tools: App Store Connect CLI");
+const description = "TypeScript CLI to list apps, build an IPA, read and update App Store metadata, and upload builds to App Store Connect.";
 ---
-<BaseLayout title="appstore-tools: App Store Connect CLI in TypeScript" description="Open-source TypeScript CLI to list apps, build IPAs, pull and update App Store metadata, and upload builds to App Store Connect. By Alejandro Sanabria.">
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Open-source CLI</p><h1>appstore-tools: an App Store Connect CLI for TypeScript projects</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
+<BaseLayout title={title} description={description} jsonLd={topicPageNode("/projects/appstore-tools/", title, description, "en")}>
+  <section class="page-intro"><div class="shell"><p class="eyebrow">Open-source CLI</p><h1>App Store Connect CLI in TypeScript</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
   <section class="section tint"><div class="shell prose">
 <p>appstore-tools is a TypeScript CLI and library for App Store Connect. It lists your apps, builds an IPA, pulls the listing metadata to a file so you can edit it, pushes it back, and uploads the build.</p>
 <h2>Commands</h2>

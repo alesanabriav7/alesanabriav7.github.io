@@ -40,6 +40,25 @@ export function absoluteUrl(path: string): string {
   return new URL(path, `${SITE_URL}/`).toString();
 }
 
+// Subpages keep the name as a brand suffix. The homepages pass a title that already includes it.
+export function brandedTitle(title: string): string {
+  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
+}
+
+// A topic page. The person stays in the graph as author; mainEntity is reserved for the homepages.
+export function topicPageNode(path: string, name: string, description: string, lang?: "en" | "es") {
+  return {
+    "@type": "WebPage",
+    "@id": `${SITE_URL}${path}#webpage`,
+    url: `${SITE_URL}${path}`,
+    name,
+    description,
+    ...(lang ? { inLanguage: lang } : {}),
+    isPartOf: { "@id": websiteId },
+    author: { "@id": personId },
+  };
+}
+
 export const personId = `${SITE_URL}/#person`;
 export const websiteId = `${SITE_URL}/#website`;
 export const personImageId = `${SITE_URL}/#person-image`;

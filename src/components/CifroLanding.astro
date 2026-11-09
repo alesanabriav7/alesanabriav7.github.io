@@ -1,7 +1,7 @@
 ---
 import "../styles/cifro.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { absoluteUrl, personId, personNode } from "../data/site";
+import { absoluteUrl, personId, personNode, websiteId } from "../data/site";
 import { cifroAlternates, cifroAppStoreId, cifroAppStoreUrl, cifroCopy, cifroPath, type CifroLang } from "../data/cifro";
 
 interface Props {
@@ -35,6 +35,17 @@ const appNode = {
   description: t.meta.description,
 };
 
+const pageNode = {
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: t.meta.title,
+  description: t.meta.description,
+  inLanguage: lang,
+  isPartOf: { "@id": websiteId },
+  about: { "@id": `${absoluteUrl("/cifro/")}#app` },
+};
+
 const faqNode = {
   "@type": "FAQPage",
   "@id": `${pageUrl}#faq`,
@@ -57,7 +68,7 @@ const faqNode = {
   favicon="/cifro/icon.jpg"
   alternates={cifroAlternates}
   appStoreId={cifroAppStoreId}
-  jsonLd={[personNode, appNode, faqNode]}
+  jsonLd={[pageNode, personNode, appNode, faqNode]}
 >
   <section class="cifro-hero">
     <div class="shell cifro-hero-grid">

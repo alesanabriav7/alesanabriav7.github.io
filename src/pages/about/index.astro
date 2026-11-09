@@ -1,14 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE_URL, PERSON_PHOTO, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks } from "../../data/site";
+import { SITE_URL, PERSON_PHOTO, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, brandedTitle } from "../../data/site";
 
+const title = brandedTitle("About: software engineer since 2012");
+const description = "Forward Deployed Engineer at Wonderful in Bogotá. In technology since December 2012, about 14 years: Brand Spa, Platzi, then Wonderful.";
 const aboutJsonLd = {
-  "@type": ["AboutPage", "ProfilePage"],
+  "@type": "ProfilePage",
   "@id": `${SITE_URL}/about/#webpage`,
   url: `${SITE_URL}/about/`,
-  name: "About Alejandro Sanabria Villescas (alesanabriav)",
+  name: title,
+  description,
   isPartOf: { "@id": websiteId },
-  mainEntity: { "@id": personId },
   about: { "@id": personId },
   primaryImageOfPage: { "@id": personImageId },
 };
@@ -23,8 +25,8 @@ const profiles = [
 ---
 
 <BaseLayout
-  title="Alejandro Sanabria Villescas (alesanabriav) | since 2012"
-  description="Alejandro Sanabria Villescas (alesanabriav) at Wonderful in Bogotá. About 14 years in tech since 2012: Brand Spa, Platzi mobile, now agents in customer systems."
+  title={title}
+  description={description}
   ogType="profile"
   jsonLd={aboutJsonLd}
   alternates={[
@@ -33,7 +35,7 @@ const profiles = [
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">About · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia.</p></div></section>
+  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">About</p><h1>Software engineer since 2012</h1><p>I go by Alejandro Sanabria, and alesanabriav online. I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia.</p></div></section>
   <section class="section tint"><div class="shell prose">
     <h2>Background</h2>
     <p>I've worked in technology since 2012, about 14 years. I started in frontend, then built and led product engineering across web and mobile.</p>

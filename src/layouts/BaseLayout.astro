@@ -10,6 +10,7 @@ import {
   DEFAULT_IMAGE,
   DEFAULT_IMAGE_ALT,
   absoluteUrl,
+  brandedTitle,
   personNode,
   websiteNode,
   cifroAppNode,
@@ -46,7 +47,7 @@ const {
 } = Astro.props;
 const ogLocale = lang === "es" ? "es_LA" : "en_US";
 const canonical = new URL(Astro.url.pathname, SITE_URL);
-const fullTitle = variant === "cifro" || title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
+const fullTitle = variant === "cifro" ? title : brandedTitle(title);
 const imageUrl = absoluteUrl(image);
 const metadataSiteName = variant === "cifro" ? "Cifro" : SITE_NAME;
 

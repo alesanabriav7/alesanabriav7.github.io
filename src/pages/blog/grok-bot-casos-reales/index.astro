@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { SITE_URL, DEFAULT_IMAGE, absoluteUrl, personId, profileLinks } from "../../../data/site";
+import { SITE_URL, DEFAULT_IMAGE, absoluteUrl, personId, profileLinks, brandedTitle } from "../../../data/site";
 import { posts, postPath } from "../../../data/posts";
 
 const post = posts.find((p) => p.slug === "grok-bot-casos-reales")!;
@@ -27,7 +27,7 @@ const postJsonLd = {
 ---
 
 <BaseLayout
-  title={`${post.title} | Alejandro Sanabria`}
+  title={brandedTitle(post.title)}
   description={post.description}
   lang="es"
   ogType="article"

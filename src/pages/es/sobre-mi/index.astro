@@ -1,15 +1,17 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { SITE_URL, PERSON_PHOTO, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks } from "../../../data/site";
+import { SITE_URL, PERSON_PHOTO, PERSON_PHOTO_ALT, personId, personImageId, websiteId, profileLinks, brandedTitle } from "../../../data/site";
 
+const title = brandedTitle("Sobre mí: ingeniero de software");
+const description = "Forward Deployed Engineer en Wonderful, en Bogotá. Unos 14 años en tecnología desde diciembre de 2012: Brand Spa, Platzi y Wonderful.";
 const aboutJsonLd = {
-  "@type": ["AboutPage", "ProfilePage"],
+  "@type": "ProfilePage",
   "@id": `${SITE_URL}/es/sobre-mi/#webpage`,
   url: `${SITE_URL}/es/sobre-mi/`,
   inLanguage: "es",
-  name: "Sobre Alejandro Sanabria Villescas (alesanabriav)",
+  name: title,
+  description,
   isPartOf: { "@id": websiteId },
-  mainEntity: { "@id": personId },
   about: { "@id": personId },
   primaryImageOfPage: { "@id": personImageId },
 };
@@ -24,8 +26,8 @@ const profiles = [
 ---
 
 <BaseLayout
-  title="Alejandro Sanabria Villescas (alesanabriav) | desde 2012"
-  description="Alejandro Sanabria Villescas (alesanabriav) en Wonderful, en Bogotá. Unos 14 años en tecnología desde 2012: Brand Spa, móvil en Platzi y agentes para clientes."
+  title={title}
+  description={description}
   lang="es"
   ogType="profile"
   jsonLd={aboutJsonLd}
@@ -35,7 +37,7 @@ const profiles = [
     { hreflang: "x-default", href: "/about/" },
   ]}
 >
-  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">Sobre mí · alesanabriav</p><h1>Alejandro Sanabria Villescas</h1><p>Me conocen como Alejandro Sanabria, y en internet como alesanabriav. Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a> y vivo en Bogotá, Colombia.</p></div></section>
+  <section class="page-intro"><div class="shell"><img class="person-photo" src={PERSON_PHOTO} alt={PERSON_PHOTO_ALT} width="160" height="160" decoding="async" fetchpriority="high" /><p class="eyebrow">Sobre mí</p><h1>Ingeniero de software desde 2012</h1><p>Me conocen como Alejandro Sanabria, y en internet como alesanabriav. Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a> y vivo en Bogotá, Colombia.</p></div></section>
   <section class="section tint"><div class="shell prose">
     <h2>Trayectoria</h2>
     <p>Llevo en tecnología desde 2012, unos 14 años. Empecé en frontend y de ahí pasé a construir y liderar ingeniería de producto en web y móvil.</p>
