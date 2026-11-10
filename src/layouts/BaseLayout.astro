@@ -11,7 +11,8 @@ import {
   DEFAULT_IMAGE_ALT,
   absoluteUrl,
   brandedTitle,
-  personNode,
+  personNodeFor,
+  DEFAULT_IMAGE_ALT_ES,
   websiteNode,
   cifroAppNode,
 } from "../data/site";
@@ -35,7 +36,7 @@ const {
   title,
   description,
   image = DEFAULT_IMAGE,
-  imageAlt = DEFAULT_IMAGE_ALT,
+  imageAlt: imageAltProp,
   favicon = "/favicon.svg",
   noindex = false,
   ogType = "website",
@@ -46,13 +47,14 @@ const {
   appStoreId,
 } = Astro.props;
 const ogLocale = lang === "es" ? "es_LA" : "en_US";
+const imageAlt = imageAltProp ?? (lang === "es" ? DEFAULT_IMAGE_ALT_ES : DEFAULT_IMAGE_ALT);
 const canonical = new URL(Astro.url.pathname, SITE_URL);
 const fullTitle = variant === "cifro" ? title : brandedTitle(title);
 const imageUrl = absoluteUrl(image);
 const metadataSiteName = variant === "cifro" ? "Cifro" : SITE_NAME;
 
 const extraNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
-const identityNodes = variant === "cifro" ? [] : [personNode, websiteNode, cifroAppNode];
+const identityNodes = variant === "cifro" ? [] : [personNodeFor(lang), websiteNode, cifroAppNode];
 const structuredDataNodes = [...identityNodes, ...extraNodes];
 const structuredDataJson = structuredDataNodes.length > 0
   ? JSON.stringify({ "@context": "https://schema.org", "@graph": structuredDataNodes }).replace(/</g, "\\u003c")

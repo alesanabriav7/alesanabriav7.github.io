@@ -6,6 +6,7 @@ export const FULL_NAME = "Alejandro Sanabria Villescas";
 export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
 export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at Apple WWDC";
+export const DEFAULT_IMAGE_ALT_ES = "Alejandro Sanabria Villescas en Apple WWDC";
 export const PERSON_PHOTO = "/alejandro-sanabria-villescas.jpg?v=20261104";
 export const PERSON_PHOTO_SMALL = "/alejandro-sanabria-villescas-192.jpg?v=20261104";
 export const PERSON_PHOTO_ALT = "Alejandro Sanabria Villescas";
@@ -126,6 +127,19 @@ export const personNode = {
   ],
   sameAs: personSameAs,
 };
+
+// Same entity (@id), described in Spanish for the Spanish pages so hl=es crawls read a Spanish bio.
+export const personNodeEs = {
+  ...personNode,
+  image: [personImageNode, { ...wwdc26ImageNode, caption: "Alejandro Sanabria en WWDC26, Apple Park" }],
+  description:
+    "Forward Deployed Engineer en Wonderful, en Bogotá. En tecnología desde 2012: cofundó Brand Spa, lideró el equipo móvil de Platzi por más de 8 años y publica la app Cifro para iPhone.",
+  disambiguatingDescription: "No es el abogado tributario Alejandro Sanabria Díaz de Pérez-Llorca.",
+};
+
+export function personNodeFor(lang: "en" | "es" = "en") {
+  return lang === "es" ? personNodeEs : personNode;
+}
 
 export const cifroAppNode = {
   "@type": "SoftwareApplication",
