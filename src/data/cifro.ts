@@ -47,7 +47,7 @@ interface CifroCopy {
 export const cifroCopy: Record<CifroLang, CifroCopy> = {
   en: {
     meta: {
-      title: "Cifro App: Budget Planner & Expense Tracker for iPhone, No Bank Login",
+      title: "Cifro App: Budget Planner & Expense Tracker for iPhone",
       description:
         "Cifro is a budget planner and expense tracker for iPhone. On track this month, daily spending limit, private on-device AI. No bank login, ads, or tracking.",
       ogAlt: "Cifro budget planner on iPhone showing whether the month is on track",
