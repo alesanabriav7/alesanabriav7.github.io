@@ -15,7 +15,39 @@ const hreflangPairs = [
 ];
 
 // Extra sources whose content renders into a page (besides the page file itself).
+const profilePhotos = [
+  "public/alejandro-sanabria-villescas.jpg",
+  "public/alejandro-sanabria-wwdc26.jpg",
+];
+const homeSources = [
+  "src/components/pages/HomePage.astro",
+  "src/data/profile.ts",
+  "src/data/posts.ts",
+  ...profilePhotos,
+  "public/images/wwdc26-1600.webp",
+  "public/images/wwdc26-900.webp",
+  "public/images/apple-park-portrait-1000.webp",
+  "public/images/apple-park-portrait-600.webp",
+];
+const workSources = ["src/components/pages/WorkPage.astro", "src/data/profile.ts"];
+const projectsSources = ["src/components/pages/ProjectsPage.astro", "src/data/profile.ts"];
+const aboutSources = [
+  "src/components/pages/AboutPage.astro",
+  "src/data/profile.ts",
+  ...profilePhotos,
+  "public/images/wwdc26-1600.webp",
+  "public/images/wwdc26-900.webp",
+  "public/images/apple-park-portrait-600.webp",
+];
 const extraSources = {
+  "/": homeSources,
+  "/es/": homeSources,
+  "/work/": workSources,
+  "/es/trabajo/": workSources,
+  "/projects/": projectsSources,
+  "/es/proyectos/": projectsSources,
+  "/about/": aboutSources,
+  "/es/sobre-mi/": aboutSources,
   "/cifro/": ["src/components/CifroLanding.astro", "src/data/cifro.ts"],
   "/cifro/es/": ["src/components/CifroLanding.astro", "src/data/cifro.ts"],
   "/cifro/support/": ["src/data/cifro.ts"],
@@ -26,7 +58,12 @@ const extraSources = {
 function pageSources(path) {
   const base = path === "/" ? "src/pages/index" : `src/pages${path.replace(/\/$/, "")}`;
   const candidates = [`${base}/index.astro`, `${base}.astro`];
-  return [...candidates.filter((file) => existsSync(file)), ...(extraSources[path] ?? [])];
+  return [
+    ...candidates.filter((file) => existsSync(file)),
+    "src/data/site.ts",
+    "public/alejandro-sanabria.jpg",
+    ...(extraSources[path] ?? []),
+  ];
 }
 
 // lastmod = date of the last commit that touched the page's own content, not the build time.

@@ -1,20 +1,27 @@
 ---
-import "../styles/global.css";
+import "../styles/tokens.css";
+import "../styles/base.css";
+import "../styles/components.css";
+import "../styles/cifro.css";
+import ColorModeScript from "../components/ColorModeScript.astro";
 import CifroFooter from "../components/CifroFooter.astro";
 import CifroHeader from "../components/CifroHeader.astro";
-import SiteFooter from "../components/SiteFooter.astro";
-import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/ui/SiteFooter.astro";
+import SiteNav from "../components/ui/SiteNav.astro";
+import { personalContact, personalFooterLinks, personalNavLinks } from "../data/navigation";
+import { paths, ui } from "../data/profile";
 import {
   SITE_NAME,
   SITE_URL,
   DEFAULT_IMAGE,
   DEFAULT_IMAGE_ALT,
-  absoluteUrl,
-  brandedTitle,
-  personNodeFor,
   DEFAULT_IMAGE_ALT_ES,
+  absoluteUrl,
+  personNodeFor,
   websiteNode,
   cifroAppNode,
+  webPageNodes,
+  type Crumb,
 } from "../data/site";
 
 interface Props {
@@ -26,10 +33,11 @@ interface Props {
   noindex?: boolean;
   ogType?: "website" | "profile" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
-  variant?: "personal" | "profile" | "cifro";
+  variant?: "personal" | "cifro";
   lang?: "en" | "es";
   alternates?: { hreflang: string; href: string }[];
   appStoreId?: string;
+  breadcrumbs?: Crumb[];
 }
 
 const {
@@ -45,41 +53,43 @@ const {
   lang = "en",
   alternates = [],
   appStoreId,
+  breadcrumbs,
 } = Astro.props;
+const isCifro = variant === "cifro";
 const ogLocale = lang === "es" ? "es_LA" : "en_US";
 const imageAlt = imageAltProp ?? (lang === "es" ? DEFAULT_IMAGE_ALT_ES : DEFAULT_IMAGE_ALT);
-const canonical = new URL(Astro.url.pathname, SITE_URL);
-const fullTitle = variant === "cifro" ? title : brandedTitle(title);
+const canonical = new URL(Astro.url.pathname, SITE_URL).toString();
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const fullTitle = isCifro || title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
 const imageUrl = absoluteUrl(image);
-const metadataSiteName = variant === "cifro" ? "Cifro" : SITE_NAME;
+const metadataSiteName = isCifro ? "Cifro" : SITE_NAME;
 
 const extraNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
-const identityNodes = variant === "cifro" ? [] : [personNodeFor(lang), websiteNode, cifroAppNode];
-const structuredDataNodes = [...identityNodes, ...extraNodes];
+const identityNodes = isCifro ? [] : [personNodeFor(lang), websiteNode, cifroAppNode];
+const pageNodes = breadcrumbs && !noindex ? webPageNodes(canonical, fullTitle, description, breadcrumbs, lang) : [];
+const structuredDataNodes = [...identityNodes, ...pageNodes, ...extraNodes];
 const structuredDataJson = structuredDataNodes.length > 0
   ? JSON.stringify({ "@context": "https://schema.org", "@graph": structuredDataNodes }).replace(/</g, "\\u003c")
   : null;
 ---
 
 <!doctype html>
-<html lang={lang}>
+<html lang={lang} data-theme={variant}>
   <head>
     <meta charset="UTF-8" />
+    <ColorModeScript />
     <meta name="google-site-verification" content="l95xqS-N0KHT5-3z9O5GaMDLjR-_60SRadHGRSqD3Qw" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
+    <meta name="author" content={SITE_NAME} />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content={isCifro ? "#f2f2f7" : "#ffffff"} />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content={isCifro ? "#000000" : "#0b0b0b"} />
     <link rel="canonical" href={canonical} />
     {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={absoluteUrl(alternate.href)} />)}
     {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`} />}
     <link rel="icon" href={favicon} />
-    {variant === "profile" && (
-      <>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet" />
-      </>
-    )}
+    {!isCifro && <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} · Blog`} href="/rss.xml" />}
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={metadataSiteName} />
     <meta property="og:locale" content={ogLocale} />
@@ -96,11 +106,45 @@ const structuredDataJson = structuredDataNodes.length > 0
     <title>{fullTitle}</title>
     {structuredDataJson && <script is:inline type="application/ld+json" set:html={structuredDataJson}></script>}
   </head>
-  <body class={`${variant}-page`}>
-    {variant === "cifro" ? <CifroHeader lang={lang} /> : variant === "personal" ? <SiteHeader currentPath={Astro.url.pathname.replace(/\/$/, "") || "/"} lang={lang} alternates={alternates} /> : null}
+  <body>
+    {isCifro ? (
+      <CifroHeader lang={lang} />
+    ) : (
+      <SiteNav
+        brand={{ href: paths[lang].home, label: SITE_NAME, shortLabel: "A. Sanabria", ariaLabel: ui[lang].nav.homeLabel }}
+        links={personalNavLinks(lang, alternates)}
+        cta={personalContact(lang)}
+        currentPath={currentPath}
+        ariaLabel={ui[lang].nav.label}
+        lang={lang}
+      />
+    )}
     <main>
       <slot />
     </main>
-    {variant === "cifro" ? <CifroFooter lang={lang} /> : variant === "personal" ? <SiteFooter lang={lang} /> : null}
+    {isCifro ? (
+      <CifroFooter lang={lang} />
+    ) : (
+      <SiteFooter links={personalFooterLinks(lang)} ariaLabel={ui[lang].nav.footer}>{`© ${new Date().getFullYear()} ${SITE_NAME}`}</SiteFooter>
+    )}
+    <script>
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
+      if (!reducedMotion && revealElements.length > 0) {
+        document.body.classList.add("motion-ready");
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        }, { threshold: 0.12 });
+        for (const element of revealElements) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) element.classList.add("visible");
+          else observer.observe(element);
+        }
+      }
+    </script>
   </body>
 </html>

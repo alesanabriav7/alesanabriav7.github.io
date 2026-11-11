@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/ui/Button.astro";
+import PageTitle from "../components/ui/PageTitle.astro";
 ---
 
 <BaseLayout title="Page not found" description="The requested page was not found." noindex={true}>
-  <section class="page-intro"><div class="shell"><p class="eyebrow">404</p><h1>That page is not here.</h1><p><a class="button primary" href="/">Return home</a></p></div></section>
+  <PageTitle eyebrow="404" title="That page isn't here.">The link may be outdated, or the page has moved.</PageTitle>
+  <div class="container"><div class="btn-row"><Button href="/">Go home</Button></div></div>
 </BaseLayout>

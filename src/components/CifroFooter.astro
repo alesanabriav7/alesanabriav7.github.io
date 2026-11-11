@@ -1,4 +1,6 @@
 ---
+import SiteFooter from "./ui/SiteFooter.astro";
+import { SITE_NAME } from "../data/site";
 import { cifroAppStoreUrl, cifroCopy, type CifroLang } from "../data/cifro";
 
 interface Props {
@@ -7,16 +9,13 @@ interface Props {
 
 const { lang = "en" } = Astro.props;
 const t = cifroCopy[lang].footer;
+const links = [
+  { href: "/cifro/privacy/", label: t.privacy },
+  { href: "/cifro/support/", label: t.support },
+  { href: cifroAppStoreUrl, label: "App Store", external: true },
+];
 ---
 
-<footer class="cifro-footer">
-  <div class="shell footer-content">
-    <p>{t.tagline}</p>
-    <p>{lang === "es" ? <>Hecha por <a href="/es/">Alejandro Sanabria</a> en Bogotá</> : <>Made by <a href="/">Alejandro Sanabria</a> in Bogotá</>}</p>
-    <nav aria-label={t.navLabel}>
-      <a href="/cifro/privacy/">{t.privacy}</a>
-      <a href="/cifro/support/">{t.support}</a>
-      <a href={cifroAppStoreUrl} target="_blank" rel="noopener noreferrer">App Store</a>
-    </nav>
-  </div>
-</footer>
+<SiteFooter wide links={links} ariaLabel={t.navLabel}>
+  {t.tagline} · {t.madeBy} <a href={lang === "es" ? "/es/" : "/"} rel="author">{SITE_NAME}</a> {lang === "es" ? "en Bogotá" : "in Bogotá"}
+</SiteFooter>

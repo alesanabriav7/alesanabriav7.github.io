@@ -1,0 +1,14 @@
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+    const apply = () => {
+      const hour = new Date().getHours();
+      const isNight = hour >= 19 || hour < 7;
+      root.dataset.mode = prefersDark.matches || isNight ? "dark" : "light";
+    };
+    apply();
+    prefersDark.addEventListener("change", apply);
+    window.setInterval(apply, 5 * 60 * 1000);
+  })();
+</script>

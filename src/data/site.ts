@@ -5,11 +5,9 @@ export const SITE_NAME = "Alejandro Sanabria";
 export const FULL_NAME = "Alejandro Sanabria Villescas";
 export const SITE_HANDLE = "alesanabriav";
 export const DEFAULT_IMAGE = "/alejandro-sanabria.jpg";
-export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at Apple WWDC";
-export const DEFAULT_IMAGE_ALT_ES = "Alejandro Sanabria Villescas en Apple WWDC";
-export const PERSON_PHOTO = "/alejandro-sanabria-villescas.jpg?v=20261104";
-export const PERSON_PHOTO_SMALL = "/alejandro-sanabria-villescas-192.jpg?v=20261104";
-export const PERSON_PHOTO_ALT = "Alejandro Sanabria Villescas";
+export const DEFAULT_IMAGE_ALT = "Alejandro Sanabria Villescas at WWDC26 in Apple Park";
+export const DEFAULT_IMAGE_ALT_ES = "Alejandro Sanabria Villescas en WWDC26, Apple Park";
+const PERSON_PHOTO = "/alejandro-sanabria-villescas.jpg?v=20261104";
 
 export const profileLinks = {
   linkedin: "https://www.linkedin.com/in/alesanabriav/",
@@ -21,7 +19,7 @@ export const profileLinks = {
   wikidata: "https://www.wikidata.org/wiki/Q142050521",
 };
 
-export const personSameAs = [
+const personSameAs = [
   profileLinks.linkedin,
   profileLinks.github,
   profileLinks.githubLegacy,
@@ -31,40 +29,15 @@ export const personSameAs = [
   profileLinks.wikidata,
 ];
 
-export const homeAlternates = [
-  { hreflang: "en", href: "/" },
-  { hreflang: "es", href: "/es/" },
-  { hreflang: "x-default", href: "/" },
-];
-
 export function absoluteUrl(path: string): string {
   return new URL(path, `${SITE_URL}/`).toString();
-}
-
-// Subpages keep the name as a brand suffix. The homepages pass a title that already includes it.
-export function brandedTitle(title: string): string {
-  return title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
-}
-
-// A topic page. The person stays in the graph as author; mainEntity is reserved for the homepages.
-export function topicPageNode(path: string, name: string, description: string, lang?: "en" | "es") {
-  return {
-    "@type": "WebPage",
-    "@id": `${SITE_URL}${path}#webpage`,
-    url: `${SITE_URL}${path}`,
-    name,
-    description,
-    ...(lang ? { inLanguage: lang } : {}),
-    isPartOf: { "@id": websiteId },
-    author: { "@id": personId },
-  };
 }
 
 export const personId = `${SITE_URL}/#person`;
 export const websiteId = `${SITE_URL}/#website`;
 export const personImageId = `${SITE_URL}/#person-image`;
 
-export const personImageNode = {
+const personImageNode = {
   "@type": "ImageObject",
   "@id": personImageId,
   url: absoluteUrl(PERSON_PHOTO),
@@ -75,8 +48,8 @@ export const personImageNode = {
   name: "Alejandro Sanabria Villescas",
 };
 
-export const WWDC26_PHOTO = "/alejandro-sanabria-wwdc26.jpg";
-export const wwdc26ImageNode = {
+const WWDC26_PHOTO = "/alejandro-sanabria-wwdc26.jpg";
+const wwdc26ImageNode = {
   "@type": "ImageObject",
   "@id": `${SITE_URL}/#wwdc26-image`,
   url: absoluteUrl(WWDC26_PHOTO),
@@ -103,8 +76,8 @@ export const personNode = {
     { "@type": "Organization", name: "Platzi", url: "https://platzi.com" },
   ],
   description:
-    "Forward Deployed Engineer at Wonderful in Bogotá. In technology since 2012: co-founded Brand Spa, led mobile at Platzi for 8+ years, and ships the Cifro iPhone app.",
-  disambiguatingDescription: "Not the tax lawyer Alejandro Sanabria Díaz at Pérez-Llorca.",
+    "Forward Deployed Engineer at Wonderful in Bogotá. Building software products since 2012, with native iOS and Android at the core. Co-founded Brand Spa and ships the Cifro iPhone app.",
+  disambiguatingDescription: "Alejandro Sanabria Villescas, also known as alesanabriav: software engineer in Bogotá, creator of Cifro and developer tools.",
   homeLocation: {
     "@type": "Place",
     name: "Bogotá, Colombia",
@@ -124,17 +97,18 @@ export const personNode = {
     "TypeScript",
     "Mobile architecture",
     "App Store Connect automation",
+    "Product engineering",
+    "Full-stack development",
   ],
   sameAs: personSameAs,
 };
 
-// Same entity (@id), described in Spanish for the Spanish pages so hl=es crawls read a Spanish bio.
-export const personNodeEs = {
+const personNodeEs = {
   ...personNode,
   image: [personImageNode, { ...wwdc26ImageNode, caption: "Alejandro Sanabria en WWDC26, Apple Park" }],
   description:
-    "Forward Deployed Engineer en Wonderful, en Bogotá. En tecnología desde 2012: cofundó Brand Spa, lideró el equipo móvil de Platzi por más de 8 años y publica la app Cifro para iPhone.",
-  disambiguatingDescription: "No es el abogado tributario Alejandro Sanabria Díaz de Pérez-Llorca.",
+    "Forward Deployed Engineer en Wonderful, en Bogotá. Desarrollo software desde 2012: cofundé Brand Spa, después lideré iOS y Android en Platzi y ahora construyo agentes de IA e integraciones. También publico Cifro para iPhone.",
+  disambiguatingDescription: "Alejandro Sanabria Villescas, también conocido como alesanabriav: ingeniero de software en Bogotá, creador de Cifro y herramientas para desarrolladores.",
 };
 
 export function personNodeFor(lang: "en" | "es" = "en") {
@@ -162,3 +136,37 @@ export const websiteNode = {
   alternateName: SITE_HANDLE,
   publisher: { "@id": personId },
 };
+
+export interface Crumb {
+  name: string;
+  href: string;
+}
+
+export function webPageNodes(canonical: string, name: string, description: string, crumbs: Crumb[], lang: "en" | "es" = "en") {
+  const breadcrumbId = `${canonical}#breadcrumb`;
+  const home = lang === "es" ? "/es/" : "/";
+  return [
+    {
+      "@type": "WebPage",
+      "@id": `${canonical}#webpage`,
+      url: canonical,
+      name,
+      description,
+      inLanguage: lang,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": personId },
+      author: { "@id": personId },
+      breadcrumb: { "@id": breadcrumbId },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": breadcrumbId,
+      itemListElement: [{ name: SITE_NAME, href: home }, ...crumbs].map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: crumb.name,
+        item: absoluteUrl(crumb.href),
+      })),
+    },
+  ];
+}

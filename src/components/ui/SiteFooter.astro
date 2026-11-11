@@ -1,0 +1,24 @@
+---
+interface Props {
+  links: { href: string; label: string; external?: boolean; rel?: string }[];
+  wide?: boolean;
+  ariaLabel?: string;
+}
+
+const { links, wide = false, ariaLabel = "Footer" } = Astro.props;
+---
+
+<footer class="global-footer">
+  <div class:list={[wide ? "shell" : "container", "global-footer__inner"]}>
+    <p><slot /></p>
+    <nav aria-label={ariaLabel}>
+      {links.map((link) => (
+        <a
+          href={link.href}
+          target={link.external ? "_blank" : undefined}
+          rel={link.rel ?? (link.external ? "noopener noreferrer" : undefined)}
+        >{link.label}</a>
+      ))}
+    </nav>
+  </div>
+</footer>

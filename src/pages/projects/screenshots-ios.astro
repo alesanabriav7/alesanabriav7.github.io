@@ -1,20 +1,45 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { brandedTitle, topicPageNode } from "../../data/site";
+import Faq from "../../components/ui/Faq.astro";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import Prose from "../../components/ui/Prose.astro";
+import Section from "../../components/ui/Section.astro";
+
 const exampleJson = JSON.stringify({ workspace: "MyApp.xcworkspace", scheme: "MyApp", screenshotName: "home", outputDir: "docs/screenshots", launchEnv: { APP_USE_PREVIEW_DATA: "1", APP_INITIAL_SCREEN: "home" } }, null, 2);
-const title = brandedTitle("screenshots-ios: iOS screenshot CLI");
-const description = "CLI for iOS simulator screenshots. It builds the app, sets the status bar, launches with your environment variables, and captures the screen.";
+
+const faqs = [
+  { question: "What runs the capture?", answer: "The workflow uses the iOS simulator and Xcode command-line tools on macOS." },
+  { question: "Can I capture multiple screens?", answer: "Yes. Use separate context files and reuse a build where appropriate." },
+  { question: "Does it create my test data?", answer: "Your application supplies the deterministic data and navigation hooks; the CLI supplies the launch configuration." },
+];
 ---
-<BaseLayout title={title} description={description} jsonLd={topicPageNode("/projects/screenshots-ios/", title, description, "en")}>
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Open-source CLI</p><h1>Repeatable iOS simulator screenshots</h1><p>By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful</p></div></section>
-  <section class="section tint"><div class="shell prose">
-<p>Screenshots drift when the clock, battery or sample data change between runs. screenshots-ios handles the simulator side from the command line: it builds and installs the app, sets the status bar, launches with your environment variables and saves the image. Your app still decides which screen and which data to show.</p>
-<h2>How it works</h2>
-<p>The tool resolves a simulator, builds and installs the application, sets up the status bar, launches the app with the configured environment, and captures the screen. A JSON context file holds the capture settings.</p>
-<p>The application still owns its screen navigation and sample data. Configure those explicitly so that two captures represent the same state. The repository includes guidance for connecting launch environment variables to preview data and initial screens.</p>
-<h2>Questions</h2>
-<p><strong>What runs the capture?</strong> The workflow uses the iOS simulator and Xcode command-line tools on macOS.</p>
-<p><strong>Can I capture multiple screens?</strong> Yes. Use separate context files and reuse a build where appropriate.</p>
-<p><strong>Does it create my test data?</strong> Your application supplies the deterministic data and navigation hooks; the CLI supplies the launch configuration.</p>
-<p><a href="https://github.com/alesanabriav7/screenshots-ios">Read the setup and context-file guide</a>.</p><h2>A repeatable capture</h2><p>Save a context file for your own workspace and scheme:</p><pre><code>{exampleJson}</code></pre><pre><code>npx screenshots-ios --context screenshots/home.json</code></pre><p>The launch variables are a contract with your application: implement preview data and initial-screen selection in the app before relying on repeatable output.</p><p>To upload builds and metadata, see <a href="/projects/appstore-tools/">appstore-tools</a>. <a href="/projects/">All projects →</a></p></div></section>
+
+<BaseLayout
+  title="screenshots-ios: iOS Simulator Screenshots CLI"
+  description="Take the same iOS simulator screenshot every time: build, set the status bar, launch on a chosen screen with preview data, capture. JSON config. By Alejandro Sanabria."
+  breadcrumbs={[{ name: "Projects", href: "/projects/" }, { name: "screenshots-ios", href: "/projects/screenshots-ios/" }]}
+>
+  <PageTitle reading eyebrow="Open-source CLI" title="screenshots-ios: repeatable iOS simulator screenshots from the CLI">
+    By <a href="/">Alejandro Sanabria</a> · Forward Deployed Engineer at Wonderful
+  </PageTitle>
+
+  <Section reading>
+    <Prose>
+      <p>I publish screenshots-ios, the CLI I use to capture repeatable iOS simulator screenshots.</p>
+      <h2>How it works</h2>
+      <p>The tool resolves a simulator, builds and installs the application, sets up the status bar, launches the app with the configured environment, and captures the screen. A JSON context file holds the capture settings.</p>
+      <p>The application still owns its screen navigation and sample data. Configure those explicitly so that two captures represent the same state. The repository includes guidance for connecting launch environment variables to preview data and initial screens.</p>
+      <h2>A repeatable capture</h2>
+      <p>Save a context file for your own workspace and scheme:</p>
+      <pre><code>{exampleJson}</code></pre>
+      <pre><code>npx screenshots-ios --context screenshots/home.json</code></pre>
+      <p>The launch variables are a contract with your application: implement preview data and initial-screen selection in the app before relying on repeatable output.</p>
+      <p><a href="https://github.com/alesanabriav7/screenshots-ios">Read the setup and context-file guide</a>. To upload builds and metadata, see <a href="/projects/appstore-tools/">appstore-tools</a>.</p>
+    </Prose>
+  </Section>
+
+  <Section reading title="Questions">
+    <Faq items={faqs} />
+    <div class="btn-row"><a class="text-link" href="/projects/">All projects</a></div>
+  </Section>
 </BaseLayout>

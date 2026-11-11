@@ -1,9 +1,28 @@
 ---
-import "../../styles/cifro.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import Prose from "../../components/ui/Prose.astro";
 ---
 
 <BaseLayout variant="cifro" title="Cifro Privacy" description="Privacy policy for Cifro, a private-by-design iOS finance app." favicon="/cifro/icon.jpg" noindex={true}>
-  <section class="page-intro compact"><div class="shell"><p class="eyebrow">Cifro</p><h1>Privacy policy</h1><p>Last updated: April 2026</p></div></section>
-  <section class="section tint"><div class="shell prose"><p><strong>Cifro does not collect, store, transmit, or share personal data.</strong></p><h2>Data stays on your device</h2><p>Transactions, budgets, notes, and settings are stored exclusively on your device using local storage. No data leaves your device through Cifro.</p><h2>No account or analytics profile</h2><p>Cifro does not require an account and does not create a cloud profile for your financial information.</p><h2>On-device intelligence</h2><p>Product intelligence uses on-device capabilities. Your financial context is not sent to a Cifro server for AI processing.</p><h2>Your control</h2><p>Because Cifro has no servers and no data transmission, there is no remote financial record to request, delete, or export. Your data remains under your control on your device.</p><h2>Contact</h2><p>For questions, email <a href="mailto:me@alesanabriav.com">me@alesanabriav.com</a>.</p></div></section>
+  <div class="cifro-page-body">
+    <PageTitle reading eyebrow="Cifro" title="Privacy policy">Last updated: November 8, 2026</PageTitle>
+    <div class="container container--reading">
+    <Prose>
+      <p><strong>Your financial information stays on your device and, when you use iCloud sync, in your own private iCloud account.</strong> Cifro does not collect your financial information on a developer-operated server.</p>
+      <h2>Local storage and private iCloud sync</h2>
+      <p>Cifro stores transactions, budgets, notes, and settings locally on your device. iCloud sync uses Apple's CloudKit service and your private iCloud account to sync app data between your devices. You do not need a separate Cifro account. Using iCloud involves transmitting app data to Apple under your iCloud account.</p>
+      <h2>No ads or tracking</h2>
+      <p>Cifro has no ads or third-party tracking and does not connect to your bank account.</p>
+      <h2>On-device intelligence</h2>
+      <p>Cifro AI uses Apple Intelligence on supported devices. Your financial context is processed on device, rather than sent to a Cifro server for AI processing.</p>
+      <h2>Exchange rates</h2>
+      <p>Cifro downloads exchange rates from ExchangeRate-API at <a href="https://open.er-api.com">open.er-api.com</a>. The request retrieves a USD-based rate table; it does not include your transactions, budgets, balances, or notes. Like any internet request, it exposes connection information such as your IP address to the service. The provider's handling of that information is described in its <a href="https://www.exchangerate-api.com/terms#privacy">privacy policy</a>.</p>
+      <h2>Your control</h2>
+      <p>You can manage your records in Cifro and manage your iCloud account through Apple's settings. Deleting the app may remove local app data; it does not by itself guarantee deletion of copies in iCloud or device backups. Check your iCloud and backup settings before uninstalling if you need to keep or remove those copies.</p>
+      <h2>Contact</h2>
+      <p>For questions, email <a href="mailto:me@alesanabriav.com">me@alesanabriav.com</a>.</p>
+    </Prose>
+    </div>
+  </div>
 </BaseLayout>

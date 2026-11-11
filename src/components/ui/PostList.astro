@@ -1,0 +1,27 @@
+---
+import { formatPostDate, postPath, type Post } from "../../data/posts";
+import { ui, type Lang } from "../../data/profile";
+
+interface Props {
+  posts: Post[];
+  lang: Lang;
+}
+
+const { posts, lang } = Astro.props;
+const t = ui[lang];
+---
+
+<ul class="post-list">
+  {posts.map((post) => (
+    <li lang={post.lang}>
+      <a class="post-list__item" href={postPath(post.slug)} hreflang={post.lang}>
+        <span class="post-list__meta">
+          <time datetime={post.datePublished}>{formatPostDate(post.datePublished, post.lang)}</time>
+          {` · ${ui[post.lang].readingTime(post.minutes)}${post.lang !== lang ? ` · ${t.inSpanish}` : ""}`}
+        </span>
+        <span class="post-list__title">{post.title}</span>
+        <span class="post-list__description">{post.description}</span>
+      </a>
+    </li>
+  ))}
+</ul>

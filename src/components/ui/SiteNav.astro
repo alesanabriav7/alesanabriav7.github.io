@@ -1,0 +1,92 @@
+---
+interface NavLink {
+  href: string;
+  label: string;
+  hreflang?: string;
+}
+
+interface Props {
+  brand: { href: string; label: string; shortLabel?: string; ariaLabel?: string };
+  links: NavLink[];
+  cta?: { href: string; label: string; external?: boolean };
+  currentPath?: string;
+  wide?: boolean;
+  ariaLabel?: string;
+  lang?: "en" | "es";
+}
+
+const { brand, links, cta, currentPath, wide = false, ariaLabel = "Primary navigation", lang = "en" } = Astro.props;
+const menuLabel = lang === "es" ? "Menú" : "Menu";
+const normalize = (path: string) => path.replace(/\/$/, "") || "/";
+const isCurrent = (href: string) => {
+  if (!currentPath || href.includes("#")) {
+    return false;
+  }
+  const target = normalize(href);
+  return target !== "/" && (currentPath === target || currentPath.startsWith(`${target}/`));
+};
+---
+
+<header class="global-nav">
+  <div class:list={[wide ? "shell" : "container", "global-nav__inner"]}>
+    <a class="global-nav__brand" href={brand.href} aria-label={brand.ariaLabel}>{brand.shortLabel ? <><span class="global-nav__label-full">{brand.label}</span><span class="global-nav__label-short">{brand.shortLabel}</span></> : brand.label}</a>
+    <nav class="global-nav__links global-nav__desktop" aria-label={ariaLabel}>
+      {links.map((link) => (
+        <a
+          class="global-nav__link"
+          href={link.href}
+          hreflang={link.hreflang}
+          lang={link.hreflang}
+          aria-current={isCurrent(link.href) ? "page" : undefined}
+        >{link.label}</a>
+      ))}
+      {cta && (
+        <a
+          class="btn btn--primary btn--sm"
+          href={cta.href}
+          target={cta.external ? "_blank" : undefined}
+          rel={cta.external ? "noopener noreferrer" : undefined}
+        >{cta.label}</a>
+      )}
+    </nav>
+    <details class="global-nav__menu">
+      <summary>{menuLabel}<span aria-hidden="true" class="global-nav__chevron"></span></summary>
+      <nav class="global-nav__panel" aria-label={ariaLabel}>
+        {links.map((link) => (
+          <a
+            class="global-nav__link"
+            href={link.href}
+            hreflang={link.hreflang}
+            lang={link.hreflang}
+            aria-current={isCurrent(link.href) ? "page" : undefined}
+          >{link.label}</a>
+        ))}
+        {cta && (
+          <a
+            class="btn btn--primary btn--sm"
+            href={cta.href}
+            target={cta.external ? "_blank" : undefined}
+            rel={cta.external ? "noopener noreferrer" : undefined}
+          >{cta.label}</a>
+        )}
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script>
+  for (const menu of document.querySelectorAll<HTMLDetailsElement>(".global-nav__menu")) {
+    menu.addEventListener("click", (event) => {
+      if (event.target instanceof Element && event.target.closest("a")) {
+        menu.open = false;
+      }
+    });
+
+    menu.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.open) {
+        menu.open = false;
+        menu.querySelector("summary")?.focus();
+      }
+    });
+  }
+</script>

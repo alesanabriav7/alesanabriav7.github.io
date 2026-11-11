@@ -1,16 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { SITE_URL, personId, websiteId, brandedTitle } from "../../data/site";
-import { posts, postPath } from "../../data/posts";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import PostList from "../../components/ui/PostList.astro";
+import Section from "../../components/ui/Section.astro";
+import { SITE_URL, personId, websiteId } from "../../data/site";
+import { postPath, sortedPosts } from "../../data/posts";
 
-const title = brandedTitle("Notas sobre agentes de IA");
-const description = "Notas sobre agentes de IA que uso. Hay un texto sobre un equipo de bots en Grok Bot: trámites, millas y citas.";
+const posts = sortedPosts();
 const blogJsonLd = {
   "@type": "Blog",
   "@id": `${SITE_URL}/blog/#blog`,
   url: `${SITE_URL}/blog/`,
-  name: title,
-  description,
+  name: "Blog de Alejandro Sanabria",
   inLanguage: "es",
   isPartOf: { "@id": websiteId },
   author: { "@id": personId },
@@ -19,18 +20,16 @@ const blogJsonLd = {
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
+  title="Blog | Alejandro Sanabria, Forward Deployed Engineer"
+  description="Blog de Alejandro Sanabria, Forward Deployed Engineer en Bogotá: notas sobre agentes de IA, asistentes y cómo los uso en la vida real."
   lang="es"
   jsonLd={blogJsonLd}
+  breadcrumbs={[{ name: "Blog", href: "/blog/" }]}
 >
-  <section class="page-intro"><div class="shell"><p class="eyebrow">Blog</p><h1>Notas sobre agentes de IA</h1><p>Escribo sobre agentes de IA que uso de verdad. También hago <a href="/cifro/es/">Cifro, una app de presupuesto para iPhone</a>.</p></div></section>
-  <section class="section"><div class="shell article-list">
-    {posts.map((post) => (
-      <article lang={post.lang}>
-        <time datetime={post.datePublished}>{post.datePublished}</time>
-        <div><h2><a href={postPath(post.slug)}>{post.title}</a></h2><p>{post.description}</p></div>
-      </article>
-    ))}
-  </div></section>
+  <PageTitle eyebrow="Blog" title="Blog">
+    Escribo sobre agentes de IA que uso de verdad. También hago <a href="/cifro/es/">Cifro, una app de presupuesto para iPhone</a>.
+  </PageTitle>
+  <Section>
+    <PostList posts={posts} lang="es" />
+  </Section>
 </BaseLayout>

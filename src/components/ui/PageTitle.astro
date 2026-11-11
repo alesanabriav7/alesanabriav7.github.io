@@ -1,0 +1,18 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  reading?: boolean;
+}
+
+const { eyebrow, title, reading = false } = Astro.props;
+---
+
+<header class="page-header">
+  <div class:list={["container", { "container--reading": reading }]}>
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{title}</h1>
+    {Astro.slots.has("default") && <p class="page-header__lead"><slot /></p>}
+    {Astro.slots.has("meta") && <div class="page-header__meta"><slot name="meta" /></div>}
+  </div>
+</header>

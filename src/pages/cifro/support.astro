@@ -1,6 +1,8 @@
 ---
-import "../../styles/cifro.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Faq from "../../components/ui/Faq.astro";
+import PageTitle from "../../components/ui/PageTitle.astro";
+import Prose from "../../components/ui/Prose.astro";
 
 const supportJsonLd = {
   "@type": "WebPage",
@@ -10,16 +12,30 @@ const supportJsonLd = {
   name: "Cifro Support: help with the iPhone budget app",
   about: { "@id": "https://alejandrosanabria.com/cifro/#app" },
 };
+
+const faqs = [
+  { question: "Where is my data?", answer: "Cifro stores data on your iPhone and, when you use iCloud sync, in your private iCloud account. Deleting the app may remove local data but does not guarantee deletion of iCloud or backup copies. Check your iCloud and backup settings before uninstalling." },
+  { question: "How does sync work?", answer: "iCloud sync uses Apple’s CloudKit service and your own private iCloud account to sync app data between your devices. There is no separate Cifro account." },
+  { question: "Can I use other currencies?", answer: "Yes. Choose your main currency and log expenses in others. Cifro downloads a USD-based exchange-rate table from ExchangeRate-API and uses it to convert currencies. The rate request does not include your financial records. iCloud sync also uses the internet." },
+  { question: "Can I lock the app?", answer: "Yes, with Face ID or Touch ID." },
+  { question: "Which iPhones are supported?", answer: "iPhone with iOS 26 or later. Cifro AI needs an iPhone that supports Apple Intelligence." },
+];
 ---
 
 <BaseLayout variant="cifro" title="Cifro Support: help with the iPhone budget app" description="Cifro support: how to contact me, where your data lives, iCloud sync, currencies, Face ID and supported iPhones." favicon="/cifro/icon.jpg" jsonLd={supportJsonLd}>
-  <section class="page-intro compact"><div class="shell"><p class="eyebrow">Cifro</p><h1>Cifro support</h1><p>Questions about <a href="/cifro/">Cifro</a>? Email me and I'll answer.</p></div></section>
-  <section class="section tint"><div class="shell prose"><h2>Contact</h2><p>Email <a href="mailto:me@alesanabriav.com?subject=Cifro%20support">me@alesanabriav.com</a> with the Cifro version, your iPhone model, and a short description of what happened. Do not include personal financial information.</p>
-  <h2>Common questions</h2>
-  <p><strong>Where is my data?</strong> Cifro keeps its data on your iPhone. Deleting the app may remove locally stored app data, so check your device backup settings before uninstalling if you need to keep it.</p>
-  <p><strong>How does sync work?</strong> Sync is optional and goes through your own private iCloud account. There is no Cifro account.</p>
-  <p><strong>Can I use other currencies?</strong> Yes. Choose your main currency and log expenses in others. Cifro converts them with current exchange rates, which is the only thing it fetches from the internet.</p>
-  <p><strong>Can I lock the app?</strong> Yes, with Face ID or Touch ID.</p>
-  <p><strong>Which iPhones are supported?</strong> iPhone with iOS 26 or later. Cifro AI needs an iPhone that supports Apple Intelligence.</p>
-  <h2>Privacy</h2><p>Read the <a href="/cifro/privacy/">Cifro privacy policy</a>.</p></div></section>
+  <div class="cifro-page-body">
+    <PageTitle reading eyebrow="Cifro" title="Cifro support">Questions about <a href="/cifro/">Cifro</a>? Email me and I'll answer.</PageTitle>
+    <div class="container container--reading">
+      <Prose>
+        <h2>Contact</h2>
+        <p>Email <a href="mailto:me@alesanabriav.com?subject=Cifro%20support">me@alesanabriav.com</a> with the Cifro version, your iPhone model, and a short description of what happened. Do not include personal financial information.</p>
+        <h2>Common questions</h2>
+      </Prose>
+      <Faq items={faqs} />
+      <Prose>
+        <h2>Privacy</h2>
+        <p>Read the <a href="/cifro/privacy/">Cifro privacy policy</a>.</p>
+      </Prose>
+    </div>
+  </div>
 </BaseLayout>

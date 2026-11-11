@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../ui/Card.astro";
+import InsetList from "../ui/InsetList.astro";
+import PageTitle from "../ui/PageTitle.astro";
+import Section from "../ui/Section.astro";
+import { alternatesFor, experience, paths, projects, work, type Lang } from "../../data/profile";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = work[lang];
+const [cifro, ...tools] = projects[lang];
+---
+
+<BaseLayout title={t.title} description={t.description} lang={lang} alternates={alternatesFor("work")} breadcrumbs={[{ name: t.crumb, href: paths[lang].work }]}>
+  <PageTitle eyebrow={t.eyebrow} title={t.heading}><Fragment set:html={t.lead} /></PageTitle>
+
+  <Section id="experience" title={t.experience}>
+    <InsetList items={experience[lang]} />
+  </Section>
+
+  <Section id="selected-work" title={t.ownApp}>
+    <Card feature title={cifro.title} meta={cifro.meta} icon={cifro.icon} links={cifro.links}><p>{cifro.text}</p></Card>
+  </Section>
+
+  <Section title={t.tools}>
+    <div class="card-grid card-grid--3">
+      {tools.map((tool) => (
+        <Card title={tool.title} meta={tool.meta} links={tool.links}><p>{tool.text}</p></Card>
+      ))}
+    </div>
+  </Section>
+</BaseLayout>
