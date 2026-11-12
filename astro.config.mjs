@@ -83,6 +83,7 @@ export default defineConfig({
           item.img = [
             { url: `${SITE}/alejandro-sanabria-villescas.jpg`, caption: "Alejandro Sanabria" },
             { url: `${SITE}/alejandro-sanabria.jpg`, caption: "Alejandro Sanabria" },
+            { url: `${SITE}/images/wwdc26-1600.webp`, caption: "Alejandro Sanabria Villescas at WWDC26, Apple Park" },
           ];
         }
         return item;

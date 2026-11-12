@@ -59,7 +59,18 @@ export default {
       // HTML validators and byte ranges do not describe the Markdown representation.
       for (const name of ['If-None-Match', 'If-Modified-Since', 'Range', 'If-Range']) assetRequest.headers.delete(name);
     }
-    const response = await env.ASSETS.fetch(assetRequest);
+    let response = await env.ASSETS.fetch(assetRequest);
+    // The asset binding adds the trailing slash with a 307; make it permanent so /es and /es/ consolidate.
+    if (response.status === 307) {
+      const location = response.headers.get('Location');
+      if (location) {
+        const target = new URL(location, url);
+        if (target.origin === url.origin && target.pathname === `${url.pathname}/`) {
+          target.search = url.search;
+          return Response.redirect(target, 301);
+        }
+      }
+    }
     if (!['GET', 'HEAD'].includes(request.method) || response.status !== 200 ||
         !response.headers.get('Content-Type')?.includes('text/html')) return response;
     const headers = new Headers(response.headers);
