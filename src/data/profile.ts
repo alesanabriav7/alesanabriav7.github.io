@@ -48,7 +48,7 @@ export const ui = {
 
 export const home = {
   en: {
-    title: `${FULL_NAME} | Forward Deployed Engineer at Wonderful`,
+    title: `${FULL_NAME} | Forward Deployed Engineer`,
     description: "Forward Deployed Engineer at Wonderful. Previously led iOS and Android at Platzi and co-founded Brand Spa. Building software since 2012.",
     eyebrow: "Forward Deployed Engineer at Wonderful · Bogotá",
     lead: "I’m a <strong>Forward Deployed Engineer at Wonderful</strong>. Previously, I led the iOS and Android teams at Platzi.",
@@ -66,7 +66,7 @@ export const home = {
     contact: "To talk about AI in production, mobile development, or a product you’re building, reach me on LinkedIn or by email.",
   },
   es: {
-    title: `${FULL_NAME} | Forward Deployed Engineer en Wonderful`,
+    title: `${FULL_NAME} | Forward Deployed Engineer`,
     description: "Forward Deployed Engineer en Wonderful. Antes lideré iOS y Android en Platzi y cofundé Brand Spa. Desarrollo de software desde 2012.",
     eyebrow: "Forward Deployed Engineer en Wonderful · Bogotá",
     lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong>. Antes lideré los equipos de iOS y Android en Platzi.",

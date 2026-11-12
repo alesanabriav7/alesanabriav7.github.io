@@ -49,7 +49,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     meta: {
       title: "Cifro App: Budget Planner & Expense Tracker for iPhone",
       description:
-        "Cifro is a budget planner and expense tracker for iPhone. Know if you're on track this month, see your daily spending limit, and ask private on-device AI about your money. No bank login, ads, or tracking.",
+        "Cifro: budget planner and expense tracker for iPhone, with daily spending limits and on-device AI. No bank login, ads, or tracking.",
       ogAlt: "Cifro budget planner on iPhone showing whether the month is on track",
     },
     nav: {
@@ -188,7 +188,7 @@ export const cifroCopy: Record<CifroLang, CifroCopy> = {
     meta: {
       title: "Cifro: app de presupuesto para iPhone sin conectar tu banco",
       description:
-        "Cifro es la app de presupuesto y control de gastos para iPhone que te dice si vas bien en el mes, cuánto puedes gastar al día y en qué se te va el dinero. Con IA privada, sin conectar tu banco y sin anuncios.",
+        "Cifro: presupuesto y control de gastos para iPhone, con límite diario e IA en el dispositivo. Sin conectar el banco, sin anuncios y sin rastreo.",
       ogAlt: "Cifro, app de presupuesto en iPhone, mostrando si el mes va bien",
     },
     nav: {

@@ -38,7 +38,7 @@ const postJsonLd = {
   lang="es"
   ogType="article"
   jsonLd={postJsonLd}
-  breadcrumbs={[{ name: "Home", href: "/#blog" }, { name: post.title, href: postPath(post.slug) }]}
+  breadcrumbs={[{ name: post.title, href: postPath(post.slug) }]}
 >
   <article class="post" lang="es">
     <PageTitle reading eyebrow="Blog" title={post.title}>
