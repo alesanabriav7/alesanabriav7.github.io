@@ -1,6 +1,6 @@
 import type { InsetItem } from "../components/ui/types";
 import { cifroAppStoreUrl } from "./cifro";
-import { FULL_NAME, profileLinks } from "./site";
+import { FULL_NAME } from "./site";
 
 export type Lang = "en" | "es";
 
@@ -66,8 +66,8 @@ export const home = {
     contact: "To talk about AI in production, mobile development, or a product you’re building, reach me on LinkedIn or by email.",
   },
   es: {
-    title: `${FULL_NAME} | Forward Deployed Engineer`,
-    description: "Forward Deployed Engineer en Wonderful. Antes lideré iOS y Android en Platzi y cofundé Brand Spa. Desarrollo de software desde 2012.",
+    title: `${FULL_NAME} | Forward Deployed Engineer, Bogotá`,
+    description: "Forward Deployed Engineer en Wonderful, en Bogotá. Antes lideré iOS y Android en Platzi y cofundé Brand Spa. Desarrollo de software desde 2012.",
     eyebrow: "Forward Deployed Engineer en Wonderful · Bogotá",
     lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong>. Antes lideré los equipos de iOS y Android en Platzi.",
     primary: "Explorar mi trabajo",
@@ -172,101 +172,4 @@ export const projects: Record<Lang, Project[]> = {
       links: [{ href: "/projects/ios-architect/", label: "Cómo funciona" }, { href: "https://github.com/alesanabriav7/ios-architect-skill", label: "GitHub", external: true }],
     },
   ],
-};
-
-export const work = {
-  en: {
-    title: "Work: Brand Spa, Platzi and Wonderful",
-    description: "Where I've worked since 2012: Brand Spa engineering (Dec 2012–Oct 2017), Platzi mobile (Oct 2017–Jun 2026), Forward Deployed Engineer at Wonderful since July 2026.",
-    eyebrow: "Work",
-    heading: "Selected work and experience",
-    lead: `I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a>. I work directly with customers to understand their operations, design technical solutions, and build and deploy AI agents, integrations, and applications. Before Wonderful, I co-founded Brand Spa and later led iOS and Android at Platzi.`,
-    experience: "Experience",
-    ownApp: "My own app",
-    tools: "Tools I use to ship",
-    crumb: "Work",
-  },
-  es: {
-    title: "Trayectoria: Brand Spa, Platzi y Wonderful",
-    description: "Dónde he trabajado desde 2012: ingeniería en Brand Spa (dic 2012–oct 2017), móvil en Platzi (oct 2017–jun 2026) y Forward Deployed Engineer en Wonderful desde julio de 2026.",
-    eyebrow: "Trabajo",
-    heading: "Trabajo y trayectoria",
-    lead: `Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a>. Trabajo directamente con clientes para entender su operación, diseñar la solución técnica y construir y desplegar agentes de IA, integraciones y aplicaciones. Antes de Wonderful cofundé Brand Spa y después lideré iOS y Android en Platzi.`,
-    experience: "Experiencia",
-    ownApp: "Mi propia app",
-    tools: "Herramientas con las que publico",
-    crumb: "Trabajo",
-  },
-};
-
-export const projectsPage = {
-  en: {
-    title: "Projects: Cifro and open-source developer tools",
-    description: "Apps and open-source tools I build and use: Cifro for iPhone, an App Store Connect CLI, an iOS simulator screenshot CLI and iOS skills for AI coding agents.",
-    eyebrow: "Projects",
-    heading: "Things I've built",
-    lead: `I maintain Cifro, my iPhone app. I also publish the open-source tools I use to develop and release it.`,
-    app: "App",
-    tools: "Open source tools",
-    crumb: "Projects",
-  },
-  es: {
-    title: "Proyectos: Cifro y herramientas de código abierto",
-    description: "Las apps y herramientas de código abierto que hago y uso: Cifro para iPhone, una CLI de App Store Connect, una CLI de capturas del simulador de iOS y skills de iOS para agentes de código.",
-    eyebrow: "Proyectos",
-    heading: "Lo que he construido",
-    lead: `Mantengo Cifro, mi app para iPhone. También publico las herramientas de código abierto que uso en su desarrollo y publicación.`,
-    app: "App",
-    tools: "Herramientas de código abierto",
-    crumb: "Proyectos",
-  },
-};
-
-export const about = {
-  en: {
-    title: "About: software engineer since 2012",
-    heading: "Software engineer since 2012",
-    description: "Forward Deployed Engineer at Wonderful. Previously led iOS and Android at Platzi and co-founded Brand Spa. Building software since 2012.",
-    eyebrow: "About · alesanabriav",
-    lead: `I'm a Forward Deployed Engineer at <a href="https://wonderful.ai">Wonderful</a> in Bogotá, Colombia. I work with customers to understand their workflows, build AI solutions, and improve them in production.`,
-    background: "Background",
-    backgroundIntro: "I've worked in technology since 2012. I started in frontend, then built and led product engineering across web and mobile, with native iOS and Android as the core of my work.",
-    photoAlt: "Alejandro Sanabria at WWDC26, Apple Park",
-    photoCaption: "At WWDC26, Apple Park.",
-    built: "Things I've built",
-    builtText: `<a href="/cifro/">Cifro</a> is my budget app for iPhone, made with SwiftUI and Apple Foundation Models. I also publish open-source tools: <a href="/projects/appstore-tools/">appstore-tools</a> (App Store Connect CLI), <a href="/projects/screenshots-ios/">screenshots-ios</a> (iOS simulator screenshots) and <a href="/projects/ios-architect/">ios-architect-skill</a> (iOS architecture skills for Claude Code). All of them are on the <a href="/projects/">projects page</a>.`,
-    stack: "What I work with",
-    stackText: "I work with Swift, SwiftUI, Kotlin, React Native, and TypeScript. I build AI agents, integrate them with customer systems, and evaluate and monitor their behavior. I also automate App Store releases for my own apps.",
-    profilesTitle: "Profiles",
-    profiles: [
-      { label: "LinkedIn", href: profileLinks.linkedin },
-      { label: "GitHub (alesanabriav7)", href: profileLinks.github },
-      { label: "X (@alesanabriav)", href: profileLinks.x },
-      { label: "App Store developer page", href: profileLinks.appStore },
-    ],
-    crumb: "About",
-  },
-  es: {
-    title: "Sobre mí: ingeniero de software desde 2012",
-    heading: "Ingeniero de software desde 2012",
-    description: "Forward Deployed Engineer en Wonderful. Antes lideré iOS y Android en Platzi y cofundé Brand Spa. Desarrollo de software desde 2012.",
-    eyebrow: "Sobre mí · alesanabriav",
-    lead: `Soy Forward Deployed Engineer en <a href="https://wonderful.ai">Wonderful</a> y vivo en Bogotá, Colombia. Trabajo con clientes para entender sus procesos, construir soluciones de IA y mejorarlas en producción.`,
-    background: "Trayectoria",
-    backgroundIntro: "Trabajo en tecnología desde 2012. Empecé en frontend y de ahí pasé a construir y liderar ingeniería de producto en web y móvil, con iOS y Android nativos como el centro de mi trabajo.",
-    photoAlt: "Alejandro Sanabria en la WWDC26, en Apple Park",
-    photoCaption: "En la WWDC26, en Apple Park.",
-    built: "Lo que he construido",
-    builtText: `<a href="/cifro/es/">Cifro</a> es mi app de presupuesto para iPhone, hecha con SwiftUI y Apple Foundation Models. También publico herramientas de código abierto: <a href="/projects/appstore-tools/">appstore-tools</a> (una CLI para App Store Connect), <a href="/projects/screenshots-ios/">screenshots-ios</a> (capturas del simulador de iOS) y <a href="/projects/ios-architect/">ios-architect-skill</a> (skills de arquitectura iOS para Claude Code). Están todas en la <a href="/es/proyectos/">página de proyectos</a>.`,
-    stack: "Con qué trabajo",
-    stackText: "Trabajo con Swift, SwiftUI, Kotlin, React Native y TypeScript. Construyo agentes de IA, los integro con los sistemas del cliente y evalúo y monitoreo su comportamiento. También automatizo la publicación de mis apps en la App Store.",
-    profilesTitle: "Dónde encontrarme",
-    profiles: [
-      { label: "LinkedIn", href: profileLinks.linkedin },
-      { label: "GitHub (alesanabriav7)", href: profileLinks.github },
-      { label: "X (@alesanabriav)", href: profileLinks.x },
-      { label: "Mis apps en la App Store", href: profileLinks.appStore },
-    ],
-    crumb: "Sobre mí",
-  },
 };

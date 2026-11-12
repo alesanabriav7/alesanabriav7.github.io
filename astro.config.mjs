@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { execFileSync } from "node:child_process";
 import { existsSync } from "node:fs";
-import legacyProfileRedirects from "./src/data/legacy-profile-redirects.js";
 
 const SITE = "https://alejandrosanabria.com";
 
@@ -27,29 +26,12 @@ const homeSources = [
   "public/images/apple-park-portrait-1000.webp",
   "public/images/apple-park-portrait-600.webp",
 ];
-const workSources = ["src/components/pages/WorkPage.astro", "src/data/profile.ts"];
-const projectsSources = ["src/components/pages/ProjectsPage.astro", "src/data/profile.ts"];
-const aboutSources = [
-  "src/components/pages/AboutPage.astro",
-  "src/data/profile.ts",
-  ...profilePhotos,
-  "public/images/wwdc26-1600.webp",
-  "public/images/wwdc26-900.webp",
-  "public/images/apple-park-portrait-600.webp",
-];
 const extraSources = {
   "/": homeSources,
   "/es/": homeSources,
-  "/work/": workSources,
-  "/es/trabajo/": workSources,
-  "/projects/": projectsSources,
-  "/es/proyectos/": projectsSources,
-  "/about/": aboutSources,
-  "/es/sobre-mi/": aboutSources,
   "/cifro/": ["src/components/CifroLanding.astro", "src/data/cifro.ts"],
   "/cifro/es/": ["src/components/CifroLanding.astro", "src/data/cifro.ts"],
   "/cifro/support/": ["src/data/cifro.ts"],
-  "/blog/": ["src/data/posts.ts"],
   "/blog/grok-bot-casos-reales/": ["src/data/posts.ts"],
 };
 
@@ -97,21 +79,15 @@ export default defineConfig({
           ];
         }
 
-        if (["/", "/es/", "/about/", "/es/sobre-mi/"].includes(path)) {
+        if (["/", "/es/"].includes(path)) {
           item.img = [
             { url: `${SITE}/alejandro-sanabria-villescas.jpg`, caption: "Alejandro Sanabria" },
             { url: `${SITE}/alejandro-sanabria.jpg`, caption: "Alejandro Sanabria" },
           ];
-          if (["/about/", "/es/sobre-mi/"].includes(path)) {
-            item.img.push({ url: `${SITE}/alejandro-sanabria-wwdc26.jpg`, caption: "Alejandro Sanabria" });
-          }
         }
         return item;
       },
-      filter: (page) => {
-        const path = new URL(page).pathname;
-        return !legacyProfileRedirects.has(path) && !["/privacy/", "/cifro/privacy/"].includes(path);
-      },
+      filter: (page) => !["/privacy/", "/cifro/privacy/"].includes(new URL(page).pathname),
     }),
   ],
 });

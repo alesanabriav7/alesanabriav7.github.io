@@ -1,7 +1,6 @@
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import { parseHTML } from 'linkedom';
 import TurndownService from 'turndown';
-import legacyProfileRedirects from '../src/data/legacy-profile-redirects.js';
 
 const converter = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced', bulletListMarker: '-' });
 converter.remove(['script', 'style', 'nav', 'svg']);
@@ -14,7 +13,6 @@ async function walk(directory) {
     const { document } = parseHTML(await readFile(file, 'utf8'));
     if (document.querySelector('meta[http-equiv="refresh"]')) continue;
     const route = file.slice('dist'.length).replace(/index\.html$/, '');
-    if (legacyProfileRedirects.has(route)) continue;
     const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || new URL(route, 'https://alejandrosanabria.com').href;
     const content = document.querySelector('main') || document.body;
     for (const node of content.querySelectorAll('script, style, nav, svg, [hidden], [aria-hidden="true"]')) node.remove();
