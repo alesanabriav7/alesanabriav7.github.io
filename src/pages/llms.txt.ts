@@ -25,13 +25,17 @@ Alejandro Sanabria (Alejandro Sanabria Villescas, alesanabriav) is a Forward Dep
 
 ## Canonical links
 
-- About: https://alejandrosanabria.com/about/
-- Sobre mí: https://alejandrosanabria.com/es/sobre-mi/
-- Work: https://alejandrosanabria.com/work/
-- Trabajo: https://alejandrosanabria.com/es/trabajo/
-- Projects: https://alejandrosanabria.com/projects/
-- Proyectos: https://alejandrosanabria.com/es/proyectos/
-- Blog (es): https://alejandrosanabria.com/blog/
+- Home: https://alejandrosanabria.com/
+- Inicio: https://alejandrosanabria.com/es/
+- Work history: https://alejandrosanabria.com/#work
+- Trayectoria: https://alejandrosanabria.com/es/#work
+- Projects: https://alejandrosanabria.com/#projects
+- Proyectos: https://alejandrosanabria.com/es/#projects
+- Writing: https://alejandrosanabria.com/#blog
+- Publicaciones: https://alejandrosanabria.com/es/#blog
+- appstore-tools: https://alejandrosanabria.com/projects/appstore-tools/
+- ios-architect-skill: https://alejandrosanabria.com/projects/ios-architect/
+- screenshots-ios: https://alejandrosanabria.com/projects/screenshots-ios/
 - GitHub: https://github.com/alesanabriav7
 - LinkedIn: https://www.linkedin.com/in/alesanabriav/
 - X: https://x.com/alesanabriav

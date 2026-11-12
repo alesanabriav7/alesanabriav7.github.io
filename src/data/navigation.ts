@@ -6,10 +6,10 @@ export function personalNavLinks(lang: Lang, alternates: { hreflang: string; hre
   const p = paths[lang];
   const other = alternates.find((alternate) => alternate.hreflang === (lang === "es" ? "en" : "es"));
   return [
-    { href: p.work, label: t.work },
-    { href: p.projects, label: t.projects },
-    { href: p.blog, label: t.blog },
-    { href: p.about, label: t.about },
+    { href: `${p.home}#work`, label: t.work },
+    { href: `${p.home}#projects`, label: t.projects },
+    { href: `${p.home}#blog`, label: t.blog },
+    { href: `${p.home}#about`, label: t.about },
     ...(other ? [{ href: other.href, label: t.switchLabel, hreflang: other.hreflang }] : []),
   ];
 }
@@ -23,10 +23,10 @@ export function personalFooterLinks(lang: Lang) {
   const p = paths[lang];
   const otherLang: Lang = lang === "es" ? "en" : "es";
   return [
-    { href: p.work, label: t.work },
-    { href: p.projects, label: t.projects },
-    { href: p.blog, label: t.blog },
-    { href: p.about, label: t.about },
+    { href: `${p.home}#work`, label: t.work },
+    { href: `${p.home}#projects`, label: t.projects },
+    { href: `${p.home}#blog`, label: t.blog },
+    { href: `${p.home}#about`, label: t.about },
     { href: p.cifro, label: "Cifro" },
     { href: profileLinks.linkedin, label: "LinkedIn", external: true, rel: "me noopener noreferrer" },
     { href: profileLinks.github, label: "GitHub", external: true, rel: "me noopener noreferrer" },

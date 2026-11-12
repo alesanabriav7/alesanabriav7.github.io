@@ -9,10 +9,11 @@ import CifroHeader from "../components/CifroHeader.astro";
 import SiteFooter from "../components/ui/SiteFooter.astro";
 import SiteNav from "../components/ui/SiteNav.astro";
 import { personalContact, personalFooterLinks, personalNavLinks } from "../data/navigation";
-import { paths, ui } from "../data/profile";
+import { contactEmail, paths, ui } from "../data/profile";
 import {
   SITE_NAME,
   SITE_URL,
+  profileLinks,
   DEFAULT_IMAGE,
   DEFAULT_IMAGE_ALT,
   DEFAULT_IMAGE_ALT_ES,
@@ -34,6 +35,7 @@ interface Props {
   ogType?: "website" | "profile" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   variant?: "personal" | "cifro";
+  editorialHome?: boolean;
   lang?: "en" | "es";
   alternates?: { hreflang: string; href: string }[];
   appStoreId?: string;
@@ -50,6 +52,7 @@ const {
   ogType = "website",
   jsonLd,
   variant = "personal",
+  editorialHome = false,
   lang = "en",
   alternates = [],
   appStoreId,
@@ -60,6 +63,14 @@ const ogLocale = lang === "es" ? "es_LA" : "en_US";
 const imageAlt = imageAltProp ?? (lang === "es" ? DEFAULT_IMAGE_ALT_ES : DEFAULT_IMAGE_ALT);
 const canonical = new URL(Astro.url.pathname, SITE_URL).toString();
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const homeFooterLinks = editorialHome
+  ? [
+      { href: profileLinks.linkedin, label: "LinkedIn", external: true, rel: "me noopener noreferrer" },
+      { href: profileLinks.github, label: "GitHub", external: true, rel: "me noopener noreferrer" },
+      { href: `mailto:${contactEmail}`, label: ui[lang].footer.email },
+      { href: paths[lang === "es" ? "en" : "es"].home, label: ui[lang].nav.switchLabel },
+    ]
+  : personalFooterLinks(lang);
 const fullTitle = isCifro || title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
 const imageUrl = absoluteUrl(image);
 const metadataSiteName = isCifro ? "Cifro" : SITE_NAME;
@@ -109,7 +120,7 @@ const structuredDataJson = structuredDataNodes.length > 0
   <body>
     {isCifro ? (
       <CifroHeader lang={lang} />
-    ) : (
+    ) : !editorialHome ? (
       <SiteNav
         brand={{ href: paths[lang].home, label: SITE_NAME, shortLabel: "A. Sanabria", ariaLabel: ui[lang].nav.homeLabel }}
         links={personalNavLinks(lang, alternates)}
@@ -118,14 +129,14 @@ const structuredDataJson = structuredDataNodes.length > 0
         ariaLabel={ui[lang].nav.label}
         lang={lang}
       />
-    )}
+    ) : null}
     <main>
       <slot />
     </main>
     {isCifro ? (
       <CifroFooter lang={lang} />
     ) : (
-      <SiteFooter links={personalFooterLinks(lang)} ariaLabel={ui[lang].nav.footer}>{`© ${new Date().getFullYear()} ${SITE_NAME}`}</SiteFooter>
+      <SiteFooter links={homeFooterLinks} ariaLabel={ui[lang].nav.footer}>{`© ${new Date().getFullYear()} ${SITE_NAME}`}</SiteFooter>
     )}
     <script>
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

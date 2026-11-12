@@ -59,7 +59,7 @@ const wwdc26ImageNode = {
   caption: "Alejandro Sanabria at WWDC26, Apple Park",
 };
 
-export const personNode = {
+const personNode = {
   "@type": "Person",
   "@id": personId,
   name: SITE_NAME,

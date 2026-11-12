@@ -1,4 +1,5 @@
 import pages from "./generated/page-markdown.json" with { type: "json" };
+import legacyProfileRedirects from "./src/data/legacy-profile-redirects.js";
 
 const CANONICAL_HOST = "alejandrosanabria.com";
 const ALIASES = new Set(["alesanabriav.com", "www.alesanabriav.com", "www.alejandrosanabria.com"]);
@@ -19,8 +20,19 @@ function wantsMarkdown(accept) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const normalizedPath = url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`;
+    const legacyProfileTarget = legacyProfileRedirects.get(normalizedPath);
     const legacyPrivacy = url.pathname === "/privacy" || url.pathname === "/privacy/";
     const legacySitemap = url.pathname === "/sitemap.xml";
+
+    if (legacyProfileTarget) {
+      const redirectUrl = new URL(legacyProfileTarget, url);
+      redirectUrl.protocol = "https:";
+      redirectUrl.hostname = CANONICAL_HOST;
+      redirectUrl.search = url.search;
+      return Response.redirect(redirectUrl, 301);
+    }
+
     if (ALIASES.has(url.hostname) || (url.hostname === CANONICAL_HOST && url.protocol !== "https:") || legacyPrivacy || legacySitemap) {
       url.protocol = "https:";
       url.hostname = CANONICAL_HOST;

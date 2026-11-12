@@ -57,16 +57,16 @@
   --color-text: light-dark(#111111, #f2f2f2);
   --color-muted: light-dark(#5c5c5c, #a3a3a3);
   --color-border: light-dark(#e6e6e6, #262626);
-  --color-accent: light-dark(#0050e6, #75aaff);
-  --color-accent-hover: light-dark(#0046d1, #9bc0ff);
-  --color-accent-soft: light-dark(rgba(0, 80, 230, 0.08), rgba(117, 170, 255, 0.14));
-  --color-accent-line: light-dark(rgba(0, 80, 230, 0.22), rgba(117, 170, 255, 0.3));
+  --color-accent: light-dark(#d44200, #ff8b38);
+  --color-accent-hover: light-dark(#b53d00, #ffab7a);
+  --color-accent-soft: light-dark(rgba(255, 90, 0, 0.08), rgba(255, 140, 85, 0.14));
+  --color-accent-line: light-dark(rgba(255, 90, 0, 0.24), rgba(255, 140, 85, 0.3));
   --color-on-accent: light-dark(#ffffff, #0b0b0b);
   --color-inverse: light-dark(#111111, #f2f2f2);
   --color-on-inverse: light-dark(#ffffff, #0b0b0b);
-  --color-btn-bg: #0057ff;
-  --color-btn-bg-hover: #0046d1;
-  --color-btn-text: #ffffff;
+  --color-btn-bg: light-dark(#ff5a00, #ff7a2e);
+  --color-btn-bg-hover: light-dark(#f34f00, #ff985c);
+  --color-btn-text: #111111;
 }
 
 [data-theme="cifro"] {

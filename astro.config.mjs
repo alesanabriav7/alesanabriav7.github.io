@@ -2,15 +2,13 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import { execFileSync } from "node:child_process";
 import { existsSync } from "node:fs";
+import legacyProfileRedirects from "./src/data/legacy-profile-redirects.js";
 
 const SITE = "https://alejandrosanabria.com";
 
 // EN/ES page pairs. Must match the <link rel="alternate" hreflang> tags each page renders.
 const hreflangPairs = [
   ["/", "/es/"],
-  ["/about/", "/es/sobre-mi/"],
-  ["/work/", "/es/trabajo/"],
-  ["/projects/", "/es/proyectos/"],
   ["/cifro/", "/cifro/es/"],
 ];
 
@@ -110,7 +108,10 @@ export default defineConfig({
         }
         return item;
       },
-      filter: (page) => !["/privacy/", "/cifro/privacy/"].includes(new URL(page).pathname),
+      filter: (page) => {
+        const path = new URL(page).pathname;
+        return !legacyProfileRedirects.has(path) && !["/privacy/", "/cifro/privacy/"].includes(path);
+      },
     }),
   ],
 });

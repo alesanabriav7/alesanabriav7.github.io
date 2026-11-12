@@ -6,7 +6,7 @@ import PageTitle from "../../../components/ui/PageTitle.astro";
 import Prose from "../../../components/ui/Prose.astro";
 import Section from "../../../components/ui/Section.astro";
 import TagList from "../../../components/ui/TagList.astro";
-import { SITE_URL, DEFAULT_IMAGE, absoluteUrl, personId, profileLinks } from "../../../data/site";
+import { SITE_URL, DEFAULT_IMAGE, absoluteUrl, personId, profileLinks, websiteId } from "../../../data/site";
 import { posts, postPath } from "../../../data/posts";
 
 const post = posts.find((p) => p.slug === "grok-bot-casos-reales")!;
@@ -26,7 +26,7 @@ const postJsonLd = {
   image: absoluteUrl(DEFAULT_IMAGE),
   author: { "@id": personId },
   publisher: { "@id": personId },
-  isPartOf: { "@id": `${SITE_URL}/blog/#blog` },
+  isPartOf: { "@id": websiteId },
   about: ["Grok Bot", "Asistentes de IA", "Agentes de IA"],
   discussionUrl: xPost,
 };
@@ -38,7 +38,7 @@ const postJsonLd = {
   lang="es"
   ogType="article"
   jsonLd={postJsonLd}
-  breadcrumbs={[{ name: "Blog", href: "/blog/" }, { name: post.title, href: postPath(post.slug) }]}
+  breadcrumbs={[{ name: "Home", href: "/#blog" }, { name: post.title, href: postPath(post.slug) }]}
 >
   <article class="post" lang="es">
     <PageTitle reading eyebrow="Blog" title={post.title}>
