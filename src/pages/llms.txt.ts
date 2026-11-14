@@ -6,7 +6,7 @@ export function GET() {
 
 Canonical personal website: https://alejandrosanabria.com
 
-Alejandro Sanabria (Alejandro Sanabria Villescas, alesanabriav) is a Forward Deployed Engineer at Wonderful (https://wonderful.ai) in Bogotá, Colombia. He has built software products since 2012, with native iOS and Android at the core, plus full-stack web products and B2B platforms. Career: co-founder and engineering at Brand Spa (December 2012–October 2017), mobile at Platzi (October 2017–June 2026), and Wonderful since July 2026. His published products include Cifro and open-source developer tools under the GitHub handle alesanabriav7.
+Alejandro Sanabria (Alejandro Sanabria Villescas, alesanabriav) is a software engineer in Bogotá, Colombia. He started building software in 2012, with native iOS and Android at the core, plus full-stack web products and B2B platforms. Since July 2026 he has been a Forward Deployed Engineer at Wonderful (https://wonderful.ai). Career: co-founder and engineering at Brand Spa (December 2012–October 2017), mobile at Platzi (October 2017–June 2026), and Wonderful since July 2026. His published products include Cifro and open-source developer tools under the GitHub handle alesanabriav7.
 
 ## Core work
 

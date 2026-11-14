@@ -76,7 +76,7 @@ const personNode = {
     { "@type": "Organization", name: "Platzi", url: "https://platzi.com" },
   ],
   description:
-    "Forward Deployed Engineer at Wonderful in Bogotá. Building software products since 2012, with native iOS and Android at the core. Co-founded Brand Spa and ships the Cifro iPhone app.",
+    "Software engineer in Bogotá with native iOS and Android at the core. Co-founded Brand Spa in 2012, led iOS and Android at Platzi (2017–2026), and joined Wonderful as a Forward Deployed Engineer in July 2026. Ships the Cifro iPhone app.",
   disambiguatingDescription: "Alejandro Sanabria Villescas, also known as alesanabriav: software engineer in Bogotá, creator of Cifro and developer tools.",
   homeLocation: {
     "@type": "Place",
@@ -107,7 +107,7 @@ const personNodeEs = {
   ...personNode,
   image: [personImageNode, { ...wwdc26ImageNode, caption: "Alejandro Sanabria en WWDC26, Apple Park" }],
   description:
-    "Forward Deployed Engineer en Wonderful, en Bogotá. Desarrollo software desde 2012: cofundé Brand Spa, después lideré iOS y Android en Platzi y ahora construyo agentes de IA e integraciones. También publico Cifro para iPhone.",
+    "Ingeniero de software en Bogotá, con iOS y Android nativos en el centro. Cofundó Brand Spa en 2012, lideró iOS y Android en Platzi (2017–2026) y desde julio de 2026 es Forward Deployed Engineer en Wonderful. También publica Cifro para iPhone.",
   disambiguatingDescription: "Alejandro Sanabria Villescas, también conocido como alesanabriav: ingeniero de software en Bogotá, creador de Cifro y herramientas para desarrolladores.",
 };
 

@@ -29,7 +29,7 @@ export const ui = {
     inSpanish: "In Spanish",
     readingTime: (minutes: number) => `${minutes} min read`,
     writtenBy: "Written by",
-    authorBio: "I’m a Forward Deployed Engineer at Wonderful, based in Bogotá. I’ve built software since 2012, with a background in native iOS and Android.",
+    authorBio: "Software engineer in Bogotá with a background in native iOS and Android. I co-founded Brand Spa in 2012, led iOS and Android at Platzi, and joined Wonderful as a Forward Deployed Engineer in July 2026.",
     aboutMe: "About me",
   },
   es: {
@@ -41,7 +41,7 @@ export const ui = {
     inSpanish: "En español",
     readingTime: (minutes: number) => `${minutes} min de lectura`,
     writtenBy: "Escrito por",
-    authorBio: "Soy Forward Deployed Engineer en Wonderful y vivo en Bogotá. Construyo software desde 2012, con experiencia en iOS y Android nativos.",
+    authorBio: "Ingeniero de software en Bogotá, con experiencia en iOS y Android nativos. Cofundé Brand Spa en 2012, lideré iOS y Android en Platzi y desde julio de 2026 soy Forward Deployed Engineer en Wonderful.",
     aboutMe: "Sobre mí",
   },
 };
@@ -49,7 +49,7 @@ export const ui = {
 export const home = {
   en: {
     title: `${FULL_NAME} | Forward Deployed Engineer`,
-    description: "Forward Deployed Engineer at Wonderful. Previously led iOS and Android at Platzi and co-founded Brand Spa. Building software since 2012.",
+    description: "Software engineer in Bogotá. Co-founded Brand Spa in 2012, led iOS and Android at Platzi (2017–2026), and joined Wonderful as a Forward Deployed Engineer in July 2026.",
     eyebrow: "Forward Deployed Engineer at Wonderful · Bogotá",
     lead: "I’m a <strong>Forward Deployed Engineer at Wonderful</strong>, based in Bogotá, Colombia. Previously, I led the iOS and Android teams at Platzi.",
     stackTitle: "What I work with",
@@ -61,7 +61,6 @@ export const home = {
       { label: "App Store developer page", href: profileLinks.appStore },
       { label: "Platzi courses", href: profileLinks.platzi },
     ],
-    knownAs: "I go by Alejandro Sanabria, and alesanabriav online.",
     primary: "Explore my work",
     secondary: "Connect on LinkedIn",
     heroAlt: "Alejandro Sanabria at WWDC26 in Apple Park, holding his WWDC26 attendee badge",
@@ -77,7 +76,7 @@ export const home = {
   },
   es: {
     title: `${FULL_NAME} | Forward Deployed Engineer, Bogotá`,
-    description: "Forward Deployed Engineer en Wonderful, en Bogotá. Antes lideré iOS y Android en Platzi y cofundé Brand Spa. Desarrollo de software desde 2012.",
+    description: "Ingeniero de software en Bogotá. Cofundé Brand Spa en 2012, lideré iOS y Android en Platzi (2017–2026) y desde julio de 2026 soy Forward Deployed Engineer en Wonderful.",
     eyebrow: "Forward Deployed Engineer en Wonderful · Bogotá",
     lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong> y vivo en Bogotá, Colombia. Antes lideré los equipos de iOS y Android en Platzi.",
     stackTitle: "Con qué trabajo",
@@ -89,7 +88,6 @@ export const home = {
       { label: "Mis apps en la App Store", href: profileLinks.appStore },
       { label: "Mis cursos en Platzi", href: profileLinks.platzi },
     ],
-    knownAs: "Me conocen como Alejandro Sanabria, y en internet como alesanabriav.",
     primary: "Explorar mi trabajo",
     secondary: "Hablemos por LinkedIn",
     heroAlt: "Alejandro Sanabria en la WWDC26, en Apple Park, con su credencial de la WWDC26",
