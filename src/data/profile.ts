@@ -1,6 +1,6 @@
 import type { InsetItem } from "../components/ui/types";
 import { cifroAppStoreUrl } from "./cifro";
-import { FULL_NAME } from "./site";
+import { FULL_NAME, profileLinks } from "./site";
 
 export type Lang = "en" | "es";
 
@@ -51,7 +51,15 @@ export const home = {
     title: `${FULL_NAME} | Forward Deployed Engineer`,
     description: "Forward Deployed Engineer at Wonderful. Previously led iOS and Android at Platzi and co-founded Brand Spa. Building software since 2012.",
     eyebrow: "Forward Deployed Engineer at Wonderful · Bogotá",
-    lead: "I’m a <strong>Forward Deployed Engineer at Wonderful</strong>. Previously, I led the iOS and Android teams at Platzi.",
+    lead: "I’m a <strong>Forward Deployed Engineer at Wonderful</strong>, based in Bogotá, Colombia. Previously, I led the iOS and Android teams at Platzi.",
+    stackTitle: "What I work with",
+    stack: "I work with Swift, SwiftUI, Kotlin, React Native, and TypeScript. I build AI agents, integrate them with customer systems, and evaluate and monitor their behavior. I also automate App Store releases for my own apps.",
+    profiles: [
+      { label: "LinkedIn", href: profileLinks.linkedin },
+      { label: "GitHub (alesanabriav7)", href: profileLinks.github },
+      { label: "X (@alesanabriav)", href: profileLinks.x },
+      { label: "App Store developer page", href: profileLinks.appStore },
+    ],
     primary: "Explore my work",
     secondary: "Connect on LinkedIn",
     heroAlt: "Alejandro Sanabria at WWDC26 in Apple Park, holding his WWDC26 attendee badge",
@@ -69,7 +77,15 @@ export const home = {
     title: `${FULL_NAME} | Forward Deployed Engineer, Bogotá`,
     description: "Forward Deployed Engineer en Wonderful, en Bogotá. Antes lideré iOS y Android en Platzi y cofundé Brand Spa. Desarrollo de software desde 2012.",
     eyebrow: "Forward Deployed Engineer en Wonderful · Bogotá",
-    lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong>. Antes lideré los equipos de iOS y Android en Platzi.",
+    lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong> y vivo en Bogotá, Colombia. Antes lideré los equipos de iOS y Android en Platzi.",
+    stackTitle: "Con qué trabajo",
+    stack: "Trabajo con Swift, SwiftUI, Kotlin, React Native y TypeScript. Construyo agentes de IA, los integro con los sistemas del cliente y evalúo y monitoreo su comportamiento. También automatizo la publicación de mis apps en la App Store.",
+    profiles: [
+      { label: "LinkedIn", href: profileLinks.linkedin },
+      { label: "GitHub (alesanabriav7)", href: profileLinks.github },
+      { label: "X (@alesanabriav)", href: profileLinks.x },
+      { label: "Mis apps en la App Store", href: profileLinks.appStore },
+    ],
     primary: "Explorar mi trabajo",
     secondary: "Hablemos por LinkedIn",
     heroAlt: "Alejandro Sanabria en la WWDC26, en Apple Park, con su credencial de la WWDC26",

@@ -1,7 +1,7 @@
 ---
 import "../../styles/home-editorial.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { FULL_NAME, SITE_HANDLE, SITE_URL, personId, personImageId, profileLinks, websiteId } from "../../data/site";
+import { FULL_NAME, SITE_HANDLE, SITE_URL, personId, personImageId, websiteId } from "../../data/site";
 import { contactEmail, home, paths, projects, ui, experience, alternatesFor, type Lang } from "../../data/profile";
 import { formatPostDate, postPath, sortedPosts } from "../../data/posts";
 
@@ -70,6 +70,10 @@ const profileJsonLd = {
           <p>{role.body}</p>
         </article>
       ))}
+      <article class="editorial-story">
+        <h2>{t.stackTitle}</h2>
+        <p>{t.stack}</p>
+      </article>
     </section>
 
     <section class="editorial-section" id="projects" aria-labelledby="projects-heading">
@@ -130,7 +134,9 @@ const profileJsonLd = {
     <section class="editorial-section editorial-contact" id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">{s.contact}</h2>
       <p>{t.contact}</p>
-      <p><a class="editorial-link" href={profileLinks.linkedin} target="_blank" rel="me noopener noreferrer">LinkedIn</a><span aria-hidden="true"> · </span><a class="editorial-link" href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+      <p>{t.profiles.map((profile) => (
+        <><a class="editorial-link" href={profile.href} target="_blank" rel="me noopener noreferrer">{profile.label}</a><span aria-hidden="true"> · </span></>
+      ))}<a class="editorial-link" href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
     </section>
   </div>
 </BaseLayout>
