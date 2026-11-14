@@ -49,7 +49,7 @@ export const ui = {
 export const home = {
   en: {
     title: `${FULL_NAME} | Forward Deployed Engineer`,
-    description: "Software engineer in Bogotá. Co-founded Brand Spa in 2012, led iOS and Android at Platzi (2017–2026), and joined Wonderful as a Forward Deployed Engineer in July 2026.",
+    description: "Forward Deployed Engineer at Wonderful. Before that, led mobile engineering at Platzi (iOS and Android) and co-founded Brand Spa. Building software since 2012.",
     eyebrow: "Forward Deployed Engineer at Wonderful · Bogotá",
     lead: "I’m a <strong>Forward Deployed Engineer at Wonderful</strong>, based in Bogotá, Colombia. Previously, I led the iOS and Android teams at Platzi.",
     stackTitle: "What I work with",
@@ -76,7 +76,7 @@ export const home = {
   },
   es: {
     title: `${FULL_NAME} | Forward Deployed Engineer, Bogotá`,
-    description: "Ingeniero de software en Bogotá. Cofundé Brand Spa en 2012, lideré iOS y Android en Platzi (2017–2026) y desde julio de 2026 soy Forward Deployed Engineer en Wonderful.",
+    description: "Forward Deployed Engineer en Wonderful. Antes lideré ingeniería mobile en Platzi (iOS y Android) y cofundé Brand Spa. Construyo software desde 2012.",
     eyebrow: "Forward Deployed Engineer en Wonderful · Bogotá",
     lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong> y vivo en Bogotá, Colombia. Antes lideré los equipos de iOS y Android en Platzi.",
     stackTitle: "Con qué trabajo",
