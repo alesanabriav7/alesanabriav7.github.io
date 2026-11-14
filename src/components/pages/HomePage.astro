@@ -134,6 +134,7 @@ const profileJsonLd = {
     <section class="editorial-section editorial-contact" id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">{s.contact}</h2>
       <p>{t.contact}</p>
+      <p>{t.knownAs}</p>
       <p>{t.profiles.map((profile) => (
         <><a class="editorial-link" href={profile.href} target="_blank" rel="me noopener noreferrer">{profile.label}</a><span aria-hidden="true"> · </span></>
       ))}<a class="editorial-link" href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
