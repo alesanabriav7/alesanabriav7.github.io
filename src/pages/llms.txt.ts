@@ -21,7 +21,7 @@ Alejandro Sanabria (Alejandro Sanabria Villescas, alesanabriav) is a software en
 - Product landing: https://alejandrosanabria.com/cifro/
 - Landing en español: https://alejandrosanabria.com/cifro/es/
 - App Store: https://apps.apple.com/app/id6759523370
-- Privacy policy: https://alejandrosanabria.com/cifro/privacy
+- Privacy policy: https://alejandrosanabria.com/cifro/privacy/
 
 ## Canonical links
 
