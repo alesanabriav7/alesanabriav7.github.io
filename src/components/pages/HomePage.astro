@@ -34,6 +34,7 @@ const profileJsonLd = {
   primaryImageOfPage: { "@id": personImageId },
   description: t.description,
 };
+const wwdcSizes = "(max-width: 744px) calc(100vw - 40px), 720px";
 ---
 
 <BaseLayout title={t.title} description={t.description} lang={lang} ogType="profile" jsonLd={profileJsonLd} alternates={alternatesFor("home")} editorialHome>
@@ -41,7 +42,9 @@ const profileJsonLd = {
     <header class="editorial-intro" id="about">
       <img
         class="editorial-intro__portrait"
-        src="/alejandro-sanabria-villescas-192.jpg"
+        src="/images/alejandro-sanabria-villescas-192.webp"
+        srcset="/images/alejandro-sanabria-villescas-96.webp 96w, /images/alejandro-sanabria-villescas-144.webp 144w, /images/alejandro-sanabria-villescas-192.webp 192w"
+        sizes="(max-width: 744px) 72px, 96px"
         alt={photoAlt}
         width="192"
         height="192"
@@ -117,16 +120,19 @@ const profileJsonLd = {
 
     <section class="editorial-section editorial-photo" aria-label={copy.about}>
       <figure>
-        <img
-          src="/images/wwdc26-1600.webp"
-          srcset="/images/wwdc26-900.webp 900w, /images/wwdc26-1600.webp 1600w"
-          sizes="(max-width: 744px) calc(100vw - 40px), 700px"
-          alt={t.heroAlt}
-          width="1600"
-          height="1067"
-          loading="lazy"
-          decoding="async"
-        />
+        <picture>
+          <source type="image/avif" srcset="/images/wwdc26-480.avif 480w, /images/wwdc26-660.avif 660w, /images/wwdc26-900.avif 900w, /images/wwdc26-1600.avif 1600w" sizes={wwdcSizes} />
+          <img
+            src="/images/wwdc26-1600.webp"
+            srcset="/images/wwdc26-480.webp 480w, /images/wwdc26-660.webp 660w, /images/wwdc26-900.webp 900w, /images/wwdc26-1600.webp 1600w"
+            sizes={wwdcSizes}
+            alt={t.heroAlt}
+            width="1600"
+            height="1067"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
         <figcaption>{t.caption}</figcaption>
       </figure>
     </section>

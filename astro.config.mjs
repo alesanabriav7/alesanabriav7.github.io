@@ -61,6 +61,8 @@ function lastCommitDate(path) {
 
 export default defineConfig({
   site: SITE,
+  // Inline the (small) site CSS so it never blocks first render behind a second request.
+  build: { inlineStylesheets: "always" },
   integrations: [
     sitemap({
       serialize(item) {

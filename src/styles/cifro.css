@@ -12,6 +12,9 @@
 
 [data-theme="cifro"] .global-footer p a {
   color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 
 [data-theme="cifro"] .card {
@@ -24,6 +27,16 @@
     linear-gradient(var(--color-hero-wash), var(--color-hero-wash)),
     url("/cifro/v1.1/hero-bg.webp") center top / cover no-repeat,
     var(--color-bg);
+}
+
+@media (max-width: 744px) {
+  .cifro-hero,
+  .cifro-cta {
+    background:
+      linear-gradient(var(--color-hero-wash), var(--color-hero-wash)),
+      url("/cifro/v1.1/hero-bg-1200.webp") center top / cover no-repeat,
+      var(--color-bg);
+  }
 }
 
 .cifro-hero {

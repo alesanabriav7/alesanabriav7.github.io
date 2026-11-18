@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Content-Signal: ai-train=yes, search=yes, ai-input=yes
+# Content signals: ai-train=yes, search=yes, ai-input=yes (all uses allowed; same as no restriction)
 
 Sitemap: https://alejandrosanabria.com/sitemap-index.xml
 Sitemap: https://alejandrosanabria.com/sitemap-legacy.xml

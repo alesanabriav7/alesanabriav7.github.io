@@ -21,7 +21,7 @@ export const contactEmail = "me@alesanabriav.com";
 
 export const ui = {
   en: {
-    nav: { work: "Work", projects: "Projects", blog: "Blog", about: "About", switchLabel: "ES · Español", connect: "Contact", label: "Primary navigation", footer: "Site links", homeLabel: "Alejandro Sanabria home" },
+    nav: { work: "Work", projects: "Projects", blog: "Blog", about: "About", switchLabel: "ES · Español", connect: "Contact", label: "Primary navigation", footer: "Site links" },
     footer: { email: "Email" },
     sections: { about: "About", experience: "Experience", projects: "Projects", blog: "Blog", contact: "Contact" },
     fullHistory: "Full work history",
@@ -33,7 +33,7 @@ export const ui = {
     aboutMe: "About me",
   },
   es: {
-    nav: { work: "Trabajo", projects: "Proyectos", blog: "Blog", about: "Sobre mí", switchLabel: "EN · English", connect: "Contacto", label: "Navegación principal", footer: "Enlaces del sitio", homeLabel: "Alejandro Sanabria, inicio" },
+    nav: { work: "Trabajo", projects: "Proyectos", blog: "Blog", about: "Sobre mí", switchLabel: "EN · English", connect: "Contacto", label: "Navegación principal", footer: "Enlaces del sitio" },
     footer: { email: "Correo" },
     sections: { about: "Sobre mí", experience: "Experiencia", projects: "Proyectos", blog: "Blog", contact: "Contacto" },
     fullHistory: "Toda mi trayectoria",

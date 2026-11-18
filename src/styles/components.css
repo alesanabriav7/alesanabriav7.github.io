@@ -417,7 +417,9 @@
 
 .page-header__lead a {
   color: var(--color-accent);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
 }
 
 /* Prose */

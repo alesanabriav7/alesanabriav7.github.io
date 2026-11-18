@@ -14,6 +14,10 @@ interface Props {
 const { lang } = Astro.props;
 const t = cifroCopy[lang];
 const shot = (name: string) => `/cifro/v1.1/${lang}/${name}.webp`;
+// Phones render at most ~270 CSS px wide: 300w for 1x screens, 480w up to ~1.75x, 660w beyond.
+const shotSrcset = (name: string) => `/cifro/v1.1/${lang}/${name}-300.webp 300w, /cifro/v1.1/${lang}/${name}-480.webp 480w, ${shot(name)} 660w`;
+const shotAvifSrcset = (name: string) => `/cifro/v1.1/${lang}/${name}-300.avif 300w, /cifro/v1.1/${lang}/${name}-480.avif 480w, /cifro/v1.1/${lang}/${name}-660.avif 660w`;
+const SHOT_SIZES = "270px";
 const pageUrl = absoluteUrl(cifroPath(lang));
 
 const appNode = {
@@ -51,6 +55,7 @@ const faqNode = {
 ---
 
 <BaseLayout
+  preloadCifroHero
   variant="cifro"
   lang={lang}
   title={t.meta.title}
@@ -76,10 +81,10 @@ const faqNode = {
       </div>
       <div class="cifro-hero-phones">
         <figure class="cifro-phone cifro-phone-back">
-          <img src={shot("where")} alt={t.hero.secondImageAlt} width="660" height="1434" loading="eager" decoding="async" />
+          <picture><source type="image/avif" srcset={shotAvifSrcset("where")} sizes={SHOT_SIZES} /><img src={shot("where")} srcset={shotSrcset("where")} sizes={SHOT_SIZES} alt={t.hero.secondImageAlt} width="660" height="1434" loading="eager" decoding="async" /></picture>
         </figure>
         <figure class="cifro-phone cifro-phone-front">
-          <img src={shot("home")} alt={t.hero.imageAlt} width="660" height="1434" loading="eager" fetchpriority="high" decoding="async" />
+          <picture><source type="image/avif" srcset={shotAvifSrcset("home")} sizes={SHOT_SIZES} /><img src={shot("home")} srcset={shotSrcset("home")} sizes={SHOT_SIZES} alt={t.hero.imageAlt} width="660" height="1434" loading="eager" fetchpriority="high" decoding="async" /></picture>
         </figure>
       </div>
     </div>
@@ -105,7 +110,7 @@ const faqNode = {
               </ul>
             </div>
             <figure class="cifro-phone">
-              <img src={shot(feature.image)} alt={feature.alt} width="660" height="1434" loading="lazy" decoding="async" />
+              <picture><source type="image/avif" srcset={shotAvifSrcset(feature.image)} sizes={SHOT_SIZES} /><img src={shot(feature.image)} srcset={shotSrcset(feature.image)} sizes={SHOT_SIZES} alt={feature.alt} width="660" height="1434" loading="lazy" decoding="async" /></picture>
             </figure>
           </article>
         ))}

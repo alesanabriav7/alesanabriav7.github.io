@@ -13,7 +13,7 @@ const { date, minutes, lang } = Astro.props;
 ---
 
 <div class="byline">
-  <img class="byline__avatar" src="/images/apple-park-portrait-600.webp" alt="" width="44" height="44" />
+  <img class="byline__avatar" src="/images/apple-park-portrait-88.webp" srcset="/images/apple-park-portrait-88.webp 1x, /images/apple-park-portrait-176.webp 2x" alt="" width="44" height="44" />
   <div>
     <a class="byline__name" href={paths[lang].home} rel="author">{SITE_NAME}</a>
     <p class="byline__meta"><time datetime={date}>{formatPostDate(date, lang)}</time>{` · ${ui[lang].readingTime(minutes)}`}</p>

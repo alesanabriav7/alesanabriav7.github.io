@@ -40,6 +40,8 @@ interface Props {
   alternates?: { hreflang: string; href: string }[];
   appStoreId?: string;
   breadcrumbs?: Crumb[];
+  /** Preload the Cifro hero background (a CSS image the browser would otherwise find late). */
+  preloadCifroHero?: boolean;
 }
 
 const {
@@ -57,6 +59,7 @@ const {
   alternates = [],
   appStoreId,
   breadcrumbs,
+  preloadCifroHero = false,
 } = Astro.props;
 const isCifro = variant === "cifro";
 const ogLocale = lang === "es" ? "es_LA" : "en_US";
@@ -100,6 +103,8 @@ const structuredDataJson = structuredDataNodes.length > 0
     <link rel="canonical" href={canonical} />
     {alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={absoluteUrl(alternate.href)} />)}
     {appStoreId && <meta name="apple-itunes-app" content={`app-id=${appStoreId}`} />}
+    {preloadCifroHero && <link rel="preload" as="image" type="image/webp" href="/cifro/v1.1/hero-bg-1200.webp" media="(max-width: 744px)" fetchpriority="high" />}
+    {preloadCifroHero && <link rel="preload" as="image" type="image/webp" href="/cifro/v1.1/hero-bg.webp" media="(min-width: 745px)" fetchpriority="high" />}
     <link rel="icon" href={favicon} />
     {!isCifro && <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} · Blog`} href="/rss.xml" />}
     <meta property="og:type" content={ogType} />
@@ -123,7 +128,7 @@ const structuredDataJson = structuredDataNodes.length > 0
       <CifroHeader lang={lang} />
     ) : !editorialHome ? (
       <SiteNav
-        brand={{ href: paths[lang].home, label: SITE_NAME, shortLabel: "A. Sanabria", ariaLabel: ui[lang].nav.homeLabel }}
+        brand={{ href: paths[lang].home, label: SITE_NAME, shortLabel: "A. Sanabria" }}
         links={personalNavLinks(lang, alternates)}
         cta={personalContact(lang)}
         currentPath={currentPath}
@@ -143,19 +148,21 @@ const structuredDataJson = structuredDataNodes.length > 0
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
       if (!reducedMotion && revealElements.length > 0) {
-        document.body.classList.add("motion-ready");
+        // The observer's first callback reports what is already on screen without forcing a
+        // synchronous layout. Those elements stay visible; only the rest are hidden for the reveal.
+        let firstBatch = true;
         const observer = new IntersectionObserver((entries) => {
           for (const entry of entries) {
             if (!entry.isIntersecting) continue;
             entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
+          if (firstBatch) {
+            firstBatch = false;
+            document.body.classList.add("motion-ready");
+          }
         }, { threshold: 0.12 });
-        for (const element of revealElements) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) element.classList.add("visible");
-          else observer.observe(element);
-        }
+        for (const element of revealElements) observer.observe(element);
       }
     </script>
   </body>

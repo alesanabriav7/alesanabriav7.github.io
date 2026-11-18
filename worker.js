@@ -1,8 +1,37 @@
 import pages from "./generated/page-markdown.json" with { type: "json" };
+import cspHashes from "./generated/csp-hashes.json" with { type: "json" };
 import legacyProfileRedirects from "./src/data/legacy-profile-redirects.js";
 
 const CANONICAL_HOST = "alejandrosanabria.com";
 const ALIASES = new Set(["alesanabriav.com", "www.alesanabriav.com", "www.alejandrosanabria.com"]);
+
+// Strict, hash-based CSP: only the site's own inline scripts (hashed at build time) may run.
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  `script-src ${cspHashes.join(" ")} 'strict-dynamic'`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "upgrade-insecure-requests",
+  "require-trusted-types-for 'script'",
+].join("; ");
+const SECURITY_HEADERS = {
+  "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+  "Content-Security-Policy": CONTENT_SECURITY_POLICY,
+  "Cross-Origin-Opener-Policy": "same-origin",
+  "X-Frame-Options": "DENY",
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+};
+function withSecurityHeaders(response) {
+  const headers = new Headers(response.headers);
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) headers.set(name, value);
+  return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+}
 
 // Require an explicit Markdown preference; ordinary browser Accept headers stay HTML.
 function wantsMarkdown(accept) {
@@ -19,72 +48,76 @@ function wantsMarkdown(accept) {
 
 export default {
   async fetch(request, env) {
-    const url = new URL(request.url);
-    const normalizedPath = url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`;
-    const legacyProfileTarget = legacyProfileRedirects.get(normalizedPath);
-    const legacyPrivacy = url.pathname === "/privacy" || url.pathname === "/privacy/";
-    const legacySitemap = url.pathname === "/sitemap.xml";
-
-    if (legacyProfileTarget) {
-      const redirectUrl = new URL(legacyProfileTarget, url);
-      redirectUrl.protocol = "https:";
-      redirectUrl.hostname = CANONICAL_HOST;
-      redirectUrl.search = url.search;
-      return Response.redirect(redirectUrl, 301);
-    }
-
-    if (ALIASES.has(url.hostname) || (url.hostname === CANONICAL_HOST && url.protocol !== "https:") || legacyPrivacy || legacySitemap) {
-      url.protocol = "https:";
-      url.hostname = CANONICAL_HOST;
-      if (legacyPrivacy) url.pathname = "/cifro/privacy/";
-      if (legacySitemap) url.pathname = "/sitemap-index.xml";
-      return Response.redirect(url, 301);
-    }
-    // /404 is a real file, so the asset binding would serve it with 200.
-    // Unknown paths already come back as 404 via assets.not_found_handling = "404-page".
-    if (url.pathname === "/404" || url.pathname === "/404/" || url.pathname === "/404.html") {
-      let notFound = await env.ASSETS.fetch(request);
-      if (notFound.status >= 300 && notFound.status < 400) {
-        const location = notFound.headers.get("Location");
-        if (location) notFound = await env.ASSETS.fetch(new Request(new URL(location, request.url), request));
-      }
-      const headers = new Headers(notFound.headers);
-      headers.delete("Location");
-      return new Response(request.method === "HEAD" ? null : notFound.body, { status: 404, headers });
-    }
-    // Serve the requested asset, preserving redirects and 404s for every Accept header.
-    const markdownRequested = wantsMarkdown(request.headers.get('Accept') || '');
-    const assetRequest = new Request(request);
-    if (markdownRequested) {
-      // HTML validators and byte ranges do not describe the Markdown representation.
-      for (const name of ['If-None-Match', 'If-Modified-Since', 'Range', 'If-Range']) assetRequest.headers.delete(name);
-    }
-    let response = await env.ASSETS.fetch(assetRequest);
-    // The asset binding adds the trailing slash with a 307; make it permanent so /es and /es/ consolidate.
-    if (response.status === 307) {
-      const location = response.headers.get('Location');
-      if (location) {
-        const target = new URL(location, url);
-        if (target.origin === url.origin && target.pathname === `${url.pathname}/`) {
-          target.search = url.search;
-          return Response.redirect(target, 301);
-        }
-      }
-    }
-    if (!['GET', 'HEAD'].includes(request.method) || response.status !== 200 ||
-        !response.headers.get('Content-Type')?.includes('text/html')) return response;
-    const headers = new Headers(response.headers);
-    const vary = headers.get('Vary');
-    if (!vary?.split(',').some(value => ['accept', '*'].includes(value.trim().toLowerCase()))) {
-      headers.set('Vary', vary ? `${vary}, Accept` : 'Accept');
-    }
-    const page = Object.hasOwn(pages, url.pathname) ? pages[url.pathname] : null;
-    if (page && markdownRequested) {
-      headers.set('Content-Type', 'text/markdown; charset=utf-8');
-      if (page.robots) headers.set('X-Robots-Tag', page.robots);
-      for (const name of ['Content-Length', 'Content-Encoding', 'ETag', 'Last-Modified', 'Accept-Ranges']) headers.delete(name);
-      return new Response(request.method === 'HEAD' ? null : page.body, { headers });
-    }
-    return new Response(response.body, { status: response.status, headers });
+    return withSecurityHeaders(await handle(request, env));
   },
 };
+
+async function handle(request, env) {
+  const url = new URL(request.url);
+  const normalizedPath = url.pathname.endsWith('/') ? url.pathname : `${url.pathname}/`;
+  const legacyProfileTarget = legacyProfileRedirects.get(normalizedPath);
+  const legacyPrivacy = url.pathname === "/privacy" || url.pathname === "/privacy/";
+  const legacySitemap = url.pathname === "/sitemap.xml";
+
+  if (legacyProfileTarget) {
+    const redirectUrl = new URL(legacyProfileTarget, url);
+    redirectUrl.protocol = "https:";
+    redirectUrl.hostname = CANONICAL_HOST;
+    redirectUrl.search = url.search;
+    return Response.redirect(redirectUrl, 301);
+  }
+
+  if (ALIASES.has(url.hostname) || (url.hostname === CANONICAL_HOST && url.protocol !== "https:") || legacyPrivacy || legacySitemap) {
+    url.protocol = "https:";
+    url.hostname = CANONICAL_HOST;
+    if (legacyPrivacy) url.pathname = "/cifro/privacy/";
+    if (legacySitemap) url.pathname = "/sitemap-index.xml";
+    return Response.redirect(url, 301);
+  }
+  // /404 is a real file, so the asset binding would serve it with 200.
+  // Unknown paths already come back as 404 via assets.not_found_handling = "404-page".
+  if (url.pathname === "/404" || url.pathname === "/404/" || url.pathname === "/404.html") {
+    let notFound = await env.ASSETS.fetch(request);
+    if (notFound.status >= 300 && notFound.status < 400) {
+      const location = notFound.headers.get("Location");
+      if (location) notFound = await env.ASSETS.fetch(new Request(new URL(location, request.url), request));
+    }
+    const headers = new Headers(notFound.headers);
+    headers.delete("Location");
+    return new Response(request.method === "HEAD" ? null : notFound.body, { status: 404, headers });
+  }
+  // Serve the requested asset, preserving redirects and 404s for every Accept header.
+  const markdownRequested = wantsMarkdown(request.headers.get('Accept') || '');
+  const assetRequest = new Request(request);
+  if (markdownRequested) {
+    // HTML validators and byte ranges do not describe the Markdown representation.
+    for (const name of ['If-None-Match', 'If-Modified-Since', 'Range', 'If-Range']) assetRequest.headers.delete(name);
+  }
+  let response = await env.ASSETS.fetch(assetRequest);
+  // The asset binding adds the trailing slash with a 307; make it permanent so /es and /es/ consolidate.
+  if (response.status === 307) {
+    const location = response.headers.get('Location');
+    if (location) {
+      const target = new URL(location, url);
+      if (target.origin === url.origin && target.pathname === `${url.pathname}/`) {
+        target.search = url.search;
+        return Response.redirect(target, 301);
+      }
+    }
+  }
+  if (!['GET', 'HEAD'].includes(request.method) || response.status !== 200 ||
+      !response.headers.get('Content-Type')?.includes('text/html')) return response;
+  const headers = new Headers(response.headers);
+  const vary = headers.get('Vary');
+  if (!vary?.split(',').some(value => ['accept', '*'].includes(value.trim().toLowerCase()))) {
+    headers.set('Vary', vary ? `${vary}, Accept` : 'Accept');
+  }
+  const page = Object.hasOwn(pages, url.pathname) ? pages[url.pathname] : null;
+  if (page && markdownRequested) {
+    headers.set('Content-Type', 'text/markdown; charset=utf-8');
+    if (page.robots) headers.set('X-Robots-Tag', page.robots);
+    for (const name of ['Content-Length', 'Content-Encoding', 'ETag', 'Last-Modified', 'Accept-Ranges']) headers.delete(name);
+    return new Response(request.method === 'HEAD' ? null : page.body, { headers });
+  }
+  return new Response(response.body, { status: response.status, headers });
+}
