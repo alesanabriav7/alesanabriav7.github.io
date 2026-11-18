@@ -8,7 +8,8 @@ const ALIASES = new Set(["alesanabriav.com", "www.alesanabriav.com", "www.alejan
 // Strict, hash-based CSP: only the site's own inline scripts (hashed at build time) may run.
 const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
-  `script-src ${cspHashes.join(" ")} 'strict-dynamic'`,
+  // 'unsafe-inline' and https: are fallbacks for old browsers; CSP3 browsers ignore them when hashes and 'strict-dynamic' are present.
+  `script-src ${cspHashes.join(" ")} 'strict-dynamic' 'unsafe-inline' https:`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "object-src 'none'",
