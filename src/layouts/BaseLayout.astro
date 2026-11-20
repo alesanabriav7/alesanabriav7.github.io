@@ -11,6 +11,7 @@ import SiteNav from "../components/ui/SiteNav.astro";
 import { personalContact, personalFooterLinks, personalNavLinks } from "../data/navigation";
 import { contactEmail, paths, ui } from "../data/profile";
 import {
+  FULL_NAME,
   SITE_NAME,
   SITE_URL,
   profileLinks,
@@ -77,7 +78,7 @@ const homeFooterLinks = editorialHome
   : personalFooterLinks(lang);
 const fullTitle = isCifro || title.includes(SITE_NAME) ? title : `${title} — ${SITE_NAME}`;
 const imageUrl = absoluteUrl(image);
-const metadataSiteName = isCifro ? "Cifro" : SITE_NAME;
+const metadataSiteName = isCifro ? "Cifro" : FULL_NAME;
 
 const extraNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const identityNodes = isCifro ? [] : [personNodeFor(lang), websiteNode, cifroAppNode];

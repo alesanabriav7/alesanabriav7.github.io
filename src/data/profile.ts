@@ -75,7 +75,7 @@ export const home = {
     contact: "To talk about AI in production, mobile development, or a product you’re building, reach me on LinkedIn or by email.",
   },
   es: {
-    title: `${FULL_NAME} | Forward Deployed Engineer, Bogotá`,
+    title: `${FULL_NAME}, Forward Deployed Engineer en Bogotá`,
     description: "Forward Deployed Engineer en Wonderful. Antes lideré ingeniería mobile en Platzi (iOS y Android) y cofundé Brand Spa. Construyo software desde 2012.",
     eyebrow: "Forward Deployed Engineer en Wonderful · Bogotá",
     lead: "Soy <strong>Forward Deployed Engineer en Wonderful</strong> y vivo en Bogotá, Colombia. Antes lideré los equipos de iOS y Android en Platzi.",

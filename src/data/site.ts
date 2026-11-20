@@ -132,8 +132,8 @@ export const websiteNode = {
   "@type": "WebSite",
   "@id": websiteId,
   url: `${SITE_URL}/`,
-  name: SITE_NAME,
-  alternateName: SITE_HANDLE,
+  name: FULL_NAME,
+  alternateName: [SITE_NAME, SITE_HANDLE],
   publisher: { "@id": personId },
 };
 
